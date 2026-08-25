@@ -1432,7 +1432,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 翻譯引擎架構
       
     </span>
   </a>
@@ -1443,7 +1443,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 支援的 LLM 供應商與環境變數
       
     </span>
   </a>
@@ -1454,7 +1454,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 工業級 Prompt 約束原則
       
     </span>
   </a>
@@ -1465,7 +1465,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 本地執行指令
       
     </span>
   </a>
@@ -1518,7 +1518,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 翻譯引擎架構
       
     </span>
   </a>
@@ -1529,7 +1529,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 支援的 LLM 供應商與環境變數
       
     </span>
   </a>
@@ -1540,7 +1540,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 工業級 Prompt 約束原則
       
     </span>
   </a>
@@ -1551,7 +1551,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 本地執行指令
       
     </span>
   </a>
@@ -1591,12 +1591,12 @@
   
 
 
-<h1 id="ai-opencode_translatepy">AI 国际化翻译引擎 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE 工程设计并实现了基于现代大语言模型（LLM）的跨模组全自动国际化翻译系统（位于 <code>scripts/opencode_translate.py</code>）。</p>
+<h1 id="ai-opencode_translatepy">AI 國際化翻譯引擎 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>GTE 工程設計並實現了基於現代大語言模型（LLM）的跨模組全自動國際化翻譯系統（位於 <code>scripts/opencode_translate.py</code>）。</p>
 <hr />
-<h2 id="_1">🤖 翻译引擎架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>传统的社区汉化依赖人工手动维护繁杂的 JSON 与 SNBT 文本，更新滞后且极易产生错漏。</p>
-<p>GTE 的 AI 翻译引擎通过标准化 OpenAI 兼容 API，实现了 FTB Quests 任务书与核心 Mod 语言文件的<strong>自动化增量提取、术语对齐与并发翻译</strong>：</p>
+<h2 id="_1">🤖 翻譯引擎架構<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>傳統的社群漢化依賴人工手動維護繁雜的 JSON 與 SNBT 文字，更新滯後且極易產生錯漏。</p>
+<p>GTE 的 AI 翻譯引擎透過標準化 OpenAI 相容 API，實現了 FTB Quests 任務書與核心 Mod 語言檔案的<strong>自動化增量提取、術語對齊與併發翻譯</strong>：</p>
 <pre class="mermaid"><code>graph TD
     A[扫描 FTB Quests snbt 与 Lang json] --&gt; B[提取未翻译词条]
     B --&gt; C[读取 .translation_cache.json 本地缓存]
@@ -1607,15 +1607,15 @@
     G --&gt; H[校验与更新本地缓存]
     H --&gt; I[回写至 zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
-<h2 id="llm">🔑 支持的 LLM 供应商与环境变量<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
-<p>脚本支持通过环境变量无缝切换不同的 AI 模型提供商：</p>
+<h2 id="llm">🔑 支援的 LLM 供應商與環境變數<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
+<p>指令碼支援透過環境變數無縫切換不同的 AI 模型提供商：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">供应商名称</th>
-<th style="text-align: left;">API Key 环境变量</th>
-<th style="text-align: left;">Base URL 环境变量</th>
-<th style="text-align: left;">默认模型</th>
+<th style="text-align: left;">供應商名稱</th>
+<th style="text-align: left;">API Key 環境變數</th>
+<th style="text-align: left;">Base URL 環境變數</th>
+<th style="text-align: left;">預設模型</th>
 </tr>
 </thead>
 <tbody>
@@ -1638,7 +1638,7 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>通义千问 (DashScope)</strong></td>
+<td style="text-align: left;"><strong>通義千問 (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
@@ -1650,13 +1650,13 @@
 <td style="text-align: left;"><code>moonshot-v1-8k</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>智谱清言 (Zhipu GLM)</strong></td>
+<td style="text-align: left;"><strong>智譜清言 (Zhipu GLM)</strong></td>
 <td style="text-align: left;"><code>ZHIPU_API_KEY</code></td>
 <td style="text-align: left;"><code>ZHIPU_BASE_URL</code></td>
 <td style="text-align: left;"><code>glm-4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>OpenCode 平台</strong></td>
+<td style="text-align: left;"><strong>OpenCode 平臺</strong></td>
 <td style="text-align: left;"><code>OPENCODE_API_KEY</code></td>
 <td style="text-align: left;"><code>OPENCODE_BASE_URL</code></td>
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
@@ -1665,19 +1665,19 @@
 <td style="text-align: left;"><strong>通用聚合代理</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
-<td style="text-align: left;"><code>LLM_MODEL</code> (自定义)</td>
+<td style="text-align: left;"><code>LLM_MODEL</code> (自定義)</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="prompt">🎯 工业级 Prompt 约束原则<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
-<p>在调用 API 进行翻译时，系统内置了严格的 Minecraft 与 GregTech 术语规则：
-1. <strong>格式符绝对保留</strong>：完整保留 Minecraft 原生颜色格式化代码（如 <code>§a</code>, <code>§c</code>, <code>§6</code>）与占位符（<code>%s</code>, <code>%d</code>, <code>{0}</code>）。
-2. <strong>科技术语规范统一</strong>：严格锁定科技专有名词翻译（如 <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 等）。
-3. <strong>哈希增量缓存</strong>：所有已翻译条目自动持久化记录在 <code>.translation_cache.json</code> 中，只有新增或变更文本会发起网络请求，极大节省 Token 开销与 CI 耗时。</p>
+<h2 id="prompt">🎯 工業級 Prompt 約束原則<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<p>在呼叫 API 進行翻譯時，系統內建了嚴格的 Minecraft 與 GregTech 術語規則：
+1. <strong>格式符絕對保留</strong>：完整保留 Minecraft 原生顏色格式化程式碼（如 <code>§a</code>, <code>§c</code>, <code>§6</code>）與佔位符（<code>%s</code>, <code>%d</code>, <code>{0}</code>）。
+2. <strong>科技術語規範統一</strong>：嚴格鎖定科技專有名詞翻譯（如 <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 等）。
+3. <strong>雜湊增量快取</strong>：所有已翻譯條目自動持久化記錄在 <code>.translation_cache.json</code> 中，只有新增或變更文字會發起網路請求，極大節省 Token 開銷與 CI 耗時。</p>
 <hr />
-<h2 id="_2">💻 本地运行指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在本地开发环境中一键触发全量翻译：</p>
+<h2 id="_2">💻 本地執行指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在本地開發環境中一鍵觸發全量翻譯：</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 设置任意一个有效 API Key 后执行</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>

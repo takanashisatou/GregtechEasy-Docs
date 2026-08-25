@@ -1103,7 +1103,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 脚本目录架构与生命周期
+        📁 指令碼目錄架構與生命週期
       
     </span>
   </a>
@@ -1114,7 +1114,7 @@
   <a href="#startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 启动期：自定义材料注册 (startup_scripts/)
+        🧪 啟動期：自定義材料註冊 (startup_scripts/)
       
     </span>
   </a>
@@ -1125,19 +1125,19 @@
   <a href="#server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ 服务端：自定义配方与机器配方编写 (server_scripts/)
+        ⚙️ 服務端：自定義配方與機器配方編寫 (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ 服务端：自定义配方与机器配方编写 (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ 服務端：自定義配方與機器配方編寫 (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 基础机器与高炉配方
+        1. 基礎機器與高爐配方
       
     </span>
   </a>
@@ -1148,7 +1148,7 @@
   <a href="#2-gtecore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. GTECore 自定义机器配方
+        2. GTECore 自定義機器配方
       
     </span>
   </a>
@@ -1164,7 +1164,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 游戏内热重载指令
+        ⚡ 遊戲內熱過載指令
       
     </span>
   </a>
@@ -1548,7 +1548,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 脚本目录架构与生命周期
+        📁 指令碼目錄架構與生命週期
       
     </span>
   </a>
@@ -1559,7 +1559,7 @@
   <a href="#startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 启动期：自定义材料注册 (startup_scripts/)
+        🧪 啟動期：自定義材料註冊 (startup_scripts/)
       
     </span>
   </a>
@@ -1570,19 +1570,19 @@
   <a href="#server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ 服务端：自定义配方与机器配方编写 (server_scripts/)
+        ⚙️ 服務端：自定義配方與機器配方編寫 (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ 服务端：自定义配方与机器配方编写 (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ 服務端：自定義配方與機器配方編寫 (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 基础机器与高炉配方
+        1. 基礎機器與高爐配方
       
     </span>
   </a>
@@ -1593,7 +1593,7 @@
   <a href="#2-gtecore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. GTECore 自定义机器配方
+        2. GTECore 自定義機器配方
       
     </span>
   </a>
@@ -1609,7 +1609,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 游戏内热重载指令
+        ⚡ 遊戲內熱過載指令
       
     </span>
   </a>
@@ -1649,10 +1649,10 @@
   
 
 
-<h1 id="kubejs">KubeJS 魔改与脚本开发指南<a class="headerlink" href="#kubejs" title="Permanent link">&para;</a></h1>
-<p>GTE 将大部分材料注册、配方调整与多模组联动逻辑交由 <strong>KubeJS</strong> 处理（目录位于 <code>gte/overrides/kubejs/</code>）。</p>
+<h1 id="kubejs">KubeJS 魔改與指令碼開發指南<a class="headerlink" href="#kubejs" title="Permanent link">&para;</a></h1>
+<p>GTE 將大部分材料註冊、配方調整與多模組聯動邏輯交由 <strong>KubeJS</strong> 處理（目錄位於 <code>gte/overrides/kubejs/</code>）。</p>
 <hr />
-<h2 id="_1">📁 脚本目录架构与生命周期<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">📁 指令碼目錄架構與生命週期<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gte/overrides/kubejs/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【启动期脚本】在游戏最早期执行，用于注册材料、流体、方块、物品
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【服务端脚本】在进入存档/连接服务器时执行，用于注册/修改配方与标签
@@ -1660,8 +1660,8 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── assets/ &amp; data/      # 静态本地化、贴图材质与数据包文件
 </span></code></pre></div>
 <hr />
-<h2 id="startup_scripts">🧪 启动期：自定义材料注册 (<code>startup_scripts/</code>)<a class="headerlink" href="#startup_scripts" title="Permanent link">&para;</a></h2>
-<p>使用 <code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> 注册自定义元素与材料：</p>
+<h2 id="startup_scripts">🧪 啟動期：自定義材料註冊 (<code>startup_scripts/</code>)<a class="headerlink" href="#startup_scripts" title="Permanent link">&para;</a></h2>
+<p>使用 <code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> 註冊自定義元素與材料：</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">GTCEuStartupEvents</span><span class="p">.</span><span class="nx">registry</span><span class="p">(</span><span class="s1">'gtceu:material'</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 1. 注册无尽金属 (Infinite)</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'infinite'</span><span class="p">)</span>
@@ -1708,9 +1708,9 @@
 </span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="server_scripts">⚙️ 服务端：自定义配方与机器配方编写 (<code>server_scripts/</code>)<a class="headerlink" href="#server_scripts" title="Permanent link">&para;</a></h2>
-<p>在 <code>ServerEvents.recipes</code> 事件中，可直接调用 <code>event.recipes.gtceu</code> 与 <code>event.recipes.gtecore</code>：</p>
-<h3 id="1">1. 基础机器与高炉配方<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h2 id="server_scripts">⚙️ 服務端：自定義配方與機器配方編寫 (<code>server_scripts/</code>)<a class="headerlink" href="#server_scripts" title="Permanent link">&para;</a></h2>
+<p>在 <code>ServerEvents.recipes</code> 事件中，可直接呼叫 <code>event.recipes.gtceu</code> 與 <code>event.recipes.gtecore</code>：</p>
+<h3 id="1">1. 基礎機器與高爐配方<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtceu</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtecore</span>
@@ -1741,7 +1741,7 @@
 </span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemOutputs</span><span class="p">(</span><span class="s1">'1x ae2:printed_logic_processor'</span><span class="p">)</span>
 </span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="p">})</span>
 </span></code></pre></div>
-<h3 id="2-gtecore">2. GTECore 自定义机器配方<a class="headerlink" href="#2-gtecore" title="Permanent link">&para;</a></h3>
+<h3 id="2-gtecore">2. GTECore 自定義機器配方<a class="headerlink" href="#2-gtecore" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtecore</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -1762,13 +1762,13 @@
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="_2">⚡ 游戏内热重载指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>无需重启客户端即可实时测试脚本修改：</p>
+<h2 id="_2">⚡ 遊戲內熱過載指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>無需重啟客戶端即可實時測試指令碼修改：</p>
 <ul>
-<li><strong>重载配方与服务端脚本</strong>：
+<li><strong>過載配方與服務端指令碼</strong>：
   <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">/</span><span class="kc">kubejs</span><span class="w"> </span><span class="kc">reload</span><span class="w"> </span><span class="kc">server_scripts</span>
 </span></code></pre></div></li>
-<li><strong>重载材质与客户端脚本</strong>：
+<li><strong>過載材質與客戶端指令碼</strong>：
   <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">/</span><span class="kc">kubejs</span><span class="w"> </span><span class="kc">reload</span><span class="w"> </span><span class="kc">client_scripts</span>
 </span></code></pre></div></li>
 </ul>

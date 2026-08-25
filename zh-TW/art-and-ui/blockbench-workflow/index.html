@@ -1163,7 +1163,7 @@
   <a href="#art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 美术源文件目录 (art_assets/)
+        🎨 美術原始檔目錄 (art_assets/)
       
     </span>
   </a>
@@ -1174,7 +1174,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 命名规范与自动路由规则
+        🏷️ 命名規範與自動路由規則
       
     </span>
   </a>
@@ -1185,19 +1185,19 @@
   <a href="#syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 一键资产同步任务 (syncBlockbenchAssets)
+        🔄 一鍵資產同步任務 (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 一键资产同步任务 (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 一鍵資產同步任務 (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动化特性
+        自動化特性
       
     </span>
   </a>
@@ -1523,7 +1523,7 @@
   <a href="#art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 美术源文件目录 (art_assets/)
+        🎨 美術原始檔目錄 (art_assets/)
       
     </span>
   </a>
@@ -1534,7 +1534,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 命名规范与自动路由规则
+        🏷️ 命名規範與自動路由規則
       
     </span>
   </a>
@@ -1545,19 +1545,19 @@
   <a href="#syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 一键资产同步任务 (syncBlockbenchAssets)
+        🔄 一鍵資產同步任務 (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 一键资产同步任务 (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 一鍵資產同步任務 (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动化特性
+        自動化特性
       
     </span>
   </a>
@@ -1602,11 +1602,11 @@
   
 
 
-<h1 id="blockbench">界面、材质与 Blockbench 美术工作流<a class="headerlink" href="#blockbench" title="Permanent link">&para;</a></h1>
-<p>GTE 工程建立了一套自动化、零丢失的美术资产处理流水线。模型设计师只需使用 <strong>Blockbench</strong> 制作模型并保存在原件目录，Gradle 任务会自动完成资产分类、格式校验与增量同步。</p>
+<h1 id="blockbench">介面、材質與 Blockbench 美術工作流<a class="headerlink" href="#blockbench" title="Permanent link">&para;</a></h1>
+<p>GTE 工程建立了一套自動化、零丟失的美術資產處理流水線。模型設計師只需使用 <strong>Blockbench</strong> 製作模型並儲存在原件目錄，Gradle 任務會自動完成資產分類、格式校驗與增量同步。</p>
 <hr />
-<h2 id="art_assets">🎨 美术源文件目录 (<code>art_assets/</code>)<a class="headerlink" href="#art_assets" title="Permanent link">&para;</a></h2>
-<p>项目根目录下的 <code>art_assets/</code> 是美术设计师的<strong>唯一工作目录</strong>，受 Git 严格版本追踪：</p>
+<h2 id="art_assets">🎨 美術原始檔目錄 (<code>art_assets/</code>)<a class="headerlink" href="#art_assets" title="Permanent link">&para;</a></h2>
+<p>專案根目錄下的 <code>art_assets/</code> 是美術設計師的<strong>唯一工作目錄</strong>，受 Git 嚴格版本追蹤：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Blockbench 工程源文件（保留图层与骨骼）
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Blockbench 导出的 Minecraft 几何模型
@@ -1615,50 +1615,50 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # 高阶电路系列专用材质子目录
 </span></code></pre></div>
 <hr />
-<h2 id="_1">🏷️ 命名规范与自动路由规则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Gradle 任务 <code>syncBlockbenchAssets</code> 根据文件命名关键词，自动将文件分发至 <code>modules/gtecore</code> 对应的资源路径中：</p>
+<h2 id="_1">🏷️ 命名規範與自動路由規則<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Gradle 任務 <code>syncBlockbenchAssets</code> 根據檔案命名關鍵詞，自動將檔案分發至 <code>modules/gtecore</code> 對應的資源路徑中：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">文件类型</th>
-<th style="text-align: left;">命名包含关键词</th>
-<th style="text-align: left;">自动同步目标目录 (GTECore)</th>
+<th style="text-align: left;">檔案型別</th>
+<th style="text-align: left;">命名包含關鍵詞</th>
+<th style="text-align: left;">自動同步目標目錄 (GTECore)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>物品贴图</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>物品貼圖</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>processor</code>, <code>string</code>, <code>symbol</code>, <code>paper</code>, <code>wafer</code>, <code>chip</code>, <code>god</code>, <code>rune</code>, <code>yin</code>, <code>yang</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/item/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>方块机壳贴图</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>方塊機殼貼圖</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>concrete</code>, <code>coil</code>, <code>zhenfa</code>, <code>matrix</code>, <code>buffer</code>, <code>generator</code>, <code>machine</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>方块模型</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>方塊模型</strong> (<code>.json</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>block</code>, <code>matrix</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/block/</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>物品模型</strong> (<code>.json</code>)</td>
-<td style="text-align: left;">其余所有模型文件（排除 <code>.bbmodel</code>）</td>
+<td style="text-align: left;">其餘所有模型檔案（排除 <code>.bbmodel</code>）</td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/item/</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="syncblockbenchassets">🔄 一键资产同步任务 (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#syncblockbenchassets" title="Permanent link">&para;</a></h2>
-<p>在导出模型或修改贴图后，在终端执行：</p>
+<h2 id="syncblockbenchassets">🔄 一鍵資產同步任務 (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#syncblockbenchassets" title="Permanent link">&para;</a></h2>
+<p>在匯出模型或修改貼圖後，在終端執行：</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">syncBlockbenchAssets</span>
 </span></code></pre></div>
-<h3 id="_2">自动化特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">自動化特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>自动触发</strong>：该任务已被挂载至 <code>buildAll</code>、<code>copyOutputJars</code> 以及 CI 构建流程的前置节点，在本地编译或启动游戏时会自动执行，无需手动反复拷贝。</li>
-<li><strong>增量安全</strong>：使用二进制流式覆写，自动在目标资源目录中补全缺失的父级目录。</li>
-<li><strong>保持 Git 清洁</strong>：<code>.bbmodel</code> 仅保留在 <code>art_assets/</code> 作为源工程，编译生成的 jar 包中不会夹带冗余的 Blockbench 项目元数据。</li>
+<li><strong>自動觸發</strong>：該任務已被掛載至 <code>buildAll</code>、<code>copyOutputJars</code> 以及 CI 構建流程的前置節點，在本地編譯或啟動遊戲時會自動執行，無需手動反覆複製。</li>
+<li><strong>增量安全</strong>：使用二進位制流式覆寫，自動在目標資源目錄中補全缺失的父級目錄。</li>
+<li><strong>保持 Git 清潔</strong>：<code>.bbmodel</code> 僅保留在 <code>art_assets/</code> 作為源工程，編譯生成的 jar 包中不會夾帶冗餘的 Blockbench 專案後設資料。</li>
 </ol>
 
 
