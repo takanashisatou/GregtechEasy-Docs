@@ -49,7 +49,7 @@ jobs:
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-        run: python scripts/translate_docs.py --docs-dir docs
+        run: python scripts/opencode_translate.py --docs-dir docs
 
       - name: "[Gate 1] Documentation Cleanliness & Symmetry Audit (0.5s)"
         run: python scripts/audit_docs.py
