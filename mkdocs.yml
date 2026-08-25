@@ -61,6 +61,38 @@ plugins:
           name: English
           build: true
           site_name: GregTech Easy (GTE) Official Docs
+        - locale: zh-TW
+          name: 繁體中文
+          build: true
+          site_name: GregTech Easy (GTE) 官方文檔
+        - locale: ja
+          name: 日本語
+          build: true
+          site_name: GregTech Easy (GTE) 公式ドキュメント
+        - locale: ko
+          name: 한국어
+          build: true
+          site_name: GregTech Easy (GTE) 공식 문서
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: Официальная документация GregTech Easy (GTE)
+        - locale: de
+          name: Deutsch
+          build: true
+          site_name: GregTech Easy (GTE) Offizielle Dokumentation
+        - locale: fr
+          name: Français
+          build: true
+          site_name: Documentation Officielle GregTech Easy (GTE)
+        - locale: es
+          name: Español
+          build: true
+          site_name: Documentación Oficial de GregTech Easy (GTE)
+        - locale: pt
+          name: Português
+          build: true
+          site_name: Documentação Oficial do GregTech Easy (GTE)
 
 nav:
   - 概览 / Overview: index.md
