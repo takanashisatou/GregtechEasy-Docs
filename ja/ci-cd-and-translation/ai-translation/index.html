@@ -1443,7 +1443,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 サポートされている LLM プロバイダーと環境変数
+        🔑 対応 LLM プロバイダと環境変数
       
     </span>
   </a>
@@ -1529,7 +1529,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 サポートされている LLM プロバイダーと環境変数
+        🔑 対応 LLM プロバイダと環境変数
       
     </span>
   </a>
@@ -1592,27 +1592,27 @@
 
 
 <h1 id="ai-opencode_translatepy">AI 国際化翻訳エンジン (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE は、現代の大規模言語モデル（LLM）に基づくクロスモッド全自動国際化翻訳システム（<code>scripts/opencode_translate.py</code> に配置）を設計・実装しました。</p>
+<p>GTE は、現代の大規模言語モデル（LLM）に基づくクロスモッド全自動国際化翻訳システムを設計・実装しました（<code>scripts/opencode_translate.py</code> に配置）。</p>
 <hr />
 <h2 id="_1">🤖 翻訳エンジンのアーキテクチャ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>従来のコミュニティによるローカライズは、人手による複雑な JSON および SNBT テキストのメンテナンスに依存しており、更新が遅れ、エラーや欠落が発生しやすいものでした。</p>
-<p>GTE の AI 翻訳エンジンは、標準化された OpenAI 互換 API を通じて、FTB Quests のクエストブックとコア Mod の言語ファイルの<strong>自動化された増分抽出、用語の整合、および並行翻訳</strong>を実現します：</p>
+<p>従来のコミュニティ翻訳は、人手による複雑な JSON と SNBT テキストのメンテナンスに依存しており、更新が遅れ、エラーや漏れが発生しやすいものでした。</p>
+<p>GTE の AI 翻訳エンジンは、標準化された OpenAI 互換 API を通じて、FTB Quests のクエストブックとコア Mod の言語ファイルの<strong>自動増分抽出、用語整合、並行翻訳</strong>を実現します：</p>
 <pre class="mermaid"><code>graph TD
     A[FTB Quests snbt と Lang json をスキャン] --&gt; B[未翻訳エントリを抽出]
     B --&gt; C[.translation_cache.json ローカルキャッシュを読み込み]
     C --&gt; D{新規または変更されたエントリがあるか?}
     D -- なし --&gt; E[ターゲット言語ファイルに直接同期書き込み]
     D -- あり --&gt; F[GregTech 工業用語の制約を含む Prompt を組み立て]
-    F --&gt; G[LLM プロバイダー API を呼び出し: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
+    F --&gt; G[LLM プロバイダ API を呼び出し: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
     G --&gt; H[ローカルキャッシュを検証・更新]
     H --&gt; I[zh_cn.json / en_us.json / ftbquests/lang/ に書き戻し]</code></pre>
 <hr />
-<h2 id="llm">🔑 サポートされている LLM プロバイダーと環境変数<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
-<p>このスクリプトは、環境変数を通じて異なる AI モデルプロバイダーをシームレスに切り替えることをサポートしています：</p>
+<h2 id="llm">🔑 対応 LLM プロバイダと環境変数<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
+<p>スクリプトは、環境変数を通じて異なる AI モデルプロバイダをシームレスに切り替えることができます：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">プロバイダー名</th>
+<th style="text-align: left;">プロバイダ名</th>
 <th style="text-align: left;">API Key 環境変数</th>
 <th style="text-align: left;">Base URL 環境変数</th>
 <th style="text-align: left;">デフォルトモデル</th>
@@ -1671,13 +1671,13 @@
 </table>
 <hr />
 <h2 id="prompt">🎯 産業グレードの Prompt 制約原則<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
-<p>API を呼び出して翻訳する際、システムには厳格な Minecraft および GregTech 用語ルールが組み込まれています：
+<p>API を呼び出して翻訳する際、システムには厳格な Minecraft と GregTech の用語ルールが組み込まれています：
 1. <strong>フォーマットコードを絶対に保持</strong>：Minecraft ネイティブの色フォーマットコード（<code>§a</code>, <code>§c</code>, <code>§6</code> など）とプレースホルダー（<code>%s</code>, <code>%d</code>, <code>{0}</code>）を完全に保持します。
-2. <strong>科学技術用語の統一</strong>：科学技術の固有名詞の翻訳を厳密に固定します（例：<code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> など）。
-3. <strong>ハッシュ増分キャッシュ</strong>：翻訳済みのすべてのエントリは自動的に <code>.translation_cache.json</code> に永続化され、新規または変更されたテキストのみがネットワークリクエストを発行するため、Token 消費と CI 時間を大幅に節約します。</p>
+2. <strong>科学技術用語の統一</strong>：科学技術の固有名詞の翻訳を厳密に固定します（<code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> など）。
+3. <strong>ハッシュ増分キャッシュ</strong>：翻訳済みのすべてのエントリは自動的に <code>.translation_cache.json</code> に永続化され、新規または変更されたテキストのみがネットワークリクエストを発生させ、Token 消費と CI 時間を大幅に節約します。</p>
 <hr />
 <h2 id="_2">💻 ローカル実行コマンド<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ローカル開発環境でワンクリックで全量翻訳をトリガーします：</p>
+<p>ローカル開発環境でワンクリックで全量翻訳を実行：</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 有効な API Key を設定してから実行</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>

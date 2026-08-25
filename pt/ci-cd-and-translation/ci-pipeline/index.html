@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pipeline-de-cicd-build-automatizado-empacotamento-e-publicacao-no-maven" class="md-skip">
+        <a href="#pipeline-de-cicd-para-build-automatizado-empacotamento-e-publicacao-no-maven" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -1426,10 +1426,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pacote-padrao-curseforge-e-patch-java-21" class="md-nav__link">
+  <a href="#1-pacote-padrao-curseforge-e-patch-para-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Pacote Padrão CurseForge e Patch Java 21
+        1. Pacote Padrão CurseForge e Patch para Java 21
       
     </span>
   </a>
@@ -1579,10 +1579,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pacote-padrao-curseforge-e-patch-java-21" class="md-nav__link">
+  <a href="#1-pacote-padrao-curseforge-e-patch-para-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Pacote Padrão CurseForge e Patch Java 21
+        1. Pacote Padrão CurseForge e Patch para Java 21
       
     </span>
   </a>
@@ -1671,35 +1671,35 @@
   
 
 
-<h1 id="pipeline-de-cicd-build-automatizado-empacotamento-e-publicacao-no-maven">Pipeline de CI/CD: Build Automatizado, Empacotamento e Publicação no Maven<a class="headerlink" href="#pipeline-de-cicd-build-automatizado-empacotamento-e-publicacao-no-maven" title="Permanent link">&para;</a></h1>
-<p>A GTE estabeleceu um pipeline de <strong>CI/CD do GitHub Actions</strong> altamente automatizado, com geração paralela de múltiplos artefatos (arquivos de configuração em <code>.github/workflows/sync-build.yml</code> e <code>release-publish.yml</code>).</p>
+<h1 id="pipeline-de-cicd-para-build-automatizado-empacotamento-e-publicacao-no-maven">Pipeline de CI/CD para Build Automatizado, Empacotamento e Publicação no Maven<a class="headerlink" href="#pipeline-de-cicd-para-build-automatizado-empacotamento-e-publicacao-no-maven" title="Permanent link">&para;</a></h1>
+<p>A GTE estabeleceu um pipeline de <strong>CI/CD do GitHub Actions</strong> altamente automatizado, com múltiplos artefatos de destino em paralelo (arquivos de configuração localizados em <code>.github/workflows/sync-build.yml</code> e <code>release-publish.yml</code>).</p>
 <hr />
 <h2 id="arquitetura-completa-do-pipeline-de-ci-sync-buildyml">🔄 Arquitetura Completa do Pipeline de CI (<code>sync-build.yml</code>)<a class="headerlink" href="#arquitetura-completa-do-pipeline-de-ci-sync-buildyml" title="Permanent link">&para;</a></h2>
-<p>Sempre que o código é enviado para os branches <code>master</code> / <code>main</code> / <code>satou</code>, um PR é submetido ou uma Release Tag é acionada, o GitHub Actions executa automaticamente o seguinte pipeline padrão:</p>
+<p>Sempre que o código é enviado para os ramos <code>master</code> / <code>main</code> / <code>satou</code>, um PR é submetido ou uma Tag de Release é acionada, o GitHub Actions executa automaticamente o seguinte pipeline padrão:</p>
 <pre class="mermaid"><code>flowchart TD
-    A[Push de código / Acionamento por Tag] --&gt; B[Checkout recursivo de submódulos &amp; Configuração JDK 21 / Python 3.11 / Go]
+    A[Push de código / Acionamento por Tag] --&gt; B[Checkout com submódulos recursivos &amp; Configuração de JDK 21 / Python 3.11 / Go]
     B --&gt; C[Sincronização incremental dos assets do Blockbench via Gradle syncBlockbenchAssets]
-    C --&gt; D[Compilação multi-módulo de alta concorrência &amp; Testes automatizados com GameTest]
-    D --&gt; E[Copiar Jars gerados para overrides/mods &amp; Coletar em build/artifacts]
-    E --&gt; F[Executar opencode_translate.py para tradução de IA internacional total/incremental]
-    F --&gt; G[Empacotamento padrão Packwiz: Pacote CurseForge + Patch do manifest Java 21]
-    G --&gt; H[Python constrói pacote completo Zero-Compile para jogadores .minecraft]
-    H --&gt; I[Packwiz exporta pacote puro de servidor Server]
-    I --&gt; J[Enviar todos os artefatos de Release para o armazenamento de Actions Artifacts]
-    J --&gt; K[Construir repositório Maven estático e implantar no GitHub Pages (gh-pages)]
-    J --&gt; L[Quando acionado por Tag: Publicação automática na plataforma CurseForge]</code></pre>
+    C --&gt; D[Compilação multi-módulo de alta concorrência &amp; Testes automatizados de GameTest em ambiente real]
+    D --&gt; E[Copia os Jars gerados para overrides/mods &amp; coleta em build/artifacts]
+    E --&gt; F[Executa opencode_translate.py para tradução de internacionalização total/incremental com IA]
+    F --&gt; G[Empacotamento padrão Packwiz: pacote CurseForge + patch do manifest para Java 21]
+    G --&gt; H[Python constrói pacote completo para jogadores sem compilação .minecraft]
+    H --&gt; I[Packwiz exporta pacote de servidor puro]
+    I --&gt; J[Envia todos os artefatos de Release para o armazenamento de Artifacts do Actions]
+    J --&gt; K[Constrói repositório Maven estático e implanta no GitHub Pages (gh-pages)]
+    J --&gt; L[Quando acionado por Tag: publicação automática na plataforma CurseForge]</code></pre>
 <hr />
 <h2 id="detalhamento-das-tres-principais-tarefas-de-empacotamento">📦 Detalhamento das Três Principais Tarefas de Empacotamento<a class="headerlink" href="#detalhamento-das-tres-principais-tarefas-de-empacotamento" title="Permanent link">&para;</a></h2>
-<h3 id="1-pacote-padrao-curseforge-e-patch-java-21">1. Pacote Padrão CurseForge e Patch Java 21<a class="headerlink" href="#1-pacote-padrao-curseforge-e-patch-java-21" title="Permanent link">&para;</a></h3>
+<h3 id="1-pacote-padrao-curseforge-e-patch-para-java-21">1. Pacote Padrão CurseForge e Patch para Java 21<a class="headerlink" href="#1-pacote-padrao-curseforge-e-patch-para-java-21" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Exportação Packwiz</strong>: Executa <code>packwiz curseforge export</code> para gerar o pacote padrão.</li>
-<li><strong>Patch automático do manifest.json</strong>: Devido ao problema de alguns launchers de terceiros atribuírem Java 17 por padrão ao analisar pacotes CurseForge, o CI descompacta o zip automaticamente e, por meio de um script Python, <strong>força a gravação</strong> de <code>minecraft.javaVersion</code> e <code>javaVersion</code> no nível superior do <code>manifest.json</code> <strong>como 21</strong>, reembalando em seguida.</li>
+<li><strong>Exportação Packwiz</strong>: executa <code>packwiz curseforge export</code> para gerar o pacote padrão.</li>
+<li><strong>Patch automático do manifest.json</strong>: devido ao problema de alguns launchers de terceiros atribuírem Java 17 por padrão ao analisar pacotes CurseForge, o CI descompacta o zip automaticamente e, por meio de um script Python, <strong>força a escrita de 21</strong> nos campos <code>minecraft.javaVersion</code> e <code>javaVersion</code> de nível superior do <code>manifest.json</code>, reempacotando em seguida.</li>
 </ul>
 <h3 id="2-pacote-completo-para-jogadores-sem-compilacao-build_lazy_packpy">2. Pacote Completo para Jogadores sem Compilação (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-pacote-completo-para-jogadores-sem-compilacao-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>O script Python extrai automaticamente os Jars principais mais recentes de <code>build/libs/</code> de cada módulo.</li>
-<li>Mescla automaticamente os Mods de extensão essenciais em <code>modules/gtecore/gradle/libs/</code>.</li>
-<li>Empacota todas as configurações, scripts KubeJS e manuais Patchouli em um arquivo <code>.minecraft</code> pronto para uso, incluindo um guia de início em chinês.</li>
+<li>Mescla automaticamente os Mods de extensão essenciais localizados em <code>modules/gtecore/gradle/libs/</code>.</li>
+<li>Empacota todas as configurações, scripts KubeJS e manuais de Patchouli em um arquivo <code>.minecraft</code> pronto para uso, incluindo um guia de início em chinês.</li>
 </ul>
 <h3 id="3-pacote-de-exportacao-para-servidor-packwiz-server-export">3. Pacote de Exportação para Servidor (<code>packwiz server export</code>)<a class="headerlink" href="#3-pacote-de-exportacao-para-servidor-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1707,7 +1707,7 @@
 </ul>
 <hr />
 <h2 id="implantacao-do-repositorio-maven-estatico-no-github-pages">🌐 Implantação do Repositório Maven Estático no GitHub Pages<a class="headerlink" href="#implantacao-do-repositorio-maven-estatico-no-github-pages" title="Permanent link">&para;</a></h2>
-<p>O pipeline usa a tarefa <code>publish</code> do Gradle para construir todos os submódulos (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) como artefatos Maven padrão e implantá-los no branch <code>gh-pages</code>:</p>
+<p>O pipeline usa a tarefa <code>publish</code> do Gradle para construir todos os submódulos (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) como artefatos Maven padrão e implantá-los no ramo <code>gh-pages</code>:</p>
 <div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Referencie diretamente o repositório Maven da GTE em Mods de terceiros ou projetos de desenvolvimento</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
@@ -1722,11 +1722,11 @@
 </span></code></pre></div>
 <hr />
 <h2 id="workflow-de-publicacao-manual-e-versionamento-release-publishyml">🏷️ Workflow de Publicação Manual e Versionamento (<code>release-publish.yml</code>)<a class="headerlink" href="#workflow-de-publicacao-manual-e-versionamento-release-publishyml" title="Permanent link">&para;</a></h2>
-<p>O projeto adota um processo padronizado de Release Git:
+<p>O projeto adota um fluxo de Release Git padronizado:
 1. Acione manualmente <strong>Manual Publish Release</strong> na página do GitHub Actions, informando o número da versão (ex.: <code>2.3.0</code>).
 2. O workflow cria automaticamente um PR <code>dev -&gt; release</code>, executa a validação do CI e realiza o Squash Merge automático.
-3. Cria automaticamente a Git Tag <code>v2.3.0</code> no branch <code>release</code> e faz o push.
-4. O evento de push da Tag aciona automaticamente o <code>sync-build.yml</code>, concluindo a publicação de artefatos em todos os canais.</p>
+3. Cria automaticamente a Tag Git <code>v2.3.0</code> no ramo <code>release</code> e faz o push.
+4. O evento de push da Tag aciona automaticamente o <code>sync-build.yml</code>, concluindo a publicação dos artefatos em todos os canais.</p>
 
 
 

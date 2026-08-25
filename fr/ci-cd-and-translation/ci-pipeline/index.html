@@ -1437,10 +1437,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-pack-complet-sans-compilation-pour-les-joueurs-build_lazy_packpy" class="md-nav__link">
+  <a href="#2-pack-complet-sans-compilation-pour-joueurs-build_lazy_packpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pack complet sans compilation pour les joueurs (build_lazy_pack.py)
+        2. Pack complet sans compilation pour joueurs (build_lazy_pack.py)
       
     </span>
   </a>
@@ -1475,10 +1475,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-de-publication-manuelle-et-de-tag-de-version-release-publishyml" class="md-nav__link">
+  <a href="#workflow-de-publication-manuelle-et-de-versionnage-release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ Workflow de publication manuelle et de tag de version (release-publish.yml)
+        🏷️ Workflow de publication manuelle et de versionnage (release-publish.yml)
       
     </span>
   </a>
@@ -1590,10 +1590,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-pack-complet-sans-compilation-pour-les-joueurs-build_lazy_packpy" class="md-nav__link">
+  <a href="#2-pack-complet-sans-compilation-pour-joueurs-build_lazy_packpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pack complet sans compilation pour les joueurs (build_lazy_pack.py)
+        2. Pack complet sans compilation pour joueurs (build_lazy_pack.py)
       
     </span>
   </a>
@@ -1628,10 +1628,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-de-publication-manuelle-et-de-tag-de-version-release-publishyml" class="md-nav__link">
+  <a href="#workflow-de-publication-manuelle-et-de-versionnage-release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ Workflow de publication manuelle et de tag de version (release-publish.yml)
+        🏷️ Workflow de publication manuelle et de versionnage (release-publish.yml)
       
     </span>
   </a>
@@ -1679,27 +1679,27 @@
 <pre class="mermaid"><code>flowchart TD
     A[Code push / Tag trigger] --&gt; B[Checkout récursif des sous-modules &amp; configuration JDK 21 / Python 3.11 / Go]
     B --&gt; C[Synchronisation incrémentale des assets Blockbench via Gradle syncBlockbenchAssets]
-    C --&gt; D[Compilation multi-modules à haute concurrence &amp; tests automatisés GameTest]
+    C --&gt; D[Compilation multi-modules haute concurrence &amp; tests automatisés GameTest]
     D --&gt; E[Copie des Jars générés vers overrides/mods &amp; collecte dans build/artifacts]
     E --&gt; F[Exécution de opencode_translate.py pour traduction IA internationale complète/incrémentale]
-    F --&gt; G[Packwiz standardisé : pack CurseForge + patch manifest Java 21]
-    G --&gt; H[Python construit le pack complet .minecraft sans compilation pour les joueurs]
+    F --&gt; G[Packwiz standard : pack CurseForge + patch manifest Java 21]
+    G --&gt; H[Python construit le pack complet Zero-Compile pour joueurs .minecraft]
     H --&gt; I[Packwiz exporte le pack serveur pur]
     I --&gt; J[Téléversement de tous les artefacts de release vers le stockage Actions Artifacts]
     J --&gt; K[Construction du dépôt Maven statique et déploiement sur GitHub Pages (gh-pages)]
-    J --&gt; L[Déclenchement par tag : publication automatique sur CurseForge]</code></pre>
+    J --&gt; L[Si déclenché par un tag : publication automatique sur CurseForge]</code></pre>
 <hr />
 <h2 id="detail-des-trois-taches-dempaquetage-principales">📦 Détail des trois tâches d'empaquetage principales<a class="headerlink" href="#detail-des-trois-taches-dempaquetage-principales" title="Permanent link">&para;</a></h2>
 <h3 id="1-pack-standard-curseforge-et-patch-java-21">1. Pack standard CurseForge et patch Java 21<a class="headerlink" href="#1-pack-standard-curseforge-et-patch-java-21" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Export Packwiz</strong> : exécute <code>packwiz curseforge export</code> pour générer le pack standard.</li>
-<li><strong>Patch automatique de manifest.json</strong> : pour résoudre le problème où certains lanceurs tiers attribuent par défaut Java 17 lors de l'analyse des packs CurseForge, le CI décompresse automatiquement le zip, utilise un script Python pour <strong>forcer en dur</strong> la valeur <code>minecraft.javaVersion</code> et <code>javaVersion</code> de niveau supérieur dans <code>manifest.json</code> à <strong>21</strong>, puis reconditionne le tout.</li>
+<li><strong>Patch automatique de manifest.json</strong> : pour résoudre le problème où certains lanceurs tiers attribuent par défaut Java 17 lors de l'analyse des packs CurseForge, le CI décompresse automatiquement le zip, utilise un script Python pour <strong>forcer en dur</strong> <code>minecraft.javaVersion</code> et <code>javaVersion</code> de premier niveau dans <code>manifest.json</code> à <strong>21</strong>, puis recompresse.</li>
 </ul>
-<h3 id="2-pack-complet-sans-compilation-pour-les-joueurs-build_lazy_packpy">2. Pack complet sans compilation pour les joueurs (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-pack-complet-sans-compilation-pour-les-joueurs-build_lazy_packpy" title="Permanent link">&para;</a></h3>
+<h3 id="2-pack-complet-sans-compilation-pour-joueurs-build_lazy_packpy">2. Pack complet sans compilation pour joueurs (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-pack-complet-sans-compilation-pour-joueurs-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Le script Python extrait automatiquement les derniers Jars principaux depuis <code>build/libs/</code> de chaque module.</li>
-<li>Fusionne automatiquement les mods d'extension clés situés dans <code>modules/gtecore/gradle/libs/</code>.</li>
-<li>Empaquète toutes les configurations, scripts KubeJS, manuels Patchouli dans une archive <code>.minecraft</code> prête à l'emploi, avec un guide de démarrage en chinois intégré.</li>
+<li>Fusionne automatiquement les mods étendus clés situés dans <code>modules/gtecore/gradle/libs/</code>.</li>
+<li>Empaquète toutes les configurations, scripts KubeJS, manuels Patchouli dans une archive <code>.minecraft</code> prête à l'emploi, avec guide de démarrage en chinois intégré.</li>
 </ul>
 <h3 id="3-pack-dexport-serveur-packwiz-server-export">3. Pack d'export serveur (<code>packwiz server export</code>)<a class="headerlink" href="#3-pack-dexport-serveur-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1721,10 +1721,10 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">}</span>
 </span></code></pre></div>
 <hr />
-<h2 id="workflow-de-publication-manuelle-et-de-tag-de-version-release-publishyml">🏷️ Workflow de publication manuelle et de tag de version (<code>release-publish.yml</code>)<a class="headerlink" href="#workflow-de-publication-manuelle-et-de-tag-de-version-release-publishyml" title="Permanent link">&para;</a></h2>
-<p>Le projet suit un processus de release Git normalisé :
+<h2 id="workflow-de-publication-manuelle-et-de-versionnage-release-publishyml">🏷️ Workflow de publication manuelle et de versionnage (<code>release-publish.yml</code>)<a class="headerlink" href="#workflow-de-publication-manuelle-et-de-versionnage-release-publishyml" title="Permanent link">&para;</a></h2>
+<p>Le projet suit un processus de Release Git normalisé :
 1. Déclenchement manuel de <strong>Manual Publish Release</strong> depuis la page GitHub Actions, avec saisie du numéro de version (ex. <code>2.3.0</code>).
-2. Le workflow crée automatiquement une PR <code>dev -&gt; release</code>, exécute les validations CI et effectue un Squash Merge automatique.
+2. Le workflow crée automatiquement une PR <code>dev -&gt; release</code>, exécute la validation CI et effectue un Squash Merge automatique.
 3. Un tag Git <code>v2.3.0</code> est automatiquement créé sur la branche <code>release</code> et poussé.
 4. L'événement de push du tag déclenche automatiquement <code>sync-build.yml</code>, finalisant la publication des artefacts sur tous les canaux.</p>
 

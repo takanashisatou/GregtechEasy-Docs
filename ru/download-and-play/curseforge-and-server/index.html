@@ -753,7 +753,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Методы импорта для клиента
+        Методы импорта на клиенте
       
     </span>
   </a>
@@ -831,7 +831,7 @@
   <a href="#q1-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q1: При запуске сервера появляется ошибка UnsupportedClassVersionError: ... class file version 65.0
+        Q1: При запуске сервера появляется UnsupportedClassVersionError: ... class file version 65.0
       
     </span>
   </a>
@@ -1605,7 +1605,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Методы импорта для клиента
+        Методы импорта на клиенте
       
     </span>
   </a>
@@ -1683,7 +1683,7 @@
   <a href="#q1-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q1: При запуске сервера появляется ошибка UnsupportedClassVersionError: ... class file version 65.0
+        Q1: При запуске сервера появляется UnsupportedClassVersionError: ... class file version 65.0
       
     </span>
   </a>
@@ -1744,24 +1744,24 @@
 <hr />
 <h2 id="curseforge_1">📦 Импорт пакета CurseForge<a class="headerlink" href="#curseforge_1" title="Permanent link">&para;</a></h2>
 <p>Файл интеграционного пакета формата CurseForge называется <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code>.</p>
-<h3 id="_1">Методы импорта для клиента<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">Методы импорта на клиенте<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Импорт через PCL2 / HMCL</label><label for="__tabbed_1_2">Импорт через CurseForge App</label><label for="__tabbed_1_3">Импорт через Prism Launcher</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
 <li>Откройте лаунчер и выберите <strong>Установить новую версию / Импортировать сборку</strong>.</li>
 <li>Выберите загруженный файл <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code>.</li>
-<li>Лаунчер автоматически проанализирует <code>manifest.json</code> и быстро загрузит зависимые моды с высокой скоростью.</li>
-<li>После завершения импорта перейдите в настройки версии и укажите Java Runtime как <strong>Java 21</strong>.</li>
+<li>Лаунчер автоматически проанализирует <code>manifest.json</code> и быстро загрузит зависимые моды с высокой степенью параллелизма.</li>
+<li>После завершения импорта перейдите в настройки версии и укажите Java Runtime <strong>Java 21</strong>.</li>
 <li>Установите объем оперативной памяти (рекомендуется 8 ГБ ~ 12 ГБ) и запустите игру.</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Откройте приложение CurseForge.</li>
+<li>Откройте клиент CurseForge App.</li>
 <li>Нажмите на значок <strong>Minecraft</strong> слева и перейдите в <strong>My Modpacks</strong>.</li>
 <li>В меню настроек в правом верхнем углу выберите <strong>Create Custom Profile</strong> ➜ <strong>Import</strong>.</li>
-<li>Выберите <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code> и дождитесь автоматической загрузки и установки.</li>
+<li>Выберите <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code> и дождитесь автоматической загрузки и завершения установки.</li>
 </ol>
 </div>
 <div class="tabbed-block">
@@ -1831,14 +1831,14 @@
 </div>
 <hr />
 <h2 id="faq">⚙️ Часто задаваемые вопросы (FAQ)<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
-<h3 id="q1-unsupportedclassversionerror-class-file-version-650">Q1: При запуске сервера появляется ошибка <code>UnsupportedClassVersionError: ... class file version 65.0</code><a class="headerlink" href="#q1-unsupportedclassversionerror-class-file-version-650" title="Permanent link">&para;</a></h3>
+<h3 id="q1-unsupportedclassversionerror-class-file-version-650">Q1: При запуске сервера появляется <code>UnsupportedClassVersionError: ... class file version 65.0</code><a class="headerlink" href="#q1-unsupportedclassversionerror-class-file-version-650" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Причина</strong>: Версия Java, используемая сервером, ниже Java 21 (версия 65.0 соответствует JDK 21).<br />
-<strong>Решение</strong>: В Linux переключитесь на OpenJDK 21 с помощью команды <code>sudo update-alternatives --config java</code>.</p>
+<strong>Решение</strong>: В Linux переключитесь на OpenJDK 21 с помощью <code>sudo update-alternatives --config java</code>.</p>
 </blockquote>
 <h3 id="q2">Q2: Игроки получают сообщение о несоответствии списка модов при входе на сервер<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Решение</strong>: Убедитесь, что версия клиента полностью совпадает с версией сервера. Каждая сборка CI основного проекта генерирует соответствующие клиентские и серверные артефакты одновременно.</p>
+<p><strong>Решение</strong>: Убедитесь, что версия клиента полностью совпадает с версией сервера. Каждая сборка CI основного проекта генерирует согласованные артефакты Client и Server.</p>
 </blockquote>
 
 

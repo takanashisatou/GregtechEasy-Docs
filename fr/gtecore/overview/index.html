@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apercu-du-mod-principal-gtecore" class="md-skip">
+        <a href="#vue-densemble-du-mod-principal-gtecore" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1615,31 +1615,31 @@
   
 
 
-<h1 id="apercu-du-mod-principal-gtecore">Aperçu du mod principal GTECore<a class="headerlink" href="#apercu-du-mod-principal-gtecore" title="Permanent link">&para;</a></h1>
-<p><strong>GTECore</strong> est un mod Java personnalisé pour le projet GregTech Easy. Il dépend directement du code source de <code>gtm-reborn</code> et étend les structures industrielles multi-blocs à grande échelle, les technologies de formation avancées, les interactions profondes avec AE2 et le système de fabrication de circuits super-avancés.</p>
+<h1 id="vue-densemble-du-mod-principal-gtecore">Vue d'ensemble du mod principal GTECore<a class="headerlink" href="#vue-densemble-du-mod-principal-gtecore" title="Permanent link">&para;</a></h1>
+<p><strong>GTECore</strong> est un mod principal Java personnalisé pour le projet GregTech Easy. Il dépend directement du code source de <code>gtm-reborn</code> et étend les structures industrielles multi-blocs à grande échelle, les technologies de matrices avancées, les interactions profondes avec AE2 et le système de fabrication de circuits suprêmes.</p>
 <hr />
 <h2 id="architecture-du-mod-et-positionnement-de-conception">🏛️ Architecture du mod et positionnement de conception<a class="headerlink" href="#architecture-du-mod-et-positionnement-de-conception" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
-    A[Framework de base GTM-Reborn] --&gt; B[Mod principal GTECore]
-    B --&gt; C[Industrie mystique orientale : Four de raffinage alchimique Yin-Yang Bagua / Formation des Quatre Symboles / Tai Chi Cinq Éléments]
-    B --&gt; D[Optimisation industrielle extrême : Anneau des Merveilles / Traitement intégré des minerais / Moteur à carburant universel]
-    B --&gt; E[Extension approfondie d'AE2 : Assemblage de modèles ME Plus &amp; Miroir / Chambre à vapeur ME]
-    B --&gt; F[Système de circuits hyperdimensionnels : Système de circuits supercordes / Système de circuits Yin-Yang]
-    B --&gt; G[Automatisation et développement : Intégration Jade en temps réel / Terminal de test de structure / Datagen internationalisation]</code></pre>
+    A[GTM-Reborn 基础框架] --&gt; B[GTECore 核心模组]
+    B --&gt; C[东方玄妙工业: 阴阳八卦炼仙炉 / 四象阵法 / 太极五行]
+    B --&gt; D[工业极端优化: 奇迹之环 / 矿石综合处理 / 通用燃油引擎]
+    B --&gt; E[AE2 深度拓展: ME 样板总成 Plus &amp; 镜像 / ME 蒸汽仓]
+    B --&gt; F[超维电路系统: 超弦电路体系 / 阴阳电路体系]
+    B --&gt; G[自动化与开发: Jade 实时集成 / 结构测试终端 / Datagen 国际化]</code></pre>
 <hr />
 <h2 id="onglets-dinventaire-en-mode-creatif-et-categories">📦 Onglets d'inventaire en mode créatif et catégories<a class="headerlink" href="#onglets-dinventaire-en-mode-creatif-et-categories" title="Permanent link">&para;</a></h2>
 <p>GTECore enregistre des onglets de mode créatif indépendants dans le jeu :</p>
 <ol>
 <li><strong>Machines GregTech Easy (<code>itemGroup.gtecore.gtecore_machines</code>)</strong> :</li>
-<li>Contient tous les blocs principaux multi-blocs originaux de GTE (Haut fourneau Yin-Yang Bagua, Anneau des Merveilles, Centre de traitement des minerais, Terminateur chimique, etc.).</li>
-<li>Contient les boîtiers de batterie super de plusieurs niveaux (Max Super Battery Buffer), les chambres à vapeur ME, les assemblages de modèles ME Plus et Miroir.</li>
+<li>Contient tous les blocs principaux multi-blocs originaux de GTE (haut fourneau Yin-Yang Bagua, Anneau des Miracles, Centre de traitement du minerai, Terminateur chimique, etc.).</li>
+<li>Contient les boîtiers de super batterie multi-niveaux (Max Super Battery Buffer), les chambres à vapeur ME, les assemblages de schémas ME Plus et leurs miroirs.</li>
 <li><strong>Objets GregTech Easy (<code>itemGroup.gtecore.gtecore_items</code>)</strong> :</li>
-<li>Contient les objets des circuits supercordes et Yin-Yang (processeurs, clusters, supercalculateurs, hôtes).</li>
-<li>Contient des talismans des Cinq Éléments, des puces Bagua, des particules des Trois Purs, des terminaux de test de structure et d'autres objets spéciaux.</li>
+<li>Contient les objets des circuits Supercordes et Yin-Yang (processeurs, clusters, supercalculateurs, hôtes).</li>
+<li>Contient les talismans des cinq éléments, les puces Bagua, les particules des Trois Purs, le terminal de test de structure et d'autres objets spécialisés.</li>
 </ol>
 <hr />
 <h2 id="configuration-globale-du-mod-gteconfig">⚙️ Configuration globale du mod (<code>GTEConfig</code>)<a class="headerlink" href="#configuration-globale-du-mod-gteconfig" title="Permanent link">&para;</a></h2>
-<p>GTECore fournit de nombreuses options de configuration dans le jeu et dans les fichiers (situés dans <code>config/gtecore-common.toml</code> ou via le menu de configuration en jeu) :</p>
+<p>GTECore offre une riche configuration en jeu et via fichiers (située dans <code>config/gtecore-common.toml</code> ou via le menu de configuration en jeu) :</p>
 <table>
 <thead>
 <tr>
@@ -1650,28 +1650,28 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>superPeace</code> (Mode super paix)</td>
+<td style="text-align: left;"><code>superPeace</code> (mode super paix)</td>
 <td style="text-align: left;"><code>false</code></td>
 <td style="text-align: left;">Une fois activé, désactive complètement la génération de créatures hostiles nuisibles, offrant un environnement absolument pur pour la construction technologique</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>durationMultiplier</code> (Multiplicateur de durée des recettes)</td>
+<td style="text-align: left;"><code>durationMultiplier</code> (multiplicateur de durée des recettes)</td>
 <td style="text-align: left;"><code>1.0</code></td>
-<td style="text-align: left;">Ajuste globalement le facteur de durée des recettes personnalisées de GTECore</td>
+<td style="text-align: left;">Ajuste globalement le facteur de temps des recettes personnalisées de GTECore</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="integration-native-jade-top">🔍 Intégration native Jade / TOP<a class="headerlink" href="#integration-native-jade-top" title="Permanent link">&para;</a></h2>
 <p>GTECore intègre le plugin <strong><code>GTEJadePlugin</code></strong> :
-- <strong>État de l'assemblage de modèles ME Plus</strong> : affiche en temps réel le nombre de modèles liés à l'assemblage actuel, ainsi que les modes de sortie des fluides et des objets.
-- <strong>Informations de liaison de l'assemblage de modèles ME Miroir Plus</strong> : affiche directement en survol les coordonnées <code>(X, Y, Z)</code> de l'assemblage principal lié et l'état de connectivité du réseau.
-- <strong>Indicateur d'activation de formation</strong> : affiche en temps réel sur le Four de raffinage alchimique Yin-Yang Bagua l'état de préparation des formations des Quatre Symboles (Dragon Azure, Tigre Blanc, Oiseau Vermillon, Tortue Noire).</p>
+- <strong>État de l'assemblage de schémas ME Plus</strong> : affiche en temps réel le nombre de schémas liés à l'assemblage actuel, les modes de sortie des fluides et des objets.
+- <strong>Informations de liaison de l'assemblage de schémas ME Miroir Plus</strong> : affiche directement en survol les coordonnées <code>(X, Y, Z)</code> de l'assemblage principal lié ainsi que l'état de connectivité du réseau.
+- <strong>Indicateur d'activation des matrices</strong> : affiche en temps réel l'état de préparation des matrices des Quatre Symboles (Qinglong, Baihu, Zhuque, Xuanwu) sur le haut fourneau Yin-Yang Bagua.</p>
 <hr />
 <h2 id="terminal-de-test-de-structure-structure-testing-terminal">🛠️ Terminal de test de structure (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#terminal-de-test-de-structure-structure-testing-terminal" title="Permanent link">&para;</a></h2>
 <p>GTECore fournit un outil portable dédié — le <strong>terminal de test de structure</strong> (<code>item.gtecore.check_structure_terminal</code>) :
-- <strong>Clic droit sur le contrôleur multi-blocs</strong> : analyse en temps réel l'intégrité de la structure.
-- <strong>Messages de diagnostic d'erreur</strong> : si la structure n'est pas formée, le terminal indique précisément dans le chat et dans l'infobulle les <strong>coordonnées des blocs erronés et les emplacements qui ne devraient pas être occupés</strong>, accélérant considérablement la construction et le débogage des grandes structures multi-blocs.</p>
+- <strong>Clic droit sur le contrôleur multi-blocs</strong> : scanne en temps réel l'intégrité de la structure.
+- <strong>Messages de diagnostic d'erreur</strong> : si la structure n'est pas formée, le terminal indique précisément dans le chat et les infobulles les <strong>coordonnées des blocs erronés et les emplacements qui ne devraient pas être occupés</strong>, accélérant considérablement la construction et le débogage des grandes structures multi-blocs.</p>
 
 
 

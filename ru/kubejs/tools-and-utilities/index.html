@@ -1131,12 +1131,12 @@
   <a href="#dumpmultiblock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪓 Визуальный экспортер многоструктур (/dumpmultiblock)
+        🪓 Визуальный экспорт многоструктур (/dumpmultiblock)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪓 Визуальный экспортер многоструктур (/dumpmultiblock)">
+    <nav class="md-nav" aria-label="🪓 Визуальный экспорт многоструктур (/dumpmultiblock)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1171,7 +1171,7 @@
   <a href="#1-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Извлечение газов во всех измерениях (dimension_gas.js)
+        1. Извлечение газов всех измерений (dimension_gas.js)
       
     </span>
   </a>
@@ -1182,7 +1182,7 @@
   <a href="#2-universal_circuitjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Универсальный конвертер схем (universal_circuit.js)
+        2. Универсальный преобразователь схем (universal_circuit.js)
       
     </span>
   </a>
@@ -1543,12 +1543,12 @@
   <a href="#dumpmultiblock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪓 Визуальный экспортер многоструктур (/dumpmultiblock)
+        🪓 Визуальный экспорт многоструктур (/dumpmultiblock)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪓 Визуальный экспортер многоструктур (/dumpmultiblock)">
+    <nav class="md-nav" aria-label="🪓 Визуальный экспорт многоструктур (/dumpmultiblock)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1583,7 +1583,7 @@
   <a href="#1-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Извлечение газов во всех измерениях (dimension_gas.js)
+        1. Извлечение газов всех измерений (dimension_gas.js)
       
     </span>
   </a>
@@ -1594,7 +1594,7 @@
   <a href="#2-universal_circuitjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Универсальный конвертер схем (universal_circuit.js)
+        2. Универсальный преобразователь схем (universal_circuit.js)
       
     </span>
   </a>
@@ -1642,9 +1642,9 @@
 <h1 id="kubejs-dumpmultiblock">KubeJS Инструменты и экспорт многоструктур (<code>/dumpmultiblock</code>)<a class="headerlink" href="#kubejs-dumpmultiblock" title="Permanent link">&para;</a></h1>
 <p>GTE встроил в серверные скрипты KubeJS автоматизированное построение многоструктур и инструменты извлечения структур для разработчиков, полностью освобождая процесс проектирования многоструктур.</p>
 <hr />
-<h2 id="dumpmultiblock">🪓 Визуальный экспортер многоструктур (<code>/dumpmultiblock</code>)<a class="headerlink" href="#dumpmultiblock" title="Permanent link">&para;</a></h2>
+<h2 id="dumpmultiblock">🪓 Визуальный экспорт многоструктур (<code>/dumpmultiblock</code>)<a class="headerlink" href="#dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>При разработке пользовательских многоструктур (будь то Java-код или скрипты KubeJS) ручное написание <code>FactoryBlockPattern.aisle(...)</code>, состоящего из десятков слоёв символов, крайне трудоёмко и подвержено ошибкам.</p>
-<p>GTE включает встроенный <strong>экспортер с деревянным топором <code>/dumpmultiblock</code></strong> (<code>server_scripts/easymultiblock.js</code>):</p>
+<p>GTE включает встроенный <strong>экспортёр с деревянным топором <code>/dumpmultiblock</code></strong> (<code>server_scripts/easymultiblock.js</code>):</p>
 <pre class="mermaid"><code>graph LR
     A[Держим деревянный топор] --&gt;|ЛКМ| B[Выбор угла Pos1]
     A --&gt;|ПКМ| C[Выбор противоположного угла Pos2]
@@ -1654,12 +1654,12 @@
 <ol>
 <li>Войдите в игру в творческом режиме, возьмите в руку <strong>деревянный топор (<code>minecraft:wooden_axe</code>)</strong>.</li>
 <li>По замыслу постройте в мире полную физическую структуру многоструктуры (включая корпус, отсеки, катушки, главный контроллер).</li>
-<li>Используя деревянный топор, <strong>ЛКМ</strong> кликните по нижнему угловому блоку структуры (в чате появится сообщение <code>Установлен Pos1: x, y, z</code>).</li>
-<li>Используя деревянный топор, <strong>ПКМ</strong> кликните по противоположному верхнему угловому блоку структуры (в чате появится сообщение <code>Установлен Pos2: x, y, z</code>).</li>
+<li>Используйте деревянный топор <strong>ЛКМ</strong> по нижнему угловому блоку структуры (в чате появится сообщение <code>Установлен Pos1: x, y, z</code>).</li>
+<li>Используйте деревянный топор <strong>ПКМ</strong> по диагональному верхнему угловому блоку структуры (в чате появится сообщение <code>Установлен Pos2: x, y, z</code>).</li>
 <li>Введите команду в чат:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>Скрипт автоматически просканирует все типы блоков в трёхмерной ограничивающей рамке, назначит символьные соответствия (<code>.</code> — воздух, <code>A-Z/a-z/0-9</code> — конкретные блоки) и сгенерирует код структуры в фоновом журнале и непосредственно на клиенте:</li>
+<li>Скрипт автоматически просканирует все типы блоков в трёхмерной ограничивающей рамке, назначит символьные соответствия (<code>.</code> — воздух, <code>A-Z/a-z/0-9</code> — конкретные блоки) и сгенерирует код структуры в фоновом журнале и непосредственно в клиенте:</li>
 </ol>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Автоматически экспортированный шаблон FactoryBlockPattern</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
@@ -1674,15 +1674,15 @@
 </span></code></pre></div>
 <hr />
 <h2 id="_2">🌌 Конфигурация газов и рудных флюидов в измерениях<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>GTE расширяет сбор флюидов и газов по всем измерениям через KubeJS:</p>
-<h3 id="1-dimension_gasjs">1. Извлечение газов во всех измерениях (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimension_gasjs" title="Permanent link">&para;</a></h3>
-<p>Используя большой газосборник (<code>gas_collector</code>) с различными номерами схем, можно извлекать атмосферу, характерную для любого измерения:
-- <strong>Воздух Верхнего мира</strong>: <code>circuit(4)</code> ➜ выход <code>gtceu:air 10000</code>
-- <strong>Адский газ Нижнего мира</strong>: <code>circuit(5)</code> ➜ выход <code>gtceu:nether_air 10000</code>
-- <strong>Эндер-воздух Края</strong>: <code>circuit(6)</code> ➜ выход <code>gtceu:ender_air 10000</code></p>
-<h3 id="2-universal_circuitjs">2. Универсальный конвертер схем (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-universal_circuitjs" title="Permanent link">&para;</a></h3>
-<p>Для решения проблемы сложного нагромождения рецептов между модами и платами разных уровней GTE вводит систему <strong>универсальных схем (<code>universal_circuit</code>)</strong>:
-- Позволяет в упаковщике (<code>packer</code>) конвертировать любую схему того же уровня напряжения (от ULV до MAX) в единый предмет универсальной схемы без потерь с затратами <strong>1 EU / 1 тик</strong>.</p>
+<p>GTE расширил сбор флюидов и газов по всем измерениям через KubeJS:</p>
+<h3 id="1-dimension_gasjs">1. Извлечение газов всех измерений (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimension_gasjs" title="Permanent link">&para;</a></h3>
+<p>Используя большой газосборник (<code>gas_collector</code>) с различными номерами схем, можно извлекать уникальную атмосферу любого измерения:
+- <strong>Воздух Верхнего мира</strong>: <code>circuit(4)</code> ➜ вывод <code>gtceu:air 10000</code>
+- <strong>Адский воздух Нижнего мира</strong>: <code>circuit(5)</code> ➜ вывод <code>gtceu:nether_air 10000</code>
+- <strong>Эндер-воздух Края</strong>: <code>circuit(6)</code> ➜ вывод <code>gtceu:ender_air 10000</code></p>
+<h3 id="2-universal_circuitjs">2. Универсальный преобразователь схем (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-universal_circuitjs" title="Permanent link">&para;</a></h3>
+<p>Для решения сложного нагромождения рецептов между модами и платами разных уровней GTE вводит систему <strong>универсальных схем (<code>universal_circuit</code>)</strong>:
+- Позволяет в упаковщике (<code>packer</code>) преобразовывать любые схемы одного уровня напряжения (от ULV до MAX) в единый универсальный предмет схемы с затратами <strong>1 EU / 1 tick</strong> без потерь.</p>
 
 
 

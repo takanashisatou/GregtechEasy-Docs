@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#debogage-a-chaud-local-et-execution-rapide-sans-lanceur" class="md-skip">
+        <a href="#developpement-local-en-direct-et-demarrage-rapide-sans-lanceur" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1319,15 +1319,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-environnement-fantome-de-compilation-a-chaud-pour-le-code-de-mod-gte-dev-runtime" class="md-nav__link">
+  <a href="#3-environnement-fantome-de-compilation-a-chaud-du-code-de-mod-gte-dev-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ☕ 3. Environnement fantôme de compilation à chaud pour le code de mod (gte-dev-runtime)
+        ☕ 3. Environnement fantôme de compilation à chaud du code de mod (gte-dev-runtime)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="☕ 3. Environnement fantôme de compilation à chaud pour le code de mod (gte-dev-runtime)">
+    <nav class="md-nav" aria-label="☕ 3. Environnement fantôme de compilation à chaud du code de mod (gte-dev-runtime)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1579,15 +1579,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-environnement-fantome-de-compilation-a-chaud-pour-le-code-de-mod-gte-dev-runtime" class="md-nav__link">
+  <a href="#3-environnement-fantome-de-compilation-a-chaud-du-code-de-mod-gte-dev-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ☕ 3. Environnement fantôme de compilation à chaud pour le code de mod (gte-dev-runtime)
+        ☕ 3. Environnement fantôme de compilation à chaud du code de mod (gte-dev-runtime)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="☕ 3. Environnement fantôme de compilation à chaud pour le code de mod (gte-dev-runtime)">
+    <nav class="md-nav" aria-label="☕ 3. Environnement fantôme de compilation à chaud du code de mod (gte-dev-runtime)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1639,30 +1639,30 @@
   
 
 
-<h1 id="debogage-a-chaud-local-et-execution-rapide-sans-lanceur">Débogage à chaud local et exécution rapide sans lanceur<a class="headerlink" href="#debogage-a-chaud-local-et-execution-rapide-sans-lanceur" title="Permanent link">&para;</a></h1>
-<p>GTE a conçu un système de débogage en direct transparent et extrêmement convivial pour les planificateurs de packs de mods, les rédacteurs de quêtes et les programmeurs de mods.</p>
+<h1 id="developpement-local-en-direct-et-demarrage-rapide-sans-lanceur">Développement local en direct et démarrage rapide sans lanceur<a class="headerlink" href="#developpement-local-en-direct-et-demarrage-rapide-sans-lanceur" title="Permanent link">&para;</a></h1>
+<p>GTE a conçu un système de développement intégré extrêmement convivial pour les planificateurs de packs, les rédacteurs de quêtes et les programmeurs de mods.</p>
 <hr />
 <h2 id="1-script-de-demarrage-rapide-sans-lanceur-run_gamebat-run_gamesh">⚡ 1. Script de démarrage rapide sans lanceur (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-script-de-demarrage-rapide-sans-lanceur-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>Pour les auteurs de livres de quêtes (FTB Quests) et les concepteurs de recettes KubeJS, <strong>il n'est pas nécessaire d'ouvrir IntelliJ IDEA ni d'installer un lanceur tiers</strong> : double-cliquez simplement sur <strong><code>run_game.bat</code></strong> à la racine du projet pour entrer rapidement dans le jeu !</p>
+<p>Pour les auteurs de livres de quêtes (FTB Quests) et les concepteurs de recettes KubeJS, <strong>aucune nécessité d'ouvrir IntelliJ IDEA, ni d'installer un lanceur tiers</strong>, il suffit de double-cliquer sur <strong><code>run_game.bat</code></strong> à la racine du projet pour entrer rapidement dans le jeu !</p>
 <pre class="mermaid"><code>graph TD
-    A[Double-cliquez sur run_game.bat] --&gt; B[Analyse automatique du chemin JDK 21 local et persistance]
-    B --&gt; C[Détection automatique de la mémoire physique et du nombre de cœurs CPU]
-    C --&gt; D[Calcul dynamique de l'allocation mémoire JVM optimale et des threads GC]
-    D --&gt; E[Montage direct de gte/overrides comme répertoire de travail du jeu]
-    E --&gt; F[Lancement du jeu : lecture/écriture en temps réel des quêtes et scripts suivis par Git]</code></pre>
+    A[Double-cliquer sur run_game.bat] --&gt; B[Scanner automatiquement le chemin JDK 21 local et le mémoriser]
+    B --&gt; C[Détecter automatiquement la mémoire physique et le nombre de cœurs CPU]
+    C --&gt; D[Calculer dynamiquement l'allocation mémoire JVM optimale et les threads GC]
+    D --&gt; E[Monter directement gte/overrides comme répertoire de travail du jeu]
+    E --&gt; F[Lancer le jeu : lecture/écriture en temps réel des quêtes et scripts suivis par Git]</code></pre>
 <h3 id="caracteristiques-principales">Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Détection automatique du JDK 21</strong> : recherche automatiquement Java 21 installé dans <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code>, et le mémorise automatiquement dans <code>.jdk_path</code>.</li>
 <li><strong>Optimisation adaptative du matériel</strong> : en fonction de la RAM totale de l'ordinateur, alloue automatiquement la taille du tas JVM selon un ratio optimal (50 % à 60 % de la mémoire physique disponible) et configure automatiquement les threads GC parallèles.</li>
-<li><strong>Flux de travail sans déplacement</strong> : modifiez les quêtes en jeu (<code>/ftbquests editing_mode true</code>) et enregistrez ; les modifications sont directement sauvegardées en temps réel dans <code>config/ftbquests/</code> du dépôt Git, et vous pouvez les valider en un clic avec GitHub Desktop !</li>
+<li><strong>Flux de travail sans déplacement</strong> : modifiez les quêtes en jeu (<code>/ftbquests editing_mode true</code>) et enregistrez, les modifications sont directement enregistrées en temps réel dans <code>config/ftbquests/</code> du dépôt Git, ouvrez GitHub Desktop pour un commit en un clic !</li>
 </ol>
 <hr />
 <h2 id="2-outil-de-mappage-sans-copie-pour-lanceur-externe-link_to_launcherbat">🔗 2. Outil de mappage sans copie pour lanceur externe (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-outil-de-mappage-sans-copie-pour-lanceur-externe-link_to_launcherbat" title="Permanent link">&para;</a></h2>
-<p>Si vous avez l'habitude d'utiliser un lanceur avec vos propres skins et raccourcis clavier (comme PCL2 / HMCL / Prism Launcher) :</p>
+<p>Si vous avez l'habitude d'utiliser un lanceur avec vos propres skins et habitudes de touches (comme PCL2 / HMCL / Prism Launcher) :</p>
 <ol>
 <li>Double-cliquez sur <strong><code>link_to_launcher.bat</code></strong> à la racine.</li>
 <li>Suivez les instructions pour faire glisser le répertoire de jeu de votre lanceur (par exemple <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) dans la console et appuyez sur Entrée.</li>
-<li>Le script crée automatiquement des jonctions de répertoires Windows :</li>
+<li>Le script crée automatiquement des liens symboliques de répertoire Windows (Directory Junctions) :</li>
 <li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
@@ -1670,15 +1670,15 @@
 <li>Quelle que soit la façon dont vous modifiez les quêtes ou les recettes dans le lanceur, <strong>les données physiques sont synchronisées en temps réel dans le dépôt Git principal</strong> !</li>
 </ol>
 <hr />
-<h2 id="3-environnement-fantome-de-compilation-a-chaud-pour-le-code-de-mod-gte-dev-runtime">☕ 3. Environnement fantôme de compilation à chaud pour le code de mod (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-environnement-fantome-de-compilation-a-chaud-pour-le-code-de-mod-gte-dev-runtime" title="Permanent link">&para;</a></h2>
+<h2 id="3-environnement-fantome-de-compilation-a-chaud-du-code-de-mod-gte-dev-runtime">☕ 3. Environnement fantôme de compilation à chaud du code de mod (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-environnement-fantome-de-compilation-a-chaud-du-code-de-mod-gte-dev-runtime" title="Permanent link">&para;</a></h2>
 <p>Pour les programmeurs Java/Kotlin, <code>modules/gte-dev-runtime</code> est un module de débogage fantôme dédié :</p>
 <h3 id="principe-de-fonctionnement-et-considerations-de-conception">Principe de fonctionnement et considérations de conception<a class="headerlink" href="#principe-de-fonctionnement-et-considerations-de-conception" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Rôle</strong> : un bac à sable de compilation à chaud et de débogage en direct purement local, <strong>interdit à la publication, il n'apparaît dans aucun artefact de joueur</strong>.</li>
-<li><strong>Remappage dynamique ModDevGradle</strong> : compile automatiquement à chaud les dernières sources de <code>gtm-reborn</code> et <code>gtecore</code> et les monte dans l'espace de noms de désobfuscation Mojang.</li>
+<li><strong>Positionnement</strong> : un bac à sable de compilation à chaud et de développement intégré purement local, <strong>interdit à la publication, n'apparaîtra dans aucun artefact de joueur</strong>.</li>
+<li><strong>Remappage dynamique ModDevGradle</strong> : compile automatiquement à chaud les dernières sources de <code>gtm-reborn</code> et <code>gtecore</code> et les monte dans l'espace de noms de désambiguïsation Mojang.</li>
 <li><strong>Méthode de lancement</strong> :</li>
 <li>Dans IDEA, sélectionnez la configuration d'exécution <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong>.</li>
-<li>ou exécutez en ligne de commande :
+<li>Ou exécutez en ligne de commande :
     <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gte-dev-runtime</span><span class="p">:</span><span class="n">runClient</span>
 </span></code></pre></div></li>
 </ul>

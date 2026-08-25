@@ -1131,12 +1131,12 @@
   <a href="#dumpmultiblock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪓 멀티블록 시각적 내보내기 (/dumpmultiblock)
+        🪓 멀티블록 시각화 내보내기 (/dumpmultiblock)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪓 멀티블록 시각적 내보내기 (/dumpmultiblock)">
+    <nav class="md-nav" aria-label="🪓 멀티블록 시각화 내보내기 (/dumpmultiblock)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1543,12 +1543,12 @@
   <a href="#dumpmultiblock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪓 멀티블록 시각적 내보내기 (/dumpmultiblock)
+        🪓 멀티블록 시각화 내보내기 (/dumpmultiblock)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪓 멀티블록 시각적 내보내기 (/dumpmultiblock)">
+    <nav class="md-nav" aria-label="🪓 멀티블록 시각화 내보내기 (/dumpmultiblock)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1642,24 +1642,24 @@
 <h1 id="kubejs-dumpmultiblock">KubeJS 도구 세트 및 멀티블록 내보내기 (<code>/dumpmultiblock</code>)<a class="headerlink" href="#kubejs-dumpmultiblock" title="Permanent link">&para;</a></h1>
 <p>GTE는 KubeJS 서버 스크립트에 개발자 전용 멀티블록 자동화 구축 및 구조 추출 도구를 내장하여 멀티블록 구조 설계 프로세스를 완전히 해방시킵니다.</p>
 <hr />
-<h2 id="dumpmultiblock">🪓 멀티블록 시각적 내보내기 (<code>/dumpmultiblock</code>)<a class="headerlink" href="#dumpmultiblock" title="Permanent link">&para;</a></h2>
-<p>사용자 정의 멀티블록(Java 코드 또는 KubeJS 스크립트)을 개발할 때 수십 개의 문자 레이어로 구성된 <code>FactoryBlockPattern.aisle(...)</code>을 수동으로 작성하는 것은 매우 시간이 많이 걸리고 오류가 발생하기 쉽습니다.</p>
+<h2 id="dumpmultiblock">🪓 멀티블록 시각화 내보내기 (<code>/dumpmultiblock</code>)<a class="headerlink" href="#dumpmultiblock" title="Permanent link">&para;</a></h2>
+<p>사용자 정의 멀티블록(Java 코드든 KubeJS 스크립트든)을 개발할 때 수십 개의 문자 레이어로 구성된 <code>FactoryBlockPattern.aisle(...)</code>을 수동으로 작성하는 것은 매우 시간이 많이 걸리고 오류가 발생하기 쉽습니다.</p>
 <p>GTE에는 <strong><code>/dumpmultiblock</code> 나무 도끼 선택 영역 내보내기</strong> (<code>server_scripts/easymultiblock.js</code>)가 내장되어 있습니다:</p>
 <pre class="mermaid"><code>graph LR
     A[나무 도끼를 손에 듦] --&gt;|왼쪽 클릭| B[Pos1 모서리 선택]
     A --&gt;|오른쪽 클릭| C[Pos2 대각선 모서리 선택]
     B &amp; C --&gt; D[게임 내에서 /dumpmultiblock 실행]
-    D --&gt; E[콘솔 및 채팅창에 완전한 FactoryBlockPattern Java 코드 출력]</code></pre>
+    D --&gt; E[콘솔과 채팅창에 완전한 FactoryBlockPattern Java 코드 출력]</code></pre>
 <h3 id="_1">사용 단계<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>게임에서 크리에이티브 모드로 전환하고 <strong>나무 도끼 (<code>minecraft:wooden_axe</code>)</strong> 를 손에 듭니다.</li>
 <li>구상에 따라 세계에 완전한 멀티블록 물리 구조(기계 케이싱, 버스, 코일, 메인 컨트롤러 포함)를 직접 구축합니다.</li>
-<li>나무 도끼로 구조의 한쪽 하단 모서리 블록을 <strong>왼쪽 클릭</strong> 합니다 (채팅창에 <code>Pos1 설정됨: x, y, z</code> 표시).</li>
-<li>나무 도끼로 구조의 대각선 상단 모서리 블록을 <strong>오른쪽 클릭</strong> 합니다 (채팅창에 <code>Pos2 설정됨: x, y, z</code> 표시).</li>
+<li>나무 도끼로 구조의 한쪽 밑면 모서리 블록을 <strong>왼쪽 클릭</strong> 합니다 (채팅창에 <code>Pos1 설정됨: x, y, z</code> 표시).</li>
+<li>나무 도끼로 구조의 대각선 꼭대기 모서리 블록을 <strong>오른쪽 클릭</strong> 합니다 (채팅창에 <code>Pos2 설정됨: x, y, z</code> 표시).</li>
 <li>채팅창에 다음 명령어를 입력합니다:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>스크립트가 3D 경계 상자 내의 모든 블록 유형을 자동으로 스캔하고 문자 매핑을 할당한 후(<code>.</code>는 공기, <code>A-Z/a-z/0-9</code>는 특정 블록), 백그라운드 로그와 클라이언트에 구조 코드를 직접 생성합니다:</li>
+<li>스크립트가 3D 경계 상자 내의 모든 블록 유형을 자동으로 스캔하고 문자 매핑을 할당한 후(<code>.</code>은 공기, <code>A-Z/a-z/0-9</code>는 특정 블록), 백그라운드 로그와 클라이언트에 구조 코드를 직접 생성합니다:</li>
 </ol>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// 자동으로 내보낸 FactoryBlockPattern 템플릿</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
@@ -1681,7 +1681,7 @@
 - <strong>네더 지옥 기체</strong>: <code>circuit(5)</code> ➜ 출력 <code>gtceu:nether_air 10000</code>
 - <strong>엔드 공허 기체</strong>: <code>circuit(6)</code> ➜ 출력 <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-universal_circuitjs">2. 만능 회로 변환기 (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-universal_circuitjs" title="Permanent link">&para;</a></h3>
-<p>크로스 모드 및 다양한 등급의 회로 기판으로 인한 복잡한 레시피 중첩 문제를 해결하기 위해 GTE는 <strong>범용 회로 (<code>universal_circuit</code>)</strong> 시스템을 도입했습니다:
+<p>크로스 모드 및 다양한 등급의 회로판으로 인한 복잡한 레시피 중첩 문제를 해결하기 위해 GTE는 <strong>범용 회로 (<code>universal_circuit</code>)</strong> 시스템을 도입했습니다:
 - 포장기 (<code>packer</code>)에서 모든 동일 전압 등급의 회로(ULV ~ MAX)를 <strong>1 EU / 1 tick</strong>의 손실 없이 통합 범용 회로 아이템으로 변환할 수 있습니다.</p>
 
 

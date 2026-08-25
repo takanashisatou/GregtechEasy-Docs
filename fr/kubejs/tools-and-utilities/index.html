@@ -1168,10 +1168,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-extraction-de-gaz-dimensionnel-dimension_gasjs" class="md-nav__link">
+  <a href="#1-extraction-de-gaz-a-lechelle-dimensionnelle-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Extraction de gaz dimensionnel (dimension_gas.js)
+        1. Extraction de gaz à l'échelle dimensionnelle (dimension_gas.js)
       
     </span>
   </a>
@@ -1580,10 +1580,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-extraction-de-gaz-dimensionnel-dimension_gasjs" class="md-nav__link">
+  <a href="#1-extraction-de-gaz-a-lechelle-dimensionnelle-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Extraction de gaz dimensionnel (dimension_gas.js)
+        1. Extraction de gaz à l'échelle dimensionnelle (dimension_gas.js)
       
     </span>
   </a>
@@ -1640,26 +1640,26 @@
 
 
 <h1 id="outils-kubejs-et-exportateur-de-multiblocs-dumpmultiblock">Outils KubeJS et exportateur de multiblocs (<code>/dumpmultiblock</code>)<a class="headerlink" href="#outils-kubejs-et-exportateur-de-multiblocs-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>GTE intègre dans les scripts serveur KubeJS des outils de construction automatisée et d'extraction de structures multiblocs destinés aux développeurs, libérant ainsi entièrement le processus de conception de structures multiblocs.</p>
+<p>GTE intègre dans les scripts KubeJS côté serveur des outils de construction automatisée et d'extraction de structures multiblocs destinés aux développeurs, libérant ainsi entièrement le processus de conception de structures multiblocs.</p>
 <hr />
 <h2 id="exportateur-visuel-de-multiblocs-dumpmultiblock">🪓 Exportateur visuel de multiblocs (<code>/dumpmultiblock</code>)<a class="headerlink" href="#exportateur-visuel-de-multiblocs-dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>Lors du développement de multiblocs personnalisés (que ce soit en code Java ou en scripts KubeJS), écrire manuellement des <code>FactoryBlockPattern.aisle(...)</code> composés de dizaines de couches de caractères est extrêmement chronophage et sujet aux erreurs.</p>
-<p>GTE intègre l'<strong>exportateur à sélection avec hache en bois <code>/dumpmultiblock</code></strong> (<code>server_scripts/easymultiblock.js</code>) :</p>
+<p>GTE intègre l'<strong>exportateur à hache en bois <code>/dumpmultiblock</code></strong> (<code>server_scripts/easymultiblock.js</code>) :</p>
 <pre class="mermaid"><code>graph LR
-    A[Hache en bois en main] --&gt;|Clic gauche| B[Sélection du coin Pos1]
-    A --&gt;|Clic droit| C[Sélection du coin opposé Pos2]
-    B &amp; C --&gt; D[Exécuter /dumpmultiblock dans le jeu]
+    A[Hache en bois en main] --&gt;|Clic gauche| B[Sélectionner le coin Pos1]
+    A --&gt;|Clic droit| C[Sélectionner le coin opposé Pos2]
+    B &amp; C --&gt; D[Exécuter /dumpmultiblock en jeu]
     D --&gt; E[Code Java FactoryBlockPattern complet affiché dans la console et le chat]</code></pre>
 <h3 id="etapes-dutilisation">Étapes d'utilisation<a class="headerlink" href="#etapes-dutilisation" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Passez en mode créatif dans le jeu et tenez une <strong>hache en bois (<code>minecraft:wooden_axe</code>)</strong>.</li>
-<li>Construisez directement dans le monde la structure physique complète du multibloc selon vos plans (y compris la coque, les compartiments, les bobines, le contrôleur principal).</li>
+<li>Passez en mode créatif dans le jeu, tenez une <strong>hache en bois (<code>minecraft:wooden_axe</code>)</strong>.</li>
+<li>Construisez directement dans le monde la structure physique complète du multibloc selon vos plans (y compris le boîtier, les compartiments, les bobines, le contrôleur principal).</li>
 <li>Avec la hache en bois, <strong>cliquez gauche</strong> sur un bloc d'angle inférieur de la structure (le chat affiche <code>Pos1 défini : x, y, z</code>).</li>
 <li>Avec la hache en bois, <strong>cliquez droit</strong> sur le bloc d'angle supérieur opposé de la structure (le chat affiche <code>Pos2 défini : x, y, z</code>).</li>
 <li>Saisissez la commande dans le chat :
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>Le script analyse automatiquement tous les types de blocs dans la boîte englobante 3D, attribue une correspondance de caractères (<code>.</code> pour l'air, <code>A-Z/a-z/0-9</code> pour les blocs spécifiques), et génère le code de structure dans les journaux en arrière-plan et directement côté client :</li>
+<li>Le script scanne automatiquement tous les types de blocs dans la boîte englobante 3D, attribue des correspondances de caractères (<code>.</code> pour l'air, <code>A-Z/a-z/0-9</code> pour les blocs spécifiques), et génère le code de structure directement dans les journaux d'arrière-plan et côté client :</li>
 </ol>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Modèle FactoryBlockPattern exporté automatiquement</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
@@ -1674,15 +1674,15 @@
 </span></code></pre></div>
 <hr />
 <h2 id="configuration-des-gaz-et-minerais-fluides-dimensionnels">🌌 Configuration des gaz et minerais fluides dimensionnels<a class="headerlink" href="#configuration-des-gaz-et-minerais-fluides-dimensionnels" title="Permanent link">&para;</a></h2>
-<p>GTE étend la collecte des fluides et gaz à toutes les dimensions via KubeJS :</p>
-<h3 id="1-extraction-de-gaz-dimensionnel-dimension_gasjs">1. Extraction de gaz dimensionnel (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-extraction-de-gaz-dimensionnel-dimension_gasjs" title="Permanent link">&para;</a></h3>
+<p>GTE étend la collecte de fluides et de gaz à toutes les dimensions via KubeJS :</p>
+<h3 id="1-extraction-de-gaz-a-lechelle-dimensionnelle-dimension_gasjs">1. Extraction de gaz à l'échelle dimensionnelle (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-extraction-de-gaz-a-lechelle-dimensionnelle-dimension_gasjs" title="Permanent link">&para;</a></h3>
 <p>En utilisant la grande chambre de collecte de gaz (<code>gas_collector</code>) avec différents numéros de circuit, il est possible d'extraire l'atmosphère spécifique de n'importe quelle dimension :
 - <strong>Air du monde normal</strong> : <code>circuit(4)</code> ➜ sortie <code>gtceu:air 10000</code>
 - <strong>Air infernal du Nether</strong> : <code>circuit(5)</code> ➜ sortie <code>gtceu:nether_air 10000</code>
 - <strong>Air du vide de l'End</strong> : <code>circuit(6)</code> ➜ sortie <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-convertisseur-de-circuits-universels-universal_circuitjs">2. Convertisseur de circuits universels (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-convertisseur-de-circuits-universels-universal_circuitjs" title="Permanent link">&para;</a></h3>
-<p>Pour résoudre l'empilement complexe de recettes entre les différents mods et les circuits de divers niveaux, GTE introduit le système de <strong>circuit universel (<code>universal_circuit</code>)</strong> :
-- Permet dans la machine d'emballage (<code>packer</code>) de convertir sans perte tout circuit de même niveau de tension (de ULV à MAX) en un objet de circuit universel unifié à raison de <strong>1 EU / 1 tick</strong>.</p>
+<p>Pour résoudre la complexité des recettes empilées entre les mods et les différents niveaux de circuits, GTE introduit le système de <strong>circuit universel (<code>universal_circuit</code>)</strong> :
+- Permet dans la machine d'emballage (<code>packer</code>) de convertir sans perte n'importe quel circuit de même niveau de tension (de ULV à MAX) en un objet de circuit universel unifié à <strong>1 EU / 1 tick</strong>.</p>
 
 
 

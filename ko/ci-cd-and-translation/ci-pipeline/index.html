@@ -1679,12 +1679,12 @@
 <pre class="mermaid"><code>flowchart TD
     A[코드 푸시 / Tag 트리거] --&gt; B[Checkout 재귀 서브모듈 &amp; JDK 21 / Python 3.11 / Go 구성]
     B --&gt; C[Gradle 증분 동기화 Blockbench 아트 에셋 syncBlockbenchAssets]
-    C --&gt; D[다중 모듈 고동시성 컴파일 &amp; GameTest 자동화 실기 테스트]
+    C --&gt; D[멀티모듈 고동시성 컴파일 &amp; GameTest 자동화 실기 테스트]
     D --&gt; E[생성된 Jar를 overrides/mods로 복사 &amp; build/artifacts로 수집]
-    E --&gt; F[opencode_translate.py 실행 전체/증분 AI 국제화 번역]
+    E --&gt; F[opencode_translate.py 전체/증분 AI 국제화 번역 실행]
     F --&gt; G[Packwiz 규범 패키징: CurseForge 팩 + Java 21 manifest 패치]
-    G --&gt; H[Python 빌드 Zero-Compile 플레이어 완전 편의 팩 .minecraft]
-    H --&gt; I[Packwiz 내보내기 순수 서버 Server 팩]
+    G --&gt; H[Python Zero-Compile 플레이어 완전 편의 팩 .minecraft 빌드]
+    H --&gt; I[Packwiz 순수 서버 Server 팩 내보내기]
     I --&gt; J[모든 Release 산출물을 Actions Artifacts 저장소에 업로드]
     J --&gt; K[정적 Maven 저장소 구축 및 GitHub Pages (gh-pages)에 배포]
     J --&gt; L[Tag 트리거 시: CurseForge 플랫폼에 자동 게시]</code></pre>
@@ -1693,7 +1693,7 @@
 <h3 id="1-curseforge-java-21">1. CurseForge 규범 팩 및 Java 21 패치<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Packwiz 내보내기</strong>: <code>packwiz curseforge export</code>를 실행하여 표준 규범 팩을 생성합니다.</li>
-<li><strong>manifest.json 자동 패치</strong>: 일부 타사 런처가 CurseForge 팩을 파싱할 때 기본적으로 Java 17을 지정하는 문제를 해결하기 위해, CI는 zip을 자동으로 압축 해제하고 Python 스크립트를 통해 <code>manifest.json</code>의 <code>minecraft.javaVersion</code> 및 최상위 <code>javaVersion</code>을 <strong>하드코딩으로 21로 강제 작성</strong>한 후 다시 패키징합니다.</li>
+<li><strong>manifest.json 자동 패치</strong>: 일부 서드파티 런처가 CurseForge 팩을 파싱할 때 기본적으로 Java 17을 지정하는 문제를 해결하기 위해, CI는 zip을 자동으로 압축 해제하고 Python 스크립트를 통해 <code>manifest.json</code>의 <code>minecraft.javaVersion</code> 및 최상위 <code>javaVersion</code>을 <strong>하드코딩으로 21로 강제 작성</strong>한 후 다시 패키징합니다.</li>
 </ul>
 <h3 id="2-build_lazy_packpy">2. 플레이어 컴파일 불필요 완전 편의 팩 (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1703,12 +1703,12 @@
 </ul>
 <h3 id="3-packwiz-server-export">3. 서버 내보내기 팩 (<code>packwiz server export</code>)<a class="headerlink" href="#3-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
-<li>클라이언트 전용 최적화 Mod (예: 3D 스킨 레이어, 셰이더, 키 바인딩 등)를 자동으로 제외하고, Linux/Windows 프로덕션 서버에 직접 배포할 수 있는 순수 서버를 생성합니다.</li>
+<li>클라이언트 전용 최적화 Mod (예: 3D 스킨 레이어, 셰이더, 키 바인딩 등)를 자동으로 제거하여 Linux/Windows 프로덕션 서버에 바로 배포할 수 있는 순수 서버를 생성합니다.</li>
 </ul>
 <hr />
 <h2 id="github-pages-maven">🌐 GitHub Pages 정적 Maven 저장소 배포<a class="headerlink" href="#github-pages-maven" title="Permanent link">&para;</a></h2>
 <p>파이프라인은 Gradle의 <code>publish</code> 작업을 통해 모든 서브모듈 (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>)을 표준 Maven 아티팩트로 빌드하고 <code>gh-pages</code> 브랜치에 배포합니다:</p>
-<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// 타사 Mod 또는 개발 프로젝트에서 GTE Maven 저장소 직접 참조</span>
+<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// 서드파티 Mod 또는 개발 프로젝트에서 GTE Maven 저장소 직접 참조</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GTE GitHub Pages Maven"</span>
@@ -1726,7 +1726,7 @@
 1. GitHub Actions 페이지에서 <strong>Manual Publish Release</strong>를 수동으로 트리거하고 버전 번호 (예: <code>2.3.0</code>)를 입력합니다.
 2. 워크플로우가 자동으로 <code>dev -&gt; release</code> PR을 생성하고, CI 검증을 실행한 후 자동으로 Squash Merge합니다.
 3. <code>release</code> 브랜치에 <code>v2.3.0</code> Git Tag를 자동으로 생성하고 푸시합니다.
-4. Tag 푸시 이벤트가 자동으로 <code>sync-build.yml</code>을 트리거하여 최종적으로 전체 채널 산출물 게시를 완료합니다.</p>
+4. Tag 푸시 이벤트가 <code>sync-build.yml</code>을 자동으로 트리거하여 최종적으로 전 채널 산출물 게시를 완료합니다.</p>
 
 
 

@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#curseforge-import-server-deployment-guide" class="md-skip">
+        <a href="#curseforge-import-and-server-deployment-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -778,10 +778,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-requirements" class="md-nav__link">
+  <a href="#1-environment-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Requirements
+        1. Environment Preparation
       
     </span>
   </a>
@@ -800,10 +800,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-startup-scripts-run_serversh-run_serverbat" class="md-nav__link">
+  <a href="#3-startup-script-configuration-run_serversh-run_serverbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Startup Scripts (run_server.sh / run_server.bat)
+        3. Startup Script Configuration (run_server.sh / run_server.bat)
       
     </span>
   </a>
@@ -816,22 +816,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#faq-troubleshooting" class="md-nav__link">
+  <a href="#common-issues-troubleshooting-faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ FAQ &amp; Troubleshooting
+        ⚙️ Common Issues Troubleshooting (FAQ)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ FAQ &amp; Troubleshooting">
+    <nav class="md-nav" aria-label="⚙️ Common Issues Troubleshooting (FAQ)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#q1-server-crashes-with-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
+  <a href="#q1-server-startup-shows-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q1: Server crashes with UnsupportedClassVersionError: ... class file version 65.0
+        Q1: Server startup shows UnsupportedClassVersionError: ... class file version 65.0
       
     </span>
   </a>
@@ -839,10 +839,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#q2-players-receive-mod-mismatch-when-joining-server" class="md-nav__link">
+  <a href="#q2-players-get-a-mod-list-mismatch-when-joining-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q2: Players receive mod mismatch when joining server
+        Q2: Players get a mod list mismatch when joining the server
       
     </span>
   </a>
@@ -1630,10 +1630,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-requirements" class="md-nav__link">
+  <a href="#1-environment-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Requirements
+        1. Environment Preparation
       
     </span>
   </a>
@@ -1652,10 +1652,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-startup-scripts-run_serversh-run_serverbat" class="md-nav__link">
+  <a href="#3-startup-script-configuration-run_serversh-run_serverbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Startup Scripts (run_server.sh / run_server.bat)
+        3. Startup Script Configuration (run_server.sh / run_server.bat)
       
     </span>
   </a>
@@ -1668,22 +1668,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#faq-troubleshooting" class="md-nav__link">
+  <a href="#common-issues-troubleshooting-faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ FAQ &amp; Troubleshooting
+        ⚙️ Common Issues Troubleshooting (FAQ)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ FAQ &amp; Troubleshooting">
+    <nav class="md-nav" aria-label="⚙️ Common Issues Troubleshooting (FAQ)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#q1-server-crashes-with-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
+  <a href="#q1-server-startup-shows-unsupportedclassversionerror-class-file-version-650" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q1: Server crashes with UnsupportedClassVersionError: ... class file version 65.0
+        Q1: Server startup shows UnsupportedClassVersionError: ... class file version 65.0
       
     </span>
   </a>
@@ -1691,10 +1691,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#q2-players-receive-mod-mismatch-when-joining-server" class="md-nav__link">
+  <a href="#q2-players-get-a-mod-list-mismatch-when-joining-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Q2: Players receive mod mismatch when joining server
+        Q2: Players get a mod list mismatch when joining the server
       
     </span>
   </a>
@@ -1739,36 +1739,36 @@
   
 
 
-<h1 id="curseforge-import-server-deployment-guide">CurseForge Import &amp; Server Deployment Guide<a class="headerlink" href="#curseforge-import-server-deployment-guide" title="Permanent link">&para;</a></h1>
-<p>In addition to the zero-compile player lazy pack, GTE provides automated <strong>Packwiz</strong> builds for standard CurseForge packages and multiplayer server packages.</p>
+<h1 id="curseforge-import-and-server-deployment-guide">CurseForge Import and Server Deployment Guide<a class="headerlink" href="#curseforge-import-and-server-deployment-guide" title="Permanent link">&para;</a></h1>
+<p>In addition to the pre-compiled lazy pack, GTE provides CurseForge standard packs and server packs automatically built with <strong>Packwiz</strong>.</p>
 <hr />
 <h2 id="curseforge-standard-pack-import">📦 CurseForge Standard Pack Import<a class="headerlink" href="#curseforge-standard-pack-import" title="Permanent link">&para;</a></h2>
-<p>The CurseForge distribution file is named <code>GTE-CurseForge-&lt;version&gt;.zip</code>.</p>
+<p>The CurseForge format modpack file is named <code>GTE-CurseForge-&lt;version&gt;.zip</code>.</p>
 <h3 id="client-import-methods">Client Import Methods<a class="headerlink" href="#client-import-methods" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PCL2 / HMCL Import</label><label for="__tabbed_1_2">CurseForge App Import</label><label for="__tabbed_1_3">Prism Launcher Import</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li>Open your launcher and choose <strong>Install New Version / Import Modpack</strong>.</li>
-<li>Browse and select the downloaded <code>GTE-CurseForge-&lt;version&gt;.zip</code>.</li>
-<li>The launcher will parse <code>manifest.json</code> and download required mods concurrently.</li>
-<li>Once imported, enter Version Settings and set the Java runtime to <strong>Java 21</strong>.</li>
-<li>Allocate <strong>8GB ~ 12GB</strong> of RAM and launch the game.</li>
+<li>Open the launcher and select <strong>Install New Game Version / Import Modpack</strong>.</li>
+<li>Select the downloaded <code>GTE-CurseForge-&lt;version&gt;.zip</code> file.</li>
+<li>The launcher will automatically parse <code>manifest.json</code> and download dependent mods concurrently at high speed.</li>
+<li>After import, go to version settings and set the Java runtime to <strong>Java 21</strong>.</li>
+<li>Set the allocated memory (recommended 8GB ~ 12GB) and launch the game.</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Open the CurseForge App client.</li>
-<li>Click on the <strong>Minecraft</strong> tab and navigate to <strong>My Modpacks</strong>.</li>
-<li>From the top-right menu, select <strong>Create Custom Profile</strong> ➜ <strong>Import</strong>.</li>
-<li>Select <code>GTE-CurseForge-&lt;version&gt;.zip</code> and wait for mod downloads to finish.</li>
+<li>Click the <strong>Minecraft</strong> icon on the left, then go to <strong>My Modpacks</strong>.</li>
+<li>Click <strong>Create Custom Profile</strong> ➜ <strong>Import</strong> in the settings menu at the top right.</li>
+<li>Select <code>GTE-CurseForge-&lt;version&gt;.zip</code> and wait for automatic download and installation.</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Click <strong>Add Instance</strong> ➜ <strong>Import</strong>.</li>
-<li>Browse to and select <code>GTE-CurseForge-&lt;version&gt;.zip</code>.</li>
-<li>After creation, open Instance Settings and set the Java installation to <strong>JDK 21</strong>.</li>
+<li>Browse and select <code>GTE-CurseForge-&lt;version&gt;.zip</code>.</li>
+<li>After the instance is created, set the Java path to <strong>JDK 21</strong> in the instance properties.</li>
 </ol>
 </div>
 </div>
@@ -1776,27 +1776,28 @@
 <hr />
 <h2 id="server-deployment-guide">🖥️ Server Deployment Guide<a class="headerlink" href="#server-deployment-guide" title="Permanent link">&para;</a></h2>
 <p>The server pack file is named <code>GTE-Server-&lt;version&gt;.zip</code>.</p>
-<h3 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h3>
+<h3 id="1-environment-preparation">1. Environment Preparation<a class="headerlink" href="#1-environment-preparation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Operating System: Linux (Ubuntu 22.04+ / Debian 12+) or Windows Server 2022+</li>
-<li><strong>JDK 21 is required</strong>: Run <code>java -version</code> in terminal to confirm <code>openjdk version "21..."</code>.</li>
-<li>Recommended Specs: 4+ CPU cores, 16GB RAM (allocate 10G ~ 14G to Minecraft).</li>
+<li><strong>JDK 21 must be ready</strong>: Run <code>java -version</code> in the terminal and confirm the output is <code>openjdk version "21..."</code>.</li>
+<li>Recommended configuration: 4+ CPU cores, 16GB physical memory (allocate 10G ~ 14G to the Minecraft server).</li>
 </ul>
 <h3 id="2-deployment-steps">2. Deployment Steps<a class="headerlink" href="#2-deployment-steps" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Create server working directory</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. 创建服务端工作目录</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/gte-server<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/gte-server
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. Extract server archive</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. 解压服务端包</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>unzip<span class="w"> </span>GTE-Server-*.zip<span class="w"> </span>-d<span class="w"> </span>.
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3. Install Forge 1.20.1-47.3.0 / 47.4.4 server libraries (if not pre-installed)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>java<span class="w"> </span>-jar<span class="w"> </span>forge-1.20.1-*-installer.jar<span class="w"> </span>--installServer
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 4. Accept Minecraft EULA</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"eula=true"</span><span class="w"> </span>&gt;<span class="w"> </span>eula.txt
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3. 安装 Forge 1.20.1-47.3.0 / 47.4.4 服务端核心 (若未预装)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 运行安装脚本下载 minecraft_server 与 forge 库</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>java<span class="w"> </span>-jar<span class="w"> </span>forge-1.20.1-*-installer.jar<span class="w"> </span>--installServer
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 4. 同意 Minecraft EULA 协议</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"eula=true"</span><span class="w"> </span>&gt;<span class="w"> </span>eula.txt
 </span></code></pre></div>
-<h3 id="3-startup-scripts-run_serversh-run_serverbat">3. Startup Scripts (<code>run_server.sh</code> / <code>run_server.bat</code>)<a class="headerlink" href="#3-startup-scripts-run_serversh-run_serverbat" title="Permanent link">&para;</a></h3>
-<p>We recommend using Aikar's optimized JVM flags:</p>
+<h3 id="3-startup-script-configuration-run_serversh-run_serverbat">3. Startup Script Configuration (<code>run_server.sh</code> / <code>run_server.bat</code>)<a class="headerlink" href="#3-startup-script-configuration-run_serversh-run_serverbat" title="Permanent link">&para;</a></h3>
+<p>It is recommended to use Aikar's optimized parameters to start the server:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux (<code>run_server.sh</code>)</label><label for="__tabbed_2_2">Windows (<code>run_server.bat</code>)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1829,15 +1830,15 @@
 </div>
 </div>
 <hr />
-<h2 id="faq-troubleshooting">⚙️ FAQ &amp; Troubleshooting<a class="headerlink" href="#faq-troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="q1-server-crashes-with-unsupportedclassversionerror-class-file-version-650">Q1: Server crashes with <code>UnsupportedClassVersionError: ... class file version 65.0</code><a class="headerlink" href="#q1-server-crashes-with-unsupportedclassversionerror-class-file-version-650" title="Permanent link">&para;</a></h3>
+<h2 id="common-issues-troubleshooting-faq">⚙️ Common Issues Troubleshooting (FAQ)<a class="headerlink" href="#common-issues-troubleshooting-faq" title="Permanent link">&para;</a></h2>
+<h3 id="q1-server-startup-shows-unsupportedclassversionerror-class-file-version-650">Q1: Server startup shows <code>UnsupportedClassVersionError: ... class file version 65.0</code><a class="headerlink" href="#q1-server-startup-shows-unsupportedclassversionerror-class-file-version-650" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Cause</strong>: The server is running on a Java version older than Java 21 (class version 65.0 corresponds to JDK 21).<br />
+<p><strong>Cause</strong>: The Java version at server runtime is lower than Java 21 (version 65.0 corresponds to JDK 21).<br />
 <strong>Solution</strong>: On Linux, switch to OpenJDK 21 via <code>sudo update-alternatives --config java</code>.</p>
 </blockquote>
-<h3 id="q2-players-receive-mod-mismatch-when-joining-server">Q2: Players receive mod mismatch when joining server<a class="headerlink" href="#q2-players-receive-mod-mismatch-when-joining-server" title="Permanent link">&para;</a></h3>
+<h3 id="q2-players-get-a-mod-list-mismatch-when-joining-the-server">Q2: Players get a mod list mismatch when joining the server<a class="headerlink" href="#q2-players-get-a-mod-list-mismatch-when-joining-the-server" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Solution</strong>: Ensure client and server are built from the exact same CI release version. Every GitHub Actions run synchronously exports matching Client and Server artifacts.</p>
+<p><strong>Solution</strong>: Ensure the client version and server version are exactly the same. Each CI build of the main project generates matching Client and Server artifacts.</p>
 </blockquote>
 
 

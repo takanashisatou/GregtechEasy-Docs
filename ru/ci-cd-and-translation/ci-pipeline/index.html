@@ -1429,7 +1429,7 @@
   <a href="#1-curseforge-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Стандартный пакет CurseForge и патч для Java 21
+        1. Стандартный пакет CurseForge и патч Java 21
       
     </span>
   </a>
@@ -1478,7 +1478,7 @@
   <a href="#release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ Ручная публикация и рабочий процесс версионирования (release-publish.yml)
+        🏷️ Ручной процесс публикации и создания версий (release-publish.yml)
       
     </span>
   </a>
@@ -1582,7 +1582,7 @@
   <a href="#1-curseforge-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Стандартный пакет CurseForge и патч для Java 21
+        1. Стандартный пакет CurseForge и патч Java 21
       
     </span>
   </a>
@@ -1631,7 +1631,7 @@
   <a href="#release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ Ручная публикация и рабочий процесс версионирования (release-publish.yml)
+        🏷️ Ручной процесс публикации и создания версий (release-publish.yml)
       
     </span>
   </a>
@@ -1671,8 +1671,8 @@
   
 
 
-<h1 id="cicd-maven">CI/CD автоматизированная сборка, упаковка и публикация в Maven<a class="headerlink" href="#cicd-maven" title="Permanent link">&para;</a></h1>
-<p>GTE создал высокоавтоматизированный <strong>конвейер CI/CD GitHub Actions</strong> с множеством параллельных целевых артефактов (файлы конфигурации находятся в <code>.github/workflows/sync-build.yml</code> и <code>release-publish.yml</code>).</p>
+<h1 id="cicd-maven">CI/CD автоматизированная сборка, упаковка и конвейер публикации в Maven<a class="headerlink" href="#cicd-maven" title="Permanent link">&para;</a></h1>
+<p>GTE создал высокоавтоматизированный <strong>конвейер CI/CD GitHub Actions</strong> с параллельной генерацией нескольких целевых артефактов (файлы конфигурации находятся в <code>.github/workflows/sync-build.yml</code> и <code>release-publish.yml</code>).</p>
 <hr />
 <h2 id="ci-sync-buildyml">🔄 Архитектура полного CI-конвейера (<code>sync-build.yml</code>)<a class="headerlink" href="#ci-sync-buildyml" title="Permanent link">&para;</a></h2>
 <p>При каждом push-коде в ветки <code>master</code> / <code>main</code> / <code>satou</code>, отправке PR или срабатывании Release Tag, GitHub Actions автоматически выполняет следующий стандартный конвейер:</p>
@@ -1682,7 +1682,7 @@
     C --&gt; D[Многомодульная высокопараллельная компиляция и автоматическое тестирование GameTest]
     D --&gt; E[Копирование сгенерированных Jar в overrides/mods и сбор в build/artifacts]
     E --&gt; F[Запуск opencode_translate.py для полного/инкрементального AI-перевода интернационализации]
-    F --&gt; G[Стандартная упаковка Packwiz: пакет CurseForge + патч manifest для Java 21]
+    F --&gt; G[Стандартная упаковка Packwiz: пакет CurseForge + патч манифеста Java 21]
     G --&gt; H[Python сборка Zero-Compile полного ленивого пакета игрока .minecraft]
     H --&gt; I[Packwiz экспорт чистого серверного пакета Server]
     I --&gt; J[Загрузка всех Release-артефактов в хранилище Actions Artifacts]
@@ -1690,20 +1690,20 @@
     J --&gt; L[При срабатывании Tag: автоматическая публикация на платформе CurseForge]</code></pre>
 <hr />
 <h2 id="_1">📦 Подробное описание трех основных задач упаковки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="1-curseforge-java-21">1. Стандартный пакет CurseForge и патч для Java 21<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
+<h3 id="1-curseforge-java-21">1. Стандартный пакет CurseForge и патч Java 21<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Экспорт Packwiz</strong>: запуск <code>packwiz curseforge export</code> для генерации стандартного пакета.</li>
-<li><strong>Автоматический патч manifest.json</strong>: для решения проблемы, когда некоторые сторонние лаунчеры при разборе пакета CurseForge по умолчанию назначают Java 17, CI автоматически распаковывает zip, с помощью Python-скрипта <strong>принудительно записывает</strong> <code>minecraft.javaVersion</code> и верхнеуровневый <code>javaVersion</code> в <code>manifest.json</code> как <strong>21</strong>, а затем переупаковывает.</li>
+<li><strong>Экспорт Packwiz</strong>: выполняется <code>packwiz curseforge export</code> для генерации стандартного пакета.</li>
+<li><strong>Автоматический патч manifest.json</strong>: из-за проблемы, когда некоторые сторонние лаунчеры при разборе пакета CurseForge по умолчанию назначают Java 17, CI автоматически распаковывает zip, с помощью Python-скрипта <strong>принудительно записывает 21</strong> в <code>minecraft.javaVersion</code> и верхнеуровневый <code>javaVersion</code> в <code>manifest.json</code>, а затем переупаковывает.</li>
 </ul>
 <h3 id="2-build_lazy_packpy">2. Полный ленивый пакет игрока без компиляции (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Python-скрипт автоматически извлекает последние основные Jar из <code>build/libs/</code> каждого модуля.</li>
 <li>Автоматически объединяет ключевые расширяющие моды из <code>modules/gtecore/gradle/libs/</code>.</li>
-<li>Упаковывает все конфигурации, скрипты KubeJS, книги Памалию в готовый к использованию архив <code>.minecraft</code> со встроенным руководством по запуску на китайском языке.</li>
+<li>Упаковывает все конфигурации, скрипты KubeJS, руководства Patchouli в готовый к использованию архив <code>.minecraft</code> со встроенным руководством по запуску на китайском языке.</li>
 </ul>
 <h3 id="3-packwiz-server-export">3. Экспортный пакет для сервера (<code>packwiz server export</code>)<a class="headerlink" href="#3-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Автоматически исключает клиентские оптимизирующие моды (например, 3D-слои скинов, шейдеры, привязки клавиш), создавая чистый серверный пакет, готовый к развертыванию на производственных серверах Linux/Windows.</li>
+<li>Автоматически исключает клиентские оптимизационные моды (например, 3D-слои скинов, шейдеры, привязки клавиш) и генерирует чистый серверный пакет, готовый к развертыванию на производственных серверах Linux/Windows.</li>
 </ul>
 <hr />
 <h2 id="maven-github-pages">🌐 Развертывание статического Maven-репозитория на GitHub Pages<a class="headerlink" href="#maven-github-pages" title="Permanent link">&para;</a></h2>
@@ -1721,7 +1721,7 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">}</span>
 </span></code></pre></div>
 <hr />
-<h2 id="release-publishyml">🏷️ Ручная публикация и рабочий процесс версионирования (<code>release-publish.yml</code>)<a class="headerlink" href="#release-publishyml" title="Permanent link">&para;</a></h2>
+<h2 id="release-publishyml">🏷️ Ручной процесс публикации и создания версий (<code>release-publish.yml</code>)<a class="headerlink" href="#release-publishyml" title="Permanent link">&para;</a></h2>
 <p>Проект использует стандартизированный процесс Git Release:
 1. На странице GitHub Actions вручную запускается <strong>Manual Publish Release</strong>, вводится номер версии (например, <code>2.3.0</code>).
 2. Рабочий процесс автоматически создает PR <code>dev -&gt; release</code>, выполняет проверку CI и автоматически Squash Merge.

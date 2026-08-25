@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ae2-plus" class="md-skip">
+        <a href="#ae2-plus-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -926,12 +926,12 @@
   <a href="#me-plus-me_pattern_buffer_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧩 ME Накопитель образцов Plus (me_pattern_buffer_plus)
+        🧩 ME Паттерн-буфер Plus (me_pattern_buffer_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧩 ME Накопитель образцов Plus (me_pattern_buffer_plus)">
+    <nav class="md-nav" aria-label="🧩 ME Паттерн-буфер Plus (me_pattern_buffer_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -954,12 +954,12 @@
   <a href="#me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪞 Зеркало ME Накопителя образцов Plus (me_pattern_buffer_proxy_plus)
+        🪞 Зеркало ME Паттерн-буфера Plus (me_pattern_buffer_proxy_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪞 Зеркало ME Накопителя образцов Plus (me_pattern_buffer_proxy_plus)">
+    <nav class="md-nav" aria-label="🪞 Зеркало ME Паттерн-буфера Plus (me_pattern_buffer_proxy_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1554,12 +1554,12 @@
   <a href="#me-plus-me_pattern_buffer_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧩 ME Накопитель образцов Plus (me_pattern_buffer_plus)
+        🧩 ME Паттерн-буфер Plus (me_pattern_buffer_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧩 ME Накопитель образцов Plus (me_pattern_buffer_plus)">
+    <nav class="md-nav" aria-label="🧩 ME Паттерн-буфер Plus (me_pattern_buffer_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1582,12 +1582,12 @@
   <a href="#me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪞 Зеркало ME Накопителя образцов Plus (me_pattern_buffer_proxy_plus)
+        🪞 Зеркало ME Паттерн-буфера Plus (me_pattern_buffer_proxy_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪞 Зеркало ME Накопителя образцов Plus (me_pattern_buffer_proxy_plus)">
+    <nav class="md-nav" aria-label="🪞 Зеркало ME Паттерн-буфера Plus (me_pattern_buffer_proxy_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1661,42 +1661,42 @@
   
 
 
-<h1 id="ae2-plus">Глубокая интеграция AE2 и система Plus для образцовых сборок<a class="headerlink" href="#ae2-plus" title="Permanent link">&para;</a></h1>
-<p>GTECore обеспечивает чрезвычайно мощный прямой мост данных между Applied Energistics 2 (AE2) и мультиблочными структурами GregTech.</p>
+<h1 id="ae2-plus-">Глубокая интеграция AE2 и система Plus для паттерн-буферов<a class="headerlink" href="#ae2-plus-" title="Permanent link">&para;</a></h1>
+<p>GTECore создаёт чрезвычайно мощный прямой мост данных между Applied Energistics 2 (AE2) и мультиблочными структурами GregTech.</p>
 <hr />
-<h2 id="me-plus-me_pattern_buffer_plus">🧩 ME Накопитель образцов Plus (<code>me_pattern_buffer_plus</code>)<a class="headerlink" href="#me-plus-me_pattern_buffer_plus" title="Permanent link">&para;</a></h2>
-<p>В традиционных технических модах подключение AE2-образцов к мультиблочным машинам часто сталкивается с такими проблемами, как <strong>недостаточное количество слотов, невозможность смешанного вывода жидкостей и предметов, а также сложность совместного использования образцов несколькими машинами</strong>.</p>
-<p><strong>ME Накопитель образцов Plus</strong> от GTECore полностью решает эту проблему:</p>
+<h2 id="me-plus-me_pattern_buffer_plus">🧩 ME Паттерн-буфер Plus (<code>me_pattern_buffer_plus</code>)<a class="headerlink" href="#me-plus-me_pattern_buffer_plus" title="Permanent link">&para;</a></h2>
+<p>В традиционных технических модах подключение паттерн-провайдеров AE2 к мультиблочным машинам часто сталкивается с такими проблемами, как <strong>недостаточное количество слотов, невозможность смешанной выдачи жидкостей и предметов, а также сложность совместного использования паттернов несколькими машинами</strong>.</p>
+<p><strong>ME Паттерн-буфер Plus</strong> от GTECore полностью решает эту проблему:</p>
 <pre class="mermaid"><code>graph TD
-    A[Сеть AE2 ME] --&gt; B[Основной ME Накопитель образцов Plus&lt;br/&gt;81 слот для образцов / общий инвентарь / программируемое хранилище]
-    B --&gt;|Привязка через Datastick| C[Зеркало ME Накопителя образцов Plus #1&lt;br/&gt;подключено к мультиблочной машине A]
-    B --&gt;|Привязка через Datastick| D[Зеркало ME Накопителя образцов Plus #2&lt;br/&gt;подключено к мультиблочной машине B]
-    B --&gt;|Привязка через Datastick| E[Зеркало ME Накопителя образцов Plus #3&lt;br/&gt;подключено к мультиблочной машине C]</code></pre>
+    A[ME-сеть AE2] --&gt; B[Хост ME Паттерн-буфера Plus&lt;br/&gt;81 слот для паттернов / общий инвентарь / программируемое хранилище]
+    B --&gt;|Привязка через Datastick| C[Зеркало ME Паттерн-буфера Plus #1&lt;br/&gt;подключено к мультиблочной машине A]
+    B --&gt;|Привязка через Datastick| D[Зеркало ME Паттерн-буфера Plus #2&lt;br/&gt;подключено к мультиблочной машине B]
+    B --&gt;|Привязка через Datastick| E[Зеркало ME Паттерн-буфера Plus #3&lt;br/&gt;подключено к мультиблочной машине C]</code></pre>
 <h3 id="_1">Ключевые особенности<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Огромная ёмкость образцов</strong>: один основной накопитель имеет <strong>81 слот для образцов</strong> (эквивалент суммы 9 стандартных AE2-образцов).</li>
-<li><strong>Универсальные возможности</strong>: одновременно поддерживает <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, <code>EXPORT_FLUIDS</code>, что позволяет смешивать жидкости и предметы в одном контейнере.</li>
+<li><strong>Огромная ёмкость паттернов</strong>: один хост-буфер имеет <strong>81 слот для паттернов</strong> (эквивалент суммы 9 стандартных паттерн-провайдеров AE2).</li>
+<li><strong>Возможности всех типов камер</strong>: одновременно обладает способностями <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, <code>EXPORT_FLUIDS</code>, поддерживая смешанное взаимодействие жидкостей и предметов в одном корпусе.</li>
 <li><strong>Поддержка программируемого хранилища</strong>: встроенный механизм Programmable Storage обеспечивает точную подачу и кэширование для сложных рецептов.</li>
 </ol>
 <hr />
-<h2 id="me-plus-me_pattern_buffer_proxy_plus">🪞 Зеркало ME Накопителя образцов Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#me-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
-<p><strong>Зеркало ME Накопителя образцов Plus</strong> — это революционный компонент распределённой автоматизации:</p>
+<h2 id="me-plus-me_pattern_buffer_proxy_plus">🪞 Зеркало ME Паттерн-буфера Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#me-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
+<p><strong>Зеркало Паттерн-буфера Plus</strong> — это революционный компонент распределённой автоматизации:</p>
 <h3 id="_2">Принцип работы и совместное использование между машинами<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Установите зеркало накопителя в слот любой мультиблочной машины.</li>
-<li>Держите <strong>Datastick</strong> в руке, нажмите ПКМ по основному <strong>ME Накопителю образцов Plus</strong>, чтобы считать координаты, затем нажмите ПКМ по <strong>Зеркалу ME Накопителя образцов Plus</strong> для привязки.</li>
-<li><strong>Все привязанные зеркала будут в реальном времени разделять все 81 образцов, размещённых в основном накопителе</strong>!</li>
+<li>Установите зеркальный буфер в позицию камеры любой мультиблочной машины.</li>
+<li>Возьмите в руку <strong>Datastick (флеш-накопитель)</strong>, нажмите ПКМ по главному <strong>ME Паттерн-буферу Plus</strong>, чтобы считать координаты, затем нажмите ПКМ по <strong>Зеркалу Паттерн-буфера Plus</strong> для привязки.</li>
+<li><strong>Все привязанные зеркала будут в реальном времени разделять все 81 паттерн, размещённые в главном буфере</strong>!</li>
 <li>Когда сеть AE2 запускает задачу автоматического синтеза, сеть автоматически распределяет нагрузку между всеми свободными зеркальными машинами для параллельной работы!</li>
 </ul>
 <h3 id="jade">Отображение состояния в Jade<a class="headerlink" href="#jade" title="Permanent link">&para;</a></h3>
-<p>При наведении на накопитель или зеркало Jade автоматически показывает:
-- Основной накопитель: <code>Количество подключённых зеркал: X</code>
-- Зеркальный компонент: <code>Привязано к - X: ..., Y: ..., Z: ...</code></p>
+<p>При наведении на паттерн-буфер или зеркало Jade автоматически показывает:
+- Для главного буфера: <code>Количество подключённых зеркал: X</code>
+- Для зеркального компонента: <code>Привязано к - X: ..., Y: ..., Z: ...</code></p>
 <hr />
 <h2 id="me-me_steam_hatch">💨 ME Паровой люк (<code>me_steam_hatch</code>)<a class="headerlink" href="#me-me_steam_hatch" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Функция</strong>: прямое подключение сети жидкостей AE2 к паровой мультиблочной структуре.</li>
-<li><strong>Назначение</strong>: паровой мультиблочной структуре больше не нужны сложные внешние паропроводы и резервуары высокого давления; она может напрямую получать пар из сети ME с максимальной пропускной способностью, устраняя узкие места в трубопроводах.</li>
+<li><strong>Функция</strong>: прямое соединение жидкостной сети AE2 с паровой мультиблочной структурой.</li>
+<li><strong>Назначение</strong>: паровой мультиблочной структуре больше не требуются внешние сложные высокоскоростные паропроводы и резервуары; она может напрямую получать пар из ME-сети с максимальной пропускной способностью, устраняя узкие места в трубопроводах.</li>
 </ul>
 
 

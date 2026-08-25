@@ -1264,10 +1264,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exigence-obligatoire-jdk-21" class="md-nav__link">
+  <a href="#jdk-21-obligatoire" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exigence obligatoire : JDK 21
+        JDK 21 obligatoire
       
     </span>
   </a>
@@ -1319,10 +1319,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-commandes-gradle-courantes" class="md-nav__link">
+  <a href="#3-commandes-de-construction-gradle-courantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ 3. Commandes Gradle courantes
+        🛠️ 3. Commandes de construction Gradle courantes
       
     </span>
   </a>
@@ -1563,10 +1563,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exigence-obligatoire-jdk-21" class="md-nav__link">
+  <a href="#jdk-21-obligatoire" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exigence obligatoire : JDK 21
+        JDK 21 obligatoire
       
     </span>
   </a>
@@ -1618,10 +1618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-commandes-gradle-courantes" class="md-nav__link">
+  <a href="#3-commandes-de-construction-gradle-courantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ 3. Commandes Gradle courantes
+        🛠️ 3. Commandes de construction Gradle courantes
       
     </span>
   </a>
@@ -1665,8 +1665,8 @@
 <p>Ce guide s'adresse aux programmeurs Java/Kotlin et aux auteurs de packs de mods participant au développement du projet multi-modules GTE-Multi.</p>
 <hr />
 <h2 id="1-preparation-de-lenvironnement-de-developpement">💻 1. Préparation de l'environnement de développement<a class="headerlink" href="#1-preparation-de-lenvironnement-de-developpement" title="Permanent link">&para;</a></h2>
-<h3 id="exigence-obligatoire-jdk-21">Exigence obligatoire : JDK 21<a class="headerlink" href="#exigence-obligatoire-jdk-21" title="Permanent link">&para;</a></h3>
-<p>Tous les modules de ce projet utilisent uniformément <strong>JDK 21</strong>. Installations recommandées :
+<h3 id="jdk-21-obligatoire">JDK 21 obligatoire<a class="headerlink" href="#jdk-21-obligatoire" title="Permanent link">&para;</a></h3>
+<p>Ce projet utilise uniformément <strong>JDK 21</strong> pour tous les modules. Installations recommandées :
 - <a href="https://www.azul.com/downloads/?version=java-21-lts">Azul Zulu JDK 21</a>
 - <a href="https://adoptium.net/temurin/releases/?version=21">Eclipse Temurin JDK 21</a></p>
 <h3 id="ide-recommande-et-plugins">IDE recommandé et plugins<a class="headerlink" href="#ide-recommande-et-plugins" title="Permanent link">&para;</a></h3>
@@ -1676,7 +1676,7 @@
 - <strong>Kotlin</strong> : prend en charge le développement du module GT-- CE.</p>
 <hr />
 <h2 id="2-clonage-du-depot-et-importation-du-projet">📥 2. Clonage du dépôt et importation du projet<a class="headerlink" href="#2-clonage-du-depot-et-importation-du-projet" title="Permanent link">&para;</a></h2>
-<p>Ce projet contient plusieurs sous-modules Git (Submodules), il est <strong>obligatoire de les récupérer de manière récursive</strong> :</p>
+<p>Ce projet contient plusieurs sous-modules Git (Submodules), il est <strong>obligatoire de les récupérer récursivement</strong> :</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Cloner récursivement le dépôt principal et tous les sous-modules</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/takanashisatou/GregtechEasy.git<span class="w"> </span>GTEGroup
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>GTEGroup
@@ -1687,12 +1687,12 @@
 <h3 id="instructions-dimportation-dans-idea">Instructions d'importation dans IDEA<a class="headerlink" href="#instructions-dimportation-dans-idea" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Dans IDEA, cliquez sur <strong>File ➜ Open</strong>, sélectionnez le <code>build.gradle</code> à la racine pour ouvrir le projet.</li>
-<li>Accédez aux paramètres : <code>Settings</code> ➜ <code>Build, Execution, Deployment</code> ➜ <code>Build Tools</code> ➜ <code>Gradle</code>.</li>
+<li>Allez dans les paramètres : <code>Settings</code> ➜ <code>Build, Execution, Deployment</code> ➜ <code>Build Tools</code> ➜ <code>Gradle</code>.</li>
 <li>Définissez <strong>Gradle JVM</strong> sur <strong>JDK 21</strong>.</li>
 </ol>
 <hr />
-<h2 id="3-commandes-gradle-courantes">🛠️ 3. Commandes Gradle courantes<a class="headerlink" href="#3-commandes-gradle-courantes" title="Permanent link">&para;</a></h2>
-<p>Exécutez dans Windows PowerShell (après avoir défini <code>JAVA_HOME</code>) :</p>
+<h2 id="3-commandes-de-construction-gradle-courantes">🛠️ 3. Commandes de construction Gradle courantes<a class="headerlink" href="#3-commandes-de-construction-gradle-courantes" title="Permanent link">&para;</a></h2>
+<p>Exécutez dans Windows PowerShell (avec <code>JAVA_HOME</code> préalablement défini) :</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c"># 1. Compiler uniquement un sous-module spécifique</span>
@@ -1700,16 +1700,16 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gt</span><span class="p">--:</span><span class="n">compileKotlin</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">compileJava</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. Exécuter le serveur de test GameTest du module GTM-Reborn</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. Exécuter le test serveur GameTest de GTM-Reborn</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">runGameTestServer</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c"># 3. Exécuter le formatage du code</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">spotlessApply</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c"># 4. Compiler tous les modules et empaqueter les Jars en une seule commande</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c"># 4. Compiler tous les modules et empaqueter les Jars en une commande</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">buildAll</span> <span class="n">-x</span> <span class="n">test</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c"># 5. Synchroniser les Jars générés vers gte/overrides/mods/</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c"># 5. Synchroniser les Jars compilés vers gte/overrides/mods/</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">copyOutputJars</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c"># 6. Publier tous les modules dans le dépôt Maven local (~/.m2/repository/)</span>

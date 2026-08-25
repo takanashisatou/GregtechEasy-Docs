@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejecucion-rapida-sin-lanzador-y-depuracion-en-caliente-local" class="md-skip">
+        <a href="#depuracion-en-caliente-local-y-ejecucion-rapida-sin-lanzador" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1280,15 +1280,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-script-de-inicio-ultrarrapido-sin-lanzador-run_gamebat-run_gamesh" class="md-nav__link">
+  <a href="#1-script-de-inicio-rapido-sin-lanzador-run_gamebat-run_gamesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 1. Script de inicio ultrarrápido sin lanzador (run_game.bat / run_game.sh)
+        ⚡ 1. Script de inicio rápido sin lanzador (run_game.bat / run_game.sh)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚡ 1. Script de inicio ultrarrápido sin lanzador (run_game.bat / run_game.sh)">
+    <nav class="md-nav" aria-label="⚡ 1. Script de inicio rápido sin lanzador (run_game.bat / run_game.sh)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1540,15 +1540,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-script-de-inicio-ultrarrapido-sin-lanzador-run_gamebat-run_gamesh" class="md-nav__link">
+  <a href="#1-script-de-inicio-rapido-sin-lanzador-run_gamebat-run_gamesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 1. Script de inicio ultrarrápido sin lanzador (run_game.bat / run_game.sh)
+        ⚡ 1. Script de inicio rápido sin lanzador (run_game.bat / run_game.sh)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚡ 1. Script de inicio ultrarrápido sin lanzador (run_game.bat / run_game.sh)">
+    <nav class="md-nav" aria-label="⚡ 1. Script de inicio rápido sin lanzador (run_game.bat / run_game.sh)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1639,11 +1639,11 @@
   
 
 
-<h1 id="ejecucion-rapida-sin-lanzador-y-depuracion-en-caliente-local">Ejecución rápida sin lanzador y depuración en caliente local<a class="headerlink" href="#ejecucion-rapida-sin-lanzador-y-depuracion-en-caliente-local" title="Permanent link">&para;</a></h1>
-<p>GTE ha diseñado un sistema de depuración en caliente sin fricciones, extremadamente amigable para planificadores de modpacks, escritores de misiones y programadores de mods.</p>
+<h1 id="depuracion-en-caliente-local-y-ejecucion-rapida-sin-lanzador">Depuración en caliente local y ejecución rápida sin lanzador<a class="headerlink" href="#depuracion-en-caliente-local-y-ejecucion-rapida-sin-lanzador" title="Permanent link">&para;</a></h1>
+<p>GTE ha diseñado un sistema de depuración conjunta sin fricciones, extremadamente amigable para planificadores de modpacks, escritores de misiones y programadores de mods.</p>
 <hr />
-<h2 id="1-script-de-inicio-ultrarrapido-sin-lanzador-run_gamebat-run_gamesh">⚡ 1. Script de inicio ultrarrápido sin lanzador (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-script-de-inicio-ultrarrapido-sin-lanzador-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>Para autores de libros de misiones (FTB Quests) y planificadores de recetas de KubeJS, <strong>no es necesario abrir IntelliJ IDEA ni instalar ningún lanzador de terceros</strong>; simplemente haga doble clic en <strong><code>run_game.bat</code></strong> en la raíz del proyecto para entrar al juego rápidamente.</p>
+<h2 id="1-script-de-inicio-rapido-sin-lanzador-run_gamebat-run_gamesh">⚡ 1. Script de inicio rápido sin lanzador (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-script-de-inicio-rapido-sin-lanzador-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
+<p>Para autores de libros de misiones (FTB Quests) y planificadores de recetas de KubeJS, <strong>no es necesario abrir IntelliJ IDEA ni instalar ningún lanzador de terceros</strong>, simplemente haga doble clic en <strong><code>run_game.bat</code></strong> en la raíz del proyecto para entrar rápidamente al juego.</p>
 <pre class="mermaid"><code>graph TD
     A[双击 run_game.bat] --&gt; B[自动扫描本地 JDK 21 路径并持久化]
     B --&gt; C[自动探测系统物理内存与 CPU 核心数]
@@ -1652,29 +1652,29 @@
     E --&gt; F[启动游戏: 实时读写 Git 追踪的 quests 与 scripts]</code></pre>
 <h3 id="caracteristicas-principales">Características principales<a class="headerlink" href="#caracteristicas-principales" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Detección automática de JDK 21</strong>: busca automáticamente Java 21 instalado en <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code> y <code>Program Files</code>, y lo recuerda en <code>.jdk_path</code>.</li>
-<li><strong>Optimización adaptativa de hardware</strong>: asigna automáticamente el tamaño del heap de JVM según la RAM total del equipo, en la proporción óptima (50%~60% de la memoria física disponible), y configura automáticamente los hilos de GC paralelos.</li>
-<li><strong>Flujo de trabajo sin mover archivos</strong>: modifica misiones en el juego (<code>/ftbquests editing_mode true</code>) y guarda; los cambios se guardan en tiempo real en <code>config/ftbquests/</code> del repositorio Git, ¡y puedes confirmarlos con un clic en GitHub Desktop!</li>
+<li><strong>Detección automática de JDK 21</strong>: busca automáticamente Java 21 instalado en <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code>, y lo recuerda automáticamente en <code>.jdk_path</code>.</li>
+<li><strong>Optimización adaptativa de hardware</strong>: asigna automáticamente el tamaño del heap de JVM según la RAM total de la computadora, en la proporción óptima (50%~60% de la memoria física disponible), y configura automáticamente los hilos de GC paralelos.</li>
+<li><strong>Flujo de trabajo sin mover archivos</strong>: modifica las misiones en el juego (<code>/ftbquests editing_mode true</code>) y guarda; los cambios se guardan en tiempo real directamente en <code>config/ftbquests/</code> del repositorio Git, ¡abre GitHub Desktop y haz commit con un clic!</li>
 </ol>
 <hr />
 <h2 id="2-herramienta-de-mapeo-sin-copias-para-lanzadores-externos-link_to_launcherbat">🔗 2. Herramienta de mapeo sin copias para lanzadores externos (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-herramienta-de-mapeo-sin-copias-para-lanzadores-externos-link_to_launcherbat" title="Permanent link">&para;</a></h2>
 <p>Si estás acostumbrado a usar un lanzador con tu propia configuración de skins y controles (como PCL2 / HMCL / Prism Launcher):</p>
 <ol>
-<li>Ejecuta <strong><code>link_to_launcher.bat</code></strong> en la raíz con doble clic.</li>
-<li>Arrastra el directorio del juego de tu lanzador (por ejemplo, <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) a la consola y presiona Enter.</li>
-<li>El script creará automáticamente enlaces de directorio de Windows (Directory Junctions):</li>
+<li>Haz doble clic en <strong><code>link_to_launcher.bat</code></strong> en la raíz.</li>
+<li>Sigue las indicaciones y arrastra el directorio del juego de tu lanzador (por ejemplo, <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) a la consola y presiona Enter.</li>
+<li>El script creará automáticamente enlaces simbólicos de directorios de Windows (Directory Junctions):</li>
 <li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
 <li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
-<li>No importa cómo modifiques misiones o recetas en el lanzador, <strong>los datos físicos se sincronizan en tiempo real en el repositorio Git principal</strong>.</li>
+<li>No importa cómo modifiques misiones o recetas en el lanzador, <strong>los datos físicos se sincronizan y guardan en tiempo real en el repositorio Git principal</strong>.</li>
 </ol>
 <hr />
 <h2 id="3-entorno-sombra-de-compilacion-en-caliente-para-codigo-de-mods-gte-dev-runtime">☕ 3. Entorno sombra de compilación en caliente para código de mods (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-entorno-sombra-de-compilacion-en-caliente-para-codigo-de-mods-gte-dev-runtime" title="Permanent link">&para;</a></h2>
 <p>Para programadores de Java/Kotlin, <code>modules/gte-dev-runtime</code> es un módulo de depuración sombra dedicado:</p>
 <h3 id="principio-de-funcionamiento-y-consideraciones-de-diseno">Principio de funcionamiento y consideraciones de diseño<a class="headerlink" href="#principio-de-funcionamiento-y-consideraciones-de-diseno" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Propósito</strong>: sandbox de depuración en caliente puramente local, <strong>prohibido para empaquetado y publicación, no aparecerá en ningún artefacto de jugador</strong>.</li>
+<li><strong>Propósito</strong>: caja de arena de depuración conjunta de compilación en caliente puramente local, <strong>prohibido empaquetar y publicar, no aparecerá en ninguna compilación para jugadores</strong>.</li>
 <li><strong>Reasignación dinámica de ModDevGradle</strong>: compila en caliente automáticamente el código fuente más reciente de <code>gtm-reborn</code> y <code>gtecore</code> y lo monta en el espacio de nombres de ofuscación inversa de Mojang.</li>
 <li><strong>Método de inicio</strong>:</li>
 <li>En IDEA, selecciona la configuración de ejecución <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong>.</li>

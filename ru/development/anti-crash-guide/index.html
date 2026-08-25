@@ -1334,7 +1334,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 2: Запрещено помещать производственные оптимизационные/шейдерные моды в среду разработки
+        Правило 2: Запрещено помещать оптимизационные/шейдерные моды производственной среды в среду разработки
       
     </span>
   </a>
@@ -1345,7 +1345,7 @@
   <a href="#3-modlocalruntime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 3: Зависимости среды разработки должны использовать modLocalRuntime единообразно
+        Правило 3: Зависимости среды разработки должны использовать только modLocalRuntime
       
     </span>
   </a>
@@ -1367,7 +1367,7 @@
   <a href="#5-gtm-reborn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 5: Обязательная проверка взаимосвязей после изменения базового gtm-reborn
+        Правило 5: Обязательная проверка связанных модов после изменения gtm-reborn
       
     </span>
   </a>
@@ -1383,12 +1383,12 @@
   <a href="#post-mortems" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Реальные разборы крашей и рецепты исправлений (Post-Mortems)
+        📚 База реальных разборов крашей и рецептов исправления (Post-Mortems)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📚 Реальные разборы крашей и рецепты исправлений (Post-Mortems)">
+    <nav class="md-nav" aria-label="📚 База реальных разборов крашей и рецептов исправления (Post-Mortems)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1632,7 +1632,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 2: Запрещено помещать производственные оптимизационные/шейдерные моды в среду разработки
+        Правило 2: Запрещено помещать оптимизационные/шейдерные моды производственной среды в среду разработки
       
     </span>
   </a>
@@ -1643,7 +1643,7 @@
   <a href="#3-modlocalruntime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 3: Зависимости среды разработки должны использовать modLocalRuntime единообразно
+        Правило 3: Зависимости среды разработки должны использовать только modLocalRuntime
       
     </span>
   </a>
@@ -1665,7 +1665,7 @@
   <a href="#5-gtm-reborn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Правило 5: Обязательная проверка взаимосвязей после изменения базового gtm-reborn
+        Правило 5: Обязательная проверка связанных модов после изменения gtm-reborn
       
     </span>
   </a>
@@ -1681,12 +1681,12 @@
   <a href="#post-mortems" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Реальные разборы крашей и рецепты исправлений (Post-Mortems)
+        📚 База реальных разборов крашей и рецептов исправления (Post-Mortems)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📚 Реальные разборы крашей и рецепты исправлений (Post-Mortems)">
+    <nav class="md-nav" aria-label="📚 База реальных разборов крашей и рецептов исправления (Post-Mortems)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1771,20 +1771,20 @@
   
 
 
-<h1 id="anti-crash-guide">Руководство по защите от крашей и практическая база по устранению неполадок (Anti-Crash Guide)<a class="headerlink" href="#anti-crash-guide" title="Permanent link">&para;</a></h1>
-<p>В среде разработки Minecraft с несколькими модулями, несколькими Classloader'ами и сложным байт-код-усилением Mixin, некоторые неосторожные практики могут привести к катастрофическим сбоям во время выполнения.</p>
-<p>В этом руководстве обобщены <strong>пять железных правил защиты от крашей</strong> и <strong>база знаний по устранению частых сбоев</strong>, накопленные в ходе инженерной практики GTE.</p>
+<h1 id="anti-crash-guide">Руководство по защите от крашей и практическая база знаний по отладке (Anti-Crash Guide)<a class="headerlink" href="#anti-crash-guide" title="Permanent link">&para;</a></h1>
+<p>В среде разработки Minecraft с несколькими модулями, несколькими Classloader'ами и сложным усилением байт-кода Mixin, некоторые неосторожные практики могут привести к катастрофическим крашам во время выполнения.</p>
+<p>В этом руководстве обобщены <strong>пять железных правил защиты от крашей</strong> и <strong>база знаний по отладке частых крашей</strong>, накопленные в ходе инженерной практики GTE.</p>
 <hr />
 <h2 id="critical">🛡️ Пять железных правил разработки для защиты от крашей (CRITICAL)<a class="headerlink" href="#critical" title="Permanent link">&para;</a></h2>
 <h3 id="1-mixin-accessor-never-force-cast-accessors">Правило 1: Запрещено принудительное приведение к интерфейсам Mixin Accessor (Never Force-Cast Accessors)<a class="headerlink" href="#1-mixin-accessor-never-force-cast-accessors" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Корень краша</strong>: В многомодульной среде или при загрузке аддонов, нативные классы Minecraft (например, <code>BlockBehaviour.Properties</code>) создаются ранним Classloader'ом. В этот момент интерфейсы Mixin могут ещё не завершить байт-код-вейвинг, и принудительное приведение вызовет <code>ClassCastException</code>!</li>
+<li><strong>Корень краша</strong>: В многомодульной среде или при загрузке аддонов, нативные классы Minecraft (например, <code>BlockBehaviour.Properties</code>) создаются ранним Classloader'ом. В этот момент интерфейсы Mixin могут ещё не завершить байт-кодное плетение, и принудительное приведение вызовет <code>ClassCastException</code>!</li>
 <li><strong>Неправильный код (запрещено)</strong>:
-  <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Ошибка! При ранней загрузке классов обязательно будет ClassCastException</span>
+  <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Ошибка! При ранней загрузке класса обязательно будет ClassCastException</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">destroyTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">BlockPropertiesAccessor</span><span class="p">)</span><span class="w"> </span><span class="n">props</span><span class="p">).</span><span class="na">getDestroyTime</span><span class="p">();</span>
 </span></code></pre></div></li>
 <li><strong>Правильный код (безопасная защита)</strong>:
-  <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Правильно: используйте защиту через instanceof</span>
+  <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Правильно: используем защиту через instanceof</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">props</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">BlockPropertiesAccessor</span><span class="w"> </span><span class="n">acc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">newProps</span><span class="p">.</span><span class="na">destroyTime</span><span class="p">(</span><span class="n">acc</span><span class="p">.</span><span class="na">getDestroyTime</span><span class="p">());</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
@@ -1792,22 +1792,22 @@
 <li><strong>Лучший вариант</strong>: Предпочтительно использовать нативные API Vanilla/Forge (например, получать диапазон целых чисел через <code>property.getPossibleValues()</code>, а не приводить к <code>IntegerPropertyAccessor</code>).</li>
 </ul>
 <hr />
-<h3 id="2">Правило 2: Запрещено помещать производственные оптимизационные/шейдерные моды в среду разработки<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h3 id="2">Правило 2: Запрещено помещать оптимизационные/шейдерные моды производственной среды в среду разработки<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Корень краша</strong>: Производственные оптимизационные моды, такие как <code>Oculus</code>, <code>Embeddium</code>, <code>ModernFix</code>, <code>ModernUI</code>, содержат жёстко закодированные SRG-обфусцированные Mixin-маппинги (например, <code>f_117950_</code>, <code>m_91302_</code>). Среда разработки Gradle <code>runClient</code> работает с деобфусцированными маппингами Mojang, что напрямую вызывает <code>InvalidMixinException</code>.</li>
-<li><strong>Принцип управления</strong>: Помещайте оптимизационные моды в <code>gte/overrides/mods/</code> (для использования обычными лаунчерами), строго запрещено добавлять их в зависимости сборки <code>modules/gte-dev-runtime</code>.</li>
+<li><strong>Корень краша</strong>: Оптимизационные моды производственной среды, такие как <code>Oculus</code>, <code>Embeddium</code>, <code>ModernFix</code>, <code>ModernUI</code>, содержат жёстко закодированные SRG-обфусцированные Mixin-маппинги (например, <code>f_117950_</code>, <code>m_91302_</code>). Среда разработки Gradle <code>runClient</code> работает с деобфусцированными маппингами Mojang, что напрямую вызывает <code>InvalidMixinException</code>.</li>
+<li><strong>Принцип управления</strong>: Помещайте оптимизационные моды в <code>gte/overrides/mods/</code> (для обычных лаунчеров), строго запрещено добавлять их в зависимости сборки <code>modules/gte-dev-runtime</code>.</li>
 </ul>
 <hr />
-<h3 id="3-modlocalruntime">Правило 3: Зависимости среды разработки должны использовать <code>modLocalRuntime</code> единообразно<a class="headerlink" href="#3-modlocalruntime" title="Permanent link">&para;</a></h3>
+<h3 id="3-modlocalruntime">Правило 3: Зависимости среды разработки должны использовать только <code>modLocalRuntime</code><a class="headerlink" href="#3-modlocalruntime" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Корень краша</strong>: Обычный <code>localRuntime</code> или <code>fileTree</code> не запускает ремаппер деобфускации ModDevGradle, что приводит к невозможности найти символы во время выполнения или к разрыву обфусцированных имён.</li>
+<li><strong>Корень краша</strong>: Обычный <code>localRuntime</code> или <code>fileTree</code> не запускает ремаппер деобфускации ModDevGradle, что приводит к ошибкам поиска символов или разрыву обфусцированных имён во время выполнения.</li>
 <li><strong>Принцип управления</strong>: В <code>modules/gte-dev-runtime/build.gradle</code> необходимо объявить <code>modLocalRuntime(...)</code> и настроить <code>obfuscation.createRemappingConfiguration(configurations.localRuntime)</code>.</li>
 </ul>
 <hr />
 <h3 id="4-gradle-nosuchfileexception">Правило 4: Решение проблемы взаимоблокировки инкрементальной компиляции Gradle (<code>NoSuchFileException</code>)<a class="headerlink" href="#4-gradle-nosuchfileexception" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Симптомы</strong>: При выполнении <code>compileJava</code> или <code>build</code> появляется <code>NoSuchFileException: ...\build\classes\java\main\...</code> или <code>Unable to delete directory 'build'</code>.</li>
-<li><strong>Корень</strong>: Фоновый процесс Gradle Daemon занимает файловые блокировки Windows.</li>
+<li><strong>Причина</strong>: Фоновый процесс Gradle Daemon удерживает файловые блокировки Windows.</li>
 <li><strong>Стандартное решение</strong>:
   <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># 1. Полностью остановить фоновые процессы Gradle Daemon</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">-</span><span class="n">-stop</span>
@@ -1818,13 +1818,13 @@
 </span></code></pre></div></li>
 </ul>
 <hr />
-<h3 id="5-gtm-reborn">Правило 5: Обязательная проверка взаимосвязей после изменения базового <code>gtm-reborn</code><a class="headerlink" href="#5-gtm-reborn" title="Permanent link">&para;</a></h3>
+<h3 id="5-gtm-reborn">Правило 5: Обязательная проверка связанных модов после изменения <code>gtm-reborn</code><a class="headerlink" href="#5-gtm-reborn" title="Permanent link">&para;</a></h3>
 <p>При изменении базовых машин, системы материалов, RecipeType, условий рецептов или Capability в <code>gtm-reborn</code> необходимо последовательно выполнить следующие три шага проверки:
-1. <strong>Проверить целостность компиляции <code>gtecore</code></strong>: Выполнить <code>.\gradlew.bat :modules:gtecore:compileJava</code>.
-2. <strong>Проверить скрипты интеграции KubeJS</strong>: Проверить события регистрации GTCEu в <code>startup_scripts/</code> и ссылки на Machine в <code>server_scripts/</code>.
-3. <strong>Проверить ссылки на предметы в FTB Quests</strong>: Проверить, не ссылается ли книга заданий на переименованные или удалённые ID предметов.</p>
+1. <strong>Проверить целостность компиляции <code>gtecore</code></strong>: выполнить <code>.\gradlew.bat :modules:gtecore:compileJava</code>.
+2. <strong>Проверить скрипты интеграции KubeJS</strong>: проверить события регистрации GTCEu в <code>startup_scripts/</code> и ссылки на Machine в <code>server_scripts/</code>.
+3. <strong>Проверить ссылки на предметы в FTB Quests</strong>: проверить, не ссылается ли книга заданий на переименованные или удалённые ID предметов.</p>
 <hr />
-<h2 id="post-mortems">📚 Реальные разборы крашей и рецепты исправлений (Post-Mortems)<a class="headerlink" href="#post-mortems" title="Permanent link">&para;</a></h2>
+<h2 id="post-mortems">📚 База реальных разборов крашей и рецептов исправления (Post-Mortems)<a class="headerlink" href="#post-mortems" title="Permanent link">&para;</a></h2>
 <h3 id="1-gtblockscopy-classcastexception">Случай 1: <code>GTBlocks.copy</code> / регистрация руды вызывает <code>ClassCastException</code><a class="headerlink" href="#1-gtblockscopy-classcastexception" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Ошибочный стек</strong>: <code>BlockBehaviour$Properties cannot be cast to BlockPropertiesAccessor</code></li>
@@ -1833,14 +1833,14 @@
 <h3 id="2-growingplantrender-integerpropertyaccessor">Случай 2: <code>GrowingPlantRender</code> вызывает краш при приведении к <code>IntegerPropertyAccessor</code><a class="headerlink" href="#2-growingplantrender-integerpropertyaccessor" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Ошибочный стек</strong>: <code>IntegerProperty cannot be cast to IntegerPropertyAccessor</code></li>
-<li><strong>Решение</strong>: Заменить на нативные потоковые операции:
+<li><strong>Решение</strong>: Заменить на нативную потоковую операцию:
   <div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">property</span><span class="p">.</span><span class="na">getPossibleValues</span><span class="p">().</span><span class="na">stream</span><span class="p">().</span><span class="na">min</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">compare</span><span class="p">).</span><span class="na">orElse</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </span></code></pre></div></li>
 </ul>
 <h3 id="3-gregtechdatageninitpre-assertionerror">Случай 3: <code>GregTechDatagen.initPre</code> вызывает <code>AssertionError</code><a class="headerlink" href="#3-gregtechdatageninitpre-assertionerror" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Ошибочный стек</strong>: <code>AssertionError at RegistrateDataProviderAccessor.gtceu$getTypes()</code></li>
-<li><strong>Решение</strong>: Статическая Map в <code>RegistrateDataProvider</code> инициализируется только при параметре <code>--datagen</code>. Оберните вызов в <code>try { ... } catch (Throwable ignored) { }</code>, чтобы избежать ошибок при обычном запуске.</li>
+<li><strong>Решение</strong>: Статическая Map в <code>RegistrateDataProvider</code> инициализируется только с параметром <code>--datagen</code>. Обернуть вызов в <code>try { ... } catch (Throwable ignored) { }</code>, чтобы избежать ошибок при обычном запуске.</li>
 </ul>
 <h3 id="4-ponderplugin-noclassdeffounderror">Случай 4: Отсутствие <code>PonderPlugin</code> вызывает <code>NoClassDefFoundError</code><a class="headerlink" href="#4-ponderplugin-noclassdeffounderror" title="Permanent link">&para;</a></h3>
 <ul>

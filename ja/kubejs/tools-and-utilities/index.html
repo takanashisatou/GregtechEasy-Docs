@@ -1159,19 +1159,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌌 次元ガスと流体鉱脈の設定
+        🌌 ディメンションガスと流体鉱脈の設定
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🌌 次元ガスと流体鉱脈の設定">
+    <nav class="md-nav" aria-label="🌌 ディメンションガスと流体鉱脈の設定">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 全次元ガス抽出 (dimension_gas.js)
+        1. 全ディメンションガス抽出 (dimension_gas.js)
       
     </span>
   </a>
@@ -1571,19 +1571,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌌 次元ガスと流体鉱脈の設定
+        🌌 ディメンションガスと流体鉱脈の設定
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🌌 次元ガスと流体鉱脈の設定">
+    <nav class="md-nav" aria-label="🌌 ディメンションガスと流体鉱脈の設定">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 全次元ガス抽出 (dimension_gas.js)
+        1. 全ディメンションガス抽出 (dimension_gas.js)
       
     </span>
   </a>
@@ -1640,7 +1640,7 @@
 
 
 <h1 id="kubejs-dumpmultiblock">KubeJS ツールセットとマルチブロックエクスポーター (<code>/dumpmultiblock</code>)<a class="headerlink" href="#kubejs-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>GTE は KubeJS サーバーサイドスクリプトに、開発者向けのマルチブロック自動構築・構造抽出ツールを内蔵しており、マルチブロック構造設計のプロセスを完全に解放します。</p>
+<p>GTE は KubeJS サーバーサイドスクリプトに、開発者向けのマルチブロック自動構築および構造抽出ツールを内蔵しており、マルチブロック構造設計のプロセスを完全に解放します。</p>
 <hr />
 <h2 id="dumpmultiblock">🪓 マルチブロック可視化エクスポーター (<code>/dumpmultiblock</code>)<a class="headerlink" href="#dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>カスタムマルチブロック（Java コードでも KubeJS スクリプトでも）を開発する際、数十層の文字で構成される <code>FactoryBlockPattern.aisle(...)</code> を手動で記述するのは非常に時間がかかり、エラーが発生しやすいものです。</p>
@@ -1652,14 +1652,14 @@
     D --&gt; E[コンソールとチャット欄に完全な FactoryBlockPattern Java コードを出力]</code></pre>
 <h3 id="_1">使用手順<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>ゲームをクリエイティブモードにし、<strong>木の斧 (<code>minecraft:wooden_axe</code>)</strong> を手に持ちます。</li>
-<li>設計図に従って、ワールド内に完全なマルチブロック物理構造（筐体、ハッチ、コイル、メインコントローラーを含む）を直接構築します。</li>
+<li>ゲーム内でクリエイティブモードに入り、<strong>木の斧 (<code>minecraft:wooden_axe</code>)</strong> を手に持ちます。</li>
+<li>設計に従って、完全なマルチブロック物理構造（筐体、コンパートメント、コイル、メインコントローラーを含む）をワールド内に直接構築します。</li>
 <li>木の斧で構造の <strong>1 つの底角ブロックを左クリック</strong> します（チャット欄に <code>Pos1 を設定: x, y, z</code> と表示されます）。</li>
 <li>木の斧で構造の <strong>対角線上の頂角ブロックを右クリック</strong> します（チャット欄に <code>Pos2 を設定: x, y, z</code> と表示されます）。</li>
 <li>チャット欄に以下のコマンドを入力します：
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>スクリプトが 3D 境界ボックス内のすべてのブロックタイプを自動スキャンし、文字マッピングを割り当て（<code>.</code> は空気、<code>A-Z/a-z/0-9</code> は特定のブロック）、バックグラウンドログとクライアントに構造コードを直接生成します：</li>
+<li>スクリプトが 3D 境界ボックス内のすべてのブロックタイプを自動的にスキャンし、文字マッピングを割り当てます（<code>.</code> は空気、<code>A-Z/a-z/0-9</code> は特定のブロック）。そしてバックグラウンドログとクライアントに構造コードを直接生成します：</li>
 </ol>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// 自動エクスポートされた FactoryBlockPattern テンプレート</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
@@ -1673,16 +1673,16 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span>
 </span></code></pre></div>
 <hr />
-<h2 id="_2">🌌 次元ガスと流体鉱脈の設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>GTE は KubeJS を通じて、全次元の流体・ガス収集を拡張しています：</p>
-<h3 id="1-dimension_gasjs">1. 全次元ガス抽出 (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimension_gasjs" title="Permanent link">&para;</a></h3>
-<p>大型ガス収集室 (<code>gas_collector</code>) と異なる回路番号を組み合わせることで、任意の次元でその次元固有の大気を抽出できます：
+<h2 id="_2">🌌 ディメンションガスと流体鉱脈の設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>GTE は KubeJS を通じて、全ディメンションの流体およびガス収集を拡張しています：</p>
+<h3 id="1-dimension_gasjs">1. 全ディメンションガス抽出 (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimension_gasjs" title="Permanent link">&para;</a></h3>
+<p>大型ガス収集室 (<code>gas_collector</code>) と異なる回路番号を組み合わせることで、任意のディメンションでそのディメンション固有の大気を抽出できます：
 - <strong>オーバーワールドの空気</strong>：<code>circuit(4)</code> ➜ 出力 <code>gtceu:air 10000</code>
-- <strong>ネザーの地獄の空気</strong>：<code>circuit(5)</code> ➜ 出力 <code>gtceu:nether_air 10000</code>
-- <strong>エンドの虚空の空気</strong>：<code>circuit(6)</code> ➜ 出力 <code>gtceu:ender_air 10000</code></p>
+- <strong>ネザーの地獄のガス</strong>：<code>circuit(5)</code> ➜ 出力 <code>gtceu:nether_air 10000</code>
+- <strong>エンドの虚空のガス</strong>：<code>circuit(6)</code> ➜ 出力 <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-universal_circuitjs">2. 万能回路コンバーター (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-universal_circuitjs" title="Permanent link">&para;</a></h3>
-<p>クロスモッドおよび各グレードの回路基板による複雑なレシピの重複を解決するため、GTE は <strong>汎用回路 (<code>universal_circuit</code>)</strong> システムを導入しました：
-- パッカー (<code>packer</code>) を使用して、任意の同電圧グレードの回路（ULV から MAX まで）を <strong>1 EU / 1 tick</strong> の損失なしで統一された汎用回路アイテムに変換できます。</p>
+<p>クロスモッドおよび各グレードの回路基板の複雑なレシピの重複を解決するため、GTE は <strong>汎用回路 (<code>universal_circuit</code>)</strong> システムを導入しました：
+- パッカー (<code>packer</code>) 内で、任意の同電圧グレードの回路（ULV から MAX まで）を <strong>1 EU / 1 tick</strong> でロスなく統一された汎用回路アイテムに変換できます。</p>
 
 
 

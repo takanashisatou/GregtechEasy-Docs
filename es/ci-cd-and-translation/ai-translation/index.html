@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motor-de-traduccion-internacionalizado-por-ia-opencode_translatepy" class="md-skip">
+        <a href="#motor-de-traduccion-internacional-con-ia-opencode_translatepy" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1591,24 +1591,24 @@
   
 
 
-<h1 id="motor-de-traduccion-internacionalizado-por-ia-opencode_translatepy">Motor de traducción internacionalizado por IA (<code>opencode_translate.py</code>)<a class="headerlink" href="#motor-de-traduccion-internacionalizado-por-ia-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE ha diseñado e implementado un sistema de traducción internacionalizado totalmente automático entre mods basado en modelos de lenguaje modernos (LLM), ubicado en <code>scripts/opencode_translate.py</code>.</p>
+<h1 id="motor-de-traduccion-internacional-con-ia-opencode_translatepy">Motor de traducción internacional con IA (<code>opencode_translate.py</code>)<a class="headerlink" href="#motor-de-traduccion-internacional-con-ia-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>GTE ha diseñado e implementado un sistema de traducción internacional totalmente automático entre mods basado en modelos de lenguaje modernos (LLM), ubicado en <code>scripts/opencode_translate.py</code>.</p>
 <hr />
 <h2 id="arquitectura-del-motor-de-traduccion">🤖 Arquitectura del motor de traducción<a class="headerlink" href="#arquitectura-del-motor-de-traduccion" title="Permanent link">&para;</a></h2>
 <p>La traducción comunitaria tradicional depende del mantenimiento manual de complejos archivos JSON y SNBT, lo que provoca actualizaciones lentas y una alta probabilidad de errores u omisiones.</p>
-<p>El motor de traducción por IA de GTE utiliza una API estandarizada compatible con OpenAI para lograr la <strong>extracción incremental automatizada, alineación de terminología y traducción concurrente</strong> de los libros de misiones de FTB Quests y los archivos de idioma de los mods principales:</p>
+<p>El motor de traducción con IA de GTE utiliza una API estándar compatible con OpenAI para lograr la <strong>extracción incremental automatizada, alineación de terminología y traducción concurrente</strong> de los libros de misiones de FTB Quests y los archivos de idioma de los mods principales:</p>
 <pre class="mermaid"><code>graph TD
-    A[Escanear snbt de FTB Quests y Lang json] --&gt; B[Extraer entradas sin traducir]
-    B --&gt; C[Leer caché local .translation_cache.json]
+    A[Escanea SNBT de FTB Quests y JSON de Lang] --&gt; B[Extrae entradas sin traducir]
+    B --&gt; C[Lee caché local .translation_cache.json]
     C --&gt; D{¿Hay entradas nuevas o modificadas?}
-    D -- No --&gt; E[Sincronizar y escribir directamente en los archivos de idioma de destino]
-    D -- Sí --&gt; F[Ensamblar Prompt con restricciones de terminología industrial de GregTech]
-    F --&gt; G[Llamar a la API del proveedor de LLM: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
-    G --&gt; H[Validar y actualizar caché local]
-    H --&gt; I[Escribir de vuelta en zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
+    D -- No --&gt; E[Sincroniza y escribe directamente en los archivos de idioma de destino]
+    D -- Sí --&gt; F[Compila un Prompt con restricciones de terminología industrial de GregTech]
+    F --&gt; G[Llama a la API del proveedor de LLM: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
+    G --&gt; H[Valida y actualiza la caché local]
+    H --&gt; I[Escribe de vuelta en zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
 <h2 id="proveedores-de-llm-compatibles-y-variables-de-entorno">🔑 Proveedores de LLM compatibles y variables de entorno<a class="headerlink" href="#proveedores-de-llm-compatibles-y-variables-de-entorno" title="Permanent link">&para;</a></h2>
-<p>El script admite cambiar sin problemas entre diferentes proveedores de modelos de IA mediante variables de entorno:</p>
+<p>El script permite cambiar sin problemas entre diferentes proveedores de modelos de IA mediante variables de entorno:</p>
 <table>
 <thead>
 <tr>
@@ -1638,19 +1638,19 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Qwen (DashScope)</strong></td>
+<td style="text-align: left;"><strong>通义千问 (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Moonshot</strong></td>
+<td style="text-align: left;"><strong>月之暗面 (Moonshot)</strong></td>
 <td style="text-align: left;"><code>MOONSHOT_API_KEY</code></td>
 <td style="text-align: left;"><code>MOONSHOT_BASE_URL</code></td>
 <td style="text-align: left;"><code>moonshot-v1-8k</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Zhipu GLM</strong></td>
+<td style="text-align: left;"><strong>智谱清言 (Zhipu GLM)</strong></td>
 <td style="text-align: left;"><code>ZHIPU_API_KEY</code></td>
 <td style="text-align: left;"><code>ZHIPU_BASE_URL</code></td>
 <td style="text-align: left;"><code>glm-4-flash</code></td>
@@ -1662,7 +1662,7 @@
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Proxy agregado universal</strong></td>
+<td style="text-align: left;"><strong>Proxy agregador genérico</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
 <td style="text-align: left;"><code>LLM_MODEL</code> (personalizado)</td>
@@ -1672,13 +1672,13 @@
 <hr />
 <h2 id="principios-de-restriccion-de-prompt-a-nivel-industrial">🎯 Principios de restricción de Prompt a nivel industrial<a class="headerlink" href="#principios-de-restriccion-de-prompt-a-nivel-industrial" title="Permanent link">&para;</a></h2>
 <p>Al llamar a la API para traducir, el sistema incorpora reglas estrictas de terminología de Minecraft y GregTech:
-1. <strong>Preservación absoluta de códigos de formato</strong>: Se conservan íntegramente los códigos de formato de color nativos de Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) y los marcadores de posición (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Terminología técnica unificada</strong>: Se fijan estrictamente las traducciones de términos técnicos propietarios (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
-3. <strong>Caché incremental por hash</strong>: Todas las entradas traducidas se registran automáticamente de forma persistente en <code>.translation_cache.json</code>. Solo los textos nuevos o modificados generan solicitudes de red, lo que ahorra enormemente en costos de tokens y tiempo de CI.</p>
+1. <strong>Conservación absoluta de los códigos de formato</strong>: Se conservan por completo los códigos de formato de color nativos de Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) y los marcadores de posición (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
+2. <strong>Terminología técnica unificada</strong>: Se fijan estrictamente las traducciones de términos técnicos especializados (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+3. <strong>Caché incremental por hash</strong>: Todas las entradas ya traducidas se registran de forma persistente en <code>.translation_cache.json</code>; solo se realizan solicitudes de red para textos nuevos o modificados, lo que ahorra enormemente el consumo de tokens y el tiempo de CI.</p>
 <hr />
 <h2 id="instrucciones-de-ejecucion-local">💻 Instrucciones de ejecución local<a class="headerlink" href="#instrucciones-de-ejecucion-local" title="Permanent link">&para;</a></h2>
-<p>En un entorno de desarrollo local, se puede activar la traducción completa con un solo comando:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Configurar una API Key válida y luego ejecutar</span>
+<p>Para ejecutar una traducción completa con un solo comando en el entorno de desarrollo local:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Configura una API Key válida y luego ejecuta</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

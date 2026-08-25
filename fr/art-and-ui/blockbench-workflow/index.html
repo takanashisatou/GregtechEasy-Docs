@@ -1603,10 +1603,10 @@
 
 
 <h1 id="interface-textures-et-workflow-artistique-blockbench">Interface, textures et workflow artistique Blockbench<a class="headerlink" href="#interface-textures-et-workflow-artistique-blockbench" title="Permanent link">&para;</a></h1>
-<p>Le projet GTE a mis en place un pipeline automatisé de traitement des assets artistiques, sans perte de données. Les concepteurs de modèles n'ont qu'à utiliser <strong>Blockbench</strong> pour créer les modèles et les enregistrer dans le répertoire source ; les tâches Gradle effectuent automatiquement la classification des assets, la validation des formats et la synchronisation incrémentale.</p>
+<p>Le projet GTE a mis en place un pipeline de traitement des assets artistiques automatisé et sans perte. Les concepteurs de modèles n'ont qu'à utiliser <strong>Blockbench</strong> pour créer les modèles et les enregistrer dans le répertoire source ; la tâche Gradle effectue automatiquement la classification des assets, la validation des formats et la synchronisation incrémentale.</p>
 <hr />
 <h2 id="repertoire-des-fichiers-sources-artistiques-art_assets">🎨 Répertoire des fichiers sources artistiques (<code>art_assets/</code>)<a class="headerlink" href="#repertoire-des-fichiers-sources-artistiques-art_assets" title="Permanent link">&para;</a></h2>
-<p>Le répertoire <code>art_assets/</code> à la racine du projet est le <strong>répertoire de travail unique</strong> pour les artistes, strictement suivi par Git :</p>
+<p>Le dossier <code>art_assets/</code> à la racine du projet est le <strong>répertoire de travail unique</strong> pour les artistes, strictement versionné par Git :</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Fichiers sources du projet Blockbench (calques et os conservés)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Modèles géométriques Minecraft exportés depuis Blockbench
@@ -1656,9 +1656,9 @@
 </span></code></pre></div>
 <h3 id="caracteristiques-dautomatisation">Caractéristiques d'automatisation<a class="headerlink" href="#caracteristiques-dautomatisation" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Déclenchement automatique</strong> : Cette tâche est montée en nœud préalable aux tâches <code>buildAll</code>, <code>copyOutputJars</code> ainsi qu'au pipeline CI. Elle s'exécute automatiquement lors de la compilation locale ou du lancement du jeu, sans avoir à copier manuellement à plusieurs reprises.</li>
-<li><strong>Sécurité incrémentale</strong> : Utilise une écriture binaire en flux continu et crée automatiquement les répertoires parents manquants dans le répertoire de ressources cible.</li>
-<li><strong>Maintien de la propreté Git</strong> : Les fichiers <code>.bbmodel</code> sont conservés uniquement dans <code>art_assets/</code> comme projets sources ; le jar compilé ne contient pas de métadonnées de projet Blockbench redondantes.</li>
+<li><strong>Déclenchement automatique</strong> : Cette tâche est montée en nœud préalable à <code>buildAll</code>, <code>copyOutputJars</code> et au pipeline de construction CI. Elle s'exécute automatiquement lors de la compilation locale ou du lancement du jeu, sans avoir à la copier manuellement à plusieurs reprises.</li>
+<li><strong>Sécurité incrémentale</strong> : Utilise une écriture binaire en flux continu et complète automatiquement les répertoires parents manquants dans le répertoire de ressources cible.</li>
+<li><strong>Maintien de la propreté de Git</strong> : Les fichiers <code>.bbmodel</code> restent uniquement dans <code>art_assets/</code> en tant que projet source ; le jar compilé ne contient pas de métadonnées de projet Blockbench redondantes.</li>
 </ol>
 
 

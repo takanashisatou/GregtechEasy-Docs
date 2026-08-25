@@ -1042,7 +1042,7 @@
   <a href="#5-cctweaked-computercraft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. CC:Tweaked (ComputerCraft) 現代ペリフェラル統合
+        5. CC:Tweaked (ComputerCraft) 現代周辺機器統合
       
     </span>
   </a>
@@ -1640,7 +1640,7 @@
   <a href="#5-cctweaked-computercraft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. CC:Tweaked (ComputerCraft) 現代ペリフェラル統合
+        5. CC:Tweaked (ComputerCraft) 現代周辺機器統合
       
     </span>
   </a>
@@ -1737,7 +1737,7 @@
     A --&gt; F[流体とパイプネットワーク: 範囲流体出力 &amp; ワイヤレスカバープレート]</code></pre>
 <h3 id="1-64-batch-mode">1. 64ビット長整数並列処理とバッチモード (Batch Mode)<a class="headerlink" href="#1-64-batch-mode" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>32ビット整数の上限を突破</strong>：並列計算は全面的に <code>long</code> データ型を採用し、超大型工業群が極めて高い並列度で数値オーバーフローや計算切り捨てが発生する問題を完全に解決します。</li>
+<li><strong>32ビット整数上限の突破</strong>：並列計算は全面的に <code>long</code> データ型を採用し、超大型工業群が極めて高い並列度で数値オーバーフローや計算切り捨てが発生する問題を完全に解決します。</li>
 <li><strong>スマートバッチモード</strong>：原料が非常に豊富な場合、機械は数百から数千回の微小レシピを単一サイクルにパッケージ化でき、サーバーの Tick 負荷を大幅に低減します。</li>
 </ul>
 <h3 id="2-1t-subtick-oc_perfect_subtick">2. 1T Subtick 瞬時オーバークロック (OC_PERFECT_SUBTICK)<a class="headerlink" href="#2-1t-subtick-oc_perfect_subtick" title="Permanent link">&para;</a></h3>
@@ -1746,16 +1746,16 @@
 </ul>
 <h3 id="3-multi-amp">3. マルチアンペア入力とレシピサポート (Multi-Amp)<a class="headerlink" href="#3-multi-amp" title="Permanent link">&para;</a></h3>
 <ul>
-<li>機械レシピは、単一レシピで複数アンペア（Amperes）の電流を消費/出力することをサポートし、EMI/JEI インターフェースでマルチアンペア値とワイヤー仕様のヒントを直感的にレンダリングします。</li>
+<li>機械レシピは、単一レシピで複数アンペア（Amperes）の電流を消費/出力することをサポートし、EMI/JEI インターフェースでマルチアンペア値と導線仕様のヒントを直感的にレンダリングします。</li>
 </ul>
 <h3 id="4-ranged-fluid-outputs">4. 範囲流体出力 (Ranged Fluid Outputs)<a class="headerlink" href="#4-ranged-fluid-outputs" title="Permanent link">&para;</a></h3>
 <ul>
-<li>高次蒸留塔と化学反応器が、異なる温度と圧力条件に応じて範囲変動のある流体生成物を出力できるようにします。</li>
+<li>高級蒸留塔と化学反応器が、異なる温度と圧力条件に応じて範囲変動のある流体生成物を出力できるようにします。</li>
 </ul>
-<h3 id="5-cctweaked-computercraft">5. CC:Tweaked (ComputerCraft) 現代ペリフェラル統合<a class="headerlink" href="#5-cctweaked-computercraft" title="Permanent link">&para;</a></h3>
+<h3 id="5-cctweaked-computercraft">5. CC:Tweaked (ComputerCraft) 現代周辺機器統合<a class="headerlink" href="#5-cctweaked-computercraft" title="Permanent link">&para;</a></h3>
 <ul>
-<li>すべての標準機械は ComputerCraft にペリフェラルインターフェースを開放します：</li>
-<li>レシピ進行状況、残り時間、現在の EU/t 消費をリアルタイムで照会。</li>
+<li>すべての標準機械は ComputerCraft に周辺機器インターフェースを開放します：</li>
+<li>レシピ進行状況、残り時間、現在の EU/t 消費をリアルタイムに照会。</li>
 <li>Lua スクリプトによる動的な機械の起動、一時停止、または動作モードの切り替え。</li>
 </ul>
 <hr />
@@ -1767,9 +1767,9 @@
 </span></code></pre></div>
 <h3 id="_1">テストカバレッジ範囲<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Cover システム</strong>：流体ポンププレート、アイテム搬送プレート、エネルギー導流プレートのスループットと漏れ防止ロジックをテスト。</li>
+<li><strong>Cover システム</strong>：流体ポンププレート、アイテム輸送プレート、エネルギー導流プレートのスループットと漏れ防止ロジックをテスト。</li>
 <li><strong>機械 Recipe Logic</strong>：マルチアンペア、バッチ処理、クロスレシピ並列処理、オーバークロック計算をテスト。</li>
-<li><strong>マルチブロック成型と回転</strong>：各種ケーシング、バス、異なる向きでの構造検証をテスト。</li>
+<li><strong>マルチブロック成形と回転</strong>：各種ケーシング、バス、異なる方向での構造検証をテスト。</li>
 </ul>
 <hr />
 <h2 id="git">🌿 サブモジュール Git ワークフロー規約<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
@@ -1781,7 +1781,7 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat: optimize multiblock recipe logic"</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>satou
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># メインプロジェクトに戻り、サブモジュールポインタを更新</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># メインプロジェクトに戻り、サブモジュールのポインタを更新</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">cd</span><span class="w"> </span>../..
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>git<span class="w"> </span>add<span class="w"> </span>modules/gtm-reborn
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"chore: bump gtm-reborn submodule pointer"</span>

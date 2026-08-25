@@ -1595,8 +1595,8 @@
 <p>A GTE projetou e implementou um sistema de tradução internacional totalmente automático entre mods, baseado em modelos de linguagem modernos (LLM), localizado em <code>scripts/opencode_translate.py</code>.</p>
 <hr />
 <h2 id="arquitetura-do-motor-de-traducao">🤖 Arquitetura do Motor de Tradução<a class="headerlink" href="#arquitetura-do-motor-de-traducao" title="Permanent link">&para;</a></h2>
-<p>A tradução comunitária tradicional depende de manutenção manual de arquivos JSON e SNBT complexos, com atualizações atrasadas e alta propensão a erros.</p>
-<p>O motor de tradução com IA da GTE utiliza uma API padronizada compatível com OpenAI, permitindo <strong>extração incremental automatizada, alinhamento de termos e tradução concorrente</strong> dos livros de missões do FTB Quests e dos arquivos de idioma dos mods principais:</p>
+<p>A tradução comunitária tradicional depende de manutenção manual de arquivos JSON e SNBT complexos, com atualizações atrasadas e alta propensão a erros e omissões.</p>
+<p>O motor de tradução com IA da GTE, por meio de uma API padronizada compatível com OpenAI, realiza a <strong>extração incremental automatizada, alinhamento de termos e tradução concorrente</strong> dos livros de missões do FTB Quests e dos arquivos de idioma dos mods principais:</p>
 <pre class="mermaid"><code>graph TD
     A[Escanear FTB Quests snbt e Lang json] --&gt; B[Extrair entradas não traduzidas]
     B --&gt; C[Ler cache local .translation_cache.json]
@@ -1672,9 +1672,9 @@
 <hr />
 <h2 id="principios-de-restricao-de-prompt-de-nivel-industrial">🎯 Princípios de restrição de Prompt de nível industrial<a class="headerlink" href="#principios-de-restricao-de-prompt-de-nivel-industrial" title="Permanent link">&para;</a></h2>
 <p>Ao chamar a API para tradução, o sistema incorpora regras estritas de terminologia do Minecraft e GregTech:
-1. <strong>Preservação absoluta de formatadores</strong>: Preserva integralmente os códigos de formatação de cor nativos do Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) e placeholders (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Padronização de termos técnicos</strong>: Restringe rigorosamente a tradução de termos técnicos específicos (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
-3. <strong>Cache incremental por hash</strong>: Todas as entradas já traduzidas são persistidas automaticamente em <code>.translation_cache.json</code>; apenas textos novos ou alterados geram solicitações de rede, economizando significativamente custos de Token e tempo de CI.</p>
+1. <strong>Preservação absoluta de formatadores</strong>: Mantém integralmente os códigos de formatação de cor nativos do Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) e placeholders (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
+2. <strong>Padronização de termos técnicos</strong>: Traduções de termos técnicos proprietários são estritamente fixadas (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+3. <strong>Cache incremental por hash</strong>: Todas as entradas já traduzidas são persistidas automaticamente em <code>.translation_cache.json</code>; apenas textos novos ou alterados geram solicitações de rede, economizando significativamente custos de tokens e tempo de CI.</p>
 <hr />
 <h2 id="comando-de-execucao-local">💻 Comando de execução local<a class="headerlink" href="#comando-de-execucao-local" title="Permanent link">&para;</a></h2>
 <p>Dispare a tradução completa com um único comando no ambiente de desenvolvimento local:</p>

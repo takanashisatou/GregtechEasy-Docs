@@ -1145,10 +1145,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-receitas-de-maquinas-personalizadas-do-gtecore" class="md-nav__link">
+  <a href="#2-receitas-de-maquinas-personalizadas-gtecore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Receitas de Máquinas Personalizadas do GTECore
+        2. Receitas de Máquinas Personalizadas GTECore
       
     </span>
   </a>
@@ -1590,10 +1590,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-receitas-de-maquinas-personalizadas-do-gtecore" class="md-nav__link">
+  <a href="#2-receitas-de-maquinas-personalizadas-gtecore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Receitas de Máquinas Personalizadas do GTECore
+        2. Receitas de Máquinas Personalizadas GTECore
       
     </span>
   </a>
@@ -1650,7 +1650,7 @@
 
 
 <h1 id="guia-de-modificacao-e-desenvolvimento-de-scripts-kubejs">Guia de Modificação e Desenvolvimento de Scripts KubeJS<a class="headerlink" href="#guia-de-modificacao-e-desenvolvimento-de-scripts-kubejs" title="Permanent link">&para;</a></h1>
-<p>O GTE delega a maior parte do registro de materiais, ajustes de receitas e lógica de integração entre múltiplos mods para o <strong>KubeJS</strong> (diretório localizado em <code>gte/overrides/kubejs/</code>).</p>
+<p>A GTE delega a maior parte do registro de materiais, ajustes de receitas e lógica de integração entre múltiplos mods para o <strong>KubeJS</strong> (diretório localizado em <code>gte/overrides/kubejs/</code>).</p>
 <hr />
 <h2 id="estrutura-do-diretorio-de-scripts-e-ciclo-de-vida">📁 Estrutura do Diretório de Scripts e Ciclo de Vida<a class="headerlink" href="#estrutura-do-diretorio-de-scripts-e-ciclo-de-vida" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gte/overrides/kubejs/
@@ -1673,7 +1673,7 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">AXE</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">PICKAXE</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">SWORD</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">MORTAR</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">]))</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 2. Registrar Metal Fluido Escuro (Dark Fluid)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 2. Registrar Metal de Fluido Escuro (Dark Fluid)</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'dark_fluid'</span><span class="p">)</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mh">0xb156d8</span><span class="p">)</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="p">.</span><span class="nx">fluid</span><span class="p">()</span>
@@ -1732,7 +1732,7 @@
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemOutputs</span><span class="p">(</span><span class="s1">'5x gtceu:steel_ingot'</span><span class="p">)</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// Prensagem de Processador Lógico com Prensa de Moldagem</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// Prensagem de Processador Lógico</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nx">gtr</span><span class="p">.</span><span class="nx">forming_press</span><span class="p">(</span><span class="s1">'gtecore:printed_logic_processor'</span><span class="p">)</span>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="p">.</span><span class="nx">EUt</span><span class="p">(</span><span class="mf">26</span><span class="p">)</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>
@@ -1741,11 +1741,11 @@
 </span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemOutputs</span><span class="p">(</span><span class="s1">'1x ae2:printed_logic_processor'</span><span class="p">)</span>
 </span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="p">})</span>
 </span></code></pre></div>
-<h3 id="2-receitas-de-maquinas-personalizadas-do-gtecore">2. Receitas de Máquinas Personalizadas do GTECore<a class="headerlink" href="#2-receitas-de-maquinas-personalizadas-do-gtecore" title="Permanent link">&para;</a></h3>
+<h3 id="2-receitas-de-maquinas-personalizadas-gtecore">2. Receitas de Máquinas Personalizadas GTECore<a class="headerlink" href="#2-receitas-de-maquinas-personalizadas-gtecore" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtecore</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// Receita de Produção em Massa de Minerais da Caixa Fácil (Easy Box)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// Receita de Produção em Massa de Minérios da Caixa Fácil (Easy Box)</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">gte</span><span class="p">.</span><span class="nx">easy_box</span><span class="p">(</span><span class="s1">'easy_test'</span><span class="p">)</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p">.</span><span class="nx">circuit</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>

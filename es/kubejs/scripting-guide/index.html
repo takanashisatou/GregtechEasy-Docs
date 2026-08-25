@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guia-de-modificacion-y-desarrollo-de-scripts-para-kubejs" class="md-skip">
+        <a href="#guia-de-modificacion-y-desarrollo-de-scripts-de-kubejs" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1100,10 +1100,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estructura-del-directorio-de-scripts-y-ciclo-de-vida" class="md-nav__link">
+  <a href="#arquitectura-del-directorio-de-scripts-y-ciclo-de-vida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Estructura del directorio de scripts y ciclo de vida
+        📁 Arquitectura del directorio de scripts y ciclo de vida
       
     </span>
   </a>
@@ -1114,7 +1114,7 @@
   <a href="#fase-de-inicio-registro-de-materiales-personalizados-startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 Fase de inicio: Registro de materiales personalizados (startup_scripts/)
+        🧪 Fase de inicio: registro de materiales personalizados (startup_scripts/)
       
     </span>
   </a>
@@ -1122,15 +1122,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#servidor-recetas-personalizadas-y-escritura-de-recetas-de-maquinas-server_scripts" class="md-nav__link">
+  <a href="#servidor-escritura-de-recetas-personalizadas-y-recetas-de-maquinas-server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Servidor: Recetas personalizadas y escritura de recetas de máquinas (server_scripts/)
+        ⚙️ Servidor: escritura de recetas personalizadas y recetas de máquinas (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Servidor: Recetas personalizadas y escritura de recetas de máquinas (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ Servidor: escritura de recetas personalizadas y recetas de máquinas (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1161,10 +1161,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comandos-de-recarga-en-caliente-dentro-del-juego" class="md-nav__link">
+  <a href="#comandos-de-recarga-en-caliente-en-el-juego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ Comandos de recarga en caliente dentro del juego
+        ⚡ Comandos de recarga en caliente en el juego
       
     </span>
   </a>
@@ -1545,10 +1545,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estructura-del-directorio-de-scripts-y-ciclo-de-vida" class="md-nav__link">
+  <a href="#arquitectura-del-directorio-de-scripts-y-ciclo-de-vida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Estructura del directorio de scripts y ciclo de vida
+        📁 Arquitectura del directorio de scripts y ciclo de vida
       
     </span>
   </a>
@@ -1559,7 +1559,7 @@
   <a href="#fase-de-inicio-registro-de-materiales-personalizados-startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 Fase de inicio: Registro de materiales personalizados (startup_scripts/)
+        🧪 Fase de inicio: registro de materiales personalizados (startup_scripts/)
       
     </span>
   </a>
@@ -1567,15 +1567,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#servidor-recetas-personalizadas-y-escritura-de-recetas-de-maquinas-server_scripts" class="md-nav__link">
+  <a href="#servidor-escritura-de-recetas-personalizadas-y-recetas-de-maquinas-server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Servidor: Recetas personalizadas y escritura de recetas de máquinas (server_scripts/)
+        ⚙️ Servidor: escritura de recetas personalizadas y recetas de máquinas (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Servidor: Recetas personalizadas y escritura de recetas de máquinas (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ Servidor: escritura de recetas personalizadas y recetas de máquinas (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1606,10 +1606,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comandos-de-recarga-en-caliente-dentro-del-juego" class="md-nav__link">
+  <a href="#comandos-de-recarga-en-caliente-en-el-juego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ Comandos de recarga en caliente dentro del juego
+        ⚡ Comandos de recarga en caliente en el juego
       
     </span>
   </a>
@@ -1649,18 +1649,18 @@
   
 
 
-<h1 id="guia-de-modificacion-y-desarrollo-de-scripts-para-kubejs">Guía de Modificación y Desarrollo de Scripts para KubeJS<a class="headerlink" href="#guia-de-modificacion-y-desarrollo-de-scripts-para-kubejs" title="Permanent link">&para;</a></h1>
+<h1 id="guia-de-modificacion-y-desarrollo-de-scripts-de-kubejs">Guía de modificación y desarrollo de scripts de KubeJS<a class="headerlink" href="#guia-de-modificacion-y-desarrollo-de-scripts-de-kubejs" title="Permanent link">&para;</a></h1>
 <p>GTE delega la mayor parte del registro de materiales, ajuste de recetas y lógica de integración entre múltiples mods a <strong>KubeJS</strong> (directorio en <code>gte/overrides/kubejs/</code>).</p>
 <hr />
-<h2 id="estructura-del-directorio-de-scripts-y-ciclo-de-vida">📁 Estructura del directorio de scripts y ciclo de vida<a class="headerlink" href="#estructura-del-directorio-de-scripts-y-ciclo-de-vida" title="Permanent link">&para;</a></h2>
+<h2 id="arquitectura-del-directorio-de-scripts-y-ciclo-de-vida">📁 Arquitectura del directorio de scripts y ciclo de vida<a class="headerlink" href="#arquitectura-del-directorio-de-scripts-y-ciclo-de-vida" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gte/overrides/kubejs/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【Scripts de inicio】Se ejecutan en la fase más temprana del juego, para registrar materiales, fluidos, bloques e ítems
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【Scripts de servidor】Se ejecutan al entrar en un mundo o conectarse al servidor, para registrar/modificar recetas y etiquetas
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── client_scripts/      # 【Scripts de cliente】Se ejecutan en el cliente, para modificar tooltips, visualización de JEI/EMI
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【Scripts de inicio】Se ejecutan en la fase más temprana del juego, para registrar materiales, fluidos, bloques, ítems
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【Scripts de servidor】Se ejecutan al entrar en una partida o conectar a un servidor, para registrar/modificar recetas y etiquetas
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── client_scripts/      # 【Scripts de cliente】Se ejecutan en el cliente, para modificar Tooltips, visualización de JEI/EMI
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── assets/ &amp; data/      # Archivos estáticos de localización, texturas y paquetes de datos
 </span></code></pre></div>
 <hr />
-<h2 id="fase-de-inicio-registro-de-materiales-personalizados-startup_scripts">🧪 Fase de inicio: Registro de materiales personalizados (<code>startup_scripts/</code>)<a class="headerlink" href="#fase-de-inicio-registro-de-materiales-personalizados-startup_scripts" title="Permanent link">&para;</a></h2>
+<h2 id="fase-de-inicio-registro-de-materiales-personalizados-startup_scripts">🧪 Fase de inicio: registro de materiales personalizados (<code>startup_scripts/</code>)<a class="headerlink" href="#fase-de-inicio-registro-de-materiales-personalizados-startup_scripts" title="Permanent link">&para;</a></h2>
 <p>Usa <code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> para registrar elementos y materiales personalizados:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">GTCEuStartupEvents</span><span class="p">.</span><span class="nx">registry</span><span class="p">(</span><span class="s1">'gtceu:material'</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 1. Registrar metal infinito (Infinite)</span>
@@ -1686,7 +1686,7 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nx">GTMaterialFlags</span><span class="p">.</span><span class="nx">GENERATE_LONG_ROD</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="c1">// 3. Registrar materia miau miau (Meow Meow Matter) y antimateria (Antimatter)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="c1">// 3. Registrar materia Meow Meow (Meow Meow Matter) y antimateria (Antimatter)</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'meow_meow_matter'</span><span class="p">)</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mh">0x483D8B</span><span class="p">)</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="p">.</span><span class="nx">dust</span><span class="p">()</span>
@@ -1708,7 +1708,7 @@
 </span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="servidor-recetas-personalizadas-y-escritura-de-recetas-de-maquinas-server_scripts">⚙️ Servidor: Recetas personalizadas y escritura de recetas de máquinas (<code>server_scripts/</code>)<a class="headerlink" href="#servidor-recetas-personalizadas-y-escritura-de-recetas-de-maquinas-server_scripts" title="Permanent link">&para;</a></h2>
+<h2 id="servidor-escritura-de-recetas-personalizadas-y-recetas-de-maquinas-server_scripts">⚙️ Servidor: escritura de recetas personalizadas y recetas de máquinas (<code>server_scripts/</code>)<a class="headerlink" href="#servidor-escritura-de-recetas-personalizadas-y-recetas-de-maquinas-server_scripts" title="Permanent link">&para;</a></h2>
 <p>En el evento <code>ServerEvents.recipes</code>, puedes llamar directamente a <code>event.recipes.gtceu</code> y <code>event.recipes.gtecore</code>:</p>
 <h3 id="1-recetas-basicas-de-maquinas-y-alto-horno">1. Recetas básicas de máquinas y alto horno<a class="headerlink" href="#1-recetas-basicas-de-maquinas-y-alto-horno" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1732,7 +1732,7 @@
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemOutputs</span><span class="p">(</span><span class="s1">'5x gtceu:steel_ingot'</span><span class="p">)</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// Prensado de procesador lógico con prensa de moldes</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// Prensado de procesador lógico</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nx">gtr</span><span class="p">.</span><span class="nx">forming_press</span><span class="p">(</span><span class="s1">'gtecore:printed_logic_processor'</span><span class="p">)</span>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="p">.</span><span class="nx">EUt</span><span class="p">(</span><span class="mf">26</span><span class="p">)</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>
@@ -1762,8 +1762,8 @@
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="comandos-de-recarga-en-caliente-dentro-del-juego">⚡ Comandos de recarga en caliente dentro del juego<a class="headerlink" href="#comandos-de-recarga-en-caliente-dentro-del-juego" title="Permanent link">&para;</a></h2>
-<p>Puedes probar los cambios de scripts en tiempo real sin reiniciar el cliente:</p>
+<h2 id="comandos-de-recarga-en-caliente-en-el-juego">⚡ Comandos de recarga en caliente en el juego<a class="headerlink" href="#comandos-de-recarga-en-caliente-en-el-juego" title="Permanent link">&para;</a></h2>
+<p>No es necesario reiniciar el cliente para probar los cambios de scripts en tiempo real:</p>
 <ul>
 <li><strong>Recargar recetas y scripts de servidor</strong>:
   <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">/</span><span class="kc">kubejs</span><span class="w"> </span><span class="kc">reload</span><span class="w"> </span><span class="kc">server_scripts</span>

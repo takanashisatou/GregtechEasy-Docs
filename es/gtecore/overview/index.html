@@ -1621,25 +1621,25 @@
 <h2 id="arquitectura-del-modulo-y-posicionamiento-de-diseno">🏛️ Arquitectura del módulo y posicionamiento de diseño<a class="headerlink" href="#arquitectura-del-modulo-y-posicionamiento-de-diseno" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
     A[Marco base de GTM-Reborn] --&gt; B[Módulo central GTECore]
-    B --&gt; C[Industria mística oriental: Horno de refinación de alquimia Yin-Yang y Bagua / Formaciones de los Cuatro Símbolos / Tai Chi y Cinco Elementos]
+    B --&gt; C[Tecnología industrial oriental mística: Horno de refinación alquímica Yin-Yang Bagua / Formaciones de los Cuatro Símbolos / Tai Chi y Cinco Elementos]
     B --&gt; D[Optimización industrial extrema: Anillo de los Milagros / Procesamiento integral de minerales / Motor de combustible universal]
-    B --&gt; E[Expansión profunda de AE2: Ensamblador de patrones ME Plus y Espejo / Cámara de vapor ME]
-    B --&gt; F[Sistema de circuitos de hiperdimensiones: Sistema de circuitos de supercuerdas / Sistema de circuitos Yin-Yang]
-    B --&gt; G[Automatización y desarrollo: Integración en tiempo real de Jade / Terminal de prueba de estructuras / Internacionalización de Datagen]</code></pre>
+    B --&gt; E[Expansión profunda de AE2: Ensamblador de plantillas ME Plus y Espejo / Cámara de vapor ME]
+    B --&gt; F[Sistema de circuitos de hiperdimensión: Sistema de circuitos de supercuerdas / Sistema de circuitos Yin-Yang]
+    B --&gt; G[Automatización y desarrollo: Integración en tiempo real con Jade / Terminal de prueba de estructuras / Internacionalización con Datagen]</code></pre>
 <hr />
 <h2 id="pestanas-de-modo-creativo-y-clasificacion">📦 Pestañas de modo creativo y clasificación<a class="headerlink" href="#pestanas-de-modo-creativo-y-clasificacion" title="Permanent link">&para;</a></h2>
-<p>GTECore registra pestañas independientes de modo creativo en el juego:</p>
+<p>GTECore registra pestañas de modo creativo independientes en el juego:</p>
 <ol>
-<li><strong>Máquinas de GregTech Easy (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>:</li>
-<li>Incluye todos los bloques principales multibloque originales de GTE (Horno alto de Yin-Yang y Bagua, Anillo de los Milagros, Centro de procesamiento de minerales, Terminador químico, etc.).</li>
-<li>Incluye baterías superiores de varios niveles (Max Super Battery Buffer), Cámara de vapor ME, Ensamblador de patrones ME Plus y Espejo.</li>
-<li><strong>Objetos de GregTech Easy (<code>itemGroup.gtecore.gtecore_items</code>)</strong>:</li>
+<li><strong>Máquinas GregTech Easy (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>:</li>
+<li>Incluye todos los bloques principales multibloque originales de GTE (Horno alto Yin-Yang Bagua, Anillo de los Milagros, Centro de procesamiento de minerales, Terminador químico, etc.).</li>
+<li>Incluye baterías superiores de varios niveles (Max Super Battery Buffer), Cámara de vapor ME, Ensamblador de plantillas ME Plus y Espejo.</li>
+<li><strong>Objetos GregTech Easy (<code>itemGroup.gtecore.gtecore_items</code>)</strong>:</li>
 <li>Incluye la serie de circuitos de supercuerdas y Yin-Yang (procesadores, clústeres, supercomputadoras, hosts).</li>
-<li>Incluye talismanes de los Cinco Elementos, chips de Bagua, partículas de los Tres Puros, Terminal de prueba de estructuras y otros objetos especiales.</li>
+<li>Incluye talismanes de los Cinco Elementos, chips Bagua, partículas de los Tres Puros, terminal de prueba de estructuras y otros objetos especiales.</li>
 </ol>
 <hr />
 <h2 id="configuracion-global-del-modulo-gteconfig">⚙️ Configuración global del módulo (<code>GTEConfig</code>)<a class="headerlink" href="#configuracion-global-del-modulo-gteconfig" title="Permanent link">&para;</a></h2>
-<p>GTECore proporciona una amplia gama de opciones de configuración dentro del juego y en archivos (ubicadas en <code>config/gtecore-common.toml</code> o en el menú de configuración del juego):</p>
+<p>GTECore ofrece una amplia gama de opciones de configuración tanto en el juego como en archivos (ubicados en <code>config/gtecore-common.toml</code> o en el menú de configuración del juego):</p>
 <table>
 <thead>
 <tr>
@@ -1650,9 +1650,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>superPeace</code> (Modo super pacífico)</td>
+<td style="text-align: left;"><code>superPeace</code> (Modo súper pacífico)</td>
 <td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;">Al activarlo, se desactiva por completo la generación de criaturas hostiles dañinas, proporcionando un entorno absolutamente puro para la construcción tecnológica</td>
+<td style="text-align: left;">Al activarlo, desactiva por completo la generación de criaturas hostiles dañinas, proporcionando un entorno absolutamente puro para la construcción tecnológica</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>durationMultiplier</code> (Multiplicador de duración de recetas)</td>
@@ -1663,15 +1663,15 @@
 </table>
 <hr />
 <h2 id="integracion-nativa-con-jade-top">🔍 Integración nativa con Jade / TOP<a class="headerlink" href="#integracion-nativa-con-jade-top" title="Permanent link">&para;</a></h2>
-<p>GTECore incluye soporte integrado para el complemento <strong><code>GTEJadePlugin</code></strong>:
-- <strong>Estado del Ensamblador de patrones ME Plus</strong>: muestra en tiempo real el número de patrones vinculados al ensamblador actual, así como los modos de salida de fluidos y objetos.
-- <strong>Información de vinculación del Ensamblador de patrones ME Espejo Plus</strong>: al pasar el cursor, muestra directamente las coordenadas <code>(X, Y, Z)</code> del ensamblador principal vinculado y el estado de conectividad de la red.
-- <strong>Indicador de activación de formaciones</strong>: muestra en tiempo real el estado de preparación de las formaciones de los Cuatro Símbolos (Dragón Azul, Tigre Blanco, Pájaro Bermellón y Tortuga Negra) en el Horno de refinación de alquimia Yin-Yang y Bagua.</p>
+<p>GTECore incluye soporte integrado para el plugin <strong><code>GTEJadePlugin</code></strong>:
+- <strong>Estado del Ensamblador de plantillas ME Plus</strong>: muestra en tiempo real el número de plantillas vinculadas al ensamblador actual, así como los modos de salida de fluidos y objetos.
+- <strong>Información de vinculación del Ensamblador de plantillas ME Espejo Plus</strong>: al pasar el cursor, muestra directamente las coordenadas <code>(X, Y, Z)</code> del ensamblador principal vinculado y el estado de conectividad de la red.
+- <strong>Indicador de activación de formaciones</strong>: muestra en tiempo real el estado de preparación de las formaciones de los Cuatro Símbolos (Dragón Azul, Tigre Blanco, Pájaro Bermellón, Tortuga Negra) en el Horno de refinación alquímica Yin-Yang Bagua.</p>
 <hr />
 <h2 id="terminal-de-prueba-de-estructuras-structure-testing-terminal">🛠️ Terminal de prueba de estructuras (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#terminal-de-prueba-de-estructuras-structure-testing-terminal" title="Permanent link">&para;</a></h2>
-<p>GTECore proporciona una herramienta manual exclusiva: la <strong>Terminal de prueba de estructuras</strong> (<code>item.gtecore.check_structure_terminal</code>):
+<p>GTECore proporciona una herramienta de mano exclusiva: la <strong>Terminal de prueba de estructuras</strong> (<code>item.gtecore.check_structure_terminal</code>):
 - <strong>Clic derecho en el controlador multibloque</strong>: escanea la integridad de la estructura en tiempo real.
-- <strong>Mensajes de diagnóstico de errores</strong>: si la estructura no está formada, la terminal indicará con precisión en el chat y en la información emergente las <strong>coordenadas de los bloques incorrectos y las posiciones que no deberían estar</strong>, acelerando enormemente la construcción y depuración de multibloques grandes.</p>
+- <strong>Diagnóstico de errores</strong>: si la estructura no está formada, la terminal indica con precisión en el chat y en la información emergente las <strong>coordenadas de los bloques incorrectos y las posiciones que no deberían estar ocupadas</strong>, acelerando enormemente la construcción y depuración de multibloques grandes.</p>
 
 
 
