@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-opencode_translatepy" class="md-skip">
+        <a href="#motor-de-traducao-internacional-com-ia-opencode_translatepy" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -1429,10 +1429,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#arquitetura-do-motor-de-traducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 Arquitetura do Motor de Tradução
       
     </span>
   </a>
@@ -1440,10 +1440,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm" class="md-nav__link">
+  <a href="#provedores-de-llm-suportados-e-variaveis-de-ambiente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 Provedores de LLM suportados e variáveis de ambiente
       
     </span>
   </a>
@@ -1451,10 +1451,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
+  <a href="#principios-de-restricao-de-prompt-de-nivel-industrial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 Princípios de restrição de Prompt de nível industrial
       
     </span>
   </a>
@@ -1462,10 +1462,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#comando-de-execucao-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 Comando de execução local
       
     </span>
   </a>
@@ -1515,10 +1515,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#arquitetura-do-motor-de-traducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 Arquitetura do Motor de Tradução
       
     </span>
   </a>
@@ -1526,10 +1526,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm" class="md-nav__link">
+  <a href="#provedores-de-llm-suportados-e-variaveis-de-ambiente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 Provedores de LLM suportados e variáveis de ambiente
       
     </span>
   </a>
@@ -1537,10 +1537,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
+  <a href="#principios-de-restricao-de-prompt-de-nivel-industrial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 Princípios de restrição de Prompt de nível industrial
       
     </span>
   </a>
@@ -1548,10 +1548,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#comando-de-execucao-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 Comando de execução local
       
     </span>
   </a>
@@ -1591,31 +1591,31 @@
   
 
 
-<h1 id="ai-opencode_translatepy">AI 国际化翻译引擎 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE 工程设计并实现了基于现代大语言模型（LLM）的跨模组全自动国际化翻译系统（位于 <code>scripts/opencode_translate.py</code>）。</p>
+<h1 id="motor-de-traducao-internacional-com-ia-opencode_translatepy">Motor de Tradução Internacional com IA (<code>opencode_translate.py</code>)<a class="headerlink" href="#motor-de-traducao-internacional-com-ia-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>A GTE projetou e implementou um sistema de tradução internacional totalmente automático entre mods, baseado em modelos de linguagem modernos (LLM), localizado em <code>scripts/opencode_translate.py</code>.</p>
 <hr />
-<h2 id="_1">🤖 翻译引擎架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>传统的社区汉化依赖人工手动维护繁杂的 JSON 与 SNBT 文本，更新滞后且极易产生错漏。</p>
-<p>GTE 的 AI 翻译引擎通过标准化 OpenAI 兼容 API，实现了 FTB Quests 任务书与核心 Mod 语言文件的<strong>自动化增量提取、术语对齐与并发翻译</strong>：</p>
+<h2 id="arquitetura-do-motor-de-traducao">🤖 Arquitetura do Motor de Tradução<a class="headerlink" href="#arquitetura-do-motor-de-traducao" title="Permanent link">&para;</a></h2>
+<p>A tradução comunitária tradicional depende de manutenção manual de arquivos JSON e SNBT complexos, com atualizações atrasadas e alta propensão a erros.</p>
+<p>O motor de tradução com IA da GTE utiliza uma API padronizada compatível com OpenAI, permitindo <strong>extração incremental automatizada, alinhamento de termos e tradução concorrente</strong> dos livros de missões do FTB Quests e dos arquivos de idioma dos mods principais:</p>
 <pre class="mermaid"><code>graph TD
-    A[扫描 FTB Quests snbt 与 Lang json] --&gt; B[提取未翻译词条]
-    B --&gt; C[读取 .translation_cache.json 本地缓存]
-    C --&gt; D{是否有新增或修改词条?}
-    D -- 无 --&gt; E[直接同步写入目标语言文件]
-    D -- 有 --&gt; F[组装包含格雷科技工业术语约束的 Prompt]
-    F --&gt; G[调用 LLM 供应商 API: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
-    G --&gt; H[校验与更新本地缓存]
-    H --&gt; I[回写至 zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
+    A[Escanear FTB Quests snbt e Lang json] --&gt; B[Extrair entradas não traduzidas]
+    B --&gt; C[Ler cache local .translation_cache.json]
+    C --&gt; D{Há entradas novas ou modificadas?}
+    D -- Não --&gt; E[Sincronizar e gravar diretamente nos arquivos de idioma de destino]
+    D -- Sim --&gt; F[Montar Prompt com restrições de termos industriais GregTech]
+    F --&gt; G[Chamar API do provedor LLM: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
+    G --&gt; H[Validar e atualizar cache local]
+    H --&gt; I[Gravar de volta em zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
-<h2 id="llm">🔑 支持的 LLM 供应商与环境变量<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
-<p>脚本支持通过环境变量无缝切换不同的 AI 模型提供商：</p>
+<h2 id="provedores-de-llm-suportados-e-variaveis-de-ambiente">🔑 Provedores de LLM suportados e variáveis de ambiente<a class="headerlink" href="#provedores-de-llm-suportados-e-variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<p>O script suporta alternância perfeita entre diferentes provedores de modelos de IA por meio de variáveis de ambiente:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">供应商名称</th>
-<th style="text-align: left;">API Key 环境变量</th>
-<th style="text-align: left;">Base URL 环境变量</th>
-<th style="text-align: left;">默认模型</th>
+<th style="text-align: left;">Nome do provedor</th>
+<th style="text-align: left;">Variável de ambiente da API Key</th>
+<th style="text-align: left;">Variável de ambiente da Base URL</th>
+<th style="text-align: left;">Modelo padrão</th>
 </tr>
 </thead>
 <tbody>
@@ -1656,29 +1656,29 @@
 <td style="text-align: left;"><code>glm-4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>OpenCode 平台</strong></td>
+<td style="text-align: left;"><strong>Plataforma OpenCode</strong></td>
 <td style="text-align: left;"><code>OPENCODE_API_KEY</code></td>
 <td style="text-align: left;"><code>OPENCODE_BASE_URL</code></td>
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>通用聚合代理</strong></td>
+<td style="text-align: left;"><strong>Proxy agregador genérico</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
-<td style="text-align: left;"><code>LLM_MODEL</code> (自定义)</td>
+<td style="text-align: left;"><code>LLM_MODEL</code> (personalizado)</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="prompt">🎯 工业级 Prompt 约束原则<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
-<p>在调用 API 进行翻译时，系统内置了严格的 Minecraft 与 GregTech 术语规则：
-1. <strong>格式符绝对保留</strong>：完整保留 Minecraft 原生颜色格式化代码（如 <code>§a</code>, <code>§c</code>, <code>§6</code>）与占位符（<code>%s</code>, <code>%d</code>, <code>{0}</code>）。
-2. <strong>科技术语规范统一</strong>：严格锁定科技专有名词翻译（如 <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 等）。
-3. <strong>哈希增量缓存</strong>：所有已翻译条目自动持久化记录在 <code>.translation_cache.json</code> 中，只有新增或变更文本会发起网络请求，极大节省 Token 开销与 CI 耗时。</p>
+<h2 id="principios-de-restricao-de-prompt-de-nivel-industrial">🎯 Princípios de restrição de Prompt de nível industrial<a class="headerlink" href="#principios-de-restricao-de-prompt-de-nivel-industrial" title="Permanent link">&para;</a></h2>
+<p>Ao chamar a API para tradução, o sistema incorpora regras estritas de terminologia do Minecraft e GregTech:
+1. <strong>Preservação absoluta de formatadores</strong>: Preserva integralmente os códigos de formatação de cor nativos do Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) e placeholders (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
+2. <strong>Padronização de termos técnicos</strong>: Restringe rigorosamente a tradução de termos técnicos específicos (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+3. <strong>Cache incremental por hash</strong>: Todas as entradas já traduzidas são persistidas automaticamente em <code>.translation_cache.json</code>; apenas textos novos ou alterados geram solicitações de rede, economizando significativamente custos de Token e tempo de CI.</p>
 <hr />
-<h2 id="_2">💻 本地运行指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在本地开发环境中一键触发全量翻译：</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 设置任意一个有效 API Key 后执行</span>
+<h2 id="comando-de-execucao-local">💻 Comando de execução local<a class="headerlink" href="#comando-de-execucao-local" title="Permanent link">&para;</a></h2>
+<p>Dispare a tradução completa com um único comando no ambiente de desenvolvimento local:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Defina qualquer API Key válida e execute</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

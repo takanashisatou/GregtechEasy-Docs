@@ -1406,7 +1406,7 @@
   <a href="#ci-sync-buildyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 全量 CI 流水线架构 (sync-build.yml)
+        🔄 Архитектура полного CI-конвейера (sync-build.yml)
       
     </span>
   </a>
@@ -1417,19 +1417,19 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 三大核心打包任务详解
+        📦 Подробное описание трех основных задач упаковки
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 三大核心打包任务详解">
+    <nav class="md-nav" aria-label="📦 Подробное описание трех основных задач упаковки">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-curseforge-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. CurseForge 规范包与 Java 21 补丁
+        1. Стандартный пакет CurseForge и патч для Java 21
       
     </span>
   </a>
@@ -1440,7 +1440,7 @@
   <a href="#2-build_lazy_packpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 玩家免编译完整懒人包 (build_lazy_pack.py)
+        2. Полный ленивый пакет игрока без компиляции (build_lazy_pack.py)
       
     </span>
   </a>
@@ -1451,7 +1451,7 @@
   <a href="#3-packwiz-server-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 服务端导出包 (packwiz server export)
+        3. Экспортный пакет для сервера (packwiz server export)
       
     </span>
   </a>
@@ -1464,10 +1464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-pages-maven" class="md-nav__link">
+  <a href="#maven-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 GitHub Pages 静态 Maven 仓库部署
+        🌐 Развертывание статического Maven-репозитория на GitHub Pages
       
     </span>
   </a>
@@ -1478,7 +1478,7 @@
   <a href="#release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 手动发布与版本打标工作流 (release-publish.yml)
+        🏷️ Ручная публикация и рабочий процесс версионирования (release-publish.yml)
       
     </span>
   </a>
@@ -1559,7 +1559,7 @@
   <a href="#ci-sync-buildyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 全量 CI 流水线架构 (sync-build.yml)
+        🔄 Архитектура полного CI-конвейера (sync-build.yml)
       
     </span>
   </a>
@@ -1570,19 +1570,19 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 三大核心打包任务详解
+        📦 Подробное описание трех основных задач упаковки
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 三大核心打包任务详解">
+    <nav class="md-nav" aria-label="📦 Подробное описание трех основных задач упаковки">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-curseforge-java-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. CurseForge 规范包与 Java 21 补丁
+        1. Стандартный пакет CurseForge и патч для Java 21
       
     </span>
   </a>
@@ -1593,7 +1593,7 @@
   <a href="#2-build_lazy_packpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 玩家免编译完整懒人包 (build_lazy_pack.py)
+        2. Полный ленивый пакет игрока без компиляции (build_lazy_pack.py)
       
     </span>
   </a>
@@ -1604,7 +1604,7 @@
   <a href="#3-packwiz-server-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 服务端导出包 (packwiz server export)
+        3. Экспортный пакет для сервера (packwiz server export)
       
     </span>
   </a>
@@ -1617,10 +1617,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-pages-maven" class="md-nav__link">
+  <a href="#maven-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 GitHub Pages 静态 Maven 仓库部署
+        🌐 Развертывание статического Maven-репозитория на GitHub Pages
       
     </span>
   </a>
@@ -1631,7 +1631,7 @@
   <a href="#release-publishyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 手动发布与版本打标工作流 (release-publish.yml)
+        🏷️ Ручная публикация и рабочий процесс версионирования (release-publish.yml)
       
     </span>
   </a>
@@ -1671,44 +1671,44 @@
   
 
 
-<h1 id="cicd-maven">CI/CD 自动化构建、打包与 Maven 发布流水线<a class="headerlink" href="#cicd-maven" title="Permanent link">&para;</a></h1>
-<p>GTE 建立了一套高自动化、多目标产物并行的 <strong>GitHub Actions CI/CD 流水线</strong>（配置文件位于 <code>.github/workflows/sync-build.yml</code> 与 <code>release-publish.yml</code>）。</p>
+<h1 id="cicd-maven">CI/CD автоматизированная сборка, упаковка и публикация в Maven<a class="headerlink" href="#cicd-maven" title="Permanent link">&para;</a></h1>
+<p>GTE создал высокоавтоматизированный <strong>конвейер CI/CD GitHub Actions</strong> с множеством параллельных целевых артефактов (файлы конфигурации находятся в <code>.github/workflows/sync-build.yml</code> и <code>release-publish.yml</code>).</p>
 <hr />
-<h2 id="ci-sync-buildyml">🔄 全量 CI 流水线架构 (<code>sync-build.yml</code>)<a class="headerlink" href="#ci-sync-buildyml" title="Permanent link">&para;</a></h2>
-<p>每当向 <code>master</code> / <code>main</code> / <code>satou</code> 分支推送代码、提交 PR 或触发 Release Tag 时，GitHub Actions 会自动执行以下标准流水线：</p>
+<h2 id="ci-sync-buildyml">🔄 Архитектура полного CI-конвейера (<code>sync-build.yml</code>)<a class="headerlink" href="#ci-sync-buildyml" title="Permanent link">&para;</a></h2>
+<p>При каждом push-коде в ветки <code>master</code> / <code>main</code> / <code>satou</code>, отправке PR или срабатывании Release Tag, GitHub Actions автоматически выполняет следующий стандартный конвейер:</p>
 <pre class="mermaid"><code>flowchart TD
-    A[代码推送 / Tag 触发] --&gt; B[Checkout 递归子模块 &amp; 配置 JDK 21 / Python 3.11 / Go]
-    B --&gt; C[Gradle 增量同步 Blockbench 美术资产 syncBlockbenchAssets]
-    C --&gt; D[多模块高并发编译 &amp; GameTest 自动化实机测试]
-    D --&gt; E[复制生成 Jar 至 overrides/mods &amp; 收集至 build/artifacts]
-    E --&gt; F[运行 opencode_translate.py 全量/增量 AI 国际化翻译]
-    F --&gt; G[Packwiz 规范打包: CurseForge 包 + 补丁 Java 21 manifest]
-    G --&gt; H[Python 构建 Zero-Compile 玩家完整懒人包 .minecraft]
-    H --&gt; I[Packwiz 导出纯净服务端 Server 包]
-    I --&gt; J[上传所有 Release 产物至 Actions Artifacts 存储]
-    J --&gt; K[构建静态 Maven 仓库并部署至 GitHub Pages (gh-pages)]
-    J --&gt; L[Tag 触发时: 自动发布至 CurseForge 平台]</code></pre>
+    A[Кодовый push / срабатывание Tag] --&gt; B[Checkout рекурсивных подмодулей и настройка JDK 21 / Python 3.11 / Go]
+    B --&gt; C[Gradle инкрементальная синхронизация художественных ассетов Blockbench syncBlockbenchAssets]
+    C --&gt; D[Многомодульная высокопараллельная компиляция и автоматическое тестирование GameTest]
+    D --&gt; E[Копирование сгенерированных Jar в overrides/mods и сбор в build/artifacts]
+    E --&gt; F[Запуск opencode_translate.py для полного/инкрементального AI-перевода интернационализации]
+    F --&gt; G[Стандартная упаковка Packwiz: пакет CurseForge + патч manifest для Java 21]
+    G --&gt; H[Python сборка Zero-Compile полного ленивого пакета игрока .minecraft]
+    H --&gt; I[Packwiz экспорт чистого серверного пакета Server]
+    I --&gt; J[Загрузка всех Release-артефактов в хранилище Actions Artifacts]
+    J --&gt; K[Сборка статического Maven-репозитория и развертывание на GitHub Pages (gh-pages)]
+    J --&gt; L[При срабатывании Tag: автоматическая публикация на платформе CurseForge]</code></pre>
 <hr />
-<h2 id="_1">📦 三大核心打包任务详解<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="1-curseforge-java-21">1. CurseForge 规范包与 Java 21 补丁<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
+<h2 id="_1">📦 Подробное описание трех основных задач упаковки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-curseforge-java-21">1. Стандартный пакет CurseForge и патч для Java 21<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Packwiz 导出</strong>：运行 <code>packwiz curseforge export</code> 生成标准规范包。</li>
-<li><strong>自动补丁 manifest.json</strong>：针对部分第三方启动器在解析 CurseForge 包时默认指派 Java 17 的问题，CI 会自动解压 zip，通过 Python 脚本将 <code>manifest.json</code> 中的 <code>minecraft.javaVersion</code> 与顶层 <code>javaVersion</code> <strong>硬编码强制写入 21</strong>，然后重新封装。</li>
+<li><strong>Экспорт Packwiz</strong>: запуск <code>packwiz curseforge export</code> для генерации стандартного пакета.</li>
+<li><strong>Автоматический патч manifest.json</strong>: для решения проблемы, когда некоторые сторонние лаунчеры при разборе пакета CurseForge по умолчанию назначают Java 17, CI автоматически распаковывает zip, с помощью Python-скрипта <strong>принудительно записывает</strong> <code>minecraft.javaVersion</code> и верхнеуровневый <code>javaVersion</code> в <code>manifest.json</code> как <strong>21</strong>, а затем переупаковывает.</li>
 </ul>
-<h3 id="2-build_lazy_packpy">2. 玩家免编译完整懒人包 (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-build_lazy_packpy" title="Permanent link">&para;</a></h3>
+<h3 id="2-build_lazy_packpy">2. Полный ленивый пакет игрока без компиляции (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Python 脚本自动从各模块 <code>build/libs/</code> 抽取最新核心 Jar。</li>
-<li>自动合并 <code>modules/gtecore/gradle/libs/</code> 下的关键扩展 Mod。</li>
-<li>将全部配置、KubeJS 脚本、帕秋莉手册打包成一个开箱即用的 <code>.minecraft</code> 压缩包，内置中文启动指南。</li>
+<li>Python-скрипт автоматически извлекает последние основные Jar из <code>build/libs/</code> каждого модуля.</li>
+<li>Автоматически объединяет ключевые расширяющие моды из <code>modules/gtecore/gradle/libs/</code>.</li>
+<li>Упаковывает все конфигурации, скрипты KubeJS, книги Памалию в готовый к использованию архив <code>.minecraft</code> со встроенным руководством по запуску на китайском языке.</li>
 </ul>
-<h3 id="3-packwiz-server-export">3. 服务端导出包 (<code>packwiz server export</code>)<a class="headerlink" href="#3-packwiz-server-export" title="Permanent link">&para;</a></h3>
+<h3 id="3-packwiz-server-export">3. Экспортный пакет для сервера (<code>packwiz server export</code>)<a class="headerlink" href="#3-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
-<li>自动剔除客户端专有优化 Mod（如 3D 皮肤层、光影着色器、按键绑定等），生成可直接部署在 Linux/Windows 生产服务器上的纯净服务端。</li>
+<li>Автоматически исключает клиентские оптимизирующие моды (например, 3D-слои скинов, шейдеры, привязки клавиш), создавая чистый серверный пакет, готовый к развертыванию на производственных серверах Linux/Windows.</li>
 </ul>
 <hr />
-<h2 id="github-pages-maven">🌐 GitHub Pages 静态 Maven 仓库部署<a class="headerlink" href="#github-pages-maven" title="Permanent link">&para;</a></h2>
-<p>流水线通过 Gradle 的 <code>publish</code> 任务将所有子模块（<code>gtecore</code>、<code>gtm-reborn</code>、<code>gt--</code>）构建为标准 Maven 构件，并部署到 <code>gh-pages</code> 分支：</p>
-<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// 在第三方 Mod 或开发工程中直接引用 GTE Maven 仓库</span>
+<h2 id="maven-github-pages">🌐 Развертывание статического Maven-репозитория на GitHub Pages<a class="headerlink" href="#maven-github-pages" title="Permanent link">&para;</a></h2>
+<p>Конвейер через задачу Gradle <code>publish</code> собирает все подмодули (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) в стандартные Maven-артефакты и развертывает их в ветку <code>gh-pages</code>:</p>
+<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Прямое использование Maven-репозитория GTE в сторонних модах или проектах разработки</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GTE GitHub Pages Maven"</span>
@@ -1721,12 +1721,12 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">}</span>
 </span></code></pre></div>
 <hr />
-<h2 id="release-publishyml">🏷️ 手动发布与版本打标工作流 (<code>release-publish.yml</code>)<a class="headerlink" href="#release-publishyml" title="Permanent link">&para;</a></h2>
-<p>项目采用规范化的 Git Release 流程：
-1. 在 GitHub Actions 页面手动触发 <strong>Manual Publish Release</strong>，输入版本号（如 <code>2.3.0</code>）。
-2. 工作流自动创建 <code>dev -&gt; release</code> PR，执行 CI 校验并自动 Squash Merge。
-3. 自动在 <code>release</code> 分支打上 <code>v2.3.0</code> Git Tag 并推送。
-4. Tag 推送事件自动触发 <code>sync-build.yml</code>，最终完成全渠道制品发布。</p>
+<h2 id="release-publishyml">🏷️ Ручная публикация и рабочий процесс версионирования (<code>release-publish.yml</code>)<a class="headerlink" href="#release-publishyml" title="Permanent link">&para;</a></h2>
+<p>Проект использует стандартизированный процесс Git Release:
+1. На странице GitHub Actions вручную запускается <strong>Manual Publish Release</strong>, вводится номер версии (например, <code>2.3.0</code>).
+2. Рабочий процесс автоматически создает PR <code>dev -&gt; release</code>, выполняет проверку CI и автоматически Squash Merge.
+3. Автоматически создается Git Tag <code>v2.3.0</code> в ветке <code>release</code> и выполняется push.
+4. Событие push Tag автоматически запускает <code>sync-build.yml</code>, завершая публикацию артефактов по всем каналам.</p>
 
 
 

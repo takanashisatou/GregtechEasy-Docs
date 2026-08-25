@@ -1432,7 +1432,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 번역 엔진 아키텍처
       
     </span>
   </a>
@@ -1443,7 +1443,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 지원되는 LLM 공급자 및 환경 변수
       
     </span>
   </a>
@@ -1454,7 +1454,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 산업급 Prompt 제약 원칙
       
     </span>
   </a>
@@ -1465,7 +1465,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 로컬 실행 명령
       
     </span>
   </a>
@@ -1518,7 +1518,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🤖 翻译引擎架构
+        🤖 번역 엔진 아키텍처
       
     </span>
   </a>
@@ -1529,7 +1529,7 @@
   <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 支持的 LLM 供应商与环境变量
+        🔑 지원되는 LLM 공급자 및 환경 변수
       
     </span>
   </a>
@@ -1540,7 +1540,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 工业级 Prompt 约束原则
+        🎯 산업급 Prompt 제약 원칙
       
     </span>
   </a>
@@ -1551,7 +1551,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 本地运行指令
+        💻 로컬 실행 명령
       
     </span>
   </a>
@@ -1591,12 +1591,12 @@
   
 
 
-<h1 id="ai-opencode_translatepy">AI 国际化翻译引擎 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE 工程设计并实现了基于现代大语言模型（LLM）的跨模组全自动国际化翻译系统（位于 <code>scripts/opencode_translate.py</code>）。</p>
+<h1 id="ai-opencode_translatepy">AI 국제화 번역 엔진 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>GTE 엔지니어링은 현대 대규모 언어 모델(LLM) 기반의 크로스 모드 전자동 국제화 번역 시스템을 설계하고 구현했습니다 (<code>scripts/opencode_translate.py</code>에 위치).</p>
 <hr />
-<h2 id="_1">🤖 翻译引擎架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>传统的社区汉化依赖人工手动维护繁杂的 JSON 与 SNBT 文本，更新滞后且极易产生错漏。</p>
-<p>GTE 的 AI 翻译引擎通过标准化 OpenAI 兼容 API，实现了 FTB Quests 任务书与核心 Mod 语言文件的<strong>自动化增量提取、术语对齐与并发翻译</strong>：</p>
+<h2 id="_1">🤖 번역 엔진 아키텍처<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>전통적인 커뮤니티 현지화는 복잡한 JSON 및 SNBT 텍스트를 수동으로 유지 관리해야 했으며, 업데이트가 지연되고 오류가 발생하기 쉬웠습니다.</p>
+<p>GTE의 AI 번역 엔진은 표준화된 OpenAI 호환 API를 통해 FTB Quests 퀘스트 북과 핵심 Mod 언어 파일의 <strong>자동 증분 추출, 용어 정렬 및 동시 번역</strong>을 구현합니다:</p>
 <pre class="mermaid"><code>graph TD
     A[扫描 FTB Quests snbt 与 Lang json] --&gt; B[提取未翻译词条]
     B --&gt; C[读取 .translation_cache.json 本地缓存]
@@ -1607,15 +1607,15 @@
     G --&gt; H[校验与更新本地缓存]
     H --&gt; I[回写至 zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
-<h2 id="llm">🔑 支持的 LLM 供应商与环境变量<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
-<p>脚本支持通过环境变量无缝切换不同的 AI 模型提供商：</p>
+<h2 id="llm">🔑 지원되는 LLM 공급자 및 환경 변수<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
+<p>스크립트는 환경 변수를 통해 다양한 AI 모델 제공자를 원활하게 전환할 수 있습니다:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">供应商名称</th>
-<th style="text-align: left;">API Key 环境变量</th>
-<th style="text-align: left;">Base URL 环境变量</th>
-<th style="text-align: left;">默认模型</th>
+<th style="text-align: left;">공급자 이름</th>
+<th style="text-align: left;">API Key 환경 변수</th>
+<th style="text-align: left;">Base URL 환경 변수</th>
+<th style="text-align: left;">기본 모델</th>
 </tr>
 </thead>
 <tbody>
@@ -1638,47 +1638,47 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>通义千问 (DashScope)</strong></td>
+<td style="text-align: left;"><strong>Qwen (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>月之暗面 (Moonshot)</strong></td>
+<td style="text-align: left;"><strong>Moonshot</strong></td>
 <td style="text-align: left;"><code>MOONSHOT_API_KEY</code></td>
 <td style="text-align: left;"><code>MOONSHOT_BASE_URL</code></td>
 <td style="text-align: left;"><code>moonshot-v1-8k</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>智谱清言 (Zhipu GLM)</strong></td>
+<td style="text-align: left;"><strong>Zhipu GLM</strong></td>
 <td style="text-align: left;"><code>ZHIPU_API_KEY</code></td>
 <td style="text-align: left;"><code>ZHIPU_BASE_URL</code></td>
 <td style="text-align: left;"><code>glm-4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>OpenCode 平台</strong></td>
+<td style="text-align: left;"><strong>OpenCode 플랫폼</strong></td>
 <td style="text-align: left;"><code>OPENCODE_API_KEY</code></td>
 <td style="text-align: left;"><code>OPENCODE_BASE_URL</code></td>
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>通用聚合代理</strong></td>
+<td style="text-align: left;"><strong>범용 집계 프록시</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
-<td style="text-align: left;"><code>LLM_MODEL</code> (自定义)</td>
+<td style="text-align: left;"><code>LLM_MODEL</code> (사용자 정의)</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="prompt">🎯 工业级 Prompt 约束原则<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
-<p>在调用 API 进行翻译时，系统内置了严格的 Minecraft 与 GregTech 术语规则：
-1. <strong>格式符绝对保留</strong>：完整保留 Minecraft 原生颜色格式化代码（如 <code>§a</code>, <code>§c</code>, <code>§6</code>）与占位符（<code>%s</code>, <code>%d</code>, <code>{0}</code>）。
-2. <strong>科技术语规范统一</strong>：严格锁定科技专有名词翻译（如 <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 等）。
-3. <strong>哈希增量缓存</strong>：所有已翻译条目自动持久化记录在 <code>.translation_cache.json</code> 中，只有新增或变更文本会发起网络请求，极大节省 Token 开销与 CI 耗时。</p>
+<h2 id="prompt">🎯 산업급 Prompt 제약 원칙<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<p>API를 호출하여 번역할 때 시스템에는 엄격한 Minecraft 및 GregTech 용어 규칙이 내장되어 있습니다:
+1. <strong>형식 문자 절대 보존</strong>: Minecraft 기본 색상 형식 코드(예: <code>§a</code>, <code>§c</code>, <code>§6</code>)와 자리 표시자(<code>%s</code>, <code>%d</code>, <code>{0}</code>)를 완전히 보존합니다.
+2. <strong>과학 기술 용어 규범 통일</strong>: 과학 기술 고유 명사 번역을 엄격히 고정합니다(예: <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 등).
+3. <strong>해시 증분 캐시</strong>: 모든 번역된 항목은 <code>.translation_cache.json</code>에 자동으로 영구 기록되며, 새로 추가되거나 변경된 텍스트만 네트워크 요청을 발생시켜 토큰 비용과 CI 시간을 크게 절약합니다.</p>
 <hr />
-<h2 id="_2">💻 本地运行指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在本地开发环境中一键触发全量翻译：</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 设置任意一个有效 API Key 后执行</span>
+<h2 id="_2">💻 로컬 실행 명령<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>로컬 개발 환경에서 원클릭으로 전체 번역을 실행합니다:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 설정한 유효한 API Key 중 하나를 설정한 후 실행</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

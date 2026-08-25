@@ -1163,7 +1163,7 @@
   <a href="#art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 美术源文件目录 (art_assets/)
+        🎨 아트 소스 파일 디렉토리 (art_assets/)
       
     </span>
   </a>
@@ -1174,7 +1174,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 命名规范与自动路由规则
+        🏷️ 명명 규칙 및 자동 라우팅 규칙
       
     </span>
   </a>
@@ -1185,19 +1185,19 @@
   <a href="#syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 一键资产同步任务 (syncBlockbenchAssets)
+        🔄 원클릭 자산 동기화 작업 (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 一键资产同步任务 (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 원클릭 자산 동기화 작업 (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动化特性
+        자동화 기능
       
     </span>
   </a>
@@ -1523,7 +1523,7 @@
   <a href="#art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 美术源文件目录 (art_assets/)
+        🎨 아트 소스 파일 디렉토리 (art_assets/)
       
     </span>
   </a>
@@ -1534,7 +1534,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏷️ 命名规范与自动路由规则
+        🏷️ 명명 규칙 및 자동 라우팅 규칙
       
     </span>
   </a>
@@ -1545,19 +1545,19 @@
   <a href="#syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 一键资产同步任务 (syncBlockbenchAssets)
+        🔄 원클릭 자산 동기화 작업 (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 一键资产同步任务 (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 원클릭 자산 동기화 작업 (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动化特性
+        자동화 기능
       
     </span>
   </a>
@@ -1602,11 +1602,11 @@
   
 
 
-<h1 id="blockbench">界面、材质与 Blockbench 美术工作流<a class="headerlink" href="#blockbench" title="Permanent link">&para;</a></h1>
-<p>GTE 工程建立了一套自动化、零丢失的美术资产处理流水线。模型设计师只需使用 <strong>Blockbench</strong> 制作模型并保存在原件目录，Gradle 任务会自动完成资产分类、格式校验与增量同步。</p>
+<h1 id="blockbench">인터페이스, 텍스처 및 Blockbench 아트 워크플로우<a class="headerlink" href="#blockbench" title="Permanent link">&para;</a></h1>
+<p>GTE 프로젝트는 자동화되고 손실 없는 아트 자산 처리 파이프라인을 구축했습니다. 모델 디자이너는 <strong>Blockbench</strong>를 사용하여 모델을 만들고 원본 디렉토리에 저장하기만 하면, Gradle 작업이 자동으로 자산 분류, 형식 검증 및 증분 동기화를 수행합니다.</p>
 <hr />
-<h2 id="art_assets">🎨 美术源文件目录 (<code>art_assets/</code>)<a class="headerlink" href="#art_assets" title="Permanent link">&para;</a></h2>
-<p>项目根目录下的 <code>art_assets/</code> 是美术设计师的<strong>唯一工作目录</strong>，受 Git 严格版本追踪：</p>
+<h2 id="art_assets">🎨 아트 소스 파일 디렉토리 (<code>art_assets/</code>)<a class="headerlink" href="#art_assets" title="Permanent link">&para;</a></h2>
+<p>프로젝트 루트의 <code>art_assets/</code>는 아트 디자이너의 <strong>유일한 작업 디렉토리</strong>이며, Git의 엄격한 버전 추적을 받습니다:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Blockbench 工程源文件（保留图层与骨骼）
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Blockbench 导出的 Minecraft 几何模型
@@ -1615,50 +1615,50 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # 高阶电路系列专用材质子目录
 </span></code></pre></div>
 <hr />
-<h2 id="_1">🏷️ 命名规范与自动路由规则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Gradle 任务 <code>syncBlockbenchAssets</code> 根据文件命名关键词，自动将文件分发至 <code>modules/gtecore</code> 对应的资源路径中：</p>
+<h2 id="_1">🏷️ 명명 규칙 및 자동 라우팅 규칙<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Gradle 작업 <code>syncBlockbenchAssets</code>는 파일 이름 키워드를 기반으로 파일을 <code>modules/gtecore</code>의 해당 리소스 경로로 자동 배포합니다:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">文件类型</th>
-<th style="text-align: left;">命名包含关键词</th>
-<th style="text-align: left;">自动同步目标目录 (GTECore)</th>
+<th style="text-align: left;">파일 유형</th>
+<th style="text-align: left;">이름에 포함된 키워드</th>
+<th style="text-align: left;">자동 동기화 대상 디렉토리 (GTECore)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>物品贴图</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>아이템 텍스처</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>processor</code>, <code>string</code>, <code>symbol</code>, <code>paper</code>, <code>wafer</code>, <code>chip</code>, <code>god</code>, <code>rune</code>, <code>yin</code>, <code>yang</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/item/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>方块机壳贴图</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>블록 케이싱 텍스처</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>concrete</code>, <code>coil</code>, <code>zhenfa</code>, <code>matrix</code>, <code>buffer</code>, <code>generator</code>, <code>machine</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>方块模型</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>블록 모델</strong> (<code>.json</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>block</code>, <code>matrix</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>物品模型</strong> (<code>.json</code>)</td>
-<td style="text-align: left;">其余所有模型文件（排除 <code>.bbmodel</code>）</td>
+<td style="text-align: left;"><strong>아이템 모델</strong> (<code>.json</code>)</td>
+<td style="text-align: left;">나머지 모든 모델 파일 (<code>.bbmodel</code> 제외)</td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/item/</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="syncblockbenchassets">🔄 一键资产同步任务 (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#syncblockbenchassets" title="Permanent link">&para;</a></h2>
-<p>在导出模型或修改贴图后，在终端执行：</p>
+<h2 id="syncblockbenchassets">🔄 원클릭 자산 동기화 작업 (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#syncblockbenchassets" title="Permanent link">&para;</a></h2>
+<p>모델을 내보내거나 텍스처를 수정한 후 터미널에서 실행:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">syncBlockbenchAssets</span>
 </span></code></pre></div>
-<h3 id="_2">自动化特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">자동화 기능<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>自动触发</strong>：该任务已被挂载至 <code>buildAll</code>、<code>copyOutputJars</code> 以及 CI 构建流程的前置节点，在本地编译或启动游戏时会自动执行，无需手动反复拷贝。</li>
-<li><strong>增量安全</strong>：使用二进制流式覆写，自动在目标资源目录中补全缺失的父级目录。</li>
-<li><strong>保持 Git 清洁</strong>：<code>.bbmodel</code> 仅保留在 <code>art_assets/</code> 作为源工程，编译生成的 jar 包中不会夹带冗余的 Blockbench 项目元数据。</li>
+<li><strong>자동 트리거</strong>: 이 작업은 <code>buildAll</code>, <code>copyOutputJars</code> 및 CI 빌드 프로세스의 사전 노드에 마운트되어 있으며, 로컬 컴파일 또는 게임 시작 시 자동으로 실행되므로 수동으로 반복 복사할 필요가 없습니다.</li>
+<li><strong>증분 안전</strong>: 바이너리 스트리밍 덮어쓰기를 사용하여 대상 리소스 디렉토리에 누락된 상위 디렉토리를 자동으로 생성합니다.</li>
+<li><strong>Git 청결 유지</strong>: <code>.bbmodel</code>은 소스 프로젝트로 <code>art_assets/</code>에만 유지되며, 컴파일로 생성된 jar 패키지에는 불필요한 Blockbench 프로젝트 메타데이터가 포함되지 않습니다.</li>
 </ol>
 
 
