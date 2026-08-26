@@ -1,7 +1,7 @@
 site_name: GregTech Easy (GTE) 文档
 site_description: GregTech Easy (GTE-Multi) 官方人类可读多语言开发与游玩指南文档
 site_author: takanashisatou & GTE Team
-site_url: https://takanashisatou.github.io/GregtechEasy-Docs/
+site_url: https://takanashisatou.github.io/
 
 repo_name: takanashisatou/GregtechEasy
 repo_url: https://github.com/takanashisatou/GregtechEasy
@@ -61,63 +61,279 @@ plugins:
           name: English
           build: true
           site_name: GregTech Easy (GTE) Official Docs
+          nav_translations:
+            概览: Overview
+            整合包下载与玩家指南: Download & Player Guide
+            玩家免编译懒人包: Zero-Compile Lazy Pack
+            CurseForge与服务端部署: CurseForge & Server Setup
+            GTECore 核心模组: GTECore Core Mod
+            模组概览: Mod Overview
+            多方块机器图鉴: Multiblock Machines
+            阴阳八卦与四象阵法: Yin-Yang & Formations
+            AE2 深度集成: AE2 Deep Integration
+            超弦与阴阳高阶电路: Circuits & Materials
+            GTM Reborn 模组分支: GTM Reborn Mod Branch
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS & Scripting
+            脚本开发指南: Scripting Guide
+            结构导出器与工具集: Structure Exporter & Tools
+            界面材质与美术: Art & UI Assets
+            开发者与防崩溃手册: Developer & Anti-Crash Manual
+            开发者快速上手: Developer Quick Start
+            本地热联调与启动脚本: Local Runtimes & Launchers
+            防崩溃守则与实战排错: Anti-Crash Rules & Troubleshooting
+            CI/CD 流水线与 AI 翻译: CI/CD & AI Translation
+            自动化构建发布流水线: Automated Build & Release Pipeline
+            AI 国际化翻译引擎: AI Localization Translation Engine
         - locale: zh-TW
           name: 繁體中文
           build: true
           site_name: GregTech Easy (GTE) 官方文檔
+          nav_translations:
+            概览: 概覽
+            整合包下载与玩家指南: 整合包下載與玩家指南
+            玩家免编译懒人包: 玩家免編譯懶人包
+            CurseForge与服务端部署: CurseForge與伺服端部署
+            GTECore 核心模组: GTECore 核心模組
+            模组概览: 模組概覽
+            多方块机器图鉴: 多方塊機器圖鑑
+            阴阳八卦与四象阵法: 陰陽八卦與四象陣法
+            AE2 深度集成: AE2 深度集成
+            超弦与阴阳高阶电路: 超弦與陰陽高階電路
+            GTM Reborn 模组分支: GTM Reborn 模組分支
+            GT-- Community Edition: GT-- 社群版
+            KubeJS 魔改与联动: KubeJS 魔改與連動
+            脚本开发指南: 指令碼開發指南
+            结构导出器与工具集: 結構導出器與工具集
+            界面材质与美术: 介面材質與美術
+            开发者与防崩溃手册: 開發者與防崩潰手冊
+            开发者快速上手: 開發者快速上手
+            本地热联调与启动脚本: 本地熱聯調與啟動腳本
+            防崩溃守则与实战排错: 防崩潰守則與實戰排錯
+            CI/CD 流水线与 AI 翻译: CI/CD 流水線與 AI 翻譯
+            自动化构建发布流水线: 自動化建置發布流水線
+            AI 国际化翻译引擎: AI 國際化翻譯引擎
         - locale: ja
           name: 日本語
           build: true
           site_name: GregTech Easy (GTE) 公式ドキュメント
+          nav_translations:
+            概览: 概要
+            整合包下载与玩家指南: ModパックDLとプレイヤーガイド
+            玩家免编译懒人包: プレイヤー向け便利パック
+            CurseForge与服务端部署: CurseForgeとサーバー構築
+            GTECore 核心模组: GTECore コアMOD
+            模组概览: MOD概要
+            多方块机器图鉴: マルチブロック機械図鑑
+            阴阳八卦与四象阵法: 陰陽八卦と四象陣法
+            AE2 深度集成: AE2 深度統合
+            超弦与阴阳高阶电路: 超弦と陰陽高階回路
+            GTM Reborn 模组分支: GTM Reborn MODブランチ
+            GT-- Community Edition: GT-- コミュニティ版
+            KubeJS 魔改与联动: KubeJS 改変と連携
+            脚本开发指南: スクリプト開発ガイド
+            结构导出器与工具集: 構造エクスポートとツール
+            界面材质与美术: UIテクスチャとアート
+            开发者与防崩溃手册: 開発者とクラッシュ防止マニュアル
+            开发者快速上手: 開発者クイックスタート
+            本地热联调与启动脚本: ローカル熱デバッグと起動スクリプト
+            防崩溃守则与实战排错: クラッシュ防止守則とトラブルシューティング
+            CI/CD 流水线与 AI 翻译: CI/CDパイプラインとAI翻訳
+            自动化构建发布流水线: 自動ビルドリリースパイプライン
+            AI 国际化翻译引擎: AI国際化翻訳エンジン
         - locale: ko
           name: 한국어
           build: true
           site_name: GregTech Easy (GTE) 공식 문서
+          nav_translations:
+            概览: 개요
+            整合包下载与玩家指南: 모드팩 다운로드 및 플레이어 가이드
+            玩家免编译懒人包: 무컴파일 편의 팩
+            CurseForge与服务端部署: CurseForge 및 서버 배포
+            GTECore 核心模组: GTECore 핵심 모드
+            模组概览: 모드 개요
+            多方块机器图鉴: 멀티블록 기계 도감
+            阴阳八卦与四象阵法: 음양 팔괘 및 사상 진법
+            AE2 深度集成: AE2 심층 통합
+            超弦与阴阳高阶电路: 초끈 및 음양 고급 회로
+            GTM Reborn 模组分支: GTM Reborn 모드 브랜치
+            GT-- Community Edition: GT-- 커뮤니티 에디션
+            KubeJS 魔改与联动: KubeJS 모드 개조 및 연동
+            脚本开发指南: 스크립트 개발 가이드
+            结构导出器与工具集: 구조 내보내기 도구
+            界面材质与美术: UI 텍스처 및 아트
+            开发者与防崩溃手册: 개발자 및 충돌 방지 매뉴얼
+            开发者快速上手: 개발자 빠른 시작
+            本地热联调与启动脚本: 로컬 디버깅 및 실행 스크립트
+            防崩溃守则与实战排错: 충돌 방지 수칙 및 문제 해결
+            CI/CD 流水线与 AI 翻译: CI/CD 파이프라인 및 AI 번역
+            自动化构建发布流水线: 자동 빌드 배포 파이프라인
+            AI 国际化翻译引擎: AI 다국어 번역 엔진
         - locale: ru
           name: Русский
           build: true
           site_name: Официальная документация GregTech Easy (GTE)
+          nav_translations:
+            概览: Обзор
+            整合包下载与玩家指南: Загрузка сборки и руководство для игроков
+            玩家免编译懒人包: Готовый удобный пак
+            CurseForge与服务端部署: CurseForge и сервер
+            GTECore 核心模组: Основной мод GTECore
+            模组概览: Обзор мода
+            多方块机器图鉴: Каталог мультиблочных машин
+            阴阳八卦与四象阵法: Инь-Ян и Четыре Символа
+            AE2 深度集成: Глубокая интеграция с AE2
+            超弦与阴阳高阶电路: Суперструны и схемы Инь-Ян
+            GTM Reborn 模组分支: Ветка мода GTM Reborn
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS и скрипты
+            脚本开发指南: Руководство по скриптам
+            结构导出器与工具集: Экспортер структур и утилиты
+            界面材质与美术: Арт и интерфейс
+            开发者与防崩溃手册: Руководство разработчика
+            开发者快速上手: Быстрый старт
+            本地热联调与启动脚本: Локальный запуск и скрипты
+            防崩溃守则与实战排错: Защита от сбоев и отладка
+            CI/CD 流水线与 AI 翻译: CI/CD и AI локализация
+            自动化构建发布流水线: Конвейер автоматической сборки
+            AI 国际化翻译引擎: Движок AI локализации
         - locale: de
           name: Deutsch
           build: true
           site_name: GregTech Easy (GTE) Offizielle Dokumentation
+          nav_translations:
+            概览: Übersicht
+            整合包下载与玩家指南: Download & Spielerhandbuch
+            玩家免编译懒人包: Fertiges Lazy Pack
+            CurseForge与服务端部署: CurseForge & Server-Setup
+            GTECore 核心模组: GTECore Kernmod
+            模组概览: Mod-Übersicht
+            多方块机器图鉴: Multiblock-Maschinen
+            阴阳八卦与四象阵法: Yin-Yang & Formationen
+            AE2 深度集成: AE2-Integration
+            超弦与阴阳高阶电路: Superstring & Yin-Yang Schaltkreise
+            GTM Reborn 模组分支: GTM Reborn Mod-Zweig
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS & Scripting
+            脚本开发指南: Scripting-Handbuch
+            结构导出器与工具集: Struktur-Export & Werkzeuge
+            界面材质与美术: UI & Grafik-Assets
+            开发者与防崩溃手册: Entwicklerhandbuch
+            开发者快速上手: Schnellstart
+            本地热联调与启动脚本: Lokale Laufzeiten & Starter
+            防崩溃守则与实战排错: Crash-Vermeidung & Diagnose
+            CI/CD 流水线与 AI 翻译: CI/CD & KI-Übersetzung
+            自动化构建发布流水线: Automatisierte Build-Pipeline
+            AI 国际化翻译引擎: KI-Übersetzungs-Engine
         - locale: fr
           name: Français
           build: true
           site_name: Documentation Officielle GregTech Easy (GTE)
+          nav_translations:
+            概览: Aperçu
+            整合包下载与玩家指南: Téléchargement & Guide Joueur
+            玩家免编译懒人包: Pack Clé en Main
+            CurseForge与服务端部署: CurseForge & Serveur
+            GTECore 核心模组: Mod Principal GTECore
+            模组概览: Vue d'ensemble
+            多方块机器图鉴: Machines Multiblocs
+            阴阳八卦与四象阵法: Yin-Yang & Formations
+            AE2 深度集成: Intégration AE2
+            超弦与阴阳高阶电路: Supercordes & Circuits
+            GTM Reborn 模组分支: Branche GTM Reborn
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS & Scripts
+            脚本开发指南: Guide de Script
+            结构导出器与工具集: Exportateur de Structures
+            界面材质与美术: Interface & Graphismes
+            开发者与防崩溃手册: Manuel Développeur
+            开发者快速上手: Démarrage Rapide
+            本地热联调与启动脚本: Runtimes & Lanceurs
+            防崩溃守则与实战排错: Prévention des Crashs
+            CI/CD 流水线与 AI 翻译: CI/CD & Traduction IA
+            自动化构建发布流水线: Pipeline de Build Automatisé
+            AI 国际化翻译引擎: Moteur de Traduction IA
         - locale: es
           name: Español
           build: true
           site_name: Documentación Oficial de GregTech Easy (GTE)
+          nav_translations:
+            概览: Visión General
+            整合包下载与玩家指南: Descarga y Guía del Jugador
+            玩家免编译懒人包: Paquete Listo para Jugar
+            CurseForge与服务端部署: CurseForge y Servidor
+            GTECore 核心模组: Mod Principal GTECore
+            模组概览: Descripción General
+            多方块机器图鉴: Máquinas Multibloque
+            阴阳八卦与四象阵法: Yin-Yang y Formaciones
+            AE2 深度集成: Integración AE2
+            超弦与阴阳高阶电路: Supercuerdas y Circuitos
+            GTM Reborn 模组分支: Rama GTM Reborn
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS y Scripts
+            脚本开发指南: Guía de Scripts
+            结构导出器与工具集: Exportador de Estructuras
+            界面材质与美术: Arte e Interfaz
+            开发者与防崩溃手册: Manual del Desarrollador
+            开发者快速上手: Inicio Rápido
+            本地热联调与启动脚本: Entornos Locales y Lanzadores
+            防崩溃守则与实战排错: Prevención de Errores y Diagnóstico
+            CI/CD 流水线与 AI 翻译: CI/CD y Traducción IA
+            自动化构建发布流水线: Pipeline de Compilación Automatizado
+            AI 国际化翻译引擎: Motor de Traducción IA
         - locale: pt
           name: Português
           build: true
           site_name: Documentação Oficial do GregTech Easy (GTE)
+          nav_translations:
+            概览: Visão Geral
+            整合包下载与玩家指南: Download e Guia do Jogador
+            玩家免编译懒人包: Pacote Pronto para Jogar
+            CurseForge与服务端部署: CurseForge e Servidor
+            GTECore 核心模组: Mod Principal GTECore
+            模组概览: Visão Geral do Mod
+            多方块机器图鉴: Máquinas Multibloco
+            阴阳八卦与四象阵法: Yin-Yang e Formações
+            AE2 深度集成: Integração AE2
+            超弦与阴阳高阶电路: Supercordas e Circuitos
+            GTM Reborn 模组分支: Ramo GTM Reborn
+            GT-- Community Edition: GT-- Community Edition
+            KubeJS 魔改与联动: KubeJS e Scripts
+            脚本开发指南: Guia de Scripts
+            结构导出器与工具集: Exportador de Estruturas
+            界面材质与美术: Arte e Interface
+            开发者与防崩溃手册: Manual do Desenvolvedor
+            开发者快速上手: Início Rápido
+            本地热联调与启动脚本: Ambientes Locais e Iniciadores
+            防崩溃守则与实战排错: Prevenção de Falhas e Diagnóstico
+            CI/CD 流水线与 AI 翻译: CI/CD e Tradução IA
+            自动化构建发布流水线: Pipeline de Build Automatizado
+            AI 国际化翻译引擎: Motor de Tradução IA
 
 nav:
-  - 概览 / Overview: index.md
-  - 整合包下载与玩家指南 / Download & Play:
-      - 玩家免编译懒人包 / Zero-Compile Lazy Pack: download-and-play/lazy-pack.md
-      - CurseForge与服务端部署 / CurseForge & Server: download-and-play/curseforge-and-server.md
-  - GTECore 核心模组 / GTECore:
-      - 模组概览 / Overview: gtecore/overview.md
-      - 多方块机器图鉴 / Multiblocks: gtecore/machines-and-multiblocks.md
-      - 阴阳八卦与四象阵法 / Yin-Yang & Formations: gtecore/yin-yang-and-four-symbols.md
-      - AE2 深度集成 / AE2 Integration: gtecore/ae2-integration.md
-      - 超弦与阴阳高阶电路 / Circuits & Materials: gtecore/circuits-and-materials.md
-  - GTM Reborn 模组分支 / GTM Reborn: gtm-reborn/index.md
-  - GT-- Community Edition / GT-- CE: gt-minus-minus/index.md
-  - KubeJS 魔改与联动 / KubeJS:
-      - 脚本开发指南 / Scripting Guide: kubejs/scripting-guide.md
-      - 结构导出器与工具集 / Utilities & Multiblock Exporter: kubejs/tools-and-utilities.md
-  - 界面材质与美术 / Art & UI: art-and-ui/blockbench-workflow.md
-  - 开发者与防崩溃手册 / Dev & Anti-Crash:
-      - 开发者快速上手 / Quick Start: development/quick-start.md
-      - 本地热联调与启动脚本 / Runtimes & Launchers: development/runtime-and-launchers.md
-      - 防崩溃守则与实战排错 / Anti-Crash Guide: development/anti-crash-guide.md
-  - CI/CD 流水线与 AI 翻译 / CI/CD & Translation:
-      - 自动化构建发布流水线 / CI/CD Pipeline: ci-cd-and-translation/ci-pipeline.md
-      - AI 国际化翻译引擎 / AI Translation: ci-cd-and-translation/ai-translation.md
+  - 概览: index.md
+  - 整合包下载与玩家指南:
+      - 玩家免编译懒人包: download-and-play/lazy-pack.md
+      - CurseForge与服务端部署: download-and-play/curseforge-and-server.md
+  - GTECore 核心模组:
+      - 模组概览: gtecore/overview.md
+      - 多方块机器图鉴: gtecore/machines-and-multiblocks.md
+      - 阴阳八卦与四象阵法: gtecore/yin-yang-and-four-symbols.md
+      - AE2 深度集成: gtecore/ae2-integration.md
+      - 超弦与阴阳高阶电路: gtecore/circuits-and-materials.md
+  - GTM Reborn 模组分支: gtm-reborn/index.md
+  - GT-- Community Edition: gt-minus-minus/index.md
+  - KubeJS 魔改与联动:
+      - 脚本开发指南: kubejs/scripting-guide.md
+      - 结构导出器与工具集: kubejs/tools-and-utilities.md
+  - 界面材质与美术: art-and-ui/blockbench-workflow.md
+  - 开发者与防崩溃手册:
+      - 开发者快速上手: development/quick-start.md
+      - 本地热联调与启动脚本: development/runtime-and-launchers.md
+      - 防崩溃守则与实战排错: development/anti-crash-guide.md
+  - CI/CD 流水线与 AI 翻译:
+      - 自动化构建发布流水线: ci-cd-and-translation/ci-pipeline.md
+      - AI 国际化翻译引擎: ci-cd-and-translation/ai-translation.md
 
 markdown_extensions:
   - admonition
@@ -154,34 +370,34 @@ markdown_extensions:
 extra:
   alternate:
     - name: 简体中文
-      link: /GregtechEasy-Docs/
+      link: /
       lang: zh
     - name: English
-      link: /GregtechEasy-Docs/en/
+      link: /en/
       lang: en
     - name: 繁體中文
-      link: /GregtechEasy-Docs/zh-TW/
+      link: /zh-TW/
       lang: zh-TW
     - name: 日本語
-      link: /GregtechEasy-Docs/ja/
+      link: /ja/
       lang: ja
     - name: 한국어
-      link: /GregtechEasy-Docs/ko/
+      link: /ko/
       lang: ko
     - name: Русский
-      link: /GregtechEasy-Docs/ru/
+      link: /ru/
       lang: ru
     - name: Deutsch
-      link: /GregtechEasy-Docs/de/
+      link: /de/
       lang: de
     - name: Français
-      link: /GregtechEasy-Docs/fr/
+      link: /fr/
       lang: fr
     - name: Español
-      link: /GregtechEasy-Docs/es/
+      link: /es/
       lang: es
     - name: Português
-      link: /GregtechEasy-Docs/pt/
+      link: /pt/
       lang: pt
   social:
     - icon: fontawesome/brands/github
