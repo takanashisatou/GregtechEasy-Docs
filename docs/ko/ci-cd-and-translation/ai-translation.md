@@ -1,14 +1,14 @@
-# AI 国际化翻译引擎 (`opencode_translate.py`)
+# AI 국제화 번역 엔진 (`opencode_translate.py`)
 
-GTE 工程设计并实现了基于现代大语言模型（LLM）的跨模组全自动国际化翻译系统（位于 `scripts/opencode_translate.py`）。
+GTE 엔지니어링은 현대 대규모 언어 모델(LLM) 기반의 모드 간 완전 자동 국제화 번역 시스템을 설계하고 구현했습니다 (`scripts/opencode_translate.py`에 위치).
 
 ---
 
-## 🤖 翻译引擎架构
+## 🤖 번역 엔진 아키텍처
 
-传统的社区汉化依赖人工手动维护繁杂的 JSON 与 SNBT 文本，更新滞后且极易产生错漏。
+전통적인 커뮤니티 한글화는 복잡한 JSON 및 SNBT 텍스트를 수동으로 유지 관리해야 했으며, 업데이트가 지연되고 오류가 발생하기 쉬웠습니다.
 
-GTE 的 AI 翻译引擎通过标准化 OpenAI 兼容 API，实现了 FTB Quests 任务书与核心 Mod 语言文件的**自动化增量提取、术语对齐与并发翻译**：
+GTE의 AI 번역 엔진은 표준화된 OpenAI 호환 API를 통해 FTB Quests 퀘스트 북과 핵심 Mod 언어 파일의 **자동화된 증분 추출, 용어 정렬 및 동시 번역**을 구현했습니다:
 
 ```mermaid
 graph TD
@@ -24,35 +24,35 @@ graph TD
 
 ---
 
-## 🔑 支持的 LLM 供应商与环境变量
+## 🔑 지원되는 LLM 공급업체 및 환경 변수
 
-脚本支持通过环境变量无缝切换不同的 AI 模型提供商：
+스크립트는 환경 변수를 통해 다양한 AI 모델 제공업체를 원활하게 전환할 수 있습니다:
 
-| 供应商名称 | API Key 环境变量 | Base URL 环境变量 | 默认模型 |
+| 공급업체 이름 | API Key 환경 변수 | Base URL 환경 변수 | 기본 모델 |
 | :--- | :--- | :--- | :--- |
 | **DeepSeek** | `DEEPSEEK_API_KEY` | `DEEPSEEK_BASE_URL` | `deepseek-chat` |
 | **OpenAI** | `OPENAI_API_KEY` | `OPENAI_BASE_URL` | `gpt-4o-mini` |
 | **Google Gemini** | `GEMINI_API_KEY` | `GEMINI_BASE_URL` | `gemini-3.5-flash` |
-| **通义千问 (DashScope)** | `DASHSCOPE_API_KEY` | `DASHSCOPE_BASE_URL` | `qwen-plus` |
-| **月之暗面 (Moonshot)** | `MOONSHOT_API_KEY` | `MOONSHOT_BASE_URL` | `moonshot-v1-8k` |
-| **智谱清言 (Zhipu GLM)** | `ZHIPU_API_KEY` | `ZHIPU_BASE_URL` | `glm-4-flash` |
-| **OpenCode 平台** | `OPENCODE_API_KEY` | `OPENCODE_BASE_URL` | `deepseek-v4-flash` |
-| **通用聚合代理** | `LLM_API_KEY` | `LLM_BASE_URL` | `LLM_MODEL` (自定义) |
+| **통이첸원 (DashScope)** | `DASHSCOPE_API_KEY` | `DASHSCOPE_BASE_URL` | `qwen-plus` |
+| **월지암면 (Moonshot)** | `MOONSHOT_API_KEY` | `MOONSHOT_BASE_URL` | `moonshot-v1-8k` |
+| **지푸칭옌 (Zhipu GLM)** | `ZHIPU_API_KEY` | `ZHIPU_BASE_URL` | `glm-4-flash` |
+| **OpenCode 플랫폼** | `OPENCODE_API_KEY` | `OPENCODE_BASE_URL` | `deepseek-v4-flash` |
+| **범용 집계 프록시** | `LLM_API_KEY` | `LLM_BASE_URL` | `LLM_MODEL` (사용자 정의) |
 
 ---
 
-## 🎯 工业级 Prompt 约束原则
+## 🎯 산업급 Prompt 제약 원칙
 
-在调用 API 进行翻译时，系统内置了严格的 Minecraft 与 GregTech 术语规则：
-1. **格式符绝对保留**：完整保留 Minecraft 原生颜色格式化代码（如 `§a`, `§c`, `§6`）与占位符（`%s`, `%d`, `{0}`）。
-2. **科技术语规范统一**：严格锁定科技专有名词翻译（如 `UHV`, `EU/t`, `Amps`, `Voltage`, `Overclock`, `Subtick` 等）。
-3. **哈希增量缓存**：所有已翻译条目自动持久化记录在 `.translation_cache.json` 中，只有新增或变更文本会发起网络请求，极大节省 Token 开销与 CI 耗时。
+API를 호출하여 번역할 때 시스템에는 엄격한 Minecraft 및 GregTech 용어 규칙이 내장되어 있습니다:
+1. **형식 기호 절대 보존**: Minecraft 기본 색상 형식 코드(예: `§a`, `§c`, `§6`)와 자리 표시자(`%s`, `%d`, `{0}`)를 완전히 보존합니다.
+2. **과학 기술 용어 규범 통일**: 과학 기술 고유 명사 번역을 엄격히 고정합니다(예: `UHV`, `EU/t`, `Amps`, `Voltage`, `Overclock`, `Subtick` 등).
+3. **해시 증분 캐시**: 모든 번역된 항목은 `.translation_cache.json`에 자동으로 영구 기록되며, 새로 추가되거나 변경된 텍스트만 네트워크 요청을 발생시켜 Token 비용과 CI 시간을 크게 절약합니다.
 
 ---
 
-## 💻 本地运行指令
+## 💻 로컬 실행 명령
 
-在本地开发环境中一键触发全量翻译：
+로컬 개발 환경에서 원클릭으로 전체 번역을 실행합니다:
 
 ```powershell
 # 设置任意一个有效 API Key 后执行

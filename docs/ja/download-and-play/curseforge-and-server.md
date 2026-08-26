@@ -1,48 +1,49 @@
-# CurseForge 导入与服务端部署指南
+# CurseForge インポートとサーバー導入ガイド
 
-除了免编译懒人包外，GTE 提供了基于 **Packwiz** 自动构建的 CurseForge 规范包与服务端包。
-
----
-
-## 📦 CurseForge 规范包导入
-
-CurseForge 格式整合包文件名为 `GTE-CurseForge-<版本号>.zip`。
-
-### 客户端导入方法
-
-=== "PCL2 / HMCL 导入"
-
-    1. 打开启动器，选择 **安装新游戏版本 / 导入整合包**。
-    2. 选择下载好的 `GTE-CurseForge-<版本号>.zip` 文件。
-    3. 启动器将自动解析 `manifest.json` 并高速并发下载依赖模组。
-    4. 导入完成后，进入版本设置将 Java 运行时指定为 **Java 21**。
-    5. 设置运行内存（推荐 8GB ~ 12GB），启动游戏。
-
-=== "CurseForge App 导入"
-
-    1. 打开 CurseForge App 客户端。
-    2. 点击左侧 **Minecraft** 图标，进入 **My Modpacks**。
-    3. 点击右上角设置菜单中的 **Create Custom Profile** ➜ **Import**。
-    4. 选择 `GTE-CurseForge-<版本号>.zip`，等待自动下载并完成安装。
-
-=== "Prism Launcher 导入"
-
-    1. 点击 **Add Instance (添加实例)** ➜ **Import (导入)**。
-    2. 浏览并选中 `GTE-CurseForge-<版本号>.zip`。
-    3. 实例创建后，在实例属性中将 Java 设置为 **JDK 21** 路径。
+コンパイル不要の便利パックの他に、GTE は **Packwiz** ベースで自動構築された CurseForge 標準パックとサーバーパックを提供しています。
 
 ---
 
-## 🖥️ 服务端部署指南
+## 📦 CurseForge 標準パックのインポート
 
-服务端文件包名为 `GTE-Server-<版本号>.zip`。
+CurseForge 形式のMODパックのファイル名は `GTE-CurseForge-<版本号>.zip` です。
 
-### 1. 环境准备
-- 操作系统：Linux (Ubuntu 22.04+ / Debian 12+) 或 Windows Server 2022+
-- **JDK 21 必须就绪**：在终端执行 `java -version` 确认输出为 `openjdk version "21..."`。
-- 推荐配置：4 核心 CPU 以上，16GB 物理内存（给 Minecraft 服务端分配 10G ~ 14G）。
+### クライアントのインポート方法
 
-### 2. 部署步骤
+=== "PCL2 / HMCL インポート"
+
+    1. ランチャーを開き、**新しいゲームバージョンのインストール / MODパックのインポート** を選択します。
+    2. ダウンロードした `GTE-CurseForge-<版本号>.zip` ファイルを選択します。
+    3. ランチャーが `manifest.json` を自動解析し、依存MODを高速かつ並行でダウンロードします。
+    4. インポート完了後、バージョン設定で Java ランタイムを **Java 21** に指定します。
+    5. メモリを設定し（推奨 8GB ~ 12GB）、ゲームを起動します。
+
+=== "CurseForge App インポート"
+
+    1. CurseForge App クライアントを開きます。
+    2. 左側の **Minecraft** アイコンをクリックし、**My Modpacks** に入ります。
+    3. 右上隅の設定メニューにある **Create Custom Profile** ➜ **Import** をクリックします。
+    4. `GTE-CurseForge-<版本号>.zip` を選択し、自動ダウンロードとインストール完了を待ちます。
+
+=== "Prism Launcher インポート"
+
+    1. **Add Instance (インスタンス追加)** ➜ **Import (インポート)** をクリックします。
+    2. `GTE-CurseForge-<版本号>.zip` を参照して選択します。
+    3. インスタンス作成後、インスタンスのプロパティで Java を **JDK 21** のパスに設定します。
+
+---
+
+## 🖥️ サーバー導入ガイド
+
+サーバーパックのファイル名は `GTE-Server-<版本号>.zip` です。
+
+### 1. 環境準備
+
+- OS: Linux (Ubuntu 22.04+ / Debian 12+) または Windows Server 2022+
+- **JDK 21 が必須です**: ターミナルで `java -version` を実行し、出力が `openjdk version "21..."` であることを確認してください。
+- 推奨構成: 4コア以上のCPU、16GBの物理メモリ（Minecraftサーバーに10G ~ 14Gを割り当て）。
+
+### 2. 導入手順
 
 ```bash
 # 1. 创建服务端工作目录
@@ -59,9 +60,9 @@ java -jar forge-1.20.1-*-installer.jar --installServer
 echo "eula=true" > eula.txt
 ```
 
-### 3. 启动脚本配置 (`run_server.sh` / `run_server.bat`)
+### 3. 起動スクリプト設定 (`run_server.sh` / `run_server.bat`)
 
-推荐使用 Aikar 优化参数启动服务端：
+Aikar 最適化パラメータを使用したサーバー起動を推奨します：
 
 === "Linux (`run_server.sh`)"
 
@@ -96,11 +97,13 @@ echo "eula=true" > eula.txt
 
 ---
 
-## ⚙️ 常见问题排查 (FAQ)
+## ⚙️ よくある問題のトラブルシューティング (FAQ)
 
-### Q1: 启动服务端提示 `UnsupportedClassVersionError: ... class file version 65.0`
-> **原因**：服务端运行时的 Java 版本低于 Java 21（版本 65.0 代表 JDK 21）。  
-> **解决**：在 Linux 上通过 `sudo update-alternatives --config java` 切换到 OpenJDK 21。
+### Q1: サーバー起動時に `UnsupportedClassVersionError: ... class file version 65.0` が表示される
 
-### Q2: 玩家进入服务器提示模组列表不匹配
-> **解决**：请确保客户端版本号与服务端版本号完全一致。每次主工程 CI 构建均会同步生成配套的 Client 与 Server 构件。
+> **原因**: サーバー実行時の Java バージョンが Java 21 より低い（バージョン 65.0 は JDK 21 を意味します）。  
+> **解決策**: Linux では `sudo update-alternatives --config java` を使用して OpenJDK 21 に切り替えます。
+
+### Q2: プレイヤーがサーバーに入るとMODリストが一致しないと表示される
+
+> **解決策**: クライアントのバージョン番号とサーバーのバージョン番号が完全に一致していることを確認してください。メインプロジェクトのCIビルドごとに、対応するClientとServerのビルドが同時に生成されます。

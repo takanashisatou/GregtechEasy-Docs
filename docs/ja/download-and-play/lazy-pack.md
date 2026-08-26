@@ -1,58 +1,58 @@
-# 整合包下载与玩家懒人包指南
+# Modパックのダウンロードとプレイヤー向け便利パックガイド
 
-GTE (GregTech Easy) 为不同技术背景的玩家和服主提供了三种开箱即用的交付形式：
+GTE (GregTech Easy) は、技術レベルの異なるプレイヤーとサーバー管理者向けに、すぐに使える3つの配布形式を提供しています：
 
-1. **玩家免编译完整懒人包 (`GTE-LazyPack-*.zip`)**：包含预编译好的全部模组、配置、魔改脚本与完整 `.minecraft` 目录结构，**双击或拖入启动器即可游玩**。
-2. **CurseForge 规范包 (`GTE-CurseForge-*.zip`)**：标准 CurseForge 格式，可直接在 PCL2 / HMCL / CurseForge App / Prism Launcher 中一键导入。
-3. **服务端整合包 (`GTE-Server-*.zip`)**：包含纯净服务端配置、模组与启动脚本，用于开服联机。
-
----
-
-## 🚀 玩家懒人包（推荐）
-
-### 特点与优势
-- **0 编译依赖**：无需安装 JDK 编译环境、IntelliJ IDEA 或 Git。
-- **全量打包**：`gtecore`、`gtm-reborn`、`gt--` 最新发布 Jar 及前置扩展模组已全部内置于 `mods/` 目录。
-- **即拖即玩**：支持 PCL2 / HMCL 窗口拖拽一键导入。
-
-### 导入与启动步骤
-
-=== "方式一：启动器一键拖拽（推荐）"
-
-    1. 打开 **PCL2 (Plain Craft Launcher 2)** 或 **HMCL (Hello Minecraft! Launcher)**。
-    2. 将下载到的 `GTE-LazyPack-<版本号>.zip` 直接**鼠标左键拖入**启动器主窗口中。
-    3. 启动器将自动识别并解压至游戏版本列表。
-    4. 前往该版本的**版本设置**，将 Java 运行时指定为 **Java 21**。
-    5. 分配 **8GB ~ 12GB** 内存，点击启动游戏！
-
-=== "方式二：手动解压模式"
-
-    1. 将压缩包解压至任意无中文、无空格路径（例如 `D:\Games\GTE\`）。
-    2. 解压后将获得包含 `mods/`、`config/`、`kubejs/` 的 `.minecraft` 目录。
-    3. 在启动器中添加游戏版本，将游戏根目录选择为解压出的 `.minecraft` 文件夹。
-    4. 确保选择 **Java 21** 核心并启动。
+1. **プレイヤー向けコンパイル不要の完全便利パック (`GTE-LazyPack-*.zip`)**：プリコンパイル済みの全Mod、設定、改造スクリプト、完全な `.minecraft` ディレクトリ構造を含み、**ダブルクリックまたはランチャーへのドラッグ＆ドロップですぐにプレイ可能**です。
+2. **CurseForge 標準パック (`GTE-CurseForge-*.zip`)**：標準のCurseForge形式で、PCL2 / HMCL / CurseForge App / Prism Launcher にワンクリックでインポートできます。
+3. **サーバー向けModパック (`GTE-Server-*.zip`)**：素のサーバー設定、Mod、起動スクリプトを含み、サーバーを立ててマルチプレイするためのものです。
 
 ---
 
-## ⚠️ Java 21 运行环境要求（极其重要）
+## 🚀 プレイヤー向け便利パック（推奨）
+
+### 特徴と利点
+- **コンパイル依存ゼロ**：JDKコンパイル環境、IntelliJ IDEA、Gitのインストールは不要です。
+- **全量パッケージ**：`gtecore`、`gtm-reborn`、`gt--` の最新リリースJarと前提拡張Modがすべて `mods/` ディレクトリに同梱されています。
+- **ドラッグ＆ドロップですぐにプレイ**：PCL2 / HMCL ウィンドウへのドラッグ＆ドロップによるワンクリックインポートに対応。
+
+### インポートと起動手順
+
+=== "方法1：ランチャーへのドラッグ＆ドロップ（推奨）"
+
+    1. **PCL2 (Plain Craft Launcher 2)** または **HMCL (Hello Minecraft! Launcher)** を開きます。
+    2. ダウンロードした `GTE-LazyPack-<版本号>.zip` を**マウス左ボタンで**ランチャーのメインウィンドウにドラッグ＆ドロップします。
+    3. ランチャーが自動的に認識し、ゲームバージョンリストに解凍します。
+    4. そのバージョンの**バージョン設定**に移動し、Javaランタイムを **Java 21** に指定します。
+    5. **8GB ~ 12GB** のメモリを割り当て、「ゲームを起動」をクリックします！
+
+=== "方法2：手動解凍モード"
+
+    1. 圧縮パックを、中国語やスペースを含まない任意のパスに解凍します（例：`D:\Games\GTE\`）。
+    2. 解凍後、`mods/`、`config/`、`kubejs/` を含む `.minecraft` ディレクトリが得られます。
+    3. ランチャーでゲームバージョンを追加し、ゲームのルートディレクトリとして解凍した `.minecraft` フォルダを選択します。
+    4. **Java 21** を選択して起動します。
+
+---
+
+## ⚠️ Java 21 実行環境の要件（非常に重要）
 
 > [!CAUTION]
-> **本整合包强制要求运行环境为 Java 21 (JDK 21)！**
-> 切勿使用 **Java 17** 或 **Java 8**，否则游戏将直接崩溃或拒绝启动！
+> **このModパックは実行環境として Java 21 (JDK 21) を必須とします！**
+> **Java 17** や **Java 8** は使用しないでください。ゲームがクラッシュするか、起動を拒否します！
 
-### 为什么必须使用 Java 21？
-- GTE 的核心模组（`gtecore`、`gtm-reborn`、`gt--`）全面采用了 **Java 21 现代化语言特性**（如 Record Patterns、Virtual Threads、增强 Switch 匹配）。
-- Gradle 构建脚本全局配置了 `JavaLanguageVersion.of(21)` 强制工具链检查。
+### なぜ Java 21 でなければならないのか？
+- GTE のコアMod（`gtecore`、`gtm-reborn`、`gt--`）は、**Java 21 の近代的な言語機能**（Record Patterns、Virtual Threads、拡張されたSwitchマッチングなど）を全面的に採用しています。
+- Gradle ビルドスクリプトは、`JavaLanguageVersion.of(21)` をグローバルに設定し、ツールチェーンを強制チェックしています。
 
-### 推荐 JDK 21 下载地址
+### 推奨 JDK 21 ダウンロード先
 
-| 发行版 | 下载链接 | 推荐理由 |
+| ディストリビューション | ダウンロードリンク | 推奨理由 |
 | :--- | :--- | :--- |
-| **Azul Zulu 21 (LTS)** | [点击前往 Azul 官网](https://www.azul.com/downloads/?version=java-21-lts) | 性能卓越，对 Minecraft 大规模多线程优化极佳 |
-| **Eclipse Temurin 21 (LTS)** | [点击前往 Adoptium 官网](https://adoptium.net/temurin/releases/?version=21) | 官方推荐，高兼容性与稳定性 |
-| **Microsoft OpenJDK 21** | [点击前往 Microsoft 官网](https://learn.microsoft.com/zh-cn/java/openjdk/download) | Windows 平台原生适配良好 |
+| **Azul Zulu 21 (LTS)** | [Azul公式サイトへ](https://www.azul.com/downloads/?version=java-21-lts) | 性能が優れており、Minecraftの大規模マルチスレッド最適化に最適 |
+| **Eclipse Temurin 21 (LTS)** | [Adoptium公式サイトへ](https://adoptium.net/temurin/releases/?version=21) | 公式推奨、高い互換性と安定性 |
+| **Microsoft OpenJDK 21** | [Microsoft公式サイトへ](https://learn.microsoft.com/zh-cn/java/openjdk/download) | Windowsプラットフォームへのネイティブ対応が良好 |
 
-### 在启动器中配置 Java 21
+### ランチャーで Java 21 を設定する
 
 ```mermaid
 graph LR
@@ -65,14 +65,14 @@ graph LR
 
 ---
 
-## 🎮 游戏内快捷键与常用指令
+## 🎮 ゲーム内ショートカットキーとよく使うコマンド
 
-| 指令 / 快捷键 | 功能说明 | 权限要求 |
+| コマンド / ショートカットキー | 機能説明 | 権限要件 |
 | :--- | :--- | :--- |
-| `/ftbquests editing_mode true` | 开启任务书可视化编辑模式（作者模式） | OP 权限 |
-| `/ftbquests reload` | 热重载 FTB Quests 任务书配置文件 | 所有人 |
-| `/kubejs reload server_scripts` | 热重载服务端魔改脚本与配方 | OP 权限 |
-| `/kubejs reload client_scripts` | 热重载客户端魔改脚本与显示逻辑 | 无需权限 |
-| `/dumpmultiblock` | 木斧选取区域后一键导出多方块结构代码 | OP 权限 |
-| <kbd>U</kbd> / <kbd>R</kbd> | 查看光标处物品的用途 (Usage) / 配方 (Recipe) | EMI / JEI 快捷键 |
-| <kbd>F7</kbd> | 查看周围光照等级（红叉表示刷怪区域） | 客户端快捷键 |
+| `/ftbquests editing_mode true` | クエストブックのビジュアル編集モードを有効化（作者モード） | OP権限 |
+| `/ftbquests reload` | FTB Quests クエストブックの設定ファイルをホットリロード | 全員 |
+| `/kubejs reload server_scripts` | サーバー側の改造スクリプトとレシピをホットリロード | OP権限 |
+| `/kubejs reload client_scripts` | クライアント側の改造スクリプトと表示ロジックをホットリロード | 権限不要 |
+| `/dumpmultiblock` | 木の斧で領域を選択後、ワンクリックでマルチブロック構造コードをエクスポート | OP権限 |
+| <kbd>U</kbd> / <kbd>R</kbd> | カーソル位置のアイテムの用途 (Usage) / レシピ (Recipe) を表示 | EMI / JEI ショートカットキー |
+| <kbd>F7</kbd> | 周囲の明るさレベルを表示（赤い×はモブ湧き領域を示す） | クライアント側ショートカットキー |

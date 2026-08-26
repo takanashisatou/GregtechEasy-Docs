@@ -1,73 +1,73 @@
-# GregTech Easy (GTE) 官方文档
+# GregTech Easy (GTE) 공식 문서
 
-欢迎查阅 **GregTech Easy (GTE)** 整合包官方全方位指南！
+**GregTech Easy (GTE)** 통합팩 공식 종합 가이드를 환영합니다!
 
-GTE 是一个以 **“简单、好玩、有趣、耗时短”** 为核心理念的现代 Minecraft 1.20.1 整合包。
+GTE는 **“간단하고, 재미있고, 흥미롭고, 시간이 짧은”** 것을 핵심 이념으로 하는 현대적인 Minecraft 1.20.1 통합팩입니다.
 
 ---
 
-## ⚡ 快速跳转索引
+## ⚡ 빠른 이동 색인
 
 <div class="grid cards" markdown>
 
--   :material-download: __[玩家与整合包指南](download-and-play/lazy-pack.md)__
+-   :material-download: __[플레이어 및 통합팩 가이드](download-and-play/lazy-pack.md)__
 
     ---
 
-    下载开箱即用的 **0 编译完整懒人包**、CurseForge 规范包与服务端，了解 **Java 21** 运行环境配置与启动器导入教程。
+    즉시 사용 가능한 **0 컴파일 완전 편의 팩**, CurseForge 표준 팩 및 서버를 다운로드하고, **Java 21** 실행 환경 구성과 런처 가져오기 튜토리얼을 알아보세요.
 
-    [:octicons-arrow-right-24: 立即前往](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: 바로 가기](download-and-play/lazy-pack.md)
 
--   :material-chip: __[GTECore 核心模组详解](gtecore/overview.md)__
-
-    ---
-
-    深入了解 **阴阳八卦炼仙炉**、**四象阵法**、**矿石处理中心**、**奇迹之环**、**超弦与阴阳电路**、**AE2 样板总成 Plus** 等核心内容。
-
-    [:octicons-arrow-right-24: 立即前往](gtecore/overview.md)
-
--   :material-cog: __[GTM Reborn 模组分支](gtm-reborn/index.md)__
+-   :material-chip: __[GTECore 핵심 모드 상세](gtecore/overview.md)__
 
     ---
 
-    了解 `satou` 分支带来的多安培配方、批处理模式、1t Subtick 超频、GameTest 自动化测试以及流体区间输出特性。
+    **음양 팔괘 연선로**, **사상 진법**, **광석 처리 센터**, **기적의 고리**, **초끈과 음양 회로**, **AE2 패턴 어셈블리 Plus** 등 핵심 콘텐츠를 자세히 알아보세요.
 
-    [:octicons-arrow-right-24: 立即前往](gtm-reborn/index.md)
+    [:octicons-arrow-right-24: 바로 가기](gtecore/overview.md)
 
--   :material-code-tags: __[KubeJS 魔改与开发工具](kubejs/scripting-guide.md)__
-
-    ---
-
-    学习如何在 KubeJS 中注册材料、编写配方，并使用内置的 `/dumpmultiblock` 木斧框选工具一键导出多方块结构代码。
-
-    [:octicons-arrow-right-24: 立即前往](kubejs/scripting-guide.md)
-
--   :material-hammer-wrench: __[开发者与防崩溃实战手册](development/quick-start.md)__
+-   :material-cog: __[GTM Reborn 모드 브랜치](gtm-reborn/index.md)__
 
     ---
 
-    掌握 `run_game.bat` 免启动器秒级启动、`link_to_launcher.bat` 零复制目录映射，以及杜绝 Mixin Accessor 崩溃的黄金守则。
+    `satou` 브랜치가 제공하는 다중 암페어 레시피, 배치 처리 모드, 1t Subtick 오버클럭, GameTest 자동화 테스트 및 유체 구간 출력 특성을 알아보세요.
 
-    [:octicons-arrow-right-24: 立即前往](development/quick-start.md)
+    [:octicons-arrow-right-24: 바로 가기](gtm-reborn/index.md)
 
--   :material-robot: __[CI/CD 流水线与 AI 翻译](ci-cd-and-translation/ci-pipeline.md)__
+-   :material-code-tags: __[KubeJS 모드 개조 및 개발 도구](kubejs/scripting-guide.md)__
 
     ---
 
-    了解基于 GitHub Actions 的自动化多模块并行构建、Packwiz 打包、Maven 发布以及 `opencode_translate.py` AI 国际化脚本。
+    KubeJS에서 재료를 등록하고 레시피를 작성하는 방법과, 내장된 `/dumpmultiblock` 목재 도끼 영역 선택 도구를 사용하여 한 번에 멀티블록 구조 코드를 내보내는 방법을 배워보세요.
 
-    [:octicons-arrow-right-24: 立即前往](ci-cd-and-translation/ci-pipeline.md)
+    [:octicons-arrow-right-24: 바로 가기](kubejs/scripting-guide.md)
+
+-   :material-hammer-wrench: __[개발자 및 충돌 방지 실전 매뉴얼](development/quick-start.md)__
+
+    ---
+
+    `run_game.bat`으로 런처 없이 초 단위 시작, `link_to_launcher.bat`으로 복사 없는 디렉터리 매핑, 그리고 Mixin Accessor 충돌을 방지하는 황금 규칙을 익히세요.
+
+    [:octicons-arrow-right-24: 바로 가기](development/quick-start.md)
+
+-   :material-robot: __[CI/CD 파이프라인 및 AI 번역](ci-cd-and-translation/ci-pipeline.md)__
+
+    ---
+
+    GitHub Actions 기반 자동화 다중 모듈 병렬 빌드, Packwiz 패키징, Maven 릴리스 및 `opencode_translate.py` AI 국제화 스크립트에 대해 알아보세요.
+
+    [:octicons-arrow-right-24: 바로 가기](ci-cd-and-translation/ci-pipeline.md)
 
 </div>
 
 ---
 
-## 🛠️ 项目基础信息
+## 🛠️ 프로젝트 기본 정보
 
-| 配置项 | 说明 |
+| 구성 항목 | 설명 |
 | :--- | :--- |
-| **项目名称** | `GregtechEasy` (`gte-multi`) |
-| **运行与编译工具链** | **JDK 21**（强制使用 Java 21 Toolchain，所有子模块严格统一） |
-| **游戏版本** | Minecraft `1.20.1` (Forge `47.3.0` / `47.4.4`) |
-| **开源许可证** | LGPL-3.0 / MIT |
-| **默认分支** | 主仓库 `main` / `master`，GTM-Reborn `satou`，GT-- `kotlin`，GTECore `master` |
+| **프로젝트 이름** | `GregtechEasy` (`gte-multi`) |
+| **실행 및 컴파일 도구 체인** | **JDK 21** (Java 21 Toolchain 강제 사용, 모든 하위 모듈 엄격히 통일) |
+| **게임 버전** | Minecraft `1.20.1` (Forge `47.3.0` / `47.4.4`) |
+| **오픈소스 라이선스** | LGPL-3.0 / MIT |
+| **기본 브랜치** | 메인 저장소 `main` / `master`, GTM-Reborn `satou`, GT-- `kotlin`, GTECore `master` |

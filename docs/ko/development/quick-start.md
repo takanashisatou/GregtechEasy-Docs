@@ -1,27 +1,27 @@
-# 开发者快速上手指南
+# 개발자 빠른 시작 가이드
 
-本指南面向参与 GTE-Multi 跨模块工程开发的 Java/Kotlin 程序员与整合包作者。
+이 가이드는 GTE-Multi 크로스 모듈 프로젝트 개발에 참여하는 Java/Kotlin 프로그래머와 모드팩 제작자를 대상으로 합니다.
 
 ---
 
-## 💻 1. 开发环境准备
+## 💻 1. 개발 환경 준비
 
-### JDK 21 强制要求
-本项目全模块统一使用 **JDK 21**。推荐安装：
+### JDK 21 필수 요구 사항
+이 프로젝트는 모든 모듈에서 **JDK 21**을 통일적으로 사용합니다. 다음을 설치하는 것이 좋습니다:
 - [Azul Zulu JDK 21](https://www.azul.com/downloads/?version=java-21-lts)
 - [Eclipse Temurin JDK 21](https://adoptium.net/temurin/releases/?version=21)
 
-### IDE 推荐与插件
-推荐使用 **IntelliJ IDEA 2023.3+**，并安装以下官方插件：
-- **Minecraft Development**：提供 Mixin 代码提示、AT 访问转换器识别与事件高亮。
-- **Lombok**：支持 `@Getter`, `@Setter`, `@NoArgsConstructor` 等注解。
-- **Kotlin**：支持 GT-- CE 模块开发。
+### IDE 권장 사항 및 플러그인
+**IntelliJ IDEA 2023.3+** 사용을 권장하며, 다음 공식 플러그인을 설치하세요:
+- **Minecraft Development**: Mixin 코드 힌트, AT 액세스 트랜스포머 인식 및 이벤트 하이라이트를 제공합니다.
+- **Lombok**: `@Getter`, `@Setter`, `@NoArgsConstructor` 등의 애노테이션을 지원합니다.
+- **Kotlin**: GT-- CE 모듈 개발을 지원합니다.
 
 ---
 
-## 📥 2. 仓库克隆与工程导入
+## 📥 2. 저장소 클론 및 프로젝트 가져오기
 
-因为本项目包含了多个 Git 子模块 (Submodules)，**必须递归拉取**：
+이 프로젝트는 여러 Git 서브모듈(Submodules)을 포함하고 있으므로 **재귀적으로 가져와야 합니다**:
 
 ```bash
 # 1. 递归克隆主仓库与所有子模块
@@ -32,16 +32,16 @@ cd GTEGroup
 git submodule update --init --recursive
 ```
 
-### IDEA 导入指引
-1. 在 IDEA 中点击 **File ➜ Open**，选中根目录的 `build.gradle` 打开为工程。
-2. 前往设置：`Settings` ➜ `Build, Execution, Deployment` ➜ `Build Tools` ➜ `Gradle`。
-3. 将 **Gradle JVM** 指定为 **JDK 21**。
+### IDEA 가져오기 지침
+1. IDEA에서 **File ➜ Open**을 클릭하고 루트 디렉터리의 `build.gradle`을 선택하여 프로젝트로 엽니다.
+2. 설정으로 이동: `Settings` ➜ `Build, Execution, Deployment` ➜ `Build Tools` ➜ `Gradle`.
+3. **Gradle JVM**을 **JDK 21**로 지정합니다.
 
 ---
 
-## 🛠️ 3. 常用 Gradle 构建指令
+## 🛠️ 3. 일반적인 Gradle 빌드 명령어
 
-在 Windows PowerShell 中执行（需预先设置 `JAVA_HOME`）：
+Windows PowerShell에서 실행합니다 (`JAVA_HOME`을 미리 설정해야 합니다):
 
 ```powershell
 $env:JAVA_HOME='C:\Users\Ex_Je\.jdks\ms-21.0.11'

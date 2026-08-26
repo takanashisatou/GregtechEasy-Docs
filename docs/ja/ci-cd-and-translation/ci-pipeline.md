@@ -1,12 +1,12 @@
-# CI/CD 自动化构建、打包与 Maven 发布流水线
+# CI/CD 自動ビルド・パッケージング・Maven 公開パイプライン
 
-GTE 建立了一套高自动化、多目标产物并行的 **GitHub Actions CI/CD 流水线**（配置文件位于 `.github/workflows/sync-build.yml` 与 `release-publish.yml`）。
+GTE は、高度に自動化され、複数のターゲット成果物を並行生成する **GitHub Actions CI/CD パイプライン** を構築しました（設定ファイルは `.github/workflows/sync-build.yml` と `release-publish.yml` にあります）。
 
 ---
 
-## 🔄 全量 CI 流水线架构 (`sync-build.yml`)
+## 🔄 フル CI パイプラインのアーキテクチャ (`sync-build.yml`)
 
-每当向 `master` / `main` / `satou` 分支推送代码、提交 PR 或触发 Release Tag 时，GitHub Actions 会自动执行以下标准流水线：
+`master` / `main` / `satou` ブランチへのコードプッシュ、PR の提出、または Release Tag のトリガーが発生すると、GitHub Actions は以下の標準パイプラインを自動的に実行します：
 
 ```mermaid
 flowchart TD
@@ -25,25 +25,25 @@ flowchart TD
 
 ---
 
-## 📦 三大核心打包任务详解
+## 📦 主要な3つのパッケージングタスクの詳細
 
-### 1. CurseForge 规范包与 Java 21 补丁
-- **Packwiz 导出**：运行 `packwiz curseforge export` 生成标准规范包。
-- **自动补丁 manifest.json**：针对部分第三方启动器在解析 CurseForge 包时默认指派 Java 17 的问题，CI 会自动解压 zip，通过 Python 脚本将 `manifest.json` 中的 `minecraft.javaVersion` 与顶层 `javaVersion` **硬编码强制写入 21**，然后重新封装。
+### 1. CurseForge 標準パックと Java 21 パッチ
+- **Packwiz エクスポート**: `packwiz curseforge export` を実行して標準パックを生成します。
+- **manifest.json の自動パッチ**: 一部のサードパーティ製ランチャーが CurseForge パックを解析する際にデフォルトで Java 17 を割り当てる問題に対処するため、CI は zip を自動的に解凍し、Python スクリプトによって `manifest.json` 内の `minecraft.javaVersion` とトップレベルの `javaVersion` を **ハードコードで強制的に 21** に書き換え、再パッケージングします。
 
-### 2. 玩家免编译完整懒人包 (`build_lazy_pack.py`)
-- Python 脚本自动从各模块 `build/libs/` 抽取最新核心 Jar。
-- 自动合并 `modules/gtecore/gradle/libs/` 下的关键扩展 Mod。
-- 将全部配置、KubeJS 脚本、帕秋莉手册打包成一个开箱即用的 `.minecraft` 压缩包，内置中文启动指南。
+### 2. プレイヤー向けコンパイル不要の完全おまかせパック (`build_lazy_pack.py`)
+- Python スクリプトが各モジュールの `build/libs/` から最新のコア Jar を自動的に抽出します。
+- `modules/gtecore/gradle/libs/` 配下の主要な拡張 Mod を自動的にマージします。
+- すべての設定、KubeJS スクリプト、Patchouli の本を、すぐに使える `.minecraft` アーカイブにまとめ、中国語の起動ガイドを同梱します。
 
-### 3. 服务端导出包 (`packwiz server export`)
-- 自动剔除客户端专有优化 Mod（如 3D 皮肤层、光影着色器、按键绑定等），生成可直接部署在 Linux/Windows 生产服务器上的纯净服务端。
+### 3. サーバーエクスポートパック (`packwiz server export`)
+- クライアント専用の最適化 Mod（3D スキンレイヤー、シェーダー、キーバインドなど）を自動的に除外し、Linux/Windows の本番サーバーに直接デプロイできるクリーンなサーバーパックを生成します。
 
 ---
 
-## 🌐 GitHub Pages 静态 Maven 仓库部署
+## 🌐 GitHub Pages 静的 Maven リポジトリのデプロイ
 
-流水线通过 Gradle 的 `publish` 任务将所有子模块（`gtecore`、`gtm-reborn`、`gt--`）构建为标准 Maven 构件，并部署到 `gh-pages` 分支：
+パイプラインは Gradle の `publish` タスクを通じて、すべてのサブモジュール（`gtecore`、`gtm-reborn`、`gt--`）を標準の Maven アーティファクトとしてビルドし、`gh-pages` ブランチにデプロイします：
 
 ```groovy
 // 在第三方 Mod 或开发工程中直接引用 GTE Maven 仓库
@@ -61,10 +61,11 @@ dependencies {
 
 ---
 
-## 🏷️ 手动发布与版本打标工作流 (`release-publish.yml`)
+## 🏷️ 手動リリースとバージョンタグ付けワークフロー (`release-publish.yml`)
 
-项目采用规范化的 Git Release 流程：
-1. 在 GitHub Actions 页面手动触发 **Manual Publish Release**，输入版本号（如 `2.3.0`）。
-2. 工作流自动创建 `dev -> release` PR，执行 CI 校验并自动 Squash Merge。
-3. 自动在 `release` 分支打上 `v2.3.0` Git Tag 并推送。
-4. Tag 推送事件自动触发 `sync-build.yml`，最终完成全渠道制品发布。
+プロジェクトは標準化された Git Release フローを採用しています：
+
+1. GitHub Actions ページで **Manual Publish Release** を手動でトリガーし、バージョン番号（例: `2.3.0`）を入力します。
+2. ワークフローが自動的に `dev -> release` PR を作成し、CI チェックを実行して自動的に Squash Merge します。
+3. `release` ブランチに `v2.3.0` Git Tag を自動的に打ってプッシュします。
+4. Tag のプッシュイベントが自動的に `sync-build.yml` をトリガーし、最終的に全チャネルへの成果物リリースが完了します。

@@ -1,12 +1,12 @@
-# 本地热联调与免启动器快速运行
+# ローカルホットデバッグとランチャー不要のクイック起動
 
-GTE 设计了一套对整合包策划、任务编写者与模组程序员极其友好的无感联调系统。
+GTEは、Modpackプランナー、クエスト作成者、Modプログラマーにとって非常に使いやすいシームレスな連携デバッグシステムを設計しました。
 
 ---
 
-## ⚡ 1. 免启动器极速启动脚本 (`run_game.bat` / `run_game.sh`)
+## ⚡ 1. ランチャー不要の超高速起動スクリプト (`run_game.bat` / `run_game.sh`)
 
-对于任务书作者（FTB Quests）和 KubeJS 配方策划人员，**无需打开 IntelliJ IDEA，也无需安装任何第三方启动器**，直接双击项目根目录下的 **`run_game.bat`** 即可极速进入游戏！
+クエストブック作成者（FTB Quests）やKubeJSレシピ担当者にとって、**IntelliJ IDEAを開く必要も、サードパーティ製ランチャーをインストールする必要もありません**。プロジェクトルートの **`run_game.bat`** をダブルクリックするだけで、ゲームを超高速に起動できます！
 
 ```mermaid
 graph TD
@@ -17,38 +17,38 @@ graph TD
     E --> F[启动游戏: 实时读写 Git 追踪的 quests 与 scripts]
 ```
 
-### 核心特性
-1. **全自动 JDK 21 探测**：自动检索 `.jdks`、`Adoptium`、`Zulu`、`Program Files` 下安装的 Java 21，并自动记忆于 `.jdk_path`。
-2. **硬件自适应优化**：根据当前电脑的 RAM 总量自动按最优比例（50%~60% 可用物理内存）分配 JVM 堆大小，自动配置并行 GC 线程。
-3. **零挪动工作流**：游戏内修改任务（`/ftbquests editing_mode true`）并保存，修改直接实时保存在 Git 仓库对应的 `config/ftbquests/` 中，打开 GitHub Desktop 即可一键提交！
+### 主な特徴
+1. **全自動JDK 21検出**: `.jdks`、`Adoptium`、`Zulu`、`Program Files` 配下にインストールされたJava 21を自動的に検索し、`.jdk_path` に自動的に記憶します。
+2. **ハードウェア適応最適化**: 現在のPCのRAM総量に基づき、最適な割合（使用可能な物理メモリの50%〜60%）でJVMヒープサイズを自動割り当てし、並列GCスレッドを自動構成します。
+3. **移動ゼロのワークフロー**: ゲーム内でクエストを変更（`/ftbquests editing_mode true`）して保存すると、変更はGitリポジトリ内の対応する `config/ftbquests/` にリアルタイムで直接保存されます。GitHub Desktopを開けばワンクリックでコミットできます！
 
 ---
 
-## 🔗 2. 外部启动器零复制映射工具 (`link_to_launcher.bat`)
+## 🔗 2. 外部ランチャー向けコピー不要マッピングツール (`link_to_launcher.bat`)
 
-如果你习惯使用自己配置好皮肤、按键习惯的启动器（如 PCL2 / HMCL / Prism Launcher）：
+スキンやキー設定を自分好みに設定したランチャー（PCL2 / HMCL / Prism Launcher など）を使い慣れている場合：
 
-1. 双击运行根目录的 **`link_to_launcher.bat`**。
-2. 按提示将你的启动器游戏目录（例如 `D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\`）拖入控制台中并回车。
-3. 脚本会自动建立 Windows 目录软链接 (Directory Junctions)：
+1. ルートディレクトリの **`link_to_launcher.bat`** をダブルクリックして実行します。
+2. プロンプトに従って、ランチャーのゲームディレクトリ（例: `D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\`）をコンソールにドラッグ＆ドロップしてEnterキーを押します。
+3. スクリプトはWindowsのディレクトリジャンクション（Directory Junctions）を自動的に作成します：
    - `config` ➜ `gte/overrides/config`
    - `kubejs` ➜ `gte/overrides/kubejs`
    - `ftbquests` ➜ `gte/overrides/config/ftbquests`
    - `defaultconfigs` ➜ `gte/overrides/defaultconfigs`
-4. 无论在启动器中如何修改任务或配方，**物理数据实时同步保存在主 Git 仓库中**！
+4. ランチャー内でクエストやレシピをどのように変更しても、**物理データはメインのGitリポジトリにリアルタイムで同期保存されます**！
 
 ---
 
-## ☕ 3. 模组代码热编译影子环境 (`gte-dev-runtime`)
+## ☕ 3. Modコードのホットコンパイルシャドウ環境 (`gte-dev-runtime`)
 
-对于 Java/Kotlin 程序员，`modules/gte-dev-runtime` 是专用的影子调试模块：
+Java/Kotlinプログラマー向けに、`modules/gte-dev-runtime` は専用のシャドウデバッグモジュールです：
 
-### 工作原理与设计考量
-- **定位**：纯本地热编译联调沙盒，**禁止打包发布，不会出现在任何玩家构件中**。
-- **ModDevGradle 动态重映射**：自动将 `gtm-reborn` 与 `gtecore` 的最新源码热编译并挂载进 Mojang 反混淆命名空间。
-- **启动方式**：
-  - 在 IDEA 中选择运行配置 **`Run GTE Full Pack (Client - Hot Debug)`**。
-  - 或命令行执行：
+### 動作原理と設計上の考慮点
+- **位置付け**: 純粋なローカルホットコンパイル/連携デバッグ用サンドボックスであり、**パッケージングして公開することは禁止されており、いかなるプレイヤー向け成果物にも含まれません**。
+- **ModDevGradle動的リマッピング**: `gtm-reborn` と `gtecore` の最新ソースコードを自動的にホットコンパイルし、Mojangの難読化解除名前空間にマウントします。
+- **起動方法**:
+  - IDEAで実行構成 **`Run GTE Full Pack (Client - Hot Debug)`** を選択します。
+  - またはコマンドラインで実行：
     ```powershell
     .\gradlew.bat :modules:gte-dev-runtime:runClient
     ```
