@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conjunto-de-ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock" class="md-skip">
+        <a href="#ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -1639,23 +1639,23 @@
   
 
 
-<h1 id="conjunto-de-ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock">Conjunto de Ferramentas KubeJS e Exportador de Multiblocos (<code>/dumpmultiblock</code>)<a class="headerlink" href="#conjunto-de-ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>O GTE incorpora ferramentas de automação de construção de multiblocos e extração de estruturas, específicas para desenvolvedores, nos scripts do lado do servidor do KubeJS, liberando completamente o processo de design de estruturas multibloco.</p>
+<h1 id="ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock">Ferramentas KubeJS e Exportador de Multiblocos (<code>/dumpmultiblock</code>)<a class="headerlink" href="#ferramentas-kubejs-e-exportador-de-multiblocos-dumpmultiblock" title="Permanent link">&para;</a></h1>
+<p>O GTE inclui ferramentas automatizadas de construção e extração de estruturas multibloco para desenvolvedores nos scripts do lado do servidor do KubeJS, liberando completamente o processo de design de estruturas multibloco.</p>
 <hr />
 <h2 id="exportador-visual-de-multiblocos-dumpmultiblock">🪓 Exportador Visual de Multiblocos (<code>/dumpmultiblock</code>)<a class="headerlink" href="#exportador-visual-de-multiblocos-dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>Ao desenvolver multiblocos personalizados (seja em código Java ou scripts KubeJS), escrever manualmente <code>FactoryBlockPattern.aisle(...)</code> composto por dezenas de camadas de caracteres é extremamente demorado e propenso a erros.</p>
 <p>O GTE inclui o <strong>exportador de seleção com machado de madeira <code>/dumpmultiblock</code></strong> (<code>server_scripts/easymultiblock.js</code>):</p>
 <pre class="mermaid"><code>graph LR
-    A[Segurando machado de madeira] --&gt;|Clique esquerdo| B[Selecionar ponto Pos1]
-    A --&gt;|Clique direito| C[Selecionar ponto diagonal Pos2]
+    A[Segurando machado de madeira] --&gt;|Clique esquerdo| B[Selecionar canto Pos1]
+    A --&gt;|Clique direito| C[Selecionar canto oposto Pos2]
     B &amp; C --&gt; D[Executar /dumpmultiblock no jogo]
-    D --&gt; E[Saída completa do código Java FactoryBlockPattern no console e no chat]</code></pre>
+    D --&gt; E[Saída completa do código Java FactoryBlockPattern no console e chat]</code></pre>
 <h3 id="passos-de-uso">Passos de Uso<a class="headerlink" href="#passos-de-uso" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Entre no modo criativo do jogo e segure um <strong>machado de madeira (<code>minecraft:wooden_axe</code>)</strong>.</li>
-<li>Construa diretamente no mundo a estrutura física completa do multibloco conforme sua concepção (incluindo carcaça, compartimentos, bobinas, controlador principal).</li>
-<li>Use o machado de madeira com <strong>clique esquerdo</strong> em um bloco de canto inferior da estrutura (o chat exibirá <code>Pos1 definido: x, y, z</code>).</li>
-<li>Use o machado de madeira com <strong>clique direito</strong> no bloco de canto superior diagonal da estrutura (o chat exibirá <code>Pos2 definido: x, y, z</code>).</li>
+<li>Construa diretamente no mundo a estrutura física completa do multibloco conforme planejado (incluindo carcaça, compartimentos, bobinas, controlador principal).</li>
+<li>Use o machado de madeira com <strong>clique esquerdo</strong> em um bloco de canto inferior da estrutura (o chat mostrará <code>Pos1 definido: x, y, z</code>).</li>
+<li>Use o machado de madeira com <strong>clique direito</strong> no bloco de canto superior oposto da estrutura (o chat mostrará <code>Pos2 definido: x, y, z</code>).</li>
 <li>Digite o comando no chat:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
@@ -1676,13 +1676,13 @@
 <h2 id="configuracao-de-gases-e-veios-de-fluidos-por-dimensao">🌌 Configuração de Gases e Veios de Fluidos por Dimensão<a class="headerlink" href="#configuracao-de-gases-e-veios-de-fluidos-por-dimensao" title="Permanent link">&para;</a></h2>
 <p>O GTE estende a coleta de fluidos e gases em todas as dimensões através do KubeJS:</p>
 <h3 id="1-extracao-de-gases-por-dimensao-dimension_gasjs">1. Extração de Gases por Dimensão (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-extracao-de-gases-por-dimensao-dimension_gasjs" title="Permanent link">&para;</a></h3>
-<p>Usando a câmara de coleta de gás grande (<code>gas_collector</code>) com diferentes números de circuito, é possível extrair a atmosfera específica de qualquer dimensão:
+<p>Usando o coletor de gás grande (<code>gas_collector</code>) com diferentes números de circuito, é possível extrair a atmosfera exclusiva de qualquer dimensão:
 - <strong>Ar do Mundo Superior</strong>: <code>circuit(4)</code> ➜ Saída <code>gtceu:air 10000</code>
 - <strong>Ar Infernal do Nether</strong>: <code>circuit(5)</code> ➜ Saída <code>gtceu:nether_air 10000</code>
 - <strong>Ar do Vazio do End</strong>: <code>circuit(6)</code> ➜ Saída <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-conversor-de-circuitos-universais-universal_circuitjs">2. Conversor de Circuitos Universais (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-conversor-de-circuitos-universais-universal_circuitjs" title="Permanent link">&para;</a></h3>
 <p>Para resolver a complexa pilha de receitas entre diferentes mods e níveis de placas de circuito, o GTE introduz o sistema de <strong>circuito universal (<code>universal_circuit</code>)</strong>:
-- Permite converter qualquer circuito do mesmo nível de voltagem (ULV a MAX) em um item de circuito universal unificado, sem perdas, a <strong>1 EU / 1 tick</strong> na empacotadora (<code>packer</code>).</p>
+- Permite converter qualquer circuito do mesmo nível de voltagem (ULV a MAX) em um item de circuito universal unificado na empacotadora (<code>packer</code>) com custo de <strong>1 EU / 1 tick</strong> sem perdas.</p>
 
 
 

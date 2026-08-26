@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benutzeroberflache-texturen-und-blockbench-art-workflow" class="md-skip">
+        <a href="#benutzeroberflache-texturen-und-blockbench-arbeitsablauf" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -1602,26 +1602,26 @@
   
 
 
-<h1 id="benutzeroberflache-texturen-und-blockbench-art-workflow">Benutzeroberfläche, Texturen und Blockbench-Art-Workflow<a class="headerlink" href="#benutzeroberflache-texturen-und-blockbench-art-workflow" title="Permanent link">&para;</a></h1>
-<p>Das GTE-Projekt hat eine automatisierte, verlustfreie Pipeline für die Verarbeitung von Art-Assets etabliert. Modelldesigner müssen lediglich mit <strong>Blockbench</strong> Modelle erstellen und sie im Quellverzeichnis speichern. Die Gradle-Aufgaben übernehmen automatisch die Asset-Klassifizierung, Formatvalidierung und inkrementelle Synchronisierung.</p>
+<h1 id="benutzeroberflache-texturen-und-blockbench-arbeitsablauf">Benutzeroberfläche, Texturen und Blockbench-Arbeitsablauf<a class="headerlink" href="#benutzeroberflache-texturen-und-blockbench-arbeitsablauf" title="Permanent link">&para;</a></h1>
+<p>Das GTE-Projekt hat eine automatisierte, verlustfreie Pipeline für die Verarbeitung von Kunst-Assets etabliert. Modell-Designer müssen lediglich <strong>Blockbench</strong> verwenden, um Modelle zu erstellen und sie im Originalverzeichnis zu speichern. Gradle-Aufgaben übernehmen automatisch die Asset-Klassifizierung, Formatvalidierung und inkrementelle Synchronisierung.</p>
 <hr />
 <h2 id="kunst-quelldateiverzeichnis-art_assets">🎨 Kunst-Quelldateiverzeichnis (<code>art_assets/</code>)<a class="headerlink" href="#kunst-quelldateiverzeichnis-art_assets" title="Permanent link">&para;</a></h2>
-<p>Das <code>art_assets/</code>-Verzeichnis im Projektstamm ist das <strong>einzige Arbeitsverzeichnis</strong> für Art-Designer und wird streng von Git versioniert:</p>
+<p>Das <code>art_assets/</code>-Verzeichnis im Projektstamm ist das <strong>einzige Arbeitsverzeichnis</strong> für Kunst-Designer und wird streng von Git versioniert:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Blockbench-Projektquelldateien (Ebenen und Knochen bleiben erhalten)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Von Blockbench exportierte Minecraft-Geometriemodelle
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── *.png                               # Textur-Maps (Gegenstände / Blockgehäuse / Array-Texturen)
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── *.png.mcmeta                        # Animations- und Material-Metadaten
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Unterverzeichnis für spezielle Texturen der High-End-Schaltkreis-Serie
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Unterverzeichnis für spezielle Texturen der High-End-Schaltkreisserie
 </span></code></pre></div>
 <hr />
 <h2 id="namenskonventionen-und-automatische-routing-regeln">🏷️ Namenskonventionen und automatische Routing-Regeln<a class="headerlink" href="#namenskonventionen-und-automatische-routing-regeln" title="Permanent link">&para;</a></h2>
-<p>Die Gradle-Aufgabe <code>syncBlockbenchAssets</code> verteilt Dateien basierend auf Schlüsselwörtern im Dateinamen automatisch an die entsprechenden Ressourcenpfade in <code>modules/gtecore</code>:</p>
+<p>Die Gradle-Aufgabe <code>syncBlockbenchAssets</code> verteilt Dateien basierend auf Dateinamen-Schlüsselwörtern automatisch an die entsprechenden Ressourcenpfade in <code>modules/gtecore</code>:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Dateityp</th>
-<th style="text-align: left;">Schlüsselwörter im Namen</th>
+<th style="text-align: left;">Namens-Schlüsselwörter</th>
 <th style="text-align: left;">Automatisches Synchronisierungsziel (GTECore)</th>
 </tr>
 </thead>
@@ -1632,7 +1632,7 @@
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/item/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Blockgehäusetexturen</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>Blockgehäuse-Texturen</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>concrete</code>, <code>coil</code>, <code>zhenfa</code>, <code>matrix</code>, <code>buffer</code>, <code>generator</code>, <code>machine</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/block/</code></td>
 </tr>
@@ -1643,7 +1643,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Gegenstandsmodelle</strong> (<code>.json</code>)</td>
-<td style="text-align: left;">Alle übrigen Modelldateien (außer <code>.bbmodel</code>)</td>
+<td style="text-align: left;">Alle anderen Modelldateien (außer <code>.bbmodel</code>)</td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/item/</code></td>
 </tr>
 </tbody>
@@ -1656,9 +1656,9 @@
 </span></code></pre></div>
 <h3 id="automatisierungsfunktionen">Automatisierungsfunktionen<a class="headerlink" href="#automatisierungsfunktionen" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Automatische Auslösung</strong>: Diese Aufgabe ist an die Vorstufen von <code>buildAll</code>, <code>copyOutputJars</code> sowie den CI-Build-Prozess gekoppelt. Sie wird automatisch bei lokalen Builds oder beim Starten des Spiels ausgeführt, ohne manuelles Kopieren.</li>
+<li><strong>Automatische Auslösung</strong>: Diese Aufgabe ist an die Vorstufen von <code>buildAll</code>, <code>copyOutputJars</code> sowie den CI-Build-Prozess gekoppelt. Sie wird automatisch bei lokalen Builds oder beim Starten des Spiels ausgeführt, ohne manuelles wiederholtes Kopieren.</li>
 <li><strong>Inkrementelle Sicherheit</strong>: Verwendet binäres Streaming-Überschreiben und ergänzt automatisch fehlende übergeordnete Verzeichnisse im Zielressourcenverzeichnis.</li>
-<li><strong>Sauberes Git</strong>: <code>.bbmodel</code>-Dateien bleiben ausschließlich in <code>art_assets/</code> als Quellprojekt erhalten. Das kompilierte JAR-Paket enthält keine redundanten Blockbench-Projektmetadaten.</li>
+<li><strong>Git sauber halten</strong>: <code>.bbmodel</code>-Dateien bleiben nur in <code>art_assets/</code> als Quelldateien. Die generierten Jar-Pakete enthalten keine redundanten Blockbench-Projektmetadaten.</li>
 </ol>
 
 

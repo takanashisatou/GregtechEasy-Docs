@@ -1662,41 +1662,41 @@
 
 
 <h1 id="ae2-deep-integration-and-pattern-assembly-plus-system">AE2 Deep Integration and Pattern Assembly Plus System<a class="headerlink" href="#ae2-deep-integration-and-pattern-assembly-plus-system" title="Permanent link">&para;</a></h1>
-<p>GTECore establishes an extremely powerful direct data interconnection bridge between Applied Energistics 2 (AE2) and GregTech multi-block structures.</p>
+<p>GTECore provides an extremely powerful direct data interconnection bridge between Applied Energistics 2 (AE2) and GregTech multiblock structures.</p>
 <hr />
 <h2 id="me-pattern-assembly-plus-me_pattern_buffer_plus">🧩 ME Pattern Assembly Plus (<code>me_pattern_buffer_plus</code>)<a class="headerlink" href="#me-pattern-assembly-plus-me_pattern_buffer_plus" title="Permanent link">&para;</a></h2>
-<p>In traditional tech mods, connecting AE2 pattern providers to multi-block machines often faces the pain points of <strong>insufficient slots, inability to mix fluid and item outputs, and difficulty in sharing patterns across multiple machines</strong>.</p>
+<p>In traditional tech mods, connecting AE2 pattern providers to multiblock machines often faces the pain points of <strong>insufficient slots, inability to mix fluid and item outputs, and difficulty in sharing patterns across multiple machines</strong>.</p>
 <p>GTECore's <strong>ME Pattern Assembly Plus</strong> completely solves this problem:</p>
 <pre class="mermaid"><code>graph TD
     A[AE2 ME Network] --&gt; B[ME Pattern Assembly Plus Host&lt;br/&gt;81 Pattern Slots / Shared Inventory / Programmable Storage]
-    B --&gt;|Datastick Binding| C[ME Pattern Assembly Mirror Plus #1&lt;br/&gt;Connected to Multi-block Machine A]
-    B --&gt;|Datastick Binding| D[ME Pattern Assembly Mirror Plus #2&lt;br/&gt;Connected to Multi-block Machine B]
-    B --&gt;|Datastick Binding| E[ME Pattern Assembly Mirror Plus #3&lt;br/&gt;Connected to Multi-block Machine C]</code></pre>
+    B --&gt;|Datastick Binding| C[ME Pattern Assembly Mirror Plus #1&lt;br/&gt;Connected to Multiblock Machine A]
+    B --&gt;|Datastick Binding| D[ME Pattern Assembly Mirror Plus #2&lt;br/&gt;Connected to Multiblock Machine B]
+    B --&gt;|Datastick Binding| E[ME Pattern Assembly Mirror Plus #3&lt;br/&gt;Connected to Multiblock Machine C]</code></pre>
 <h3 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Massive Pattern Capacity</strong>: A single assembly host has <strong>81 pattern slots</strong> (equivalent to the total of 9 standard AE2 pattern providers).</li>
-<li><strong>All-in-one Hatch Capability</strong>: Simultaneously possesses <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, and <code>EXPORT_FLUIDS</code> capabilities, supporting mixed fluid and item interactions in the same hatch.</li>
-<li><strong>Programmable Storage Support</strong>: Internally integrates the Programmable Storage mechanism, supporting precise ingredient delivery and caching for complex recipes.</li>
+<li><strong>All-in-One Hatch Capability</strong>: Simultaneously possesses <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, <code>EXPORT_FLUIDS</code> capabilities, supporting mixed fluid and item interactions in the same hatch.</li>
+<li><strong>Programmable Storage Support</strong>: Internally integrates the Programmable Storage mechanism, supporting precise input and caching for complex recipes.</li>
 </ol>
 <hr />
 <h2 id="me-pattern-assembly-mirror-plus-me_pattern_buffer_proxy_plus">🪞 ME Pattern Assembly Mirror Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#me-pattern-assembly-mirror-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
 <p><strong>Pattern Assembly Mirror Plus</strong> is a revolutionary distributed automation structural component:</p>
 <h3 id="working-principle-and-cross-machine-sharing">Working Principle and Cross-Machine Sharing<a class="headerlink" href="#working-principle-and-cross-machine-sharing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Install the mirror assembly in the hatch position of any multi-block machine.</li>
-<li>Hold a <strong>Datastick</strong> and right-click the main <strong>ME Pattern Assembly Plus</strong> to read its coordinates, then right-click the <strong>Pattern Assembly Mirror Plus</strong> to bind.</li>
+<li>Install the mirror assembly in the hatch position of any multiblock machine.</li>
+<li>Hold a <strong>Datastick</strong> and right-click the main <strong>ME Pattern Assembly Plus</strong> to read coordinates, then right-click the <strong>Pattern Assembly Mirror Plus</strong> to bind.</li>
 <li><strong>All bound mirrors will share all 81 patterns placed in the main assembly in real-time</strong>!</li>
-<li>When the AE2 network initiates an automated crafting task, the network automatically load-balances and assigns it to all idle mirror machines for parallel operation!</li>
+<li>When the AE2 network initiates automated crafting tasks, the network will automatically load-balance and assign them to all idle mirror machines for parallel operation!</li>
 </ul>
 <h3 id="jade-hover-status-display">Jade Hover Status Display<a class="headerlink" href="#jade-hover-status-display" title="Permanent link">&para;</a></h3>
-<p>When hovering over the pattern assembly or mirror, Jade automatically displays:
-- Main assembly: <code>Connected Mirror Count: X</code>
+<p>When pointing at the pattern assembly or mirror, Jade will automatically display:
+- Main assembly: <code>Connected mirrors: X</code>
 - Mirror component: <code>Bound to - X: ..., Y: ..., Z: ...</code></p>
 <hr />
 <h2 id="me-steam-hatch-me_steam_hatch">💨 ME Steam Hatch (<code>me_steam_hatch</code>)<a class="headerlink" href="#me-steam-hatch-me_steam_hatch" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Function</strong>: Directly connects the AE2 fluid network to steam multi-block structures.</li>
-<li><strong>Effect</strong>: Steam multi-block structures no longer require external complex high-speed steam pipes and tanks, directly extracting steam from the ME network at maximum throughput for power supply, eliminating pipeline transmission bottlenecks.</li>
+<li><strong>Function</strong>: Directly connects the AE2 fluid network to steam multiblock structures.</li>
+<li><strong>Effect</strong>: Steam multiblock structures no longer need external complex high-speed steam pipes and tanks, directly drawing steam from the ME network at maximum throughput for power, eliminating pipeline transmission bottlenecks.</li>
 </ul>
 
 

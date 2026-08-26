@@ -1454,7 +1454,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 산업급 Prompt 제약 원칙
+        🎯 산업 등급 Prompt 제약 원칙
       
     </span>
   </a>
@@ -1540,7 +1540,7 @@
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 산업급 Prompt 제약 원칙
+        🎯 산업 등급 Prompt 제약 원칙
       
     </span>
   </a>
@@ -1592,23 +1592,23 @@
 
 
 <h1 id="ai-opencode_translatepy">AI 국제화 번역 엔진 (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE는 최신 대규모 언어 모델(LLM) 기반의 모드 간 완전 자동 국제화 번역 시스템을 설계 및 구현했습니다 (<code>scripts/opencode_translate.py</code>에 위치).</p>
+<p>GTE는 현대 대규모 언어 모델(LLM) 기반의 크로스 모드 완전 자동 국제화 번역 시스템(<code>scripts/opencode_translate.py</code> 위치)을 설계하고 구현했습니다.</p>
 <hr />
 <h2 id="_1">🤖 번역 엔진 아키텍처<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>기존의 커뮤니티 한글화는 수동으로 복잡한 JSON 및 SNBT 텍스트를 유지보수해야 했으며, 업데이트가 지연되고 오류가 발생하기 쉬웠습니다.</p>
-<p>GTE의 AI 번역 엔진은 표준화된 OpenAI 호환 API를 통해 FTB Quests 퀘스트북과 핵심 모드 언어 파일의 <strong>자동 증분 추출, 용어 정렬, 동시 번역</strong>을 구현합니다:</p>
+<p>GTE의 AI 번역 엔진은 표준화된 OpenAI 호환 API를 통해 FTB Quests 퀘스트 북과 핵심 모드 언어 파일의 <strong>자동 증분 추출, 용어 정렬, 동시 번역</strong>을 구현합니다:</p>
 <pre class="mermaid"><code>graph TD
     A[FTB Quests snbt 및 Lang json 스캔] --&gt; B[미번역 항목 추출]
     B --&gt; C[.translation_cache.json 로컬 캐시 읽기]
-    C --&gt; D{새로 추가되거나 수정된 항목이 있는가?}
+    C --&gt; D{새로 추가되거나 수정된 항목이 있나?}
     D -- 없음 --&gt; E[대상 언어 파일에 직접 동기화]
-    D -- 있음 --&gt; F[그레그테크 산업 용어 제약이 포함된 Prompt 구성]
+    D -- 있음 --&gt; F[그레그테크 산업 용어 제약이 포함된 Prompt 조립]
     F --&gt; G[LLM 공급자 API 호출: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
     G --&gt; H[로컬 캐시 검증 및 업데이트]
     H --&gt; I[zh_cn.json / en_us.json / ftbquests/lang/ 에 다시 쓰기]</code></pre>
 <hr />
 <h2 id="llm">🔑 지원되는 LLM 공급자 및 환경 변수<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
-<p>스크립트는 환경 변수를 통해 다양한 AI 모델 제공업체를 원활하게 전환할 수 있습니다:</p>
+<p>스크립트는 환경 변수를 통해 다양한 AI 모델 제공자를 원활하게 전환할 수 있습니다:</p>
 <table>
 <thead>
 <tr>
@@ -1670,14 +1670,14 @@
 </tbody>
 </table>
 <hr />
-<h2 id="prompt">🎯 산업급 Prompt 제약 원칙<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<h2 id="prompt">🎯 산업 등급 Prompt 제약 원칙<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
 <p>API를 호출하여 번역할 때 시스템에는 엄격한 Minecraft 및 GregTech 용어 규칙이 내장되어 있습니다:
-1. <strong>형식 코드 절대 보존</strong>: Minecraft 고유 색상 형식 코드(<code>§a</code>, <code>§c</code>, <code>§6</code>)와 자리 표시자(<code>%s</code>, <code>%d</code>, <code>{0}</code>)를 완전히 보존합니다.
-2. <strong>과학 기술 용어 표준화</strong>: <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 등 과학 기술 고유 명사 번역을 엄격히 고정합니다.
-3. <strong>해시 증분 캐시</strong>: 번역된 모든 항목은 <code>.translation_cache.json</code>에 자동으로 영구 기록되며, 새로 추가되거나 변경된 텍스트만 네트워크 요청을 발생시켜 토큰 비용과 CI 시간을 크게 절약합니다.</p>
+1. <strong>형식 코드 절대 보존</strong>: Minecraft 고유 색상 형식 코드(예: <code>§a</code>, <code>§c</code>, <code>§6</code>)와 자리 표시자(<code>%s</code>, <code>%d</code>, <code>{0}</code>)를 완전히 보존합니다.
+2. <strong>과학 기술 용어 표준화</strong>: 기술 고유 명사 번역을 엄격히 고정합니다(예: <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> 등).
+3. <strong>해시 증분 캐시</strong>: 모든 번역된 항목은 <code>.translation_cache.json</code>에 자동으로 영구 기록되며, 새로 추가되거나 변경된 텍스트만 네트워크 요청을 발생시켜 Token 비용과 CI 시간을 크게 절약합니다.</p>
 <hr />
 <h2 id="_2">💻 로컬 실행 명령<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>로컬 개발 환경에서 원클릭으로 전체 번역을 실행합니다:</p>
+<p>로컬 개발 환경에서 한 번에 전체 번역을 실행합니다:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 유효한 API Key를 설정한 후 실행</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>

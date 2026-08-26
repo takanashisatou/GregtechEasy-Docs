@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moteur-de-traduction-internationalisee-par-ia-opencode_translatepy" class="md-skip">
+        <a href="#moteur-de-traduction-internationalisee-ia-opencode_translatepy" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1591,18 +1591,18 @@
   
 
 
-<h1 id="moteur-de-traduction-internationalisee-par-ia-opencode_translatepy">Moteur de traduction internationalisée par IA (<code>opencode_translate.py</code>)<a class="headerlink" href="#moteur-de-traduction-internationalisee-par-ia-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE a conçu et implémenté un système de traduction internationalisée entièrement automatisé entre mods, basé sur les modèles de langage modernes (LLM), situé dans <code>scripts/opencode_translate.py</code>.</p>
+<h1 id="moteur-de-traduction-internationalisee-ia-opencode_translatepy">Moteur de traduction internationalisée IA (<code>opencode_translate.py</code>)<a class="headerlink" href="#moteur-de-traduction-internationalisee-ia-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>GTE a conçu et implémenté un système de traduction internationalisée entièrement automatisé entre mods, basé sur les modèles de langage modernes (LLM) (situé dans <code>scripts/opencode_translate.py</code>).</p>
 <hr />
 <h2 id="architecture-du-moteur-de-traduction">🤖 Architecture du moteur de traduction<a class="headerlink" href="#architecture-du-moteur-de-traduction" title="Permanent link">&para;</a></h2>
-<p>La localisation communautaire traditionnelle repose sur une maintenance manuelle fastidieuse de fichiers JSON et SNBT, avec des mises à jour lentes et un risque élevé d'erreurs.</p>
+<p>La localisation communautaire traditionnelle repose sur la maintenance manuelle de fichiers JSON et SNBT complexes, avec des mises à jour lentes et un risque élevé d'erreurs.</p>
 <p>Le moteur de traduction IA de GTE utilise une API standard compatible OpenAI pour réaliser l'<strong>extraction incrémentale automatisée, l'alignement terminologique et la traduction concurrente</strong> des livres de quêtes FTB Quests et des fichiers de langue des mods principaux :</p>
 <pre class="mermaid"><code>graph TD
-    A[Scanner les snbt FTB Quests et les json Lang] --&gt; B[Extraire les entrées non traduites]
+    A[Scanner les snbt de FTB Quests et les json de Lang] --&gt; B[Extraire les entrées non traduites]
     B --&gt; C[Lire le cache local .translation_cache.json]
     C --&gt; D{Y a-t-il de nouvelles entrées ou des modifications ?}
     D -- Non --&gt; E[Écrire directement dans les fichiers de langue cibles]
-    D -- Oui --&gt; F[Assembler le Prompt avec les contraintes terminologiques industrielles de GregTech]
+    D -- Oui --&gt; F[Assembler un Prompt avec les contraintes terminologiques industrielles de GregTech]
     F --&gt; G[Appeler l'API du fournisseur LLM : DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
     G --&gt; H[Valider et mettre à jour le cache local]
     H --&gt; I[Réécrire dans zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
@@ -1613,8 +1613,8 @@
 <thead>
 <tr>
 <th style="text-align: left;">Nom du fournisseur</th>
-<th style="text-align: left;">Variable d'environnement pour la clé API</th>
-<th style="text-align: left;">Variable d'environnement pour l'URL de base</th>
+<th style="text-align: left;">Variable d'environnement de clé API</th>
+<th style="text-align: left;">Variable d'environnement de Base URL</th>
 <th style="text-align: left;">Modèle par défaut</th>
 </tr>
 </thead>
@@ -1638,19 +1638,19 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Qwen (DashScope)</strong></td>
+<td style="text-align: left;"><strong>通义千问 (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Moonshot</strong></td>
+<td style="text-align: left;"><strong>月之暗面 (Moonshot)</strong></td>
 <td style="text-align: left;"><code>MOONSHOT_API_KEY</code></td>
 <td style="text-align: left;"><code>MOONSHOT_BASE_URL</code></td>
 <td style="text-align: left;"><code>moonshot-v1-8k</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Zhipu GLM</strong></td>
+<td style="text-align: left;"><strong>智谱清言 (Zhipu GLM)</strong></td>
 <td style="text-align: left;"><code>ZHIPU_API_KEY</code></td>
 <td style="text-align: left;"><code>ZHIPU_BASE_URL</code></td>
 <td style="text-align: left;"><code>glm-4-flash</code></td>
@@ -1662,7 +1662,7 @@
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Proxy agrégateur générique</strong></td>
+<td style="text-align: left;"><strong>Proxy d'agrégation générique</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
 <td style="text-align: left;"><code>LLM_MODEL</code> (personnalisé)</td>
@@ -1672,13 +1672,13 @@
 <hr />
 <h2 id="principes-de-contrainte-du-prompt-de-niveau-industriel">🎯 Principes de contrainte du Prompt de niveau industriel<a class="headerlink" href="#principes-de-contrainte-du-prompt-de-niveau-industriel" title="Permanent link">&para;</a></h2>
 <p>Lors de l'appel à l'API pour la traduction, le système intègre des règles strictes de terminologie Minecraft et GregTech :
-1. <strong>Préservation absolue des formats</strong> : conserver intégralement les codes de formatage couleur natifs de Minecraft (comme <code>§a</code>, <code>§c</code>, <code>§6</code>) et les espaces réservés (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Normalisation de la terminologie technique</strong> : verrouiller strictement la traduction des termes techniques spécialisés (comme <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
-3. <strong>Cache incrémental par hachage</strong> : toutes les entrées déjà traduites sont automatiquement enregistrées de manière persistante dans <code>.translation_cache.json</code> ; seuls les textes nouveaux ou modifiés déclenchent des requêtes réseau, ce qui réduit considérablement les coûts de tokens et le temps de CI.</p>
+1. <strong>Préservation absolue des formats</strong> : Conserver intégralement les codes de formatage couleur natifs de Minecraft (comme <code>§a</code>, <code>§c</code>, <code>§6</code>) et les espaces réservés (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
+2. <strong>Normalisation des termes techniques</strong> : Verrouiller strictement la traduction des noms techniques spécialisés (comme <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+3. <strong>Cache incrémental par hachage</strong> : Toutes les entrées déjà traduites sont automatiquement enregistrées de manière persistante dans <code>.translation_cache.json</code>. Seuls les textes nouveaux ou modifiés déclenchent des requêtes réseau, ce qui réduit considérablement les coûts de tokens et le temps de CI.</p>
 <hr />
 <h2 id="commandes-dexecution-locale">💻 Commandes d'exécution locale<a class="headerlink" href="#commandes-dexecution-locale" title="Permanent link">&para;</a></h2>
 <p>Déclenchez une traduction complète en une seule commande dans l'environnement de développement local :</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Définissez une clé API valide, puis exécutez</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Définissez une clé API valide puis exécutez</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

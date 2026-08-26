@@ -1616,14 +1616,14 @@
 
 
 <h1 id="gtecore">GTECore 核心模組概要<a class="headerlink" href="#gtecore" title="Permanent link">&para;</a></h1>
-<p><strong>GTECore</strong> は GregTech Easy プロジェクトのカスタム Java コアモッドです。<code>gtm-reborn</code> のソースコードに直接依存し、大規模なマルチブロック産業構造、高次元の陣法技術、AE2 の深層連携、そしてスーパー回路製造体系を拡張します。</p>
+<p><strong>GTECore</strong> は GregTech Easy プロジェクトのカスタム Java コアモッドです。<code>gtm-reborn</code> のソースコードに直接依存し、大規模なマルチブロック産業構造、高次陣法技術、AE2 の深層連携、そしてスーパー回路製造体系を拡張します。</p>
 <hr />
 <h2 id="_1">🏛️ モッドアーキテクチャと設計方針<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
     A[GTM-Reborn 基本フレームワーク] --&gt; B[GTECore コアモッド]
-    B --&gt; C[東方玄妙工業: 陰陽八卦錬仙炉 / 四象陣法 / 太極五行]
+    B --&gt; C[東方玄妙工業: 陰陽八卦煉仙炉 / 四象陣法 / 太極五行]
     B --&gt; D[産業極限最適化: 奇跡の環 / 鉱石総合処理 / 汎用燃料エンジン]
-    B --&gt; E[AE2 深層拡張: ME ブランク総成 Plus &amp; ミラー / ME 蒸気倉]
+    B --&gt; E[AE2 深層拡張: ME ブランクアセンブリ Plus &amp; ミラー / ME 蒸気ポート]
     B --&gt; F[超次元回路システム: 超弦回路体系 / 陰陽回路体系]
     B --&gt; G[自動化と開発: Jade リアルタイム統合 / 構造テスト端末 / Datagen 国際化]</code></pre>
 <hr />
@@ -1632,10 +1632,10 @@
 <ol>
 <li><strong>GregTech Easy 機械 (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>：</li>
 <li>GTE オリジナルのマルチブロックメインブロック（陰陽八卦高炉、奇跡の環、鉱石処理センター、化学ターミネーターなど）をすべて含みます。</li>
-<li>多段階スーパーバッテリーボックス（Max Super Battery Buffer）、ME 蒸気倉、ME ブランク総成 Plus およびミラーを含みます。</li>
+<li>多段階スーパーバッテリーボックス（Max Super Battery Buffer）、ME 蒸気ポート、ME ブランクアセンブリ Plus およびミラーを含みます。</li>
 <li><strong>GregTech Easy アイテム (<code>itemGroup.gtecore.gtecore_items</code>)</strong>：</li>
 <li>超弦および陰陽回路シリーズのアイテム（プロセッサー、クラスター、スーパーコンピューター、ホスト）を含みます。</li>
-<li>五行元素符篆、八卦チップ、三清の粒、構造テスト端末などの専用ツールを含みます。</li>
+<li>五行元素符篆、八卦チップ、三清の粒、構造テスト端末などの専用アイテムを含みます。</li>
 </ol>
 <hr />
 <h2 id="gteconfig">⚙️ モッド全体設定 (<code>GTEConfig</code>)<a class="headerlink" href="#gteconfig" title="Permanent link">&para;</a></h2>
@@ -1652,7 +1652,7 @@
 <tr>
 <td style="text-align: left;"><code>superPeace</code> (スーパーピースモード)</td>
 <td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;">有効にすると悪性の敵対モブのスポーンを全面的に無効化し、テック建築のための完全にクリーンな環境を提供します</td>
+<td style="text-align: left;">有効にすると敵対的モブのスポーンを全面的に無効化し、技術建築のための完全にクリーンな環境を提供します</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>durationMultiplier</code> (レシピ時間倍率)</td>
@@ -1664,14 +1664,14 @@
 <hr />
 <h2 id="jade-top">🔍 Jade / TOP ネイティブ統合<a class="headerlink" href="#jade-top" title="Permanent link">&para;</a></h2>
 <p>GTECore は <strong><code>GTEJadePlugin</code></strong> プラグインを内蔵しています：
-- <strong>ME ブランク総成 Plus ステータス</strong>：現在の総成にバインドされているブランク数、流体およびアイテムの出力モードをリアルタイム表示します。
-- <strong>ME ブランク総成ミラー Plus バインド情報</strong>：ホバーでバインドされたメイン総成の座標 <code>(X, Y, Z)</code> とネットワーク接続状態を直接表示します。
-- <strong>陣法活性化インジケーター</strong>：陰陽八卦錬仙炉上で青龍、白虎、朱雀、玄武の四象陣法の準備状態をリアルタイム表示します。</p>
+- <strong>ME ブランクアセンブリ Plus の状態</strong>：現在のアセンブリにバインドされているブランク数、流体およびアイテムの出力モードをリアルタイム表示します。
+- <strong>ME ブランクアセンブリミラー Plus のバインド情報</strong>：ホバーでバインドされたメインアセンブリの座標 <code>(X, Y, Z)</code> とネットワーク接続状態を直接表示します。
+- <strong>陣法活性化インジケーター</strong>：陰陽八卦煉仙炉上で青龍、白虎、朱雀、玄武の四象陣法の準備状態をリアルタイム表示します。</p>
 <hr />
 <h2 id="structure-testing-terminal">🛠️ 構造テスト端末 (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#structure-testing-terminal" title="Permanent link">&para;</a></h2>
 <p>GTECore は専用の手持ちツール <strong>構造テスト端末</strong> (<code>item.gtecore.check_structure_terminal</code>) を提供します：
 - <strong>マルチブロックコントローラーを右クリック</strong>：構造の完全性をリアルタイムスキャンします。
-- <strong>エラー診断ヒント</strong>：構造が未完成の場合、端末はチャット欄とホバーヒントで<strong>エラーとなったブロック座標および配置すべきでない位置</strong>を正確に指摘し、大型マルチブロックの構築とデバッグを大幅に高速化します。</p>
+- <strong>エラー診断メッセージ</strong>：構造が未完成の場合、端末はチャット欄とホバー表示で<strong>エラーブロックの座標と配置すべきでない位置</strong>を正確に指摘し、大型マルチブロックの構築とデバッグを大幅に高速化します。</p>
 
 
 

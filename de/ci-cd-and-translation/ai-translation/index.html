@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ki-ubersetzungs-engine-fur-internationale-lokalisierung-opencode_translatepy" class="md-skip">
+        <a href="#ki-ubersetzungs-engine-fur-internationalisierung-opencode_translatepy" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -1591,21 +1591,21 @@
   
 
 
-<h1 id="ki-ubersetzungs-engine-fur-internationale-lokalisierung-opencode_translatepy">KI-Übersetzungs-Engine für internationale Lokalisierung (<code>opencode_translate.py</code>)<a class="headerlink" href="#ki-ubersetzungs-engine-fur-internationale-lokalisierung-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE hat ein vollautomatisches, modulübergreifendes Übersetzungssystem auf Basis moderner großer Sprachmodelle (LLM) entworfen und implementiert (befindet sich in <code>scripts/opencode_translate.py</code>).</p>
+<h1 id="ki-ubersetzungs-engine-fur-internationalisierung-opencode_translatepy">KI-Übersetzungs-Engine für Internationalisierung (<code>opencode_translate.py</code>)<a class="headerlink" href="#ki-ubersetzungs-engine-fur-internationalisierung-opencode_translatepy" title="Permanent link">&para;</a></h1>
+<p>GTE hat ein modulübergreifendes, vollautomatisches Internationalisierungssystem auf Basis moderner großer Sprachmodelle (LLM) entworfen und implementiert (befindet sich in <code>scripts/opencode_translate.py</code>).</p>
 <hr />
 <h2 id="architektur-der-ubersetzungs-engine">🤖 Architektur der Übersetzungs-Engine<a class="headerlink" href="#architektur-der-ubersetzungs-engine" title="Permanent link">&para;</a></h2>
 <p>Traditionelle Community-Lokalisierung basiert auf manueller Pflege komplexer JSON- und SNBT-Texte, was zu Verzögerungen bei Updates und einer hohen Fehleranfälligkeit führt.</p>
-<p>Die KI-Übersetzungs-Engine von GTE nutzt eine standardisierte OpenAI-kompatible API, um eine <strong>automatisierte inkrementelle Extraktion, Terminologie-Abgleich und parallele Übersetzung</strong> für FTB-Quests-Aufgabenbücher und Sprachdateien der Kernmods zu ermöglichen:</p>
+<p>Die KI-Übersetzungs-Engine von GTE nutzt eine standardisierte OpenAI-kompatible API, um eine <strong>automatisierte inkrementelle Extraktion, Terminologie-Abgleich und parallele Übersetzung</strong> der FTB-Quests-Aufgabenbücher und der Sprachdateien der Kernmods zu ermöglichen:</p>
 <pre class="mermaid"><code>graph TD
-    A[Scannt FTB Quests snbt und Lang json] --&gt; B[Extrahiert unübersetzte Einträge]
-    B --&gt; C[Liest lokalen Cache .translation_cache.json]
+    A[Scanne FTB Quests snbt und Lang json] --&gt; B[Extrahiere unübersetzte Einträge]
+    B --&gt; C[Lies lokalen Cache .translation_cache.json]
     C --&gt; D{Gibt es neue oder geänderte Einträge?}
-    D -- Nein --&gt; E[Schreibt direkt in die Zielsprachdateien]
-    D -- Ja --&gt; F[Erstellt Prompt mit GregTech-Industrieterminologie-Einschränkungen]
-    F --&gt; G[Aufruf der LLM-Anbieter-API: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
+    D -- Nein --&gt; E[Schreibe direkt in die Zielsprachdateien]
+    D -- Ja --&gt; F[Erstelle Prompt mit GregTech-Industrieterminologie-Einschränkungen]
+    F --&gt; G[Rufe LLM-Anbieter-API auf: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
     G --&gt; H[Validierung und Aktualisierung des lokalen Caches]
-    H --&gt; I[Zurückschreiben in zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
+    H --&gt; I[Schreibe zurück in zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
 <h2 id="unterstutzte-llm-anbieter-und-umgebungsvariablen">🔑 Unterstützte LLM-Anbieter und Umgebungsvariablen<a class="headerlink" href="#unterstutzte-llm-anbieter-und-umgebungsvariablen" title="Permanent link">&para;</a></h2>
 <p>Das Skript unterstützt den nahtlosen Wechsel zwischen verschiedenen KI-Modellanbietern über Umgebungsvariablen:</p>
@@ -1638,19 +1638,19 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>通义千问 (DashScope)</strong></td>
+<td style="text-align: left;"><strong>Tongyi Qianwen (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>月之暗面 (Moonshot)</strong></td>
+<td style="text-align: left;"><strong>Moonshot AI</strong></td>
 <td style="text-align: left;"><code>MOONSHOT_API_KEY</code></td>
 <td style="text-align: left;"><code>MOONSHOT_BASE_URL</code></td>
 <td style="text-align: left;"><code>moonshot-v1-8k</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>智谱清言 (Zhipu GLM)</strong></td>
+<td style="text-align: left;"><strong>Zhipu GLM</strong></td>
 <td style="text-align: left;"><code>ZHIPU_API_KEY</code></td>
 <td style="text-align: left;"><code>ZHIPU_BASE_URL</code></td>
 <td style="text-align: left;"><code>glm-4-flash</code></td>
@@ -1671,13 +1671,13 @@
 </table>
 <hr />
 <h2 id="industrielle-prompt-einschrankungsprinzipien">🎯 Industrielle Prompt-Einschränkungsprinzipien<a class="headerlink" href="#industrielle-prompt-einschrankungsprinzipien" title="Permanent link">&para;</a></h2>
-<p>Beim Aufruf der API für Übersetzungen sind im System strenge Regeln für Minecraft- und GregTech-Terminologie integriert:
+<p>Beim Aufruf der API zur Übersetzung sind im System strenge Regeln für Minecraft- und GregTech-Terminologie integriert:
 1. <strong>Formatcodes absolut erhalten</strong>: Vollständige Beibehaltung der nativen Minecraft-Farbformatierungscodes (z. B. <code>§a</code>, <code>§c</code>, <code>§6</code>) und Platzhalter (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Einheitliche wissenschaftlich-technische Terminologie</strong>: Strikte Festlegung der Übersetzung von Fachbegriffen (z. B. <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> usw.).
-3. <strong>Inkrementeller Hash-Cache</strong>: Alle übersetzten Einträge werden automatisch dauerhaft in <code>.translation_cache.json</code> gespeichert. Nur neue oder geänderte Texte lösen Netzwerkanfragen aus, was Token-Kosten und CI-Zeit erheblich reduziert.</p>
+2. <strong>Einheitliche wissenschaftlich-technische Terminologie</strong>: Strikte Festlegung der Übersetzung technischer Fachbegriffe (z. B. <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code> usw.).
+3. <strong>Inkrementeller Hash-Cache</strong>: Alle bereits übersetzten Einträge werden automatisch dauerhaft in <code>.translation_cache.json</code> gespeichert. Nur neue oder geänderte Texte lösen Netzwerkanfragen aus, was Token-Kosten und CI-Zeit erheblich reduziert.</p>
 <hr />
 <h2 id="lokale-ausfuhrungsbefehle">💻 Lokale Ausführungsbefehle<a class="headerlink" href="#lokale-ausfuhrungsbefehle" title="Permanent link">&para;</a></h2>
-<p>In einer lokalen Entwicklungsumgebung kann die vollständige Übersetzung mit einem Befehl ausgelöst werden:</p>
+<p>In der lokalen Entwicklungsumgebung kann die vollständige Übersetzung mit einem Klick ausgelöst werden:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Nach dem Setzen eines gültigen API-Keys ausführen</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>

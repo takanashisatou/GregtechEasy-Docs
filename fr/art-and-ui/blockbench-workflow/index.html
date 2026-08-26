@@ -1194,10 +1194,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#caracteristiques-dautomatisation" class="md-nav__link">
+  <a href="#fonctionnalites-dautomatisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caractéristiques d'automatisation
+        Fonctionnalités d'automatisation
       
     </span>
   </a>
@@ -1554,10 +1554,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#caracteristiques-dautomatisation" class="md-nav__link">
+  <a href="#fonctionnalites-dautomatisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caractéristiques d'automatisation
+        Fonctionnalités d'automatisation
       
     </span>
   </a>
@@ -1602,26 +1602,26 @@
   
 
 
-<h1 id="interface-textures-et-workflow-artistique-blockbench">Interface, textures et workflow artistique Blockbench<a class="headerlink" href="#interface-textures-et-workflow-artistique-blockbench" title="Permanent link">&para;</a></h1>
-<p>Le projet GTE a mis en place un pipeline de traitement des assets artistiques automatisé et sans perte. Les concepteurs de modèles n'ont qu'à utiliser <strong>Blockbench</strong> pour créer les modèles et les enregistrer dans le répertoire source ; la tâche Gradle effectue automatiquement la classification des assets, la validation des formats et la synchronisation incrémentale.</p>
+<h1 id="interface-textures-et-workflow-artistique-blockbench">Interface, Textures et Workflow Artistique Blockbench<a class="headerlink" href="#interface-textures-et-workflow-artistique-blockbench" title="Permanent link">&para;</a></h1>
+<p>Le projet GTE a établi un pipeline de traitement des assets artistiques automatisé et sans perte. Les concepteurs de modèles n'ont qu'à utiliser <strong>Blockbench</strong> pour créer des modèles et les enregistrer dans le répertoire source ; les tâches Gradle effectuent automatiquement la classification des assets, la validation des formats et la synchronisation incrémentale.</p>
 <hr />
 <h2 id="repertoire-des-fichiers-sources-artistiques-art_assets">🎨 Répertoire des fichiers sources artistiques (<code>art_assets/</code>)<a class="headerlink" href="#repertoire-des-fichiers-sources-artistiques-art_assets" title="Permanent link">&para;</a></h2>
-<p>Le dossier <code>art_assets/</code> à la racine du projet est le <strong>répertoire de travail unique</strong> pour les artistes, strictement versionné par Git :</p>
+<p>Le dossier <code>art_assets/</code> à la racine du projet est le <strong>répertoire de travail unique</strong> pour les artistes, strictement suivi par Git :</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Fichiers sources du projet Blockbench (calques et os conservés)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Fichiers sources du projet Blockbench (conservent les calques et les os)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Modèles géométriques Minecraft exportés depuis Blockbench
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── *.png                               # Textures (objets / boîtiers de blocs / textures de formations)
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── *.png.mcmeta                        # Métadonnées d'animation et de matériaux
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Sous-répertoire dédié aux matériaux de la série de circuits haute tension
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Sous-répertoire dédié aux textures de la série de circuits haute tension
 </span></code></pre></div>
 <hr />
 <h2 id="conventions-de-nommage-et-regles-de-routage-automatique">🏷️ Conventions de nommage et règles de routage automatique<a class="headerlink" href="#conventions-de-nommage-et-regles-de-routage-automatique" title="Permanent link">&para;</a></h2>
-<p>La tâche Gradle <code>syncBlockbenchAssets</code> distribue automatiquement les fichiers vers les chemins de ressources correspondants dans <code>modules/gtecore</code>, en fonction des mots-clés présents dans les noms de fichiers :</p>
+<p>La tâche Gradle <code>syncBlockbenchAssets</code> distribue automatiquement les fichiers vers les chemins de ressources correspondants dans <code>modules/gtecore</code>, en fonction des mots-clés dans les noms de fichiers :</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Type de fichier</th>
-<th style="text-align: left;">Mots-clés dans le nom</th>
+<th style="text-align: left;">Mot-clé dans le nom</th>
 <th style="text-align: left;">Répertoire cible de synchronisation automatique (GTECore)</th>
 </tr>
 </thead>
@@ -1654,11 +1654,11 @@
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">syncBlockbenchAssets</span>
 </span></code></pre></div>
-<h3 id="caracteristiques-dautomatisation">Caractéristiques d'automatisation<a class="headerlink" href="#caracteristiques-dautomatisation" title="Permanent link">&para;</a></h3>
+<h3 id="fonctionnalites-dautomatisation">Fonctionnalités d'automatisation<a class="headerlink" href="#fonctionnalites-dautomatisation" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Déclenchement automatique</strong> : Cette tâche est montée en nœud préalable à <code>buildAll</code>, <code>copyOutputJars</code> et au pipeline de construction CI. Elle s'exécute automatiquement lors de la compilation locale ou du lancement du jeu, sans avoir à la copier manuellement à plusieurs reprises.</li>
-<li><strong>Sécurité incrémentale</strong> : Utilise une écriture binaire en flux continu et complète automatiquement les répertoires parents manquants dans le répertoire de ressources cible.</li>
-<li><strong>Maintien de la propreté de Git</strong> : Les fichiers <code>.bbmodel</code> restent uniquement dans <code>art_assets/</code> en tant que projet source ; le jar compilé ne contient pas de métadonnées de projet Blockbench redondantes.</li>
+<li><strong>Déclenchement automatique</strong> : Cette tâche est montée en tant que nœud préalable à <code>buildAll</code>, <code>copyOutputJars</code> et au pipeline CI. Elle s'exécute automatiquement lors de la compilation locale ou du lancement du jeu, sans avoir à copier manuellement à plusieurs reprises.</li>
+<li><strong>Sécurité incrémentale</strong> : Utilise une écriture binaire en flux continu et crée automatiquement les répertoires parents manquants dans le répertoire de ressources cible.</li>
+<li><strong>Maintien de la propreté de Git</strong> : Les fichiers <code>.bbmodel</code> sont conservés uniquement dans <code>art_assets/</code> comme projets sources ; le jar compilé ne contient pas de métadonnées de projet Blockbench redondantes.</li>
 </ol>
 
 

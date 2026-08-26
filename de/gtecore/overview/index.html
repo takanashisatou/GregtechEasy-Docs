@@ -1621,8 +1621,8 @@
 <h2 id="modularchitektur-und-designausrichtung">🏛️ Modularchitektur und Designausrichtung<a class="headerlink" href="#modularchitektur-und-designausrichtung" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
     A[GTM-Reborn Basis-Framework] --&gt; B[GTECore Kernmodul]
-    B --&gt; C[Östliche Mystische Industrie: Yin-Yang-Acht-Trigramme-Alchemieofen / Vier-Symbole-Array / Taiji-Fünf-Elemente]
-    B --&gt; D[Industrielle Extremoptimierung: Wunderring / Erz-Komplettverarbeitung / Universeller Kraftstoffmotor]
+    B --&gt; C[Östliche Mystische Industrie: Yin-Yang-Bagua-Alchemieofen / Vier-Symbole-Array / Taiji-Fünf-Elemente]
+    B --&gt; D[Industrielle Extremoptimierung: Ring der Wunder / Erz-Komplettverarbeitung / Universeller Kraftstoffmotor]
     B --&gt; E[AE2 Tiefenerweiterung: ME Muster-Assembly Plus &amp; Spiegel / ME Dampfkammer]
     B --&gt; F[Hyperdimensionale Schaltkreissysteme: Superstring-Schaltkreissystem / Yin-Yang-Schaltkreissystem]
     B --&gt; G[Automatisierung &amp; Entwicklung: Jade Echtzeit-Integration / Strukturprüfterminal / Datagen Internationalisierung]</code></pre>
@@ -1631,11 +1631,11 @@
 <p>GTECore registriert eigene Kreativmodus-Registerkarten im Spiel:</p>
 <ol>
 <li><strong>GregTech Easy Maschinen (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>:</li>
-<li>Enthält alle originalen GTE-Multiblock-Hauptblöcke (Yin-Yang-Acht-Trigramme-Hochofen, Wunderring, Erzverarbeitungszentrum, Chemie-Terminator usw.).</li>
+<li>Enthält alle originären GTE-Multiblock-Hauptblöcke (Yin-Yang-Bagua-Hochofen, Ring der Wunder, Erzverarbeitungszentrum, Chemie-Terminator usw.).</li>
 <li>Enthält mehrstufige Super-Batteriekästen (Max Super Battery Buffer), ME Dampfkammern, ME Muster-Assembly Plus und Spiegel.</li>
 <li><strong>GregTech Easy Gegenstände (<code>itemGroup.gtecore.gtecore_items</code>)</strong>:</li>
-<li>Enthält Superstring- und Yin-Yang-Schaltkreis-Seriengegenstände (Prozessoren, Cluster, Supercomputer, Hosts).</li>
-<li>Enthält spezielle Werkzeuge wie Fünf-Elemente-Symbole, Acht-Trigramme-Chips, Drei-Reinheits-Partikel, Strukturprüfterminal usw.</li>
+<li>Enthält Superstring- und Yin-Yang-Schaltkreis-Serien (Prozessoren, Cluster, Supercomputer, Hosts).</li>
+<li>Enthält spezielle Werkzeuge wie Fünf-Elemente-Talismane, Bagua-Chips, Drei-Reinheits-Partikel, Strukturprüfterminal usw.</li>
 </ol>
 <hr />
 <h2 id="globale-modulkonfiguration-gteconfig">⚙️ Globale Modulkonfiguration (<code>GTEConfig</code>)<a class="headerlink" href="#globale-modulkonfiguration-gteconfig" title="Permanent link">&para;</a></h2>
@@ -1652,26 +1652,26 @@
 <tr>
 <td style="text-align: left;"><code>superPeace</code> (Super-Friedensmodus)</td>
 <td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;">Wenn aktiviert, werden feindliche Kreaturen vollständig deaktiviert, um eine absolut reine Umgebung für den Technologiebau zu schaffen</td>
+<td style="text-align: left;">Wenn aktiviert, wird das Spawnen feindlicher Kreaturen vollständig deaktiviert, was eine absolut reine Umgebung für den Technologiebau bietet</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>durationMultiplier</code> (Rezeptzeit-Multiplikator)</td>
 <td style="text-align: left;"><code>1.0</code></td>
-<td style="text-align: left;">Globaler Multiplikator für die Dauer der GTECore-eigenen Rezepte</td>
+<td style="text-align: left;">Passt global die Zeitdauer der benutzerdefinierten GTECore-Rezepte an</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="jade-top-native-integration">🔍 Jade / TOP Native Integration<a class="headerlink" href="#jade-top-native-integration" title="Permanent link">&para;</a></h2>
 <p>GTECore enthält eingebaute Unterstützung für das <strong><code>GTEJadePlugin</code></strong>-Plugin:
-- <strong>ME Muster-Assembly Plus Status</strong>: Zeigt in Echtzeit die Anzahl der gebundenen Muster, Flüssigkeits- und Gegenstandsausgabemodi der aktuellen Assembly.
+- <strong>ME Muster-Assembly Plus Status</strong>: Zeigt in Echtzeit die Anzahl der gebundenen Muster, Flüssigkeits- und Gegenstandsausgabemodi der aktuellen Assembly an.
 - <strong>ME Muster-Assembly Spiegel Plus Bindungsinformationen</strong>: Zeigt beim Überfahren direkt die Koordinaten <code>(X, Y, Z)</code> der gebundenen Haupt-Assembly sowie den Netzwerkverbindungsstatus an.
-- <strong>Array-Aktivierungsanzeige</strong>: Zeigt auf dem Yin-Yang-Acht-Trigramme-Alchemieofen in Echtzeit den Bereitschaftsstatus der Vier-Symbole-Arrays (Azurdrache, Weißer Tiger, Purpurvogel, Schwarze Schildkröte) an.</p>
+- <strong>Array-Aktivierungsanzeige</strong>: Zeigt auf dem Yin-Yang-Bagua-Alchemieofen in Echtzeit den Bereitschaftsstatus der Vier-Symbole-Arrays (Azurdrache, Weißer Tiger, Purpurvogel, Schwarze Schildkröte) an.</p>
 <hr />
 <h2 id="strukturprufterminal-structure-testing-terminal">🛠️ Strukturprüfterminal (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#strukturprufterminal-structure-testing-terminal" title="Permanent link">&para;</a></h2>
-<p>GTECore bietet ein spezielles Handwerkzeug – das <strong>Strukturprüfterminal</strong> (<code>item.gtecore.check_structure_terminal</code>):
-- <strong>Rechtsklick auf Multiblock-Controller</strong>: Scannt die strukturelle Integrität in Echtzeit.
-- <strong>Fehlerdiagnose-Hinweise</strong>: Wenn die Struktur nicht geformt ist, zeigt das Terminal im Chat und im Tooltip präzise die <strong>fehlerhaften Blockkoordinaten und unzulässigen Positionen</strong> an, was den Bau und die Fehlersuche bei großen Multiblocks erheblich beschleunigt.</p>
+<p>GTECore bietet ein eigenes Handwerkzeug – das <strong>Strukturprüfterminal</strong> (<code>item.gtecore.check_structure_terminal</code>):
+- <strong>Rechtsklick auf Multiblock-Controller</strong>: Scannt in Echtzeit die strukturelle Integrität.
+- <strong>Fehlerdiagnose-Hinweise</strong>: Wenn die Struktur nicht geformt ist, zeigt das Terminal im Chat und im Tooltip präzise die <strong>fehlerhaften Blockkoordinaten und die Stellen, an denen keine Blöcke platziert werden sollten</strong> an, was den Bau und die Fehlersuche großer Multiblöcke erheblich beschleunigt.</p>
 
 
 

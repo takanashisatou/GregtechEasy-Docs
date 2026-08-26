@@ -1278,7 +1278,7 @@
   <a href="#ide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IDE の推奨とプラグイン
+        IDE 推奨とプラグイン
       
     </span>
   </a>
@@ -1577,7 +1577,7 @@
   <a href="#ide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IDE の推奨とプラグイン
+        IDE 推奨とプラグイン
       
     </span>
   </a>
@@ -1661,27 +1661,27 @@
   
 
 
-<h1 id="_1">開発者クイックスタートガイド<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本ガイドは、GTE-Multi のクロスモジュールエンジニアリング開発に参加する Java/Kotlin プログラマーと Modpack 作成者を対象としています。</p>
+<h1 id="_1">开发者快速上手指南<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本指南は、GTE-Multi クロスモジュールエンジニアリング開発に参加する Java/Kotlin プログラマーと整合パック作者を対象としています。</p>
 <hr />
 <h2 id="1">💻 1. 開発環境の準備<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="jdk-21">JDK 21 必須要件<a class="headerlink" href="#jdk-21" title="Permanent link">&para;</a></h3>
-<p>このプロジェクトの全モジュールは、<strong>JDK 21</strong> を統一して使用します。推奨インストール先：
+<p>このプロジェクトの全モジュールは <strong>JDK 21</strong> を統一して使用します。推奨インストール先：
 - <a href="https://www.azul.com/downloads/?version=java-21-lts">Azul Zulu JDK 21</a>
 - <a href="https://adoptium.net/temurin/releases/?version=21">Eclipse Temurin JDK 21</a></p>
-<h3 id="ide">IDE の推奨とプラグイン<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h3>
-<p><strong>IntelliJ IDEA 2023.3+</strong> の使用を推奨し、以下の公式プラグインをインストールしてください：
+<h3 id="ide">IDE 推奨とプラグイン<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h3>
+<p><strong>IntelliJ IDEA 2023.3+</strong> を推奨し、以下の公式プラグインをインストールしてください：
 - <strong>Minecraft Development</strong>：Mixin コードヒント、AT アクセストランスフォーマー認識、イベントハイライトを提供します。
 - <strong>Lombok</strong>：<code>@Getter</code>, <code>@Setter</code>, <code>@NoArgsConstructor</code> などのアノテーションをサポートします。
 - <strong>Kotlin</strong>：GT-- CE モジュール開発をサポートします。</p>
 <hr />
 <h2 id="2">📥 2. リポジトリのクローンとプロジェクトのインポート<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>このプロジェクトには複数の Git サブモジュールが含まれているため、<strong>再帰的にプルする必要があります</strong>：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. メインリポジトリとすべてのサブモジュールを再帰的にクローン</span>
+<p>このプロジェクトには複数の Git サブモジュール (Submodules) が含まれているため、<strong>再帰的にプルする必要があります</strong>：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. メインリポジトリと全サブモジュールを再帰的にクローン</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/takanashisatou/GregtechEasy.git<span class="w"> </span>GTEGroup
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>GTEGroup
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 2. 以前にクローン済みの場合、サブモジュールを更新して初期化</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 2. 以前にクローン済みの場合、サブモジュールを更新・初期化</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </span></code></pre></div>
 <h3 id="idea">IDEA インポート手順<a class="headerlink" href="#idea" title="Permanent link">&para;</a></h3>
@@ -1692,7 +1692,7 @@
 </ol>
 <hr />
 <h2 id="3-gradle">🛠️ 3. よく使う Gradle ビルドコマンド<a class="headerlink" href="#3-gradle" title="Permanent link">&para;</a></h2>
-<p>Windows PowerShell で実行します（事前に <code>JAVA_HOME</code> を設定する必要があります）：</p>
+<p>Windows PowerShell で実行します（事前に <code>JAVA_HOME</code> を設定してください）：</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c"># 1. 指定したサブモジュールのみをコンパイル</span>
@@ -1700,7 +1700,7 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gt</span><span class="p">--:</span><span class="n">compileKotlin</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">compileJava</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. GTM-Reborn GameTest サーバーで実機テストを実行</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. GTM-Reborn GameTest サーバー実機テストを実行</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">runGameTestServer</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c"># 3. コードフォーマットを実行</span>
@@ -1709,7 +1709,7 @@
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c"># 4. 全モジュールを一括コンパイルして Jar をパッケージング</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">buildAll</span> <span class="n">-x</span> <span class="n">test</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c"># 5. コンパイルで生成された Jar を gte/overrides/mods/ に同期</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c"># 5. 生成された Jar を gte/overrides/mods/ に同期</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">copyOutputJars</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c"># 6. 全モジュールをローカル Maven リポジトリ (~/.m2/repository/) に公開</span>

@@ -1156,15 +1156,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dimension-gas-and-fluid-ore-vein-configuration" class="md-nav__link">
+  <a href="#dimension-gas-and-fluid-vein-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌌 Dimension Gas and Fluid Ore Vein Configuration
+        🌌 Dimension Gas and Fluid Vein Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🌌 Dimension Gas and Fluid Ore Vein Configuration">
+    <nav class="md-nav" aria-label="🌌 Dimension Gas and Fluid Vein Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1568,15 +1568,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dimension-gas-and-fluid-ore-vein-configuration" class="md-nav__link">
+  <a href="#dimension-gas-and-fluid-vein-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌌 Dimension Gas and Fluid Ore Vein Configuration
+        🌌 Dimension Gas and Fluid Vein Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🌌 Dimension Gas and Fluid Ore Vein Configuration">
+    <nav class="md-nav" aria-label="🌌 Dimension Gas and Fluid Vein Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1640,7 +1640,7 @@
 
 
 <h1 id="kubejs-toolset-and-multiblock-exporter-dumpmultiblock">KubeJS Toolset and Multiblock Exporter (<code>/dumpmultiblock</code>)<a class="headerlink" href="#kubejs-toolset-and-multiblock-exporter-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>GTE includes developer-exclusive automated multiblock construction and structure extraction tools in KubeJS server scripts, fully streamlining the multiblock structure design process.</p>
+<p>GTE includes developer-oriented automated multiblock construction and structure extraction tools in KubeJS server scripts, fully streamlining the multiblock structure design process.</p>
 <hr />
 <h2 id="multiblock-visual-exporter-dumpmultiblock">🪓 Multiblock Visual Exporter (<code>/dumpmultiblock</code>)<a class="headerlink" href="#multiblock-visual-exporter-dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>When developing custom multiblocks (whether in Java code or KubeJS scripts), manually writing <code>FactoryBlockPattern.aisle(...)</code> composed of dozens of character layers is extremely time-consuming and error-prone.</p>
@@ -1648,20 +1648,20 @@
 <pre class="mermaid"><code>graph LR
     A[Hold wooden axe] --&gt;|Left-click| B[Select Pos1 corner]
     A --&gt;|Right-click| C[Select Pos2 opposite corner]
-    B &amp; C --&gt; D[Execute /dumpmultiblock in-game]
+    B &amp; C --&gt; D[Execute /dumpmultiblock in game]
     D --&gt; E[Console and chat output complete FactoryBlockPattern Java code]</code></pre>
 <h3 id="usage-steps">Usage Steps<a class="headerlink" href="#usage-steps" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Enter Creative Mode in-game and hold a <strong>wooden axe (<code>minecraft:wooden_axe</code>)</strong>.</li>
-<li>Build the complete multiblock physical structure directly in the world according to your design (including casings, hatches, coils, and the main controller).</li>
+<li>Enter Creative mode in-game and hold a <strong>wooden axe (<code>minecraft:wooden_axe</code>)</strong>.</li>
+<li>Build the complete multiblock physical structure in the world according to your design (including casings, hatches, coils, and the main controller).</li>
 <li>Use the wooden axe to <strong>left-click</strong> a bottom corner block of the structure (chat will show <code>Set Pos1: x, y, z</code>).</li>
 <li>Use the wooden axe to <strong>right-click</strong> the diagonal top corner block of the structure (chat will show <code>Set Pos2: x, y, z</code>).</li>
 <li>Enter the command in the chat box:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>The script automatically scans all block types within the 3D bounding box, assigns character mappings (<code>.</code> for air, <code>A-Z/a-z/0-9</code> for specific blocks), and generates the structure code directly in the background log and client:</li>
+<li>The script will automatically scan all block types within the 3D bounding box, assign character mappings (<code>.</code> for air, <code>A-Z/a-z/0-9</code> for specific blocks), and generate the structure code in the background log and directly in the client:</li>
 </ol>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Auto-exported FactoryBlockPattern template</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Automatically exported FactoryBlockPattern template</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">.</span><span class="na">aisle</span><span class="p">(</span><span class="s">"BBB"</span><span class="p">,</span><span class="w"> </span><span class="s">"BBB"</span><span class="p">,</span><span class="w"> </span><span class="s">"BBB"</span><span class="p">)</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">.</span><span class="na">aisle</span><span class="p">(</span><span class="s">"BBB"</span><span class="p">,</span><span class="w"> </span><span class="s">"BAB"</span><span class="p">,</span><span class="w"> </span><span class="s">"BBB"</span><span class="p">)</span>
@@ -1673,7 +1673,7 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span>
 </span></code></pre></div>
 <hr />
-<h2 id="dimension-gas-and-fluid-ore-vein-configuration">🌌 Dimension Gas and Fluid Ore Vein Configuration<a class="headerlink" href="#dimension-gas-and-fluid-ore-vein-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="dimension-gas-and-fluid-vein-configuration">🌌 Dimension Gas and Fluid Vein Configuration<a class="headerlink" href="#dimension-gas-and-fluid-vein-configuration" title="Permanent link">&para;</a></h2>
 <p>GTE extends fluid and gas collection across all dimensions through KubeJS:</p>
 <h3 id="1-all-dimension-gas-extraction-dimension_gasjs">1. All-Dimension Gas Extraction (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-all-dimension-gas-extraction-dimension_gasjs" title="Permanent link">&para;</a></h3>
 <p>Using a large gas collector (<code>gas_collector</code>) with different circuit numbers, you can extract the dimension-specific atmosphere in any dimension:

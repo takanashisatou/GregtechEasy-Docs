@@ -1168,10 +1168,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dimensionsgas-extraktion-dimension_gasjs" class="md-nav__link">
+  <a href="#1-dimensionsweite-gasextraktion-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dimensionsgas-Extraktion (dimension_gas.js)
+        1. Dimensionsweite Gasextraktion (dimension_gas.js)
       
     </span>
   </a>
@@ -1580,10 +1580,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dimensionsgas-extraktion-dimension_gasjs" class="md-nav__link">
+  <a href="#1-dimensionsweite-gasextraktion-dimension_gasjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dimensionsgas-Extraktion (dimension_gas.js)
+        1. Dimensionsweite Gasextraktion (dimension_gas.js)
       
     </span>
   </a>
@@ -1640,22 +1640,22 @@
 
 
 <h1 id="kubejs-werkzeugsatz-und-multiblock-exporter-dumpmultiblock">KubeJS-Werkzeugsatz und Multiblock-Exporter (<code>/dumpmultiblock</code>)<a class="headerlink" href="#kubejs-werkzeugsatz-und-multiblock-exporter-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>GTE enthält in KubeJS-Serverskripten einen entwicklerorientierten Multiblock-Automatisierungs- und Strukturextraktionstool, der den Multiblock-Designprozess vollständig revolutioniert.</p>
+<p>GTE enthält in KubeJS-Serverskripten einen entwicklerspezifischen Automatisierungs- und Strukturextraktor für Multiblöcke, der den Designprozess von Multiblock-Strukturen vollständig revolutioniert.</p>
 <hr />
 <h2 id="multiblock-visualisierungs-exporter-dumpmultiblock">🪓 Multiblock-Visualisierungs-Exporter (<code>/dumpmultiblock</code>)<a class="headerlink" href="#multiblock-visualisierungs-exporter-dumpmultiblock" title="Permanent link">&para;</a></h2>
-<p>Bei der Entwicklung benutzerdefinierter Multiblöcke (sei es in Java-Code oder KubeJS-Skripten) ist das manuelle Schreiben von <code>FactoryBlockPattern.aisle(...)</code> mit Dutzenden von Zeichenebenen äußerst zeitaufwendig und fehleranfällig.</p>
-<p>GTE enthält den <strong><code>/dumpmultiblock</code>-Holzaxt-Auswahl-Exporter</strong> (<code>server_scripts/easymultiblock.js</code>):</p>
+<p>Bei der Entwicklung eigener Multiblöcke (sei es in Java-Code oder KubeJS-Skripten) ist das manuelle Schreiben von <code>FactoryBlockPattern.aisle(...)</code>-Zeilen, die aus Dutzenden von Zeichenebenen bestehen, äußerst zeitaufwendig und fehleranfällig.</p>
+<p>GTE enthält einen integrierten <strong><code>/dumpmultiblock</code>-Holzaxt-Auswahl-Exporter</strong> (<code>server_scripts/easymultiblock.js</code>):</p>
 <pre class="mermaid"><code>graph LR
     A[Holzaxt in der Hand] --&gt;|Linksklick| B[Pos1-Eckpunkt auswählen]
     A --&gt;|Rechtsklick| C[Pos2-Diagonaleckpunkt auswählen]
-    B &amp; C --&gt; D[Im Spiel /dumpmultiblock ausführen]
-    D --&gt; E[Vollständigen FactoryBlockPattern-Java-Code in Konsole und Chat ausgeben]</code></pre>
+    B &amp; C --&gt; D[/dumpmultiblock im Spiel ausführen]
+    D --&gt; E[Vollständiger FactoryBlockPattern-Java-Code in Konsole und Chat]</code></pre>
 <h3 id="verwendungsschritte">Verwendungsschritte<a class="headerlink" href="#verwendungsschritte" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Wechsle in den Kreativmodus und halte eine <strong>Holzaxt (<code>minecraft:wooden_axe</code>)</strong> in der Hand.</li>
-<li>Baue die vollständige physische Multiblock-Struktur (einschließlich Gehäuse, Kammern, Spulen, Hauptcontroller) direkt in der Welt gemäß deiner Vorstellung.</li>
-<li><strong>Linksklicke</strong> mit der Holzaxt auf einen unteren Eckblock der Struktur (Chat zeigt <code>Pos1 gesetzt: x, y, z</code>).</li>
-<li><strong>Rechtsklicke</strong> mit der Holzaxt auf den diagonalen oberen Eckblock der Struktur (Chat zeigt <code>Pos2 gesetzt: x, y, z</code>).</li>
+<li>Wechsle im Spiel in den Kreativmodus und halte eine <strong>Holzaxt (<code>minecraft:wooden_axe</code>)</strong> in der Hand.</li>
+<li>Baue die vollständige physische Multiblock-Struktur (einschließlich Gehäuse, Busse, Spulen, Hauptcontroller) direkt in der Welt gemäß deiner Vorstellung auf.</li>
+<li><strong>Linksklicke</strong> mit der Holzaxt einen unteren Eckblock der Struktur (Chat zeigt <code>Pos1 gesetzt: x, y, z</code>).</li>
+<li><strong>Rechtsklicke</strong> mit der Holzaxt den diagonal gegenüberliegenden oberen Eckblock der Struktur (Chat zeigt <code>Pos2 gesetzt: x, y, z</code>).</li>
 <li>Gib im Chat den Befehl ein:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
@@ -1674,15 +1674,15 @@
 </span></code></pre></div>
 <hr />
 <h2 id="dimensionsgas-und-flussigkeitserz-konfiguration">🌌 Dimensionsgas- und Flüssigkeitserz-Konfiguration<a class="headerlink" href="#dimensionsgas-und-flussigkeitserz-konfiguration" title="Permanent link">&para;</a></h2>
-<p>GTE erweitert die Sammlung von Flüssigkeiten und Gasen über alle Dimensionen durch KubeJS:</p>
-<h3 id="1-dimensionsgas-extraktion-dimension_gasjs">1. Dimensionsgas-Extraktion (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimensionsgas-extraktion-dimension_gasjs" title="Permanent link">&para;</a></h3>
-<p>Mit der großen Gassammelkammer (<code>gas_collector</code>) und verschiedenen Schaltkreisnummern kann in jeder Dimension das spezifische Atmosphärengas extrahiert werden:
+<p>GTE erweitert die Sammlung von Flüssigkeiten und Gasen über alle Dimensionen hinweg durch KubeJS:</p>
+<h3 id="1-dimensionsweite-gasextraktion-dimension_gasjs">1. Dimensionsweite Gasextraktion (<code>dimension_gas.js</code>)<a class="headerlink" href="#1-dimensionsweite-gasextraktion-dimension_gasjs" title="Permanent link">&para;</a></h3>
+<p>Mit einer großen Gassammelkammer (<code>gas_collector</code>) und verschiedenen Schaltkreisnummern kann in jeder Dimension die spezifische Atmosphäre dieser Dimension extrahiert werden:
 - <strong>Overworld-Luft</strong>: <code>circuit(4)</code> ➜ Ausgabe <code>gtceu:air 10000</code>
-- <strong>Nether-Höllengas</strong>: <code>circuit(5)</code> ➜ Ausgabe <code>gtceu:nether_air 10000</code>
-- <strong>End-Void-Gas</strong>: <code>circuit(6)</code> ➜ Ausgabe <code>gtceu:ender_air 10000</code></p>
+- <strong>Nether-Höllenluft</strong>: <code>circuit(5)</code> ➜ Ausgabe <code>gtceu:nether_air 10000</code>
+- <strong>End-Void-Luft</strong>: <code>circuit(6)</code> ➜ Ausgabe <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-universeller-schaltkreis-konverter-universal_circuitjs">2. Universeller Schaltkreis-Konverter (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-universeller-schaltkreis-konverter-universal_circuitjs" title="Permanent link">&para;</a></h3>
-<p>Um die komplexen Rezeptstapel über Mods und verschiedene Schaltkreisstufen hinweg zu lösen, führt GTE das <strong>Universalschaltkreis (<code>universal_circuit</code>)</strong>-System ein:
-- Ermöglicht es, im Packer (<code>packer</code>) jeden Schaltkreis derselben Spannungsstufe (ULV bis MAX) mit <strong>1 EU / 1 tick</strong> verlustfrei in einen einheitlichen Universalschaltkreis-Gegenstand umzuwandeln.</p>
+<p>Um die komplexe Rezeptstapelung über Mods und verschiedene Schaltkreisstufen hinweg zu lösen, führt GTE das <strong>Universalschaltkreis-System (<code>universal_circuit</code>)</strong> ein:
+- Ermöglicht es, in der Packmaschine (<code>packer</code>) jeden Schaltkreis derselben Spannungsstufe (ULV bis MAX) mit <strong>1 EU / 1 Tick</strong> verlustfrei in einen einheitlichen Universalschaltkreis-Gegenstand umzuwandeln.</p>
 
 
 

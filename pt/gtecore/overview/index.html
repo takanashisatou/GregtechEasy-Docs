@@ -1616,34 +1616,34 @@
 
 
 <h1 id="visao-geral-do-modulo-principal-gtecore">Visão Geral do Módulo Principal GTECore<a class="headerlink" href="#visao-geral-do-modulo-principal-gtecore" title="Permanent link">&para;</a></h1>
-<p><strong>GTECore</strong> é o módulo principal Java personalizado do projeto GregTech Easy. Ele depende diretamente do código-fonte <code>gtm-reborn</code>, expandindo estruturas industriais multibloco em grande escala, tecnologia de formação avançada, interação profunda com AE2 e o sistema de fabricação de circuitos superdimensionados.</p>
+<p><strong>GTECore</strong> é o módulo principal Java personalizado do projeto GregTech Easy. Ele depende diretamente do código-fonte do <code>gtm-reborn</code>, expandindo estruturas industriais multibloco em grande escala, tecnologia de formação avançada, interação profunda com AE2 e o sistema de fabricação de circuitos superdimensionados.</p>
 <hr />
 <h2 id="arquitetura-do-modulo-e-posicionamento-de-design">🏛️ Arquitetura do Módulo e Posicionamento de Design<a class="headerlink" href="#arquitetura-do-modulo-e-posicionamento-de-design" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
     A[Estrutura Base GTM-Reborn] --&gt; B[Módulo Principal GTECore]
-    B --&gt; C[Indústria Mística Oriental: Forno de Refino Alquímico Yin-Yang / Formação dos Quatro Símbolos / Tai Chi e Cinco Elementos]
-    B --&gt; D[Otimização Industrial Extrema: Anel dos Milagres / Processamento Abrangente de Minérios / Motor de Combustível Universal]
-    B --&gt; E[Expansão Profunda AE2: Conjunto de Padrões ME Plus &amp; Espelho / Câmara de Vapor ME]
+    B --&gt; C[Indústria Mística Oriental: Forno de Refinamento Alquímico Yin-Yang / Formação dos Quatro Símbolos / Tai Chi e Cinco Elementos]
+    B --&gt; D[Otimização Industrial Extrema: Anel do Milagre / Processamento Abrangente de Minérios / Motor de Combustível Universal]
+    B --&gt; E[Expansão Profunda AE2: Conjunto de Padrões ME Plus e Espelho / Câmara de Vapor ME]
     B --&gt; F[Sistema de Circuitos Transdimensionais: Sistema de Circuitos de Supercordas / Sistema de Circuitos Yin-Yang]
     B --&gt; G[Automação e Desenvolvimento: Integração em Tempo Real Jade / Terminal de Teste de Estrutura / Internacionalização Datagen]</code></pre>
 <hr />
 <h2 id="abas-de-inventario-no-modo-criativo-e-categorias">📦 Abas de Inventário no Modo Criativo e Categorias<a class="headerlink" href="#abas-de-inventario-no-modo-criativo-e-categorias" title="Permanent link">&para;</a></h2>
-<p>O GTECore registra abas independentes no modo criativo dentro do jogo:</p>
+<p>O GTECore registra abas de modo criativo independentes no jogo:</p>
 <ol>
 <li><strong>Máquinas GregTech Easy (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>:</li>
-<li>Inclui todos os blocos principais multibloco originais do GTE (Alto-Forno Yin-Yang, Anel dos Milagres, Centro de Processamento de Minérios, Finalizador Químico, etc.).</li>
-<li>Inclui caixas de bateria superdimensionadas em vários níveis (Max Super Battery Buffer), Câmara de Vapor ME, Conjunto de Padrões ME Plus e Espelho.</li>
+<li>Inclui todos os blocos principais multibloco originais do GTE (Alto-Forno Yin-Yang, Anel do Milagre, Centro de Processamento de Minérios, Finalizador Químico, etc.).</li>
+<li>Inclui Buffers de Bateria Super de vários níveis (Max Super Battery Buffer), Câmara de Vapor ME, Conjunto de Padrões ME Plus e Espelho.</li>
 <li><strong>Itens GregTech Easy (<code>itemGroup.gtecore.gtecore_items</code>)</strong>:</li>
-<li>Inclui a série de circuitos de Supercordas e Yin-Yang (processadores, clusters, supercomputadores, hosts).</li>
-<li>Inclui talismãs dos Cinco Elementos, chips Bagua, partículas dos Três Puros, Terminal de Teste de Estrutura e outros itens especializados.</li>
+<li>Inclui a série de circuitos de Supercordas e Yin-Yang (Processadores, Clusters, Supercomputadores, Mainframes).</li>
+<li>Inclui talismãs dos Cinco Elementos, chips de Bagua, Partículas dos Três Puros, Terminal de Teste de Estrutura e outros itens especiais.</li>
 </ol>
 <hr />
 <h2 id="configuracao-global-do-modulo-gteconfig">⚙️ Configuração Global do Módulo (<code>GTEConfig</code>)<a class="headerlink" href="#configuracao-global-do-modulo-gteconfig" title="Permanent link">&para;</a></h2>
-<p>O GTECore oferece opções de configuração ricas dentro do jogo e em arquivos (localizadas em <code>config/gtecore-common.toml</code> ou no menu de configuração do jogo):</p>
+<p>O GTECore oferece opções de configuração ricas no jogo e em arquivos (localizadas em <code>config/gtecore-common.toml</code> ou no menu de configuração do jogo):</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Item de Configuração</th>
+<th style="text-align: left;">Opção de Configuração</th>
 <th style="text-align: left;">Valor Padrão</th>
 <th style="text-align: left;">Descrição Detalhada</th>
 </tr>
@@ -1652,7 +1652,7 @@
 <tr>
 <td style="text-align: left;"><code>superPeace</code> (Modo Super Paz)</td>
 <td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;">Quando ativado, desativa completamente a geração de mobs hostis agressivos, fornecendo um ambiente absolutamente puro para construção tecnológica</td>
+<td style="text-align: left;">Quando ativado, desativa completamente a geração de mobs hostis agressivos, fornecendo um ambiente absolutamente limpo para construção tecnológica</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>durationMultiplier</code> (Multiplicador de Duração de Receitas)</td>
@@ -1666,12 +1666,12 @@
 <p>O GTECore inclui suporte integrado ao plugin <strong><code>GTEJadePlugin</code></strong>:
 - <strong>Status do Conjunto de Padrões ME Plus</strong>: Exibe em tempo real o número de padrões vinculados ao conjunto atual, modos de saída de fluidos e itens.
 - <strong>Informações de Vinculação do Espelho do Conjunto de Padrões ME Plus</strong>: Exibe diretamente ao passar o mouse as coordenadas <code>(X, Y, Z)</code> do conjunto principal vinculado e o status de conectividade da rede.
-- <strong>Indicador de Ativação de Formação</strong>: Exibe em tempo real no Alto-Forno de Refino Alquímico Yin-Yang o status de prontidão das formações dos Quatro Símbolos: Dragão Azul, Tigre Branco, Pássaro Vermelho e Tartaruga Negra.</p>
+- <strong>Indicador de Ativação de Formação</strong>: Exibe em tempo real no Alto-Forno de Refinamento Alquímico Yin-Yang o status de prontidão das quatro formações: Dragão Azul, Tigre Branco, Pássaro Vermelho e Tartaruga Negra.</p>
 <hr />
 <h2 id="terminal-de-teste-de-estrutura-structure-testing-terminal">🛠️ Terminal de Teste de Estrutura (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#terminal-de-teste-de-estrutura-structure-testing-terminal" title="Permanent link">&para;</a></h2>
 <p>O GTECore fornece uma ferramenta portátil exclusiva — o <strong>Terminal de Teste de Estrutura</strong> (<code>item.gtecore.check_structure_terminal</code>):
 - <strong>Clique direito no controlador multibloco</strong>: Escaneia a integridade da estrutura em tempo real.
-- <strong>Diagnóstico de erros</strong>: Se a estrutura não estiver formada, o terminal apontará com precisão no chat e na dica de ferramenta as <strong>coordenadas dos blocos incorretos e os locais onde não deveriam estar</strong>, acelerando enormemente a construção e a correção de grandes multiblocos.</p>
+- <strong>Diagnóstico de erros</strong>: Se a estrutura não estiver formada, o terminal indica com precisão no chat e na dica flutuante as <strong>coordenadas dos blocos incorretos e os locais que não deveriam estar lá</strong>, acelerando enormemente a construção e a depuração de grandes multiblocos.</p>
 
 
 

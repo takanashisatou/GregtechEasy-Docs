@@ -1640,7 +1640,7 @@
 
 
 <h1 id="herramientas-kubejs-y-exportador-de-multibloques-dumpmultiblock">Herramientas KubeJS y Exportador de Multibloques (<code>/dumpmultiblock</code>)<a class="headerlink" href="#herramientas-kubejs-y-exportador-de-multibloques-dumpmultiblock" title="Permanent link">&para;</a></h1>
-<p>GTE incluye en los scripts de servidor de KubeJS herramientas de automatización de construcción de multibloques y extracción de estructuras para desarrolladores, liberando por completo el proceso de diseño de estructuras multibloque.</p>
+<p>GTE incluye herramientas de automatización de multibloques y extracción de estructuras para desarrolladores en los scripts de servidor de KubeJS, liberando por completo el proceso de diseño de estructuras multibloque.</p>
 <hr />
 <h2 id="exportador-visual-de-multibloques-dumpmultiblock">🪓 Exportador visual de multibloques (<code>/dumpmultiblock</code>)<a class="headerlink" href="#exportador-visual-de-multibloques-dumpmultiblock" title="Permanent link">&para;</a></h2>
 <p>Al desarrollar multibloques personalizados (ya sea en código Java o scripts de KubeJS), escribir manualmente <code>FactoryBlockPattern.aisle(...)</code> compuesto por decenas de capas de caracteres es extremadamente lento y propenso a errores.</p>
@@ -1652,14 +1652,14 @@
     D --&gt; E[Salida completa del código Java FactoryBlockPattern en consola y chat]</code></pre>
 <h3 id="pasos-de-uso">Pasos de uso<a class="headerlink" href="#pasos-de-uso" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Entra en modo creativo del juego y sostén un <strong>hacha de madera (<code>minecraft:wooden_axe</code>)</strong>.</li>
+<li>Entra en modo creativo en el juego y sostén un <strong>hacha de madera (<code>minecraft:wooden_axe</code>)</strong>.</li>
 <li>Construye directamente en el mundo la estructura física completa del multibloque según tu diseño (incluyendo carcasa, compartimentos, bobinas, controlador principal).</li>
-<li>Usa el hacha de madera con <strong>clic izquierdo</strong> en un bloque de esquina inferior de la estructura (el chat mostrará <code>Pos1 establecido: x, y, z</code>).</li>
-<li>Usa el hacha de madera con <strong>clic derecho</strong> en el bloque de esquina superior diagonal de la estructura (el chat mostrará <code>Pos2 establecido: x, y, z</code>).</li>
+<li>Usa el hacha de madera y haz <strong>clic izquierdo</strong> en un bloque de esquina inferior de la estructura (el chat mostrará <code>Pos1 establecido: x, y, z</code>).</li>
+<li>Usa el hacha de madera y haz <strong>clic derecho</strong> en el bloque de esquina superior opuesto de la estructura (el chat mostrará <code>Pos2 establecido: x, y, z</code>).</li>
 <li>Escribe el comando en el chat:
    <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">/</span><span class="kc">dumpmultiblock</span>
 </span></code></pre></div></li>
-<li>El script escaneará automáticamente todos los tipos de bloques dentro del volumen delimitador 3D, asignará mapeos de caracteres (<code>.</code> para aire, <code>A-Z/a-z/0-9</code> para bloques específicos) y generará el código de estructura directamente en el registro de fondo y en el cliente:</li>
+<li>El script escaneará automáticamente todos los tipos de bloques dentro del volumen delimitador 3D, asignará un mapeo de caracteres (<code>.</code> para aire, <code>A-Z/a-z/0-9</code> para bloques específicos), y generará el código de estructura directamente en el registro y en el cliente:</li>
 </ol>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Plantilla FactoryBlockPattern exportada automáticamente</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="na">pattern</span><span class="p">(</span><span class="n">definition</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">FactoryBlockPattern</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
@@ -1682,7 +1682,7 @@
 - <strong>Aire del vacío del End</strong>: <code>circuit(6)</code> ➜ Salida <code>gtceu:ender_air 10000</code></p>
 <h3 id="2-convertidor-de-circuitos-universales-universal_circuitjs">2. Convertidor de circuitos universales (<code>universal_circuit.js</code>)<a class="headerlink" href="#2-convertidor-de-circuitos-universales-universal_circuitjs" title="Permanent link">&para;</a></h3>
 <p>Para resolver la compleja acumulación de recetas entre mods y los distintos niveles de placas de circuito, GTE introduce el sistema de <strong>circuito universal (<code>universal_circuit</code>)</strong>:
-- Permite en la empaquetadora (<code>packer</code>) convertir cualquier circuito del mismo voltaje (de ULV a MAX) en un único artículo de circuito universal sin pérdidas a <strong>1 EU / 1 tick</strong>.</p>
+- Permite en la empacadora (<code>packer</code>) convertir cualquier circuito del mismo voltaje (de ULV a MAX) en un único artículo de circuito universal sin pérdidas a <strong>1 EU / 1 tick</strong>.</p>
 
 
 

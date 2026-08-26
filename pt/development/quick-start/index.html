@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guia-de-inicio-rapido-para-desenvolvedores" class="md-skip">
+        <a href="#guia-rapido-de-desenvolvimento-para-programadores" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -1264,10 +1264,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requisito-obrigatorio-de-jdk-21" class="md-nav__link">
+  <a href="#requisito-obrigatorio-jdk-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisito Obrigatório de JDK 21
+        Requisito Obrigatório: JDK 21
       
     </span>
   </a>
@@ -1563,10 +1563,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requisito-obrigatorio-de-jdk-21" class="md-nav__link">
+  <a href="#requisito-obrigatorio-jdk-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisito Obrigatório de JDK 21
+        Requisito Obrigatório: JDK 21
       
     </span>
   </a>
@@ -1661,22 +1661,22 @@
   
 
 
-<h1 id="guia-de-inicio-rapido-para-desenvolvedores">Guia de Início Rápido para Desenvolvedores<a class="headerlink" href="#guia-de-inicio-rapido-para-desenvolvedores" title="Permanent link">&para;</a></h1>
-<p>Este guia é destinado a programadores Java/Kotlin e autores de modpacks envolvidos no desenvolvimento de engenharia entre módulos do GTE-Multi.</p>
+<h1 id="guia-rapido-de-desenvolvimento-para-programadores">Guia Rápido de Desenvolvimento para Programadores<a class="headerlink" href="#guia-rapido-de-desenvolvimento-para-programadores" title="Permanent link">&para;</a></h1>
+<p>Este guia é destinado a programadores Java/Kotlin e autores de modpacks envolvidos no desenvolvimento do projeto multi-módulo GTE-Multi.</p>
 <hr />
 <h2 id="1-preparacao-do-ambiente-de-desenvolvimento">💻 1. Preparação do Ambiente de Desenvolvimento<a class="headerlink" href="#1-preparacao-do-ambiente-de-desenvolvimento" title="Permanent link">&para;</a></h2>
-<h3 id="requisito-obrigatorio-de-jdk-21">Requisito Obrigatório de JDK 21<a class="headerlink" href="#requisito-obrigatorio-de-jdk-21" title="Permanent link">&para;</a></h3>
-<p>Todos os módulos deste projeto usam <strong>JDK 21</strong> uniformemente. Instalações recomendadas:
+<h3 id="requisito-obrigatorio-jdk-21">Requisito Obrigatório: JDK 21<a class="headerlink" href="#requisito-obrigatorio-jdk-21" title="Permanent link">&para;</a></h3>
+<p>Todos os módulos deste projeto usam <strong>JDK 21</strong> uniformemente. Recomenda-se instalar:
 - <a href="https://www.azul.com/downloads/?version=java-21-lts">Azul Zulu JDK 21</a>
 - <a href="https://adoptium.net/temurin/releases/?version=21">Eclipse Temurin JDK 21</a></p>
 <h3 id="ide-recomendada-e-plugins">IDE Recomendada e Plugins<a class="headerlink" href="#ide-recomendada-e-plugins" title="Permanent link">&para;</a></h3>
 <p>Recomenda-se usar <strong>IntelliJ IDEA 2023.3+</strong> e instalar os seguintes plugins oficiais:
-- <strong>Minecraft Development</strong>: Fornece dicas de código Mixin, reconhecimento de AT (Access Transformer) e destaque de eventos.
-- <strong>Lombok</strong>: Suporte para anotações como <code>@Getter</code>, <code>@Setter</code>, <code>@NoArgsConstructor</code>.
-- <strong>Kotlin</strong>: Suporte para desenvolvimento de módulos GT-- CE.</p>
+- <strong>Minecraft Development</strong>: fornece dicas de código Mixin, reconhecimento de AT (Access Transformer) e destaque de eventos.
+- <strong>Lombok</strong>: suporta anotações como <code>@Getter</code>, <code>@Setter</code>, <code>@NoArgsConstructor</code>.
+- <strong>Kotlin</strong>: suporta o desenvolvimento do módulo GT-- CE.</p>
 <hr />
 <h2 id="2-clonagem-do-repositorio-e-importacao-do-projeto">📥 2. Clonagem do Repositório e Importação do Projeto<a class="headerlink" href="#2-clonagem-do-repositorio-e-importacao-do-projeto" title="Permanent link">&para;</a></h2>
-<p>Como este projeto inclui vários submódulos Git (Submodules), é <strong>obrigatório fazer o clone recursivo</strong>:</p>
+<p>Como este projeto contém vários submódulos Git (Submodules), <strong>é obrigatório fazer o clone recursivo</strong>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Clone recursivo do repositório principal e de todos os submódulos</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/takanashisatou/GregtechEasy.git<span class="w"> </span>GTEGroup
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>GTEGroup
@@ -1700,7 +1700,7 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gt</span><span class="p">--:</span><span class="n">compileKotlin</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">compileJava</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. Executar o teste de servidor GameTest do GTM-Reborn</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c"># 2. Executar o teste real do servidor GameTest do GTM-Reborn</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">runGameTestServer</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c"># 3. Executar a formatação de código</span>
@@ -1715,7 +1715,7 @@
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c"># 6. Publicar todos os módulos no repositório Maven local (~/.m2/repository/)</span>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">publishAllToMavenLocal</span>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c"># 7. Publicar os artefatos estáticos de todos os módulos em build/maven (para o Maven do GitHub Pages)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c"># 7. Publicar todos os artefatos estáticos dos módulos em build/maven (para o Maven do GitHub Pages)</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">publishAllToMaven</span>
 </span></code></pre></div>
 

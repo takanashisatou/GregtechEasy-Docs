@@ -1462,10 +1462,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-run-commands" class="md-nav__link">
+  <a href="#local-execution-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 Local Run Commands
+        💻 Local Execution Commands
       
     </span>
   </a>
@@ -1548,10 +1548,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-run-commands" class="md-nav__link">
+  <a href="#local-execution-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 Local Run Commands
+        💻 Local Execution Commands
       
     </span>
   </a>
@@ -1592,20 +1592,20 @@
 
 
 <h1 id="ai-internationalization-translation-engine-opencode_translatepy">AI Internationalization Translation Engine (<code>opencode_translate.py</code>)<a class="headerlink" href="#ai-internationalization-translation-engine-opencode_translatepy" title="Permanent link">&para;</a></h1>
-<p>GTE Engineering designed and implemented a cross-mod fully automated internationalization translation system based on modern large language models (LLM) (located at <code>scripts/opencode_translate.py</code>).</p>
+<p>GTE has designed and implemented a cross-mod fully automated internationalization translation system based on modern large language models (LLMs), located at <code>scripts/opencode_translate.py</code>.</p>
 <hr />
 <h2 id="translation-engine-architecture">🤖 Translation Engine Architecture<a class="headerlink" href="#translation-engine-architecture" title="Permanent link">&para;</a></h2>
-<p>Traditional community localization relies on manual maintenance of complex JSON and SNBT texts, leading to delayed updates and frequent errors.</p>
-<p>GTE's AI translation engine, through a standardized OpenAI-compatible API, achieves <strong>automated incremental extraction, terminology alignment, and concurrent translation</strong> for FTB Quests quest books and core mod language files:</p>
+<p>Traditional community localization relies on manual maintenance of complex JSON and SNBT texts, which leads to outdated updates and is highly prone to errors.</p>
+<p>GTE's AI translation engine leverages a standardized OpenAI-compatible API to achieve <strong>automated incremental extraction, terminology alignment, and concurrent translation</strong> for FTB Quests quest books and core mod language files:</p>
 <pre class="mermaid"><code>graph TD
-    A[扫描 FTB Quests snbt 与 Lang json] --&gt; B[提取未翻译词条]
-    B --&gt; C[读取 .translation_cache.json 本地缓存]
-    C --&gt; D{是否有新增或修改词条?}
-    D -- 无 --&gt; E[直接同步写入目标语言文件]
-    D -- 有 --&gt; F[组装包含格雷科技工业术语约束的 Prompt]
-    F --&gt; G[调用 LLM 供应商 API: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
-    G --&gt; H[校验与更新本地缓存]
-    H --&gt; I[回写至 zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
+    A[Scan FTB Quests snbt and Lang json] --&gt; B[Extract untranslated entries]
+    B --&gt; C[Read local .translation_cache.json cache]
+    C --&gt; D{Are there new or modified entries?}
+    D -- No --&gt; E[Directly sync-write to target language files]
+    D -- Yes --&gt; F[Assemble Prompt with GregTech industrial terminology constraints]
+    F --&gt; G[Call LLM provider API: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
+    G --&gt; H[Validate and update local cache]
+    H --&gt; I[Write back to zh_cn.json / en_us.json / ftbquests/lang/]</code></pre>
 <hr />
 <h2 id="supported-llm-providers-and-environment-variables">🔑 Supported LLM Providers and Environment Variables<a class="headerlink" href="#supported-llm-providers-and-environment-variables" title="Permanent link">&para;</a></h2>
 <p>The script supports seamless switching between different AI model providers via environment variables:</p>
@@ -1638,7 +1638,7 @@
 <td style="text-align: left;"><code>gemini-3.5-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Qwen (DashScope)</strong></td>
+<td style="text-align: left;"><strong>Tongyi Qianwen (DashScope)</strong></td>
 <td style="text-align: left;"><code>DASHSCOPE_API_KEY</code></td>
 <td style="text-align: left;"><code>DASHSCOPE_BASE_URL</code></td>
 <td style="text-align: left;"><code>qwen-plus</code></td>
@@ -1662,7 +1662,7 @@
 <td style="text-align: left;"><code>deepseek-v4-flash</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Universal Aggregation Proxy</strong></td>
+<td style="text-align: left;"><strong>Generic Aggregation Proxy</strong></td>
 <td style="text-align: left;"><code>LLM_API_KEY</code></td>
 <td style="text-align: left;"><code>LLM_BASE_URL</code></td>
 <td style="text-align: left;"><code>LLM_MODEL</code> (custom)</td>
@@ -1671,14 +1671,14 @@
 </table>
 <hr />
 <h2 id="industrial-grade-prompt-constraint-principles">🎯 Industrial-Grade Prompt Constraint Principles<a class="headerlink" href="#industrial-grade-prompt-constraint-principles" title="Permanent link">&para;</a></h2>
-<p>When calling the API for translation, the system has built-in strict Minecraft and GregTech terminology rules:
+<p>When calling the API for translation, the system enforces strict Minecraft and GregTech terminology rules:
 1. <strong>Absolute preservation of format codes</strong>: Fully preserve Minecraft native color formatting codes (e.g., <code>§a</code>, <code>§c</code>, <code>§6</code>) and placeholders (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Unified technical terminology</strong>: Strictly lock the translation of technical proper nouns (e.g., <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
-3. <strong>Hash-based incremental caching</strong>: All translated entries are automatically persisted in <code>.translation_cache.json</code>. Only new or changed texts trigger network requests, greatly saving token costs and CI time.</p>
+2. <strong>Standardized technical terminology</strong>: Strictly lock down translations for technical proper nouns (e.g., <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+3. <strong>Hash-based incremental caching</strong>: All translated entries are automatically and persistently recorded in <code>.translation_cache.json</code>. Only new or changed texts trigger network requests, greatly saving token overhead and CI time.</p>
 <hr />
-<h2 id="local-run-commands">💻 Local Run Commands<a class="headerlink" href="#local-run-commands" title="Permanent link">&para;</a></h2>
+<h2 id="local-execution-commands">💻 Local Execution Commands<a class="headerlink" href="#local-execution-commands" title="Permanent link">&para;</a></h2>
 <p>Trigger a full translation with one click in a local development environment:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 设置任意一个有效 API Key 后执行</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Set any valid API Key and then execute</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

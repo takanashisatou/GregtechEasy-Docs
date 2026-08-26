@@ -1303,10 +1303,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instructions-dimportation-dans-idea" class="md-nav__link">
+  <a href="#guide-dimportation-dans-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions d'importation dans IDEA
+        Guide d'importation dans IDEA
       
     </span>
   </a>
@@ -1602,10 +1602,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instructions-dimportation-dans-idea" class="md-nav__link">
+  <a href="#guide-dimportation-dans-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions d'importation dans IDEA
+        Guide d'importation dans IDEA
       
     </span>
   </a>
@@ -1666,7 +1666,7 @@
 <hr />
 <h2 id="1-preparation-de-lenvironnement-de-developpement">💻 1. Préparation de l'environnement de développement<a class="headerlink" href="#1-preparation-de-lenvironnement-de-developpement" title="Permanent link">&para;</a></h2>
 <h3 id="jdk-21-obligatoire">JDK 21 obligatoire<a class="headerlink" href="#jdk-21-obligatoire" title="Permanent link">&para;</a></h3>
-<p>Ce projet utilise uniformément <strong>JDK 21</strong> pour tous les modules. Installations recommandées :
+<p>Ce projet utilise uniformément <strong>JDK 21</strong> pour tous les modules. Installation recommandée :
 - <a href="https://www.azul.com/downloads/?version=java-21-lts">Azul Zulu JDK 21</a>
 - <a href="https://adoptium.net/temurin/releases/?version=21">Eclipse Temurin JDK 21</a></p>
 <h3 id="ide-recommande-et-plugins">IDE recommandé et plugins<a class="headerlink" href="#ide-recommande-et-plugins" title="Permanent link">&para;</a></h3>
@@ -1684,7 +1684,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 2. Si déjà cloné, mettre à jour et initialiser les sous-modules</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </span></code></pre></div>
-<h3 id="instructions-dimportation-dans-idea">Instructions d'importation dans IDEA<a class="headerlink" href="#instructions-dimportation-dans-idea" title="Permanent link">&para;</a></h3>
+<h3 id="guide-dimportation-dans-idea">Guide d'importation dans IDEA<a class="headerlink" href="#guide-dimportation-dans-idea" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Dans IDEA, cliquez sur <strong>File ➜ Open</strong>, sélectionnez le <code>build.gradle</code> à la racine pour ouvrir le projet.</li>
 <li>Allez dans les paramètres : <code>Settings</code> ➜ <code>Build, Execution, Deployment</code> ➜ <code>Build Tools</code> ➜ <code>Gradle</code>.</li>
@@ -1692,7 +1692,7 @@
 </ol>
 <hr />
 <h2 id="3-commandes-de-construction-gradle-courantes">🛠️ 3. Commandes de construction Gradle courantes<a class="headerlink" href="#3-commandes-de-construction-gradle-courantes" title="Permanent link">&para;</a></h2>
-<p>Exécutez dans Windows PowerShell (avec <code>JAVA_HOME</code> préalablement défini) :</p>
+<p>Exécutez dans Windows PowerShell (avec <code>JAVA_HOME</code> défini au préalable) :</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c"># 1. Compiler uniquement un sous-module spécifique</span>
@@ -1706,7 +1706,7 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c"># 3. Exécuter le formatage du code</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">spotlessApply</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c"># 4. Compiler tous les modules et empaqueter les Jars en une commande</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c"># 4. Compiler tous les modules et empaqueter les Jars en une seule commande</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">buildAll</span> <span class="n">-x</span> <span class="n">test</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c"># 5. Synchroniser les Jars compilés vers gte/overrides/mods/</span>

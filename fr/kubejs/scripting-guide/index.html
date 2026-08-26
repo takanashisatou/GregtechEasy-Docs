@@ -1100,10 +1100,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture-et-cycle-de-vie-des-repertoires-de-scripts" class="md-nav__link">
+  <a href="#architecture-du-repertoire-de-scripts-et-cycle-de-vie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Architecture et cycle de vie des répertoires de scripts
+        📁 Architecture du répertoire de scripts et cycle de vie
       
     </span>
   </a>
@@ -1114,7 +1114,7 @@
   <a href="#phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 Phase de démarrage : Enregistrement de matériaux personnalisés (startup_scripts/)
+        🧪 Phase de démarrage : enregistrement de matériaux personnalisés (startup_scripts/)
       
     </span>
   </a>
@@ -1125,12 +1125,12 @@
   <a href="#cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Côté serveur : Écriture de recettes personnalisées et de recettes de machines (server_scripts/)
+        ⚙️ Côté serveur : écriture de recettes personnalisées et de recettes de machines (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Côté serveur : Écriture de recettes personnalisées et de recettes de machines (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ Côté serveur : écriture de recettes personnalisées et de recettes de machines (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1545,10 +1545,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture-et-cycle-de-vie-des-repertoires-de-scripts" class="md-nav__link">
+  <a href="#architecture-du-repertoire-de-scripts-et-cycle-de-vie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Architecture et cycle de vie des répertoires de scripts
+        📁 Architecture du répertoire de scripts et cycle de vie
       
     </span>
   </a>
@@ -1559,7 +1559,7 @@
   <a href="#phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 Phase de démarrage : Enregistrement de matériaux personnalisés (startup_scripts/)
+        🧪 Phase de démarrage : enregistrement de matériaux personnalisés (startup_scripts/)
       
     </span>
   </a>
@@ -1570,12 +1570,12 @@
   <a href="#cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Côté serveur : Écriture de recettes personnalisées et de recettes de machines (server_scripts/)
+        ⚙️ Côté serveur : écriture de recettes personnalisées et de recettes de machines (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Côté serveur : Écriture de recettes personnalisées et de recettes de machines (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ Côté serveur : écriture de recettes personnalisées et de recettes de machines (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1650,17 +1650,17 @@
 
 
 <h1 id="guide-de-developpement-de-scripts-et-de-personnalisation-kubejs">Guide de développement de scripts et de personnalisation KubeJS<a class="headerlink" href="#guide-de-developpement-de-scripts-et-de-personnalisation-kubejs" title="Permanent link">&para;</a></h1>
-<p>GTE délègue la plupart de l'enregistrement des matériaux, les ajustements de recettes et la logique d'intégration multi-mods à <strong>KubeJS</strong> (répertoire situé dans <code>gte/overrides/kubejs/</code>).</p>
+<p>GTE délègue la plupart de l'enregistrement des matériaux, l'ajustement des recettes et la logique d'intégration multi-mods à <strong>KubeJS</strong> (répertoire situé dans <code>gte/overrides/kubejs/</code>).</p>
 <hr />
-<h2 id="architecture-et-cycle-de-vie-des-repertoires-de-scripts">📁 Architecture et cycle de vie des répertoires de scripts<a class="headerlink" href="#architecture-et-cycle-de-vie-des-repertoires-de-scripts" title="Permanent link">&para;</a></h2>
+<h2 id="architecture-du-repertoire-de-scripts-et-cycle-de-vie">📁 Architecture du répertoire de scripts et cycle de vie<a class="headerlink" href="#architecture-du-repertoire-de-scripts-et-cycle-de-vie" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gte/overrides/kubejs/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【Scripts de démarrage】Exécutés au tout début du jeu, pour enregistrer matériaux, fluides, blocs, objets
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【Scripts serveur】Exécutés lors de l'entrée dans une sauvegarde/la connexion à un serveur, pour enregistrer/modifier recettes et tags
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【Scripts serveur】Exécutés lors de l'entrée dans une sauvegarde / connexion au serveur, pour enregistrer/modifier recettes et tags
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── client_scripts/      # 【Scripts client】Exécutés côté client, pour modifier les infobulles, l'affichage JEI/EMI
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── assets/ &amp; data/      # Fichiers de localisation statiques, textures et packs de données
 </span></code></pre></div>
 <hr />
-<h2 id="phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts">🧪 Phase de démarrage : Enregistrement de matériaux personnalisés (<code>startup_scripts/</code>)<a class="headerlink" href="#phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts" title="Permanent link">&para;</a></h2>
+<h2 id="phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts">🧪 Phase de démarrage : enregistrement de matériaux personnalisés (<code>startup_scripts/</code>)<a class="headerlink" href="#phase-de-demarrage-enregistrement-de-materiaux-personnalises-startup_scripts" title="Permanent link">&para;</a></h2>
 <p>Utilisez <code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> pour enregistrer des éléments et matériaux personnalisés :</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">GTCEuStartupEvents</span><span class="p">.</span><span class="nx">registry</span><span class="p">(</span><span class="s1">'gtceu:material'</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 1. Enregistrer le métal infini (Infinite)</span>
@@ -1708,7 +1708,7 @@
 </span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts">⚙️ Côté serveur : Écriture de recettes personnalisées et de recettes de machines (<code>server_scripts/</code>)<a class="headerlink" href="#cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts" title="Permanent link">&para;</a></h2>
+<h2 id="cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts">⚙️ Côté serveur : écriture de recettes personnalisées et de recettes de machines (<code>server_scripts/</code>)<a class="headerlink" href="#cote-serveur-ecriture-de-recettes-personnalisees-et-de-recettes-de-machines-server_scripts" title="Permanent link">&para;</a></h2>
 <p>Dans l'événement <code>ServerEvents.recipes</code>, vous pouvez directement appeler <code>event.recipes.gtceu</code> et <code>event.recipes.gtecore</code> :</p>
 <h3 id="1-recettes-de-machines-de-base-et-de-haut-fourneau">1. Recettes de machines de base et de haut fourneau<a class="headerlink" href="#1-recettes-de-machines-de-base-et-de-haut-fourneau" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1745,7 +1745,7 @@
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtecore</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// Recette de production en masse de minerais pour la Boîte facile (Easy Box)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// Recette de production de minerais en masse pour la Boîte facile (Easy Box)</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">gte</span><span class="p">.</span><span class="nx">easy_box</span><span class="p">(</span><span class="s1">'easy_test'</span><span class="p">)</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p">.</span><span class="nx">circuit</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>

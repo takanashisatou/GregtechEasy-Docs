@@ -1308,10 +1308,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-zero-copy-mapping-tool-fur-externe-launcher-link_to_launcherbat" class="md-nav__link">
+  <a href="#2-null-kopier-verknupfungstool-fur-externe-launcher-link_to_launcherbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔗 2. Zero-Copy-Mapping-Tool für externe Launcher (link_to_launcher.bat)
+        🔗 2. Null-Kopier-Verknüpfungstool für externe Launcher (link_to_launcher.bat)
       
     </span>
   </a>
@@ -1568,10 +1568,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-zero-copy-mapping-tool-fur-externe-launcher-link_to_launcherbat" class="md-nav__link">
+  <a href="#2-null-kopier-verknupfungstool-fur-externe-launcher-link_to_launcherbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔗 2. Zero-Copy-Mapping-Tool für externe Launcher (link_to_launcher.bat)
+        🔗 2. Null-Kopier-Verknüpfungstool für externe Launcher (link_to_launcher.bat)
       
     </span>
   </a>
@@ -1640,25 +1640,25 @@
 
 
 <h1 id="lokale-hot-reload-entwicklung-und-schneller-start-ohne-launcher">Lokale Hot-Reload-Entwicklung und schneller Start ohne Launcher<a class="headerlink" href="#lokale-hot-reload-entwicklung-und-schneller-start-ohne-launcher" title="Permanent link">&para;</a></h1>
-<p>GTE hat ein äußerst benutzerfreundliches, nahtloses Hot-Reload-System für Modpack-Planer, Quest-Autoren und Mod-Programmierer entwickelt.</p>
+<p>GTE hat ein äußerst benutzerfreundliches Hot-Reload-System für Modpack-Planer, Quest-Autoren und Mod-Programmierer entwickelt.</p>
 <hr />
 <h2 id="1-schnellstart-skript-ohne-launcher-run_gamebat-run_gamesh">⚡ 1. Schnellstart-Skript ohne Launcher (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-schnellstart-skript-ohne-launcher-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>Für Quest-Autoren (FTB Quests) und KubeJS-Rezept-Designer: <strong>Kein Öffnen von IntelliJ IDEA und keine Installation von Drittanbieter-Launchern erforderlich</strong> – einfach <strong><code>run_game.bat</code></strong> im Projektstammverzeichnis doppelklicken, um das Spiel sofort zu starten!</p>
+<p>Für Quest-Autoren (FTB Quests) und KubeJS-Rezeptplaner: <strong>Kein Öffnen von IntelliJ IDEA erforderlich, auch keine Installation eines Drittanbieter-Launchers</strong> – einfach doppelklicken Sie auf <strong><code>run_game.bat</code></strong> im Projektstammverzeichnis, um das Spiel sofort zu starten!</p>
 <pre class="mermaid"><code>graph TD
     A[Doppelklick auf run_game.bat] --&gt; B[Automatisches Scannen des lokalen JDK-21-Pfads und dauerhaftes Speichern]
     B --&gt; C[Automatische Erkennung von physischem RAM und CPU-Kernen]
     C --&gt; D[Dynamische Berechnung der optimalen JVM-Speicherzuweisung und GC-Threads]
     D --&gt; E[Direktes Mounten von gte/overrides als Spielverzeichnis]
-    E --&gt; F[Spiel starten: Echtzeit-Lesen/Schreiben von Git-verfolgten Quests und Scripts]</code></pre>
+    E --&gt; F[Spielstart: Echtzeit-Lesen/Schreiben der Git-verfolgten Quests und Skripte]</code></pre>
 <h3 id="kernfunktionen">Kernfunktionen<a class="headerlink" href="#kernfunktionen" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Vollautomatische JDK-21-Erkennung</strong>: Sucht automatisch nach installierten Java-21-Versionen unter <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code> und <code>Program Files</code> und speichert den Pfad automatisch in <code>.jdk_path</code>.</li>
-<li><strong>Hardware-adaptive Optimierung</strong>: Weist automatisch die JVM-Heap-Größe basierend auf dem gesamten RAM des Computers im optimalen Verhältnis (50–60 % des verfügbaren physischen Speichers) zu und konfiguriert automatisch parallele GC-Threads.</li>
-<li><strong>Null-Verschiebungs-Workflow</strong>: Änderungen an Quests im Spiel (<code>/ftbquests editing_mode true</code>) und Speichern werden direkt in Echtzeit im entsprechenden <code>config/ftbquests/</code>-Ordner des Git-Repositorys gespeichert. Öffnen Sie GitHub Desktop und committen Sie mit einem Klick!</li>
+<li><strong>Automatische JDK-21-Erkennung</strong>: Sucht automatisch nach installiertem Java 21 in <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code> und <code>Program Files</code> und speichert den Pfad automatisch in <code>.jdk_path</code>.</li>
+<li><strong>Hardware-adaptive Optimierung</strong>: Weist automatisch die JVM-Heap-Größe basierend auf dem gesamten RAM des Computers im optimalen Verhältnis (50%–60% des verfügbaren physischen Speichers) zu und konfiguriert automatisch parallele GC-Threads.</li>
+<li><strong>Null-Verschiebungs-Workflow</strong>: Änderungen an Quests im Spiel (<code>/ftbquests editing_mode true</code>) und Speichern werden direkt in Echtzeit im entsprechenden <code>config/ftbquests/</code>-Ordner des Git-Repositorys gespeichert – öffnen Sie GitHub Desktop und committen Sie mit einem Klick!</li>
 </ol>
 <hr />
-<h2 id="2-zero-copy-mapping-tool-fur-externe-launcher-link_to_launcherbat">🔗 2. Zero-Copy-Mapping-Tool für externe Launcher (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-zero-copy-mapping-tool-fur-externe-launcher-link_to_launcherbat" title="Permanent link">&para;</a></h2>
-<p>Wenn Sie es gewohnt sind, einen Launcher mit eigenen Skins und Tastenbelegungen zu verwenden (z. B. PCL2 / HMCL / Prism Launcher):</p>
+<h2 id="2-null-kopier-verknupfungstool-fur-externe-launcher-link_to_launcherbat">🔗 2. Null-Kopier-Verknüpfungstool für externe Launcher (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-null-kopier-verknupfungstool-fur-externe-launcher-link_to_launcherbat" title="Permanent link">&para;</a></h2>
+<p>Wenn Sie einen Launcher mit eigenen Skins und Tastenbelegungen verwenden (z. B. PCL2 / HMCL / Prism Launcher):</p>
 <ol>
 <li>Doppelklicken Sie auf <strong><code>link_to_launcher.bat</code></strong> im Stammverzeichnis.</li>
 <li>Ziehen Sie gemäß den Anweisungen das Spielverzeichnis Ihres Launchers (z. B. <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) in die Konsole und drücken Sie die Eingabetaste.</li>
@@ -1667,18 +1667,18 @@
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
 <li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
-<li>Egal, wie Sie Quests oder Rezepte im Launcher ändern, <strong>die physischen Daten werden in Echtzeit im Haupt-Git-Repository gespeichert</strong>!</li>
+<li>Egal, wie Sie Quests oder Rezepte im Launcher ändern, <strong>die physischen Daten werden in Echtzeit im Haupt-Git-Repository synchronisiert</strong>!</li>
 </ol>
 <hr />
 <h2 id="3-hot-compile-schattenumgebung-fur-mod-code-gte-dev-runtime">☕ 3. Hot-Compile-Schattenumgebung für Mod-Code (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-hot-compile-schattenumgebung-fur-mod-code-gte-dev-runtime" title="Permanent link">&para;</a></h2>
 <p>Für Java/Kotlin-Programmierer ist <code>modules/gte-dev-runtime</code> ein dediziertes Schatten-Debug-Modul:</p>
 <h3 id="funktionsweise-und-designuberlegungen">Funktionsweise und Designüberlegungen<a class="headerlink" href="#funktionsweise-und-designuberlegungen" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Zweck</strong>: Reine lokale Hot-Compile-Sandbox für die Entwicklung, <strong>nicht für die Veröffentlichung gedacht und in keinem Spieler-Build enthalten</strong>.</li>
+<li><strong>Zweck</strong>: Reine lokale Hot-Compile-Sandbox für die Entwicklung, <strong>Veröffentlichung verboten, erscheint in keiner Spieler-Build</strong>.</li>
 <li><strong>ModDevGradle dynamisches Remapping</strong>: Kompiliert automatisch den neuesten Quellcode von <code>gtm-reborn</code> und <code>gtecore</code> und hängt ihn in den Mojang-Deobfuscation-Namespace ein.</li>
-<li><strong>Startmethoden</strong>:</li>
+<li><strong>Startmethode</strong>:</li>
 <li>Wählen Sie in IDEA die Run-Konfiguration <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong>.</li>
-<li>Oder führen Sie in der Befehlszeile aus:
+<li>Oder führen Sie über die Befehlszeile aus:
     <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gte-dev-runtime</span><span class="p">:</span><span class="n">runClient</span>
 </span></code></pre></div></li>
 </ul>

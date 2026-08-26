@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#1-run_gamebat-run_gamesh" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -1226,8 +1226,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1270,8 +1268,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1292,7 +1288,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         핵심 기능
@@ -1311,7 +1307,7 @@
   <a href="#2-link_to_launcherbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔗 2. 외부 런처 복사 없이 매핑 도구 (link_to_launcher.bat)
+        🔗 2. 외부 런처 제로 복사 매핑 도구 (link_to_launcher.bat)
       
     </span>
   </a>
@@ -1331,7 +1327,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         작동 원리 및 설계 고려 사항
@@ -1530,8 +1526,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1552,7 +1546,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         핵심 기능
@@ -1571,7 +1565,7 @@
   <a href="#2-link_to_launcherbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔗 2. 외부 런처 복사 없이 매핑 도구 (link_to_launcher.bat)
+        🔗 2. 외부 런처 제로 복사 매핑 도구 (link_to_launcher.bat)
       
     </span>
   </a>
@@ -1591,7 +1585,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         작동 원리 및 설계 고려 사항
@@ -1639,69 +1633,47 @@
   
 
 
-<h1 id="_1">로컬 핫 디버깅 및 런처 없이 빠른 실행<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>GTE는 통합팩 기획자, 퀘스트 작성자, 모드 프로그래머에게 매우 친숙한 무감각 디버깅 시스템을 설계했습니다.</p>
+  <h1>本地热联调与启动脚本 / Runtimes & Launchers</h1>
+
+<p>로컬 핫 리로드 및 런처 없이 빠른 실행</p>
+<p>GTE는 통합팩 기획자, 퀘스트 작성자, 모드 프로그래머에게 매우 친숙한 원활한 연동 디버깅 시스템을 설계했습니다.</p>
 <hr />
 <h2 id="1-run_gamebat-run_gamesh">⚡ 1. 런처 없이 빠른 시작 스크립트 (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>퀘스트 북 작성자(FTB Quests)와 KubeJS 레시피 기획자에게 <strong>IntelliJ IDEA를 열 필요 없이</strong>, <strong>타사 런처 설치 없이</strong>, 프로젝트 루트 디렉토리의 <strong><code>run_game.bat</code></strong>을 더블 클릭하면 즉시 게임에 진입할 수 있습니다!</p>
+<p>퀘스트 북 작성자(FTB Quests)와 KubeJS 레시피 기획자의 경우, <strong>IntelliJ IDEA를 열 필요 없이, 타사 런처를 설치할 필요도 없이</strong>, 프로젝트 루트 디렉토리의 <strong><code>run_game.bat</code></strong> 을 더블 클릭하면 즉시 게임에 진입할 수 있습니다!</p>
 <pre class="mermaid"><code>graph TD
-    A[双击 run_game.bat] --&gt; B[自动扫描本地 JDK 21 路径并持久化]
-    B --&gt; C[自动探测系统物理内存与 CPU 核心数]
-    C --&gt; D[动态计算最优 JVM 内存分配与 GC 线程]
-    D --&gt; E[直接挂载 gte/overrides 为游戏工作目录]
-    E --&gt; F[启动游戏: 实时读写 Git 追踪的 quests 与 scripts]</code></pre>
-<h3 id="_2">핵심 기능<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+    A[run_game.bat 더블 클릭] --&gt; B[로컬 JDK 21 경로 자동 스캔 및 영구 저장]
+    B --&gt; C[시스템 물리 메모리 및 CPU 코어 수 자동 감지]
+    C --&gt; D[최적 JVM 메모리 할당 및 GC 스레드 동적 계산]
+    D --&gt; E[gte/overrides를 게임 작업 디렉토리로 직접 마운트]
+    E --&gt; F[게임 시작: Git 추적 quests 및 scripts 실시간 읽기/쓰기]</code></pre>
+<h3 id="_1">핵심 기능<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>완전 자동 JDK 21 탐지</strong>: <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code> 아래 설치된 Java 21을 자동으로 검색하고 <code>.jdk_path</code>에 자동으로 저장합니다.</p>
-</li>
-<li>
-<p><strong>하드웨어 적응형 최적화</strong>: 현재 컴퓨터의 총 RAM 용량에 따라 최적 비율(사용 가능한 물리 메모리의 50%~60%)로 JVM 힙 크기를 자동 할당하고 병렬 GC 스레드를 자동 구성합니다.</p>
-</li>
-<li>
-<p><strong>제로 이동 워크플로우</strong>: 게임 내에서 퀘스트(<code>/ftbquests editing_mode true</code>)를 수정하고 저장하면, 수정 사항이 Git 저장소의 해당 <code>config/ftbquests/</code>에 실시간으로 저장되며, GitHub Desktop을 열면 원클릭 커밋이 가능합니다!</p>
-</li>
+<li><strong>완전 자동 JDK 21 탐지</strong>: <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code> 아래에 설치된 Java 21을 자동으로 검색하고, <code>.jdk_path</code>에 자동으로 저장합니다.</li>
+<li><strong>하드웨어 적응형 최적화</strong>: 현재 PC의 총 RAM 용량에 따라 최적 비율(사용 가능한 물리 메모리의 50%~60%)로 JVM 힙 크기를 자동 할당하고, 병렬 GC 스레드를 자동 구성합니다.</li>
+<li><strong>제로 이동 워크플로우</strong>: 게임 내에서 퀘스트를 수정(<code>/ftbquests editing_mode true</code>)하고 저장하면, 수정 사항이 Git 저장소의 해당 <code>config/ftbquests/</code>에 실시간으로 직접 저장되며, GitHub Desktop을 열면 원클릭 커밋이 가능합니다!</li>
 </ol>
 <hr />
-<h2 id="2-link_to_launcherbat">🔗 2. 외부 런처 복사 없이 매핑 도구 (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-link_to_launcherbat" title="Permanent link">&para;</a></h2>
-<p>자신이 설정한 스킨, 키 설정이 있는 런처(예: PCL2 / HMCL / Prism Launcher)를 사용하는 경우:</p>
+<h2 id="2-link_to_launcherbat">🔗 2. 외부 런처 제로 복사 매핑 도구 (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-link_to_launcherbat" title="Permanent link">&para;</a></h2>
+<p>자신이 설정한 스킨, 키 설정이 있는 런처(예: PCL2 / HMCL / Prism Launcher)를 사용하는 데 익숙하다면:</p>
 <ol>
-<li>
-<p>루트 디렉토리의 <strong><code>link_to_launcher.bat</code></strong>을 더블 클릭하여 실행합니다.</p>
-</li>
-<li>
-<p>프롬프트에 따라 런처 게임 디렉토리(예: <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>)를 콘솔에 드래그하고 Enter를 누릅니다.</p>
-</li>
-<li>
-<p>스크립트가 자동으로 Windows 디렉토리 정션(Directory Junctions)을 생성합니다:</p>
-</li>
-<li>
-<p><code>config</code> ➜ <code>gte/overrides/config</code></p>
-</li>
+<li>루트 디렉토리의 <strong><code>link_to_launcher.bat</code></strong> 을 더블 클릭하여 실행합니다.</li>
+<li>안내에 따라 런처 게임 디렉토리(예: <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>)를 콘솔에 끌어다 놓고 Enter 키를 누릅니다.</li>
+<li>스크립트가 Windows 디렉토리 심볼릭 링크(Directory Junctions)를 자동으로 생성합니다:</li>
+<li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
-<li>
-<p><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></p>
-</li>
-<li>
-<p>런처에서 퀘스트나 레시피를 어떻게 수정하든 <strong>물리적 데이터는 실시간으로 메인 Git 저장소에 동기화됩니다</strong>!</p>
-</li>
+<li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
+<li>런처에서 퀘스트나 레시피를 어떻게 수정하든, <strong>실제 데이터는 실시간으로 메인 Git 저장소에 동기화되어 저장됩니다</strong>!</li>
 </ol>
 <hr />
 <h2 id="3-gte-dev-runtime">☕ 3. 모드 코드 핫 컴파일 섀도우 환경 (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-gte-dev-runtime" title="Permanent link">&para;</a></h2>
-<p>Java/Kotlin 프로그래머를 위해 <code>modules/gte-dev-runtime</code>은 전용 섀도우 디버깅 모듈입니다:</p>
-<h3 id="_3">작동 원리 및 설계 고려 사항<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Java/Kotlin 프로그래머의 경우, <code>modules/gte-dev-runtime</code>은 전용 섀도우 디버깅 모듈입니다:</p>
+<h3 id="_2">작동 원리 및 설계 고려 사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>위치</strong>: 순수 로컬 핫 컴파일 디버깅 샌드박스로, <strong>패키징 및 배포가 금지되며 플레이어 빌드에 포함되지 않습니다</strong>.</p>
-</li>
-<li>
-<p><strong>ModDevGradle 동적 리매핑</strong>: <code>gtm-reborn</code>과 <code>gtecore</code>의 최신 소스 코드를 자동으로 핫 컴파일하고 Mojang 디난독화 네임스페이스에 마운트합니다.</p>
-</li>
-<li>
-<p><strong>시작 방법</strong>:</p>
-</li>
-<li>IDEA에서 실행 구성 <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong>을 선택합니다.</li>
+<li><strong>위치</strong>: 순수 로컬 핫 컴파일 연동 디버깅 샌드박스로, <strong>패키징 배포가 금지되며, 어떤 플레이어 빌드에도 포함되지 않습니다</strong>.</li>
+<li><strong>ModDevGradle 동적 리매핑</strong>: <code>gtm-reborn</code>과 <code>gtecore</code>의 최신 소스 코드를 자동으로 핫 컴파일하여 Mojang 디오브퓨케이션 네임스페이스에 마운트합니다.</li>
+<li><strong>시작 방법</strong>:</li>
+<li>IDEA에서 실행 구성 <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong> 을 선택합니다.</li>
 <li>또는 명령줄에서 실행:
     <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gte-dev-runtime</span><span class="p">:</span><span class="n">runClient</span>
 </span></code></pre></div></li>

@@ -1640,45 +1640,45 @@
 
 
 <h1 id="local-hot-reload-and-launcher-free-quick-run">Local Hot-Reload and Launcher-Free Quick Run<a class="headerlink" href="#local-hot-reload-and-launcher-free-quick-run" title="Permanent link">&para;</a></h1>
-<p>GTE has designed a seamless hot-reload system that is extremely friendly to pack planners, quest writers, and mod programmers.</p>
+<p>GTE has designed a seamless hot-reload system that is extremely friendly to pack planners, quest writers, and mod developers.</p>
 <hr />
 <h2 id="1-launcher-free-quick-start-script-run_gamebat-run_gamesh">⚡ 1. Launcher-Free Quick Start Script (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-launcher-free-quick-start-script-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>For quest book authors (FTB Quests) and KubeJS recipe planners, <strong>no need to open IntelliJ IDEA or install any third-party launcher</strong>; simply double-click <strong><code>run_game.bat</code></strong> in the project root to enter the game instantly!</p>
+<p>For quest book authors (FTB Quests) and KubeJS recipe planners, <strong>no need to open IntelliJ IDEA, and no need to install any third-party launcher</strong>, just double-click <strong><code>run_game.bat</code></strong> in the project root to enter the game instantly!</p>
 <pre class="mermaid"><code>graph TD
-    A[Double-click run_game.bat] --&gt; B[Automatically scan local JDK 21 path and persist it]
-    B --&gt; C[Automatically detect system physical memory and CPU core count]
-    C --&gt; D[Dynamically calculate optimal JVM memory allocation and GC threads]
-    D --&gt; E[Directly mount gte/overrides as the game working directory]
-    E --&gt; F[Launch game: real-time read/write of Git-tracked quests and scripts]</code></pre>
+    A[双击 run_game.bat] --&gt; B[自动扫描本地 JDK 21 路径并持久化]
+    B --&gt; C[自动探测系统物理内存与 CPU 核心数]
+    C --&gt; D[动态计算最优 JVM 内存分配与 GC 线程]
+    D --&gt; E[直接挂载 gte/overrides 为游戏工作目录]
+    E --&gt; F[启动游戏: 实时读写 Git 追踪的 quests 与 scripts]</code></pre>
 <h3 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Fully Automatic JDK 21 Detection</strong>: Automatically scans for Java 21 installed under <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, and <code>Program Files</code>, and automatically remembers it in <code>.jdk_path</code>.</li>
 <li><strong>Hardware-Adaptive Optimization</strong>: Automatically allocates JVM heap size based on the total RAM of the current computer at an optimal ratio (50%~60% of available physical memory), and automatically configures parallel GC threads.</li>
-<li><strong>Zero-Move Workflow</strong>: Modify quests in-game (<code>/ftbquests editing_mode true</code>) and save; changes are directly saved in real-time to the corresponding <code>config/ftbquests/</code> in the Git repository. Open GitHub Desktop and commit with one click!</li>
+<li><strong>Zero-Move Workflow</strong>: Modify quests in-game (<code>/ftbquests editing_mode true</code>) and save; changes are saved in real-time to the corresponding <code>config/ftbquests/</code> in the Git repository. Open GitHub Desktop and commit with one click!</li>
 </ol>
 <hr />
 <h2 id="2-external-launcher-zero-copy-mapping-tool-link_to_launcherbat">🔗 2. External Launcher Zero-Copy Mapping Tool (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-external-launcher-zero-copy-mapping-tool-link_to_launcherbat" title="Permanent link">&para;</a></h2>
-<p>If you prefer using a launcher with your own configured skins and keybindings (e.g., PCL2 / HMCL / Prism Launcher):</p>
+<p>If you prefer using a launcher you've configured with skins and keybindings (e.g., PCL2 / HMCL / Prism Launcher):</p>
 <ol>
 <li>Double-click <strong><code>link_to_launcher.bat</code></strong> in the root directory.</li>
-<li>As prompted, drag your launcher's game directory (e.g., <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) into the console and press Enter.</li>
+<li>Follow the prompts to drag your launcher's game directory (e.g., <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) into the console and press Enter.</li>
 <li>The script will automatically create Windows directory junctions:</li>
 <li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
 <li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
-<li>No matter how you modify quests or recipes in the launcher, <strong>the physical data is synchronized and saved in real-time to the main Git repository</strong>!</li>
+<li>No matter how you modify quests or recipes in the launcher, <strong>the physical data is synchronized in real-time to the main Git repository</strong>!</li>
 </ol>
 <hr />
 <h2 id="3-mod-code-hot-compile-shadow-environment-gte-dev-runtime">☕ 3. Mod Code Hot-Compile Shadow Environment (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-mod-code-hot-compile-shadow-environment-gte-dev-runtime" title="Permanent link">&para;</a></h2>
 <p>For Java/Kotlin programmers, <code>modules/gte-dev-runtime</code> is a dedicated shadow debugging module:</p>
 <h3 id="how-it-works-and-design-considerations">How It Works and Design Considerations<a class="headerlink" href="#how-it-works-and-design-considerations" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Purpose</strong>: A purely local hot-compile debugging sandbox; <strong>prohibited from packaging and release, and will not appear in any player builds</strong>.</li>
-<li><strong>ModDevGradle Dynamic Remapping</strong>: Automatically hot-compiles the latest source code of <code>gtm-reborn</code> and <code>gtecore</code> and mounts them into the Mojang obfuscation-decoupled namespace.</li>
+<li><strong>Purpose</strong>: A pure local hot-compile debugging sandbox; <strong>forbidden from packaging and release, and will not appear in any player artifacts</strong>.</li>
+<li><strong>ModDevGradle Dynamic Remapping</strong>: Automatically hot-compiles the latest source code of <code>gtm-reborn</code> and <code>gtecore</code> and mounts it into the Mojang obfuscation namespace.</li>
 <li><strong>Launch Method</strong>:</li>
 <li>In IDEA, select the run configuration <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong>.</li>
-<li>Or execute via command line:
+<li>Or run from the command line:
     <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gte-dev-runtime</span><span class="p">:</span><span class="n">runClient</span>
 </span></code></pre></div></li>
 </ul>

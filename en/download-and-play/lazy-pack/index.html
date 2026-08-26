@@ -761,10 +761,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-must-you-use-java-21" class="md-nav__link">
+  <a href="#why-must-java-21-be-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Must You Use Java 21?
+        Why Must Java 21 Be Used?
       
     </span>
   </a>
@@ -1624,10 +1624,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-must-you-use-java-21" class="md-nav__link">
+  <a href="#why-must-java-21-be-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Must You Use Java 21?
+        Why Must Java 21 Be Used?
       
     </span>
   </a>
@@ -1708,15 +1708,15 @@
 <h1 id="modpack-download-and-player-lazy-pack-guide">Modpack Download and Player Lazy Pack Guide<a class="headerlink" href="#modpack-download-and-player-lazy-pack-guide" title="Permanent link">&para;</a></h1>
 <p>GTE (GregTech Easy) provides three out-of-the-box delivery formats for players and server owners with different technical backgrounds:</p>
 <ol>
-<li><strong>Player No-Compile Full Lazy Pack (<code>GTE-LazyPack-*.zip</code>)</strong>: Contains all pre-compiled mods, configurations, tweak scripts, and the complete <code>.minecraft</code> directory structure. <strong>Double-click or drag into the launcher to play.</strong></li>
+<li><strong>Player Ready-to-Play Full Lazy Pack (<code>GTE-LazyPack-*.zip</code>)</strong>: Includes all pre-compiled mods, configurations, tweak scripts, and the complete <code>.minecraft</code> directory structure. <strong>Double-click or drag into the launcher to play.</strong></li>
 <li><strong>CurseForge Standard Pack (<code>GTE-CurseForge-*.zip</code>)</strong>: Standard CurseForge format, can be directly imported with one click in PCL2 / HMCL / CurseForge App / Prism Launcher.</li>
-<li><strong>Server Modpack (<code>GTE-Server-*.zip</code>)</strong>: Contains clean server configuration, mods, and startup scripts for hosting multiplayer servers.</li>
+<li><strong>Server Modpack (<code>GTE-Server-*.zip</code>)</strong>: Includes clean server configurations, mods, and launch scripts for setting up multiplayer servers.</li>
 </ol>
 <hr />
 <h2 id="player-lazy-pack-recommended">🚀 Player Lazy Pack (Recommended)<a class="headerlink" href="#player-lazy-pack-recommended" title="Permanent link">&para;</a></h2>
 <h3 id="features-and-advantages">Features and Advantages<a class="headerlink" href="#features-and-advantages" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>0 Compilation Dependencies</strong>: No need to install JDK compilation environment, IntelliJ IDEA, or Git.</li>
+<li><strong>Zero Compilation Dependencies</strong>: No need to install JDK build environment, IntelliJ IDEA, or Git.</li>
 <li><strong>Full Packaging</strong>: The latest released Jars of <code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>, and prerequisite extension mods are all built into the <code>mods/</code> directory.</li>
 <li><strong>Drag-and-Play</strong>: Supports one-click import by dragging into PCL2 / HMCL windows.</li>
 </ul>
@@ -1726,10 +1726,10 @@
 <div class="tabbed-block">
 <ol>
 <li>Open <strong>PCL2 (Plain Craft Launcher 2)</strong> or <strong>HMCL (Hello Minecraft! Launcher)</strong>.</li>
-<li>Drag the downloaded <code>GTE-LazyPack-&lt;版本号&gt;.zip</code> directly into the launcher main window with the <strong>left mouse button</strong>.</li>
+<li>Drag the downloaded <code>GTE-LazyPack-&lt;version&gt;.zip</code> directly into the launcher main window with the <strong>left mouse button</strong>.</li>
 <li>The launcher will automatically recognize and extract it to the game version list.</li>
 <li>Go to the <strong>Version Settings</strong> of that version and set the Java runtime to <strong>Java 21</strong>.</li>
-<li>Allocate <strong>8GB ~ 12GB</strong> of memory, then click to launch the game!</li>
+<li>Allocate <strong>8GB ~ 12GB</strong> of memory and click to launch the game!</li>
 </ol>
 </div>
 <div class="tabbed-block">
@@ -1747,11 +1747,11 @@
 <blockquote>
 <p>[!CAUTION]
 <strong>This modpack strictly requires Java 21 (JDK 21) as the runtime environment!</strong>
-Do not use <strong>Java 17</strong> or <strong>Java 8</strong>, otherwise the game will crash or refuse to start!</p>
+Do not use <strong>Java 17</strong> or <strong>Java 8</strong>, otherwise the game will crash or refuse to launch!</p>
 </blockquote>
-<h3 id="why-must-you-use-java-21">Why Must You Use Java 21?<a class="headerlink" href="#why-must-you-use-java-21" title="Permanent link">&para;</a></h3>
+<h3 id="why-must-java-21-be-used">Why Must Java 21 Be Used?<a class="headerlink" href="#why-must-java-21-be-used" title="Permanent link">&para;</a></h3>
 <ul>
-<li>GTE's core mods (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) fully utilize <strong>Java 21 modern language features</strong> (such as Record Patterns, Virtual Threads, enhanced Switch matching).</li>
+<li>The core mods of GTE (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) fully utilize <strong>Java 21 modern language features</strong> (such as Record Patterns, Virtual Threads, and enhanced Switch matching).</li>
 <li>The Gradle build scripts globally configure <code>JavaLanguageVersion.of(21)</code> to enforce toolchain checks.</li>
 </ul>
 <h3 id="recommended-jdk-21-download-links">Recommended JDK 21 Download Links<a class="headerlink" href="#recommended-jdk-21-download-links" title="Permanent link">&para;</a></h3>
@@ -1777,17 +1777,17 @@ Do not use <strong>Java 17</strong> or <strong>Java 8</strong>, otherwise the ga
 <tr>
 <td style="text-align: left;"><strong>Microsoft OpenJDK 21</strong></td>
 <td style="text-align: left;"><a href="https://learn.microsoft.com/zh-cn/java/openjdk/download">Click to go to Microsoft Official Website</a></td>
-<td style="text-align: left;">Good native adaptation on Windows platforms</td>
+<td style="text-align: left;">Good native adaptation on Windows platform</td>
 </tr>
 </tbody>
 </table>
 <h3 id="configuring-java-21-in-the-launcher">Configuring Java 21 in the Launcher<a class="headerlink" href="#configuring-java-21-in-the-launcher" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph LR
-    A[打开启动器] --&gt; B[进入 GTE 版本设置]
-    B --&gt; C[Java 路径 / 运行时]
-    C --&gt; D[选择已安装的 JDK 21 javaw.exe]
-    D --&gt; E[分配 8192MB ~ 12288MB 内存]
-    E --&gt; F[保存并启动游戏]</code></pre>
+    A[Open Launcher] --&gt; B[Enter GTE Version Settings]
+    B --&gt; C[Java Path / Runtime]
+    C --&gt; D[Select Installed JDK 21 javaw.exe]
+    D --&gt; E[Allocate 8192MB ~ 12288MB Memory]
+    E --&gt; F[Save and Launch Game]</code></pre>
 <hr />
 <h2 id="in-game-shortcuts-and-common-commands">🎮 In-Game Shortcuts and Common Commands<a class="headerlink" href="#in-game-shortcuts-and-common-commands" title="Permanent link">&para;</a></h2>
 <table>
@@ -1801,7 +1801,7 @@ Do not use <strong>Java 17</strong> or <strong>Java 8</strong>, otherwise the ga
 <tbody>
 <tr>
 <td style="text-align: left;"><code>/ftbquests editing_mode true</code></td>
-<td style="text-align: left;">Enable visual editing mode for quest book (author mode)</td>
+<td style="text-align: left;">Enable visual editing mode for the quest book (author mode)</td>
 <td style="text-align: left;">OP permission</td>
 </tr>
 <tr>
@@ -1821,17 +1821,17 @@ Do not use <strong>Java 17</strong> or <strong>Java 8</strong>, otherwise the ga
 </tr>
 <tr>
 <td style="text-align: left;"><code>/dumpmultiblock</code></td>
-<td style="text-align: left;">One-click export multiblock structure code after selecting area with wooden axe</td>
+<td style="text-align: left;">One-click export multiblock structure code after selecting an area with a wooden axe</td>
 <td style="text-align: left;">OP permission</td>
 </tr>
 <tr>
 <td style="text-align: left;"><kbd>U</kbd> / <kbd>R</kbd></td>
-<td style="text-align: left;">View usage (Usage) / recipe (Recipe) of item under cursor</td>
+<td style="text-align: left;">View usage (Usage) / recipe (Recipe) of the item under cursor</td>
 <td style="text-align: left;">EMI / JEI shortcut</td>
 </tr>
 <tr>
 <td style="text-align: left;"><kbd>F7</kbd></td>
-<td style="text-align: left;">View surrounding light levels (red cross indicates mob spawn area)</td>
+<td style="text-align: left;">View surrounding light levels (red cross indicates mob spawning area)</td>
 <td style="text-align: left;">Client-side shortcut</td>
 </tr>
 </tbody>

@@ -1283,12 +1283,12 @@
   <a href="#1-run_gamebat-run_gamesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 1. Быстрый запуск без лаунчера (run_game.bat / run_game.sh)
+        ⚡ 1. Скрипт быстрого запуска без лаунчера (run_game.bat / run_game.sh)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚡ 1. Быстрый запуск без лаунчера (run_game.bat / run_game.sh)">
+    <nav class="md-nav" aria-label="⚡ 1. Скрипт быстрого запуска без лаунчера (run_game.bat / run_game.sh)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1543,12 +1543,12 @@
   <a href="#1-run_gamebat-run_gamesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 1. Быстрый запуск без лаунчера (run_game.bat / run_game.sh)
+        ⚡ 1. Скрипт быстрого запуска без лаунчера (run_game.bat / run_game.sh)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚡ 1. Быстрый запуск без лаунчера (run_game.bat / run_game.sh)">
+    <nav class="md-nav" aria-label="⚡ 1. Скрипт быстрого запуска без лаунчера (run_game.bat / run_game.sh)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1640,38 +1640,38 @@
 
 
 <h1 id="_1">Локальная горячая отладка и быстрый запуск без лаунчера<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>GTE разработал систему бесшовной отладки, чрезвычайно удобную для планировщиков сборок, авторов заданий и программистов модов.</p>
+<p>GTE разработала систему бесшовной отладки, чрезвычайно удобную для разработчиков модпаков, авторов заданий и программистов модов.</p>
 <hr />
-<h2 id="1-run_gamebat-run_gamesh">⚡ 1. Быстрый запуск без лаунчера (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>Для авторов книг заданий (FTB Quests) и планировщиков рецептов KubeJS <strong>не нужно открывать IntelliJ IDEA или устанавливать сторонние лаунчеры</strong> — просто дважды щелкните <strong><code>run_game.bat</code></strong> в корне проекта, чтобы быстро войти в игру!</p>
+<h2 id="1-run_gamebat-run_gamesh">⚡ 1. Скрипт быстрого запуска без лаунчера (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
+<p>Для авторов квестов (FTB Quests) и разработчиков рецептов KubeJS <strong>не нужно открывать IntelliJ IDEA или устанавливать сторонние лаунчеры</strong> — просто дважды щелкните <strong><code>run_game.bat</code></strong> в корне проекта, чтобы мгновенно войти в игру!</p>
 <pre class="mermaid"><code>graph TD
-    A[Двойной щелчок по run_game.bat] --&gt; B[Автоматическое сканирование локального пути JDK 21 и его сохранение]
+    A[Двойной клик по run_game.bat] --&gt; B[Автоматическое сканирование локального пути JDK 21 и его сохранение]
     B --&gt; C[Автоматическое определение физической памяти и количества ядер CPU]
     C --&gt; D[Динамический расчет оптимального выделения памяти JVM и потоков GC]
     D --&gt; E[Непосредственное монтирование gte/overrides как рабочего каталога игры]
-    E --&gt; F[Запуск игры: чтение и запись в реальном времени отслеживаемых Git-файлов quests и scripts]</code></pre>
+    E --&gt; F[Запуск игры: чтение и запись в реальном времени отслеживаемых Git-ом quests и scripts]</code></pre>
 <h3 id="_2">Основные возможности<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Автоматическое обнаружение JDK 21</strong>: автоматически ищет Java 21 в <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code> и запоминает путь в <code>.jdk_path</code>.</li>
+<li><strong>Полностью автоматическое обнаружение JDK 21</strong>: автоматически ищет Java 21 в <code>.jdks</code>, <code>Adoptium</code>, <code>Zulu</code>, <code>Program Files</code> и запоминает путь в <code>.jdk_path</code>.</li>
 <li><strong>Адаптивная оптимизация под оборудование</strong>: автоматически выделяет размер кучи JVM в оптимальной пропорции (50–60% доступной физической памяти) и настраивает параллельные потоки GC.</li>
-<li><strong>Рабочий процесс без перемещений</strong>: изменяйте задания в игре (<code>/ftbquests editing_mode true</code>) и сохраняйте — изменения сразу сохраняются в <code>config/ftbquests/</code> в Git-репозитории, затем можно одним кликом отправить через GitHub Desktop!</li>
+<li><strong>Рабочий процесс без перемещения файлов</strong>: изменения заданий в игре (<code>/ftbquests editing_mode true</code>) и их сохранение напрямую сохраняются в реальном времени в <code>config/ftbquests/</code> в Git-репозитории — откройте GitHub Desktop и закоммитьте одним кликом!</li>
 </ol>
 <hr />
 <h2 id="2-link_to_launcherbat">🔗 2. Инструмент сопоставления без копирования для внешних лаунчеров (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-link_to_launcherbat" title="Permanent link">&para;</a></h2>
 <p>Если вы привыкли использовать лаунчер с настроенными скинами и раскладкой клавиш (например, PCL2 / HMCL / Prism Launcher):</p>
 <ol>
-<li>Дважды щелкните <strong><code>link_to_launcher.bat</code></strong> в корневой папке.</li>
+<li>Дважды щелкните <strong><code>link_to_launcher.bat</code></strong> в корне проекта.</li>
 <li>Следуя подсказкам, перетащите игровой каталог вашего лаунчера (например, <code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>) в консоль и нажмите Enter.</li>
 <li>Скрипт автоматически создаст символические ссылки на каталоги Windows (Directory Junctions):</li>
 <li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
 <li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
-<li>Независимо от того, как вы изменяете задания или рецепты в лаунчере, <strong>физические данные синхронизируются в реальном времени в главном Git-репозитории</strong>!</li>
+<li>Независимо от того, как вы изменяете задания или рецепты в лаунчере, <strong>физические данные синхронизируются в реальном времени и сохраняются в основном Git-репозитории</strong>!</li>
 </ol>
 <hr />
 <h2 id="3-gte-dev-runtime">☕ 3. Теневая среда горячей компиляции кода модов (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-gte-dev-runtime" title="Permanent link">&para;</a></h2>
-<p>Для Java/Kotlin программистов <code>modules/gte-dev-runtime</code> — это специальный теневой модуль отладки:</p>
+<p>Для программистов Java/Kotlin <code>modules/gte-dev-runtime</code> — это специальный теневой отладочный модуль:</p>
 <h3 id="_3">Принцип работы и проектные соображения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Назначение</strong>: чисто локальная песочница для горячей компиляции и отладки, <strong>запрещено для публикации, не появляется ни в каких сборках для игроков</strong>.</li>

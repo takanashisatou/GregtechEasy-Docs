@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interface-texturas-e-fluxo-de-trabalho-artistico-com-blockbench" class="md-skip">
+        <a href="#interface-texturas-e-fluxo-de-trabalho-artistico-no-blockbench" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -1160,10 +1160,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#diretorio-de-arquivos-de-origem-de-arte-art_assets" class="md-nav__link">
+  <a href="#diretorio-de-arquivos-de-arte-art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 Diretório de Arquivos de Origem de Arte (art_assets/)
+        🎨 Diretório de Arquivos de Arte (art_assets/)
       
     </span>
   </a>
@@ -1520,10 +1520,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#diretorio-de-arquivos-de-origem-de-arte-art_assets" class="md-nav__link">
+  <a href="#diretorio-de-arquivos-de-arte-art_assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎨 Diretório de Arquivos de Origem de Arte (art_assets/)
+        🎨 Diretório de Arquivos de Arte (art_assets/)
       
     </span>
   </a>
@@ -1602,17 +1602,17 @@
   
 
 
-<h1 id="interface-texturas-e-fluxo-de-trabalho-artistico-com-blockbench">Interface, Texturas e Fluxo de Trabalho Artístico com Blockbench<a class="headerlink" href="#interface-texturas-e-fluxo-de-trabalho-artistico-com-blockbench" title="Permanent link">&para;</a></h1>
-<p>O projeto GTE estabeleceu um pipeline automatizado de processamento de ativos artísticos, sem perdas. Os modeladores só precisam usar o <strong>Blockbench</strong> para criar modelos e salvá-los no diretório de origem; as tarefas do Gradle realizam automaticamente a classificação de ativos, validação de formato e sincronização incremental.</p>
+<h1 id="interface-texturas-e-fluxo-de-trabalho-artistico-no-blockbench">Interface, Texturas e Fluxo de Trabalho Artístico no Blockbench<a class="headerlink" href="#interface-texturas-e-fluxo-de-trabalho-artistico-no-blockbench" title="Permanent link">&para;</a></h1>
+<p>O projeto GTE estabeleceu um pipeline automatizado de processamento de ativos artísticos, sem perdas. Os modeladores só precisam usar o <strong>Blockbench</strong> para criar modelos e salvá-los no diretório de origem. As tarefas do Gradle automatizam a classificação de ativos, validação de formato e sincronização incremental.</p>
 <hr />
-<h2 id="diretorio-de-arquivos-de-origem-de-arte-art_assets">🎨 Diretório de Arquivos de Origem de Arte (<code>art_assets/</code>)<a class="headerlink" href="#diretorio-de-arquivos-de-origem-de-arte-art_assets" title="Permanent link">&para;</a></h2>
-<p>O diretório <code>art_assets/</code> na raiz do projeto é o <strong>único diretório de trabalho</strong> para artistas, estritamente versionado pelo Git:</p>
+<h2 id="diretorio-de-arquivos-de-arte-art_assets">🎨 Diretório de Arquivos de Arte (<code>art_assets/</code>)<a class="headerlink" href="#diretorio-de-arquivos-de-arte-art_assets" title="Permanent link">&para;</a></h2>
+<p>O diretório <code>art_assets/</code> na raiz do projeto é o <strong>único diretório de trabalho</strong> para os artistas, rigorosamente versionado pelo Git:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Arquivos de projeto do Blockbench (preservando camadas e ossos)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Arquivos de projeto do Blockbench (preserva camadas e ossos)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Modelos geométricos do Minecraft exportados do Blockbench
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── *.png                               # Texturas (itens / carcaças de blocos / texturas de formações)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── *.png                               # Texturas (itens / carcaças de blocos / texturas de formação)
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── *.png.mcmeta                        # Metadados de animação e material
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Subdiretório de texturas específicas para a série de circuitos de alta tensão
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── projectuhv/                         # Subdiretório de texturas dedicado à série de circuitos de alta tensão
 </span></code></pre></div>
 <hr />
 <h2 id="convencoes-de-nomenclatura-e-regras-de-roteamento-automatico">🏷️ Convenções de Nomenclatura e Regras de Roteamento Automático<a class="headerlink" href="#convencoes-de-nomenclatura-e-regras-de-roteamento-automatico" title="Permanent link">&para;</a></h2>
@@ -1627,22 +1627,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Texturas de Itens</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>Texturas de itens</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>processor</code>, <code>string</code>, <code>symbol</code>, <code>paper</code>, <code>wafer</code>, <code>chip</code>, <code>god</code>, <code>rune</code>, <code>yin</code>, <code>yang</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/item/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Texturas de Carcaças de Blocos</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>Texturas de carcaças de blocos</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>concrete</code>, <code>coil</code>, <code>zhenfa</code>, <code>matrix</code>, <code>buffer</code>, <code>generator</code>, <code>machine</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Modelos de Blocos</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>Modelos de blocos</strong> (<code>.json</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>block</code>, <code>matrix</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Modelos de Itens</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>Modelos de itens</strong> (<code>.json</code>)</td>
 <td style="text-align: left;">Todos os outros arquivos de modelo (excluindo <code>.bbmodel</code>)</td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/item/</code></td>
 </tr>
@@ -1656,9 +1656,9 @@
 </span></code></pre></div>
 <h3 id="recursos-de-automacao">Recursos de Automação<a class="headerlink" href="#recursos-de-automacao" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Disparo Automático</strong>: Esta tarefa está vinculada aos nós anteriores de <code>buildAll</code>, <code>copyOutputJars</code> e ao pipeline de CI, sendo executada automaticamente durante a compilação local ou inicialização do jogo, sem necessidade de cópia manual repetida.</li>
-<li><strong>Segurança Incremental</strong>: Usa sobrescrita binária em fluxo, criando automaticamente os diretórios pai ausentes no diretório de recursos de destino.</li>
-<li><strong>Mantém o Git Limpo</strong>: Os arquivos <code>.bbmodel</code> são mantidos apenas em <code>art_assets/</code> como projeto de origem; o jar compilado não incluirá metadados redundantes do projeto Blockbench.</li>
+<li><strong>Disparo Automático</strong>: Esta tarefa está vinculada aos nós anteriores de <code>buildAll</code>, <code>copyOutputJars</code> e do pipeline de CI. Ela é executada automaticamente durante a compilação local ou ao iniciar o jogo, sem necessidade de copiar manualmente repetidamente.</li>
+<li><strong>Segurança Incremental</strong>: Usa sobrescrita binária em fluxo contínuo, criando automaticamente os diretórios pai ausentes no diretório de recursos de destino.</li>
+<li><strong>Mantém o Git Limpo</strong>: Os arquivos <code>.bbmodel</code> permanecem apenas em <code>art_assets/</code> como projeto de origem. O jar compilado não incluirá metadados redundantes do projeto Blockbench.</li>
 </ol>
 
 

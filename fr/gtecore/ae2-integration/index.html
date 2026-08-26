@@ -951,15 +951,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-du-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
+  <a href="#miroir-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪞 Image du Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)
+        🪞 Miroir Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪞 Image du Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)">
+    <nav class="md-nav" aria-label="🪞 Miroir Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -974,10 +974,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#affichage-detat-en-survol-jade" class="md-nav__link">
+  <a href="#affichage-detat-jade-en-survol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Affichage d'état en survol Jade
+        Affichage d'état Jade en survol
       
     </span>
   </a>
@@ -990,10 +990,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compartiment-a-vapeur-me-me_steam_hatch" class="md-nav__link">
+  <a href="#hublot-a-vapeur-me-me_steam_hatch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💨 Compartiment à vapeur ME (me_steam_hatch)
+        💨 Hublot à vapeur ME (me_steam_hatch)
       
     </span>
   </a>
@@ -1579,15 +1579,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-du-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
+  <a href="#miroir-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🪞 Image du Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)
+        🪞 Miroir Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🪞 Image du Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)">
+    <nav class="md-nav" aria-label="🪞 Miroir Tampon de Schémas ME Plus (me_pattern_buffer_proxy_plus)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1602,10 +1602,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#affichage-detat-en-survol-jade" class="md-nav__link">
+  <a href="#affichage-detat-jade-en-survol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Affichage d'état en survol Jade
+        Affichage d'état Jade en survol
       
     </span>
   </a>
@@ -1618,10 +1618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compartiment-a-vapeur-me-me_steam_hatch" class="md-nav__link">
+  <a href="#hublot-a-vapeur-me-me_steam_hatch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💨 Compartiment à vapeur ME (me_steam_hatch)
+        💨 Hublot à vapeur ME (me_steam_hatch)
       
     </span>
   </a>
@@ -1662,41 +1662,41 @@
 
 
 <h1 id="integration-approfondie-dae2-et-systeme-plus-de-tampon-de-schemas">Intégration Approfondie d'AE2 et Système Plus de Tampon de Schémas<a class="headerlink" href="#integration-approfondie-dae2-et-systeme-plus-de-tampon-de-schemas" title="Permanent link">&para;</a></h1>
-<p>GTECore établit un pont de données extrêmement puissant et direct entre Applied Energistics 2 (AE2) et les structures multifonctionnelles de GregTech.</p>
+<p>GTECore établit un pont de données extrêmement puissant et direct entre Applied Energistics 2 (AE2) et les structures multi-blocs de GregTech.</p>
 <hr />
 <h2 id="tampon-de-schemas-me-plus-me_pattern_buffer_plus">🧩 Tampon de Schémas ME Plus (<code>me_pattern_buffer_plus</code>)<a class="headerlink" href="#tampon-de-schemas-me-plus-me_pattern_buffer_plus" title="Permanent link">&para;</a></h2>
-<p>Dans les mods techniques traditionnels, connecter un fournisseur de schémas AE2 à une machine multifonctionnelle pose souvent des problèmes de <strong>manque d'emplacements, d'impossibilité de mélanger fluides et objets en sortie, et de difficulté à partager les schémas entre plusieurs machines</strong>.</p>
+<p>Dans les mods techniques traditionnels, connecter un fournisseur de schémas AE2 à une machine multi-blocs rencontre souvent des problèmes de <strong>nombre de slots insuffisant, d'impossibilité de mélanger fluides et objets en sortie, et de difficulté à partager les schémas entre plusieurs machines</strong>.</p>
 <p>Le <strong>Tampon de Schémas ME Plus</strong> développé par GTECore résout complètement ce problème :</p>
 <pre class="mermaid"><code>graph TD
-    A[Réseau ME AE2] --&gt; B[Hôte du Tampon de Schémas ME Plus&lt;br/&gt;81 emplacements de schémas / inventaire partagé / stockage programmable]
-    B --&gt;|Liaison par Datastick flash| C[Image du Tampon de Schémas ME Plus #1&lt;br/&gt;connecté à la machine multifonctionnelle A]
-    B --&gt;|Liaison par Datastick flash| D[Image du Tampon de Schémas ME Plus #2&lt;br/&gt;connecté à la machine multifonctionnelle B]
-    B --&gt;|Liaison par Datastick flash| E[Image du Tampon de Schémas ME Plus #3&lt;br/&gt;connecté à la machine multifonctionnelle C]</code></pre>
+    A[Réseau ME AE2] --&gt; B[Hôte Tampon de Schémas ME Plus&lt;br/&gt;81 slots de schémas / inventaire partagé / stockage programmable]
+    B --&gt;|Liaison Datastick flash| C[Miroir Tampon de Schémas ME Plus #1&lt;br/&gt;connecté à la machine multi-blocs A]
+    B --&gt;|Liaison Datastick flash| D[Miroir Tampon de Schémas ME Plus #2&lt;br/&gt;connecté à la machine multi-blocs B]
+    B --&gt;|Liaison Datastick flash| E[Miroir Tampon de Schémas ME Plus #3&lt;br/&gt;connecté à la machine multi-blocs C]</code></pre>
 <h3 id="caracteristiques-principales">Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Capacité de schémas massive</strong> : Un seul hôte de tampon possède <strong>81 emplacements de schémas</strong> (équivalent à la somme de 9 fournisseurs de schémas AE2 standard).</li>
-<li><strong>Capacité de compartiment universel</strong> : Dispose simultanément des capacités <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, <code>EXPORT_FLUIDS</code>, permettant l'interaction mixte fluides et objets dans le même compartiment.</li>
+<li><strong>Capacité de schémas massive</strong> : Un seul hôte de tampon possède <strong>81 slots de schémas</strong> (équivalent à la somme de 9 fournisseurs de schémas AE2 standard).</li>
+<li><strong>Capacité de compartiment universel</strong> : Possède simultanément les capacités <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code>, <code>EXPORT_FLUIDS</code>, permettant une interaction mixte fluides et objets dans le même compartiment.</li>
 <li><strong>Support du stockage programmable</strong> : Intègre en interne le mécanisme de stockage programmable, prenant en charge l'alimentation précise et la mise en cache pour les recettes complexes.</li>
 </ol>
 <hr />
-<h2 id="image-du-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus">🪞 Image du Tampon de Schémas ME Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#image-du-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
-<p><strong>L'Image du Tampon de Schémas Plus</strong> est un composant structurel distribué révolutionnaire pour l'automatisation :</p>
+<h2 id="miroir-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus">🪞 Miroir Tampon de Schémas ME Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#miroir-tampon-de-schemas-me-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
+<p>Le <strong>Miroir Tampon de Schémas ME Plus</strong> est un composant structurel d'automatisation distribuée révolutionnaire :</p>
 <h3 id="principe-de-fonctionnement-et-partage-entre-machines">Principe de fonctionnement et partage entre machines<a class="headerlink" href="#principe-de-fonctionnement-et-partage-entre-machines" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Installez l'image du tampon à l'emplacement d'un compartiment de n'importe quelle machine multifonctionnelle.</li>
-<li>Tenez un <strong>Datastick</strong> en main, faites un clic droit sur le <strong>Tampon de Schémas ME Plus</strong> principal pour lire les coordonnées, puis faites un clic droit sur <strong>l'Image du Tampon de Schémas Plus</strong> pour la lier.</li>
-<li><strong>Toutes les images liées partagent en temps réel les 81 schémas placés dans le tampon principal</strong> !</li>
-<li>Lorsque le réseau AE2 lance une tâche de fabrication automatisée, le réseau répartit automatiquement la charge entre toutes les images inactives pour un fonctionnement en parallèle !</li>
+<li>Installez le miroir tampon à l'emplacement d'un compartiment de n'importe quelle machine multi-blocs.</li>
+<li>Tenez un <strong>Datastick (flash)</strong> en main, faites un clic droit sur le <strong>Tampon de Schémas ME Plus</strong> principal pour lire les coordonnées, puis faites un clic droit sur le <strong>Miroir Tampon de Schémas ME Plus</strong> pour le lier.</li>
+<li><strong>Tous les miroirs liés partagent en temps réel les 81 schémas placés dans le tampon principal</strong> !</li>
+<li>Lorsque le réseau AE2 lance une tâche de fabrication automatisée, le réseau répartit automatiquement la charge entre toutes les machines miroirs inactives pour un travail en parallèle !</li>
 </ul>
-<h3 id="affichage-detat-en-survol-jade">Affichage d'état en survol Jade<a class="headerlink" href="#affichage-detat-en-survol-jade" title="Permanent link">&para;</a></h3>
-<p>En pointant le tampon de schémas ou l'image, Jade affiche automatiquement :
-- Tampon principal : <code>Nombre d'images connectées : X</code>
-- Composant image : <code>Lié à - X : ..., Y : ..., Z : ...</code></p>
+<h3 id="affichage-detat-jade-en-survol">Affichage d'état Jade en survol<a class="headerlink" href="#affichage-detat-jade-en-survol" title="Permanent link">&para;</a></h3>
+<p>En visant le tampon de schémas ou le miroir, Jade affiche automatiquement :
+- Tampon principal : <code>Nombre de miroirs connectés : X</code>
+- Composant miroir : <code>Lié à - X : ..., Y : ..., Z : ...</code></p>
 <hr />
-<h2 id="compartiment-a-vapeur-me-me_steam_hatch">💨 Compartiment à vapeur ME (<code>me_steam_hatch</code>)<a class="headerlink" href="#compartiment-a-vapeur-me-me_steam_hatch" title="Permanent link">&para;</a></h2>
+<h2 id="hublot-a-vapeur-me-me_steam_hatch">💨 Hublot à vapeur ME (<code>me_steam_hatch</code>)<a class="headerlink" href="#hublot-a-vapeur-me-me_steam_hatch" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Fonction</strong> : Connecte directement le réseau de fluides AE2 aux structures multifonctionnelles à vapeur.</li>
-<li><strong>Rôle</strong> : Les structures multifonctionnelles à vapeur n'ont plus besoin de tuyaux à vapeur haute vitesse et de réservoirs externes complexes ; elles peuvent extraire instantanément la vapeur du réseau ME avec un débit maximal pour l'alimentation, éliminant ainsi les goulots d'étranglement de transmission par tuyaux.</li>
+<li><strong>Fonction</strong> : Connecte directement le réseau de fluides AE2 aux structures multi-blocs à vapeur.</li>
+<li><strong>Rôle</strong> : Les structures multi-blocs à vapeur n'ont plus besoin de tuyaux à vapeur haute vitesse et de réservoirs externes complexes ; elles peuvent extraire directement la vapeur du réseau ME avec un débit maximal pour alimenter la machine, éliminant ainsi les goulots d'étranglement de transmission par tuyaux.</li>
 </ul>
 
 

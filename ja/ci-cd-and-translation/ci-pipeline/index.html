@@ -1417,12 +1417,12 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 三大コアパッケージングタスク詳細
+        📦 三大核心パッケージングタスク詳細
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 三大コアパッケージングタスク詳細">
+    <nav class="md-nav" aria-label="📦 三大核心パッケージングタスク詳細">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1570,12 +1570,12 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 三大コアパッケージングタスク詳細
+        📦 三大核心パッケージングタスク詳細
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 三大コアパッケージングタスク詳細">
+    <nav class="md-nav" aria-label="📦 三大核心パッケージングタスク詳細">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1672,15 +1672,15 @@
 
 
 <h1 id="cicd-maven">CI/CD 自動ビルド・パッケージング・Maven 公開パイプライン<a class="headerlink" href="#cicd-maven" title="Permanent link">&para;</a></h1>
-<p>GTE は、高度に自動化され、多様なターゲット成果物を並行生成する <strong>GitHub Actions CI/CD パイプライン</strong>（設定ファイルは <code>.github/workflows/sync-build.yml</code> と <code>release-publish.yml</code>）を構築しています。</p>
+<p>GTE は、高度に自動化され、複数のターゲット成果物を並行生成する <strong>GitHub Actions CI/CD パイプライン</strong>（設定ファイルは <code>.github/workflows/sync-build.yml</code> と <code>release-publish.yml</code>）を構築しています。</p>
 <hr />
 <h2 id="ci-sync-buildyml">🔄 全量 CI パイプライン構成 (<code>sync-build.yml</code>)<a class="headerlink" href="#ci-sync-buildyml" title="Permanent link">&para;</a></h2>
 <p><code>master</code> / <code>main</code> / <code>satou</code> ブランチへのコードプッシュ、PR 提出、または Release Tag のトリガーがあるたびに、GitHub Actions は以下の標準パイプラインを自動実行します：</p>
 <pre class="mermaid"><code>flowchart TD
     A[コードプッシュ / Tag トリガー] --&gt; B[Checkout 再帰サブモジュール &amp; JDK 21 / Python 3.11 / Go 設定]
-    B --&gt; C[Gradle 増分同期 Blockbench アセット syncBlockbenchAssets]
+    B --&gt; C[Gradle 増分同期 Blockbench アート資産 syncBlockbenchAssets]
     C --&gt; D[マルチモジュール高並列コンパイル &amp; GameTest 自動実機テスト]
-    D --&gt; E[生成 Jar を overrides/mods にコピー &amp; build/artifacts に収集]
+    D --&gt; E[生成 Jar を overrides/mods へコピー &amp; build/artifacts に収集]
     E --&gt; F[opencode_translate.py を実行し全量/増分 AI 国際化翻訳]
     F --&gt; G[Packwiz 規範パッケージング: CurseForge パック + Java 21 manifest パッチ]
     G --&gt; H[Python で Zero-Compile プレイヤー完全お手軽パック .minecraft を構築]
@@ -1689,21 +1689,21 @@
     J --&gt; K[静的 Maven リポジトリを構築し GitHub Pages (gh-pages) にデプロイ]
     J --&gt; L[Tag トリガー時: CurseForge プラットフォームに自動公開]</code></pre>
 <hr />
-<h2 id="_1">📦 三大コアパッケージングタスク詳細<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">📦 三大核心パッケージングタスク詳細<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="1-curseforge-java-21">1. CurseForge 規範パックと Java 21 パッチ<a class="headerlink" href="#1-curseforge-java-21" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Packwiz エクスポート</strong>：<code>packwiz curseforge export</code> を実行し、標準規範パックを生成します。</li>
-<li><strong>manifest.json 自動パッチ</strong>：一部のサードパーティランチャーが CurseForge パックを解析する際にデフォルトで Java 17 を割り当てる問題に対し、CI は zip を自動解凍し、Python スクリプトで <code>manifest.json</code> 内の <code>minecraft.javaVersion</code> とトップレベルの <code>javaVersion</code> を <strong>ハードコードで強制的に 21 に書き換え</strong>、再パッケージングします。</li>
+<li><strong>manifest.json 自動パッチ</strong>：一部のサードパーティ製ランチャーが CurseForge パックを解析する際にデフォルトで Java 17 を割り当てる問題に対し、CI は zip を自動解凍し、Python スクリプトで <code>manifest.json</code> 内の <code>minecraft.javaVersion</code> とトップレベルの <code>javaVersion</code> を <strong>ハードコードで強制的に 21 に書き換え</strong>、再パッケージングします。</li>
 </ul>
 <h3 id="2-build_lazy_packpy">2. プレイヤー向けコンパイル不要完全お手軽パック (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Python スクリプトが各モジュールの <code>build/libs/</code> から最新のコア Jar を自動抽出します。</li>
 <li><code>modules/gtecore/gradle/libs/</code> 配下の主要拡張 Mod を自動マージします。</li>
-<li>すべての設定、KubeJS スクリプト、パッチョリの本を、起動後すぐ使える <code>.minecraft</code> 圧縮パックにまとめ、中国語の起動ガイドを内蔵します。</li>
+<li>すべての設定、KubeJS スクリプト、パッチョリの本を同梱し、すぐに使える <code>.minecraft</code> 圧縮パックとしてまとめ、中国語の起動ガイドを内蔵します。</li>
 </ul>
 <h3 id="3-packwiz-server-export">3. サーバーエクスポートパック (<code>packwiz server export</code>)<a class="headerlink" href="#3-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
-<li>クライアント専用の最適化 Mod（3D スキンレイヤー、シェーダー、キーバインドなど）を自動的に除外し、Linux/Windows 本番サーバーに直接デプロイできる純粋なサーバーパックを生成します。</li>
+<li>クライアント専用の最適化 Mod（3D スキンレイヤー、シェーダー、キーバインドなど）を自動的に除外し、Linux/Windows 本番サーバーに直接デプロイ可能な純粋なサーバーパックを生成します。</li>
 </ul>
 <hr />
 <h2 id="github-pages-maven">🌐 GitHub Pages 静的 Maven リポジトリデプロイ<a class="headerlink" href="#github-pages-maven" title="Permanent link">&para;</a></h2>

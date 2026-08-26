@@ -1451,10 +1451,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#principios-de-restricao-de-prompt-de-nivel-industrial" class="md-nav__link">
+  <a href="#principios-de-restricao-de-prompt-em-nivel-industrial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Princípios de restrição de Prompt de nível industrial
+        🎯 Princípios de restrição de Prompt em nível industrial
       
     </span>
   </a>
@@ -1537,10 +1537,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#principios-de-restricao-de-prompt-de-nivel-industrial" class="md-nav__link">
+  <a href="#principios-de-restricao-de-prompt-em-nivel-industrial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Princípios de restrição de Prompt de nível industrial
+        🎯 Princípios de restrição de Prompt em nível industrial
       
     </span>
   </a>
@@ -1596,7 +1596,7 @@
 <hr />
 <h2 id="arquitetura-do-motor-de-traducao">🤖 Arquitetura do Motor de Tradução<a class="headerlink" href="#arquitetura-do-motor-de-traducao" title="Permanent link">&para;</a></h2>
 <p>A tradução comunitária tradicional depende de manutenção manual de arquivos JSON e SNBT complexos, com atualizações atrasadas e alta propensão a erros e omissões.</p>
-<p>O motor de tradução com IA da GTE, por meio de uma API padronizada compatível com OpenAI, realiza a <strong>extração incremental automatizada, alinhamento de termos e tradução concorrente</strong> dos livros de missões do FTB Quests e dos arquivos de idioma dos mods principais:</p>
+<p>O motor de tradução com IA da GTE utiliza uma API padronizada compatível com OpenAI, permitindo <strong>extração incremental automatizada, alinhamento de termos e tradução concorrente</strong> dos livros de missões do FTB Quests e dos arquivos de idioma dos mods principais:</p>
 <pre class="mermaid"><code>graph TD
     A[Escanear FTB Quests snbt e Lang json] --&gt; B[Extrair entradas não traduzidas]
     B --&gt; C[Ler cache local .translation_cache.json]
@@ -1613,8 +1613,8 @@
 <thead>
 <tr>
 <th style="text-align: left;">Nome do provedor</th>
-<th style="text-align: left;">Variável de ambiente da API Key</th>
-<th style="text-align: left;">Variável de ambiente da Base URL</th>
+<th style="text-align: left;">Variável de ambiente da chave API</th>
+<th style="text-align: left;">Variável de ambiente da URL base</th>
 <th style="text-align: left;">Modelo padrão</th>
 </tr>
 </thead>
@@ -1670,15 +1670,15 @@
 </tbody>
 </table>
 <hr />
-<h2 id="principios-de-restricao-de-prompt-de-nivel-industrial">🎯 Princípios de restrição de Prompt de nível industrial<a class="headerlink" href="#principios-de-restricao-de-prompt-de-nivel-industrial" title="Permanent link">&para;</a></h2>
-<p>Ao chamar a API para tradução, o sistema incorpora regras estritas de terminologia do Minecraft e GregTech:
-1. <strong>Preservação absoluta de formatadores</strong>: Mantém integralmente os códigos de formatação de cor nativos do Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) e placeholders (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
-2. <strong>Padronização de termos técnicos</strong>: Traduções de termos técnicos proprietários são estritamente fixadas (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
+<h2 id="principios-de-restricao-de-prompt-em-nivel-industrial">🎯 Princípios de restrição de Prompt em nível industrial<a class="headerlink" href="#principios-de-restricao-de-prompt-em-nivel-industrial" title="Permanent link">&para;</a></h2>
+<p>Ao chamar a API para tradução, o sistema incorpora regras estritas de terminologia do Minecraft e do GregTech:
+1. <strong>Preservação absoluta de formatadores</strong>: Mantém integralmente os códigos de formatação de cor nativos do Minecraft (como <code>§a</code>, <code>§c</code>, <code>§6</code>) e espaços reservados (<code>%s</code>, <code>%d</code>, <code>{0}</code>).
+2. <strong>Padronização de termos técnicos</strong>: Traduções de termos técnicos proprietários são rigidamente fixadas (como <code>UHV</code>, <code>EU/t</code>, <code>Amps</code>, <code>Voltage</code>, <code>Overclock</code>, <code>Subtick</code>, etc.).
 3. <strong>Cache incremental por hash</strong>: Todas as entradas já traduzidas são persistidas automaticamente em <code>.translation_cache.json</code>; apenas textos novos ou alterados geram solicitações de rede, economizando significativamente custos de tokens e tempo de CI.</p>
 <hr />
 <h2 id="comando-de-execucao-local">💻 Comando de execução local<a class="headerlink" href="#comando-de-execucao-local" title="Permanent link">&para;</a></h2>
 <p>Dispare a tradução completa com um único comando no ambiente de desenvolvimento local:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Defina qualquer API Key válida e execute</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Defina qualquer chave API válida e execute</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:DEEPSEEK_API_KEY</span><span class="p">=</span><span class="s2">"sk-..."</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">opencode_translate</span><span class="p">.</span><span class="n">py</span>
 </span></code></pre></div>

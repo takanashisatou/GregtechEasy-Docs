@@ -741,12 +741,12 @@
   <a href="#curseforge_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 Импорт пакета CurseForge
+        📦 Импорт стандартного пакета CurseForge
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Импорт пакета CurseForge">
+    <nav class="md-nav" aria-label="📦 Импорт стандартного пакета CurseForge">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -803,7 +803,7 @@
   <a href="#3-run_serversh-run_serverbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Настройка скрипта запуска (run_server.sh / run_server.bat)
+        3. Настройка скриптов запуска (run_server.sh / run_server.bat)
       
     </span>
   </a>
@@ -819,12 +819,12 @@
   <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Часто задаваемые вопросы (FAQ)
+        ⚙️ Устранение распространенных проблем (FAQ)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Часто задаваемые вопросы (FAQ)">
+    <nav class="md-nav" aria-label="⚙️ Устранение распространенных проблем (FAQ)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1593,12 +1593,12 @@
   <a href="#curseforge_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📦 Импорт пакета CurseForge
+        📦 Импорт стандартного пакета CurseForge
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Импорт пакета CurseForge">
+    <nav class="md-nav" aria-label="📦 Импорт стандартного пакета CurseForge">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1655,7 +1655,7 @@
   <a href="#3-run_serversh-run_serverbat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Настройка скрипта запуска (run_server.sh / run_server.bat)
+        3. Настройка скриптов запуска (run_server.sh / run_server.bat)
       
     </span>
   </a>
@@ -1671,12 +1671,12 @@
   <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Часто задаваемые вопросы (FAQ)
+        ⚙️ Устранение распространенных проблем (FAQ)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ Часто задаваемые вопросы (FAQ)">
+    <nav class="md-nav" aria-label="⚙️ Устранение распространенных проблем (FAQ)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1740,64 +1740,64 @@
 
 
 <h1 id="curseforge">Руководство по импорту CurseForge и развертыванию сервера<a class="headerlink" href="#curseforge" title="Permanent link">&para;</a></h1>
-<p>Помимо готового сборника без компиляции, GTE предоставляет пакеты CurseForge и серверные пакеты, автоматически собираемые на основе <strong>Packwiz</strong>.</p>
+<p>Помимо готового пакета без компиляции, GTE предоставляет пакеты CurseForge и серверные пакеты, автоматически собираемые на основе <strong>Packwiz</strong>.</p>
 <hr />
-<h2 id="curseforge_1">📦 Импорт пакета CurseForge<a class="headerlink" href="#curseforge_1" title="Permanent link">&para;</a></h2>
-<p>Файл интеграционного пакета формата CurseForge называется <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code>.</p>
+<h2 id="curseforge_1">📦 Импорт стандартного пакета CurseForge<a class="headerlink" href="#curseforge_1" title="Permanent link">&para;</a></h2>
+<p>Файл интеграционного пакета в формате CurseForge называется <code>GTE-CurseForge-&lt;版本号&gt;.zip</code>.</p>
 <h3 id="_1">Методы импорта на клиенте<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Импорт через PCL2 / HMCL</label><label for="__tabbed_1_2">Импорт через CurseForge App</label><label for="__tabbed_1_3">Импорт через Prism Launcher</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Импорт через PCL2 / HMCL</label><label for="__tabbed_1_2">Импорт через приложение CurseForge</label><label for="__tabbed_1_3">Импорт через Prism Launcher</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li>Откройте лаунчер и выберите <strong>Установить новую версию / Импортировать сборку</strong>.</li>
-<li>Выберите загруженный файл <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code>.</li>
-<li>Лаунчер автоматически проанализирует <code>manifest.json</code> и быстро загрузит зависимые моды с высокой степенью параллелизма.</li>
-<li>После завершения импорта перейдите в настройки версии и укажите Java Runtime <strong>Java 21</strong>.</li>
-<li>Установите объем оперативной памяти (рекомендуется 8 ГБ ~ 12 ГБ) и запустите игру.</li>
+<li>Откройте лаунчер и выберите <strong>Установить новую версию игры / Импортировать интеграционный пакет</strong>.</li>
+<li>Выберите загруженный файл <code>GTE-CurseForge-&lt;版本号&gt;.zip</code>.</li>
+<li>Лаунчер автоматически проанализирует <code>manifest.json</code> и быстро загрузит зависимые моды параллельно.</li>
+<li>После завершения импорта перейдите в настройки версии и укажите среду выполнения Java как <strong>Java 21</strong>.</li>
+<li>Установите объем оперативной памяти (рекомендуется 8–12 ГБ) и запустите игру.</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Откройте клиент CurseForge App.</li>
+<li>Откройте клиент приложения CurseForge.</li>
 <li>Нажмите на значок <strong>Minecraft</strong> слева и перейдите в <strong>My Modpacks</strong>.</li>
-<li>В меню настроек в правом верхнем углу выберите <strong>Create Custom Profile</strong> ➜ <strong>Import</strong>.</li>
-<li>Выберите <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code> и дождитесь автоматической загрузки и завершения установки.</li>
+<li>В меню настроек в правом верхнем углу нажмите <strong>Create Custom Profile</strong> ➜ <strong>Import</strong>.</li>
+<li>Выберите <code>GTE-CurseForge-&lt;版本号&gt;.zip</code> и дождитесь автоматической загрузки и завершения установки.</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Нажмите <strong>Add Instance (Добавить экземпляр)</strong> ➜ <strong>Import (Импорт)</strong>.</li>
-<li>Найдите и выберите <code>GTE-CurseForge-&lt;номер версии&gt;.zip</code>.</li>
-<li>После создания экземпляра в его свойствах укажите путь к <strong>JDK 21</strong>.</li>
+<li>Найдите и выберите <code>GTE-CurseForge-&lt;版本号&gt;.zip</code>.</li>
+<li>После создания экземпляра укажите путь к <strong>JDK 21</strong> в свойствах экземпляра.</li>
 </ol>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="_2">🖥️ Руководство по развертыванию сервера<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Файл серверного пакета называется <code>GTE-Server-&lt;номер версии&gt;.zip</code>.</p>
+<p>Файл серверного пакета называется <code>GTE-Server-&lt;版本号&gt;.zip</code>.</p>
 <h3 id="1">1. Подготовка окружения<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Операционная система: Linux (Ubuntu 22.04+ / Debian 12+) или Windows Server 2022+</li>
-<li><strong>JDK 21 должен быть установлен</strong>: выполните в терминале <code>java -version</code> и убедитесь, что вывод содержит <code>openjdk version "21..."</code>.</li>
-<li>Рекомендуемая конфигурация: не менее 4 ядер CPU, 16 ГБ физической памяти (выделите серверу Minecraft 10 ГБ ~ 14 ГБ).</li>
+<li><strong>JDK 21 должен быть установлен</strong>: выполните <code>java -version</code> в терминале и убедитесь, что вывод содержит <code>openjdk version "21..."</code>.</li>
+<li>Рекомендуемая конфигурация: не менее 4 ядер CPU, 16 ГБ физической памяти (выделите серверу Minecraft 10–14 ГБ).</li>
 </ul>
 <h3 id="2">2. Шаги развертывания<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Создайте рабочую директорию сервера</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. 创建服务端工作目录</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/gte-server<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/gte-server
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. Распакуйте серверный пакет</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. 解压服务端包</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>unzip<span class="w"> </span>GTE-Server-*.zip<span class="w"> </span>-d<span class="w"> </span>.
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3. Установите ядро сервера Forge 1.20.1-47.3.0 / 47.4.4 (если не предустановлено)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Запустите скрипт установки для загрузки minecraft_server и библиотек forge</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3. 安装 Forge 1.20.1-47.3.0 / 47.4.4 服务端核心 (若未预装)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 运行安装脚本下载 minecraft_server 与 forge 库</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>java<span class="w"> </span>-jar<span class="w"> </span>forge-1.20.1-*-installer.jar<span class="w"> </span>--installServer
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 4. Примите лицензионное соглашение Minecraft EULA</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 4. 同意 Minecraft EULA 协议</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"eula=true"</span><span class="w"> </span>&gt;<span class="w"> </span>eula.txt
 </span></code></pre></div>
-<h3 id="3-run_serversh-run_serverbat">3. Настройка скрипта запуска (<code>run_server.sh</code> / <code>run_server.bat</code>)<a class="headerlink" href="#3-run_serversh-run_serverbat" title="Permanent link">&para;</a></h3>
-<p>Рекомендуется использовать оптимизированные параметры Aikar для запуска сервера:</p>
+<h3 id="3-run_serversh-run_serverbat">3. Настройка скриптов запуска (<code>run_server.sh</code> / <code>run_server.bat</code>)<a class="headerlink" href="#3-run_serversh-run_serverbat" title="Permanent link">&para;</a></h3>
+<p>Рекомендуется запускать сервер с оптимизированными параметрами Aikar:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux (<code>run_server.sh</code>)</label><label for="__tabbed_2_2">Windows (<code>run_server.bat</code>)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1830,15 +1830,15 @@
 </div>
 </div>
 <hr />
-<h2 id="faq">⚙️ Часто задаваемые вопросы (FAQ)<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h2 id="faq">⚙️ Устранение распространенных проблем (FAQ)<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h3 id="q1-unsupportedclassversionerror-class-file-version-650">Q1: При запуске сервера появляется <code>UnsupportedClassVersionError: ... class file version 65.0</code><a class="headerlink" href="#q1-unsupportedclassversionerror-class-file-version-650" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Причина</strong>: Версия Java, используемая сервером, ниже Java 21 (версия 65.0 соответствует JDK 21).<br />
-<strong>Решение</strong>: В Linux переключитесь на OpenJDK 21 с помощью <code>sudo update-alternatives --config java</code>.</p>
+<p><strong>Причина</strong>: версия Java во время выполнения сервера ниже Java 21 (версия 65.0 соответствует JDK 21).<br />
+<strong>Решение</strong>: на Linux переключитесь на OpenJDK 21 с помощью <code>sudo update-alternatives --config java</code>.</p>
 </blockquote>
 <h3 id="q2">Q2: Игроки получают сообщение о несоответствии списка модов при входе на сервер<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Решение</strong>: Убедитесь, что версия клиента полностью совпадает с версией сервера. Каждая сборка CI основного проекта генерирует согласованные артефакты Client и Server.</p>
+<p><strong>Решение</strong>: убедитесь, что версия клиента полностью совпадает с версией сервера. Каждая сборка CI основного проекта синхронно генерирует соответствующие артефакты Client и Server.</p>
 </blockquote>
 
 

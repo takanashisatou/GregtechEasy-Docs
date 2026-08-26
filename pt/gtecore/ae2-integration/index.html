@@ -974,10 +974,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exibicao-de-status-flutuante-do-jade" class="md-nav__link">
+  <a href="#exibicao-de-status-flutuante-via-jade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exibição de Status Flutuante do Jade
+        Exibição de Status Flutuante via Jade
       
     </span>
   </a>
@@ -1602,10 +1602,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exibicao-de-status-flutuante-do-jade" class="md-nav__link">
+  <a href="#exibicao-de-status-flutuante-via-jade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exibição de Status Flutuante do Jade
+        Exibição de Status Flutuante via Jade
       
     </span>
   </a>
@@ -1665,18 +1665,18 @@
 <p>O GTECore estabelece uma ponte de dados extremamente poderosa e direta entre o Applied Energistics 2 (AE2) e as estruturas multibloco do GregTech.</p>
 <hr />
 <h2 id="me-buffer-de-padroes-plus-me_pattern_buffer_plus">🧩 ME Buffer de Padrões Plus (<code>me_pattern_buffer_plus</code>)<a class="headerlink" href="#me-buffer-de-padroes-plus-me_pattern_buffer_plus" title="Permanent link">&para;</a></h2>
-<p>Em mods técnicos tradicionais, conectar o Buffer de Padrões do AE2 a máquinas multibloco geralmente enfrenta os problemas de <strong>espaço de slots insuficiente, impossibilidade de misturar fluidos e itens na saída, e dificuldade em compartilhar padrões entre várias máquinas</strong>.</p>
+<p>Em mods técnicos tradicionais, conectar o Fornecedor de Padrões do AE2 a máquinas multibloco geralmente enfrenta problemas como <strong>falta de slots, impossibilidade de misturar fluidos e itens na saída, e dificuldade em compartilhar padrões entre várias máquinas</strong>.</p>
 <p>O <strong>ME Buffer de Padrões Plus</strong> desenvolvido pelo GTECore resolve completamente esse problema:</p>
 <pre class="mermaid"><code>graph TD
-    A[Rede ME do AE2] --&gt; B[Host do ME Buffer de Padrões Plus&lt;br/&gt;81 slots de padrão / inventário compartilhado / armazenamento programável]
-    B --&gt;|Vinculação via Datastick| C[ME Buffer de Padrões Espelho Plus #1&lt;br/&gt;Conectado à máquina multibloco A]
-    B --&gt;|Vinculação via Datastick| D[ME Buffer de Padrões Espelho Plus #2&lt;br/&gt;Conectado à máquina multibloco B]
-    B --&gt;|Vinculação via Datastick| E[ME Buffer de Padrões Espelho Plus #3&lt;br/&gt;Conectado à máquina multibloco C]</code></pre>
+    A[Rede ME do AE2] --&gt; B[Host do ME Buffer de Padrões Plus&lt;br/&gt;81 slots de padrões / Inventário compartilhado / Armazenamento programável]
+    B --&gt;|Vinculação via Datastick| C[ME Buffer de Padrões Espelho Plus #1&lt;br/&gt;Conectado à Máquina Multibloco A]
+    B --&gt;|Vinculação via Datastick| D[ME Buffer de Padrões Espelho Plus #2&lt;br/&gt;Conectado à Máquina Multibloco B]
+    B --&gt;|Vinculação via Datastick| E[ME Buffer de Padrões Espelho Plus #3&lt;br/&gt;Conectado à Máquina Multibloco C]</code></pre>
 <h3 id="caracteristicas-principais">Características Principais<a class="headerlink" href="#caracteristicas-principais" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Capacidade massiva de padrões</strong>: Um único host do buffer possui <strong>81 slots de padrão</strong> (equivalente à soma de 9 Buffers de Padrões padrão do AE2).</li>
-<li><strong>Capacidade de compartimento universal</strong>: Possui simultaneamente as capacidades <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code> e <code>EXPORT_FLUIDS</code>, suportando interação mista de fluidos e itens no mesmo compartimento.</li>
-<li><strong>Suporte a armazenamento programável</strong>: Integra internamente o mecanismo de Armazenamento Programável, suportando alimentação precisa e cache para receitas complexas.</li>
+<li><strong>Capacidade Massiva de Padrões</strong>: Um único host de buffer possui <strong>81 slots de padrões</strong> (equivalente à soma de 9 Fornecedores de Padrões padrão do AE2).</li>
+<li><strong>Capacidade de Compartimento Universal</strong>: Possui simultaneamente as capacidades <code>IMPORT_ITEMS</code>, <code>IMPORT_FLUIDS</code>, <code>EXPORT_ITEMS</code> e <code>EXPORT_FLUIDS</code>, suportando interação mista de fluidos e itens no mesmo compartimento.</li>
+<li><strong>Suporte a Armazenamento Programável</strong>: Integra internamente o mecanismo de Armazenamento Programável, suportando alimentação precisa e cache para receitas complexas.</li>
 </ol>
 <hr />
 <h2 id="me-buffer-de-padroes-espelho-plus-me_pattern_buffer_proxy_plus">🪞 ME Buffer de Padrões Espelho Plus (<code>me_pattern_buffer_proxy_plus</code>)<a class="headerlink" href="#me-buffer-de-padroes-espelho-plus-me_pattern_buffer_proxy_plus" title="Permanent link">&para;</a></h2>
@@ -1688,15 +1688,15 @@
 <li><strong>Todos os espelhos vinculados compartilharão em tempo real todos os 81 padrões colocados no buffer principal</strong>!</li>
 <li>Quando a rede AE2 inicia uma tarefa de automação de síntese, a rede distribui automaticamente a carga de trabalho para todas as máquinas espelho ociosas, que trabalham em paralelo!</li>
 </ul>
-<h3 id="exibicao-de-status-flutuante-do-jade">Exibição de Status Flutuante do Jade<a class="headerlink" href="#exibicao-de-status-flutuante-do-jade" title="Permanent link">&para;</a></h3>
+<h3 id="exibicao-de-status-flutuante-via-jade">Exibição de Status Flutuante via Jade<a class="headerlink" href="#exibicao-de-status-flutuante-via-jade" title="Permanent link">&para;</a></h3>
 <p>Ao mirar no buffer de padrões ou no espelho, o Jade exibirá automaticamente:
 - Buffer principal: <code>Número de espelhos conectados: X</code>
 - Componente espelho: <code>Vinculado a - X: ..., Y: ..., Z: ...</code></p>
 <hr />
 <h2 id="me-compartimento-de-vapor-me_steam_hatch">💨 ME Compartimento de Vapor (<code>me_steam_hatch</code>)<a class="headerlink" href="#me-compartimento-de-vapor-me_steam_hatch" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Função</strong>: Conecta diretamente a rede de fluidos do AE2 à estrutura multibloco a vapor.</li>
-<li><strong>Efeito</strong>: A estrutura multibloco a vapor não precisa de tubulações de vapor complexas e tanques externos; ela extrai vapor diretamente da rede ME com a máxima taxa de transferência para alimentação, eliminando gargalos de transmissão por tubulações.</li>
+<li><strong>Função</strong>: Conecta diretamente a rede de fluidos do AE2 à estrutura multibloco de vapor.</li>
+<li><strong>Efeito</strong>: A estrutura multibloco de vapor não precisa de tubulações de vapor complexas e de alta velocidade ou tanques externos; ela extrai vapor diretamente da rede ME com a máxima taxa de transferência para alimentação, eliminando gargalos de transmissão por tubulações.</li>
 </ul>
 
 

@@ -1103,7 +1103,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 スクリプトディレクトリ構成とライフサイクル
+        📁 スクリプトディレクトリ構造とライフサイクル
       
     </span>
   </a>
@@ -1125,12 +1125,12 @@
   <a href="#server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ サーバー側：カスタムレシピとマシンレシピの記述 (server_scripts/)
+        ⚙️ サーバー側：カスタムレシピとマシンレシピの作成 (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ サーバー側：カスタムレシピとマシンレシピの記述 (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ サーバー側：カスタムレシピとマシンレシピの作成 (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1548,7 +1548,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 スクリプトディレクトリ構成とライフサイクル
+        📁 スクリプトディレクトリ構造とライフサイクル
       
     </span>
   </a>
@@ -1570,12 +1570,12 @@
   <a href="#server_scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ サーバー側：カスタムレシピとマシンレシピの記述 (server_scripts/)
+        ⚙️ サーバー側：カスタムレシピとマシンレシピの作成 (server_scripts/)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚙️ サーバー側：カスタムレシピとマシンレシピの記述 (server_scripts/)">
+    <nav class="md-nav" aria-label="⚙️ サーバー側：カスタムレシピとマシンレシピの作成 (server_scripts/)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1650,20 +1650,20 @@
 
 
 <h1 id="kubejs">KubeJS 魔改とスクリプト開発ガイド<a class="headerlink" href="#kubejs" title="Permanent link">&para;</a></h1>
-<p>GTE は、材料登録・レシピ調整・マルチモッド連携ロジックの大部分を <strong>KubeJS</strong> に委ねています（ディレクトリは <code>gte/overrides/kubejs/</code>）。</p>
+<p>GTE は、材料登録、レシピ調整、およびマルチモッド連携ロジックの大部分を <strong>KubeJS</strong> に委ねています（ディレクトリは <code>gte/overrides/kubejs/</code> にあります）。</p>
 <hr />
-<h2 id="_1">📁 スクリプトディレクトリ構成とライフサイクル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">📁 スクリプトディレクトリ構造とライフサイクル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gte/overrides/kubejs/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【起動時スクリプト】ゲームの最初期に実行され、材料・流体・ブロック・アイテムの登録に使用
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【サーバー側スクリプト】ワールド進入/サーバー接続時に実行され、レシピ・タグの登録/変更に使用
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── client_scripts/      # 【クライアント側スクリプト】クライアントで実行され、Tooltips や JEI/EMI の表示変更に使用
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── startup_scripts/     # 【起動時スクリプト】ゲームの最も初期に実行され、材料、流体、ブロック、アイテムの登録に使用
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── server_scripts/      # 【サーバー側スクリプト】ワールドに入る/サーバーに接続するときに実行され、レシピとタグの登録/変更に使用
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── client_scripts/      # 【クライアント側スクリプト】クライアントで実行され、Tooltips、JEI/EMI インターフェース表示の変更に使用
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── assets/ &amp; data/      # 静的ローカライズ、テクスチャ、データパックファイル
 </span></code></pre></div>
 <hr />
 <h2 id="startup_scripts">🧪 起動時：カスタム材料登録 (<code>startup_scripts/</code>)<a class="headerlink" href="#startup_scripts" title="Permanent link">&para;</a></h2>
-<p><code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> を使用してカスタム元素・材料を登録します：</p>
+<p><code>GTCEuStartupEvents.registry('gtceu:material', ...)</code> を使用してカスタム元素と材料を登録します：</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">GTCEuStartupEvents</span><span class="p">.</span><span class="nx">registry</span><span class="p">(</span><span class="s1">'gtceu:material'</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 1. 無限金属 (Infinite) の登録</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 1. 無限金属 (Infinite) を登録</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'infinite'</span><span class="p">)</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mh">0xed1661</span><span class="p">)</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="p">.</span><span class="nx">ingot</span><span class="p">()</span>
@@ -1673,7 +1673,7 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">AXE</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">PICKAXE</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">SWORD</span><span class="p">,</span><span class="w"> </span><span class="nx">GTToolType</span><span class="p">.</span><span class="nx">MORTAR</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">]))</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 2. 暗流体金属 (Dark Fluid) の登録</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 2. 暗流体金属 (Dark Fluid) を登録</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'dark_fluid'</span><span class="p">)</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mh">0xb156d8</span><span class="p">)</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="p">.</span><span class="nx">fluid</span><span class="p">()</span>
@@ -1686,7 +1686,7 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nx">GTMaterialFlags</span><span class="p">.</span><span class="nx">GENERATE_LONG_ROD</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="c1">// 3. ニャンニャン物質 (Meow Meow Matter) と反物質 (Antimatter) の登録</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="c1">// 3. ニャンニャン物質 (Meow Meow Matter) と 反物質 (Antimatter) を登録</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'meow_meow_matter'</span><span class="p">)</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mh">0x483D8B</span><span class="p">)</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="p">.</span><span class="nx">dust</span><span class="p">()</span>
@@ -1708,8 +1708,8 @@
 </span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">})</span>
 </span></code></pre></div>
 <hr />
-<h2 id="server_scripts">⚙️ サーバー側：カスタムレシピとマシンレシピの記述 (<code>server_scripts/</code>)<a class="headerlink" href="#server_scripts" title="Permanent link">&para;</a></h2>
-<p><code>ServerEvents.recipes</code> イベント内で、<code>event.recipes.gtceu</code> と <code>event.recipes.gtecore</code> を直接呼び出せます：</p>
+<h2 id="server_scripts">⚙️ サーバー側：カスタムレシピとマシンレシピの作成 (<code>server_scripts/</code>)<a class="headerlink" href="#server_scripts" title="Permanent link">&para;</a></h2>
+<p><code>ServerEvents.recipes</code> イベント内で、<code>event.recipes.gtceu</code> と <code>event.recipes.gtecore</code> を直接呼び出すことができます：</p>
 <h3 id="1">1. 基本マシンと高炉レシピ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtceu</span>
@@ -1726,13 +1726,13 @@
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="p">.</span><span class="nx">outputFluids</span><span class="p">(</span><span class="s1">'gtceu:creosote 1000'</span><span class="p">)</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">20</span><span class="p">)</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="c1">// 原始高炉：鉄 1 + 石炭 1 -&gt; 鋼インゴット 5 (1 tick)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="c1">// 原始高炉：1 鉄 + 1 石炭 -&gt; 5 鋼インゴット (1 tick)</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nx">gtr</span><span class="p">.</span><span class="nx">primitive_blast_furnace</span><span class="p">(</span><span class="s1">'easy_steel_from_coal'</span><span class="p">)</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemInputs</span><span class="p">(</span><span class="s1">'1x minecraft:iron_ingot'</span><span class="p">,</span><span class="w"> </span><span class="s1">'1x minecraft:coal'</span><span class="p">)</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">.</span><span class="nx">itemOutputs</span><span class="p">(</span><span class="s1">'5x gtceu:steel_ingot'</span><span class="p">)</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// 圧延機でロジックプロセッサを成型</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="c1">// 圧延機でロジックプロセッサをプレス</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nx">gtr</span><span class="p">.</span><span class="nx">forming_press</span><span class="p">(</span><span class="s1">'gtecore:printed_logic_processor'</span><span class="p">)</span>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="p">.</span><span class="nx">EUt</span><span class="p">(</span><span class="mf">26</span><span class="p">)</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>
@@ -1745,7 +1745,7 @@
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">ServerEvents</span><span class="p">.</span><span class="nx">recipes</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">gte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">recipes</span><span class="p">.</span><span class="nx">gtecore</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// イージーボックス (Easy Box) のバルク鉱石生成レシピ</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// 簡単ボックス (Easy Box) バルク鉱石生成レシピ</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">gte</span><span class="p">.</span><span class="nx">easy_box</span><span class="p">(</span><span class="s1">'easy_test'</span><span class="p">)</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p">.</span><span class="nx">circuit</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mf">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span>
@@ -1763,7 +1763,7 @@
 </span></code></pre></div>
 <hr />
 <h2 id="_2">⚡ ゲーム内ホットリロードコマンド<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>クライアントを再起動せずにスクリプト変更をリアルタイムでテストできます：</p>
+<p>クライアントを再起動せずにスクリプトの変更をリアルタイムでテストできます：</p>
 <ul>
 <li><strong>レシピとサーバー側スクリプトのリロード</strong>：
   <div class="language-mcfunction highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">/</span><span class="kc">kubejs</span><span class="w"> </span><span class="kc">reload</span><span class="w"> </span><span class="kc">server_scripts</span>

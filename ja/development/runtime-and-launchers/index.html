@@ -1639,44 +1639,44 @@
   
 
 
-<h1 id="_1">本地ホットリロード連携とランチャー不要のクイック起動<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>GTEは、統合パックの企画者、クエスト作成者、Modプログラマーにとって非常に使いやすいシームレスな連携システムを設計しました。</p>
+<h1 id="_1">ローカルホットデバッグとランチャー不要のクイック起動<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>GTEは、統合パックの企画者、クエスト作成者、Modプログラマーにとって非常に使いやすいシームレスなデバッグシステムを設計しました。</p>
 <hr />
 <h2 id="1-run_gamebat-run_gamesh">⚡ 1. ランチャー不要の超高速起動スクリプト (<code>run_game.bat</code> / <code>run_game.sh</code>)<a class="headerlink" href="#1-run_gamebat-run_gamesh" title="Permanent link">&para;</a></h2>
-<p>クエストブック作成者（FTB Quests）やKubeJSレシピ担当者向けに、<strong>IntelliJ IDEAを開く必要も、サードパーティ製ランチャーをインストールする必要もなく</strong>、プロジェクトルートの <strong><code>run_game.bat</code></strong> をダブルクリックするだけでゲームをすぐに起動できます！</p>
+<p>クエストブック作成者（FTB Quests）やKubeJSレシピプランナーにとって、<strong>IntelliJ IDEAを開く必要も、サードパーティ製ランチャーをインストールする必要もなく</strong>、プロジェクトルートディレクトリの <strong><code>run_game.bat</code></strong> をダブルクリックするだけで、ゲームをすばやく起動できます！</p>
 <pre class="mermaid"><code>graph TD
-    A[run_game.bat をダブルクリック] --&gt; B[ローカルの JDK 21 パスを自動スキャンして永続化]
-    B --&gt; C[システムの物理メモリと CPU コア数を自動検出]
-    C --&gt; D[最適な JVM メモリ割り当てと GC スレッドを動的に計算]
-    D --&gt; E[gte/overrides をゲーム作業ディレクトリとして直接マウント]
-    E --&gt; F[ゲーム起動: Git 追跡中の quests と scripts をリアルタイムで読み書き]</code></pre>
+    A[双击 run_game.bat] --&gt; B[自动扫描本地 JDK 21 路径并持久化]
+    B --&gt; C[自动探测系统物理内存与 CPU 核心数]
+    C --&gt; D[动态计算最优 JVM 内存分配与 GC 线程]
+    D --&gt; E[直接挂载 gte/overrides 为游戏工作目录]
+    E --&gt; F[启动游戏: 实时读写 Git 追踪的 quests 与 scripts]</code></pre>
 <h3 id="_2">主な特徴<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>全自動 JDK 21 検出</strong>: <code>.jdks</code>、<code>Adoptium</code>、<code>Zulu</code>、<code>Program Files</code> にインストールされた Java 21 を自動検索し、<code>.jdk_path</code> に自動記憶します。</li>
-<li><strong>ハードウェア適応型最適化</strong>: 現在のPCのRAM容量に基づき、最適な比率（利用可能な物理メモリの50%〜60%）でJVMヒープサイズを自動割り当て、並列GCスレッドを自動設定します。</li>
-<li><strong>ファイル移動不要のワークフロー</strong>: ゲーム内でクエストを編集（<code>/ftbquests editing_mode true</code>）して保存すると、変更はGitリポジトリ内の対応する <code>config/ftbquests/</code> にリアルタイムで直接保存され、GitHub Desktopを開けばワンクリックでコミットできます！</li>
+<li><strong>全自動JDK 21検出</strong>：<code>.jdks</code>、<code>Adoptium</code>、<code>Zulu</code>、<code>Program Files</code> にインストールされているJava 21を自動的に検索し、<code>.jdk_path</code> に自動的に記憶します。</li>
+<li><strong>ハードウェア適応最適化</strong>：現在のPCのRAM容量に基づいて、最適な比率（利用可能な物理メモリの50%〜60%）でJVMヒープサイズを自動的に割り当て、並列GCスレッドを自動設定します。</li>
+<li><strong>ゼロ移動ワークフロー</strong>：ゲーム内でクエストを変更（<code>/ftbquests editing_mode true</code>）して保存すると、変更はGitリポジトリの対応する <code>config/ftbquests/</code> にリアルタイムで直接保存され、GitHub Desktopを開けばワンクリックでコミットできます！</li>
 </ol>
 <hr />
 <h2 id="2-link_to_launcherbat">🔗 2. 外部ランチャー向けコピー不要マッピングツール (<code>link_to_launcher.bat</code>)<a class="headerlink" href="#2-link_to_launcherbat" title="Permanent link">&para;</a></h2>
 <p>スキンやキー設定を自分で設定したランチャー（PCL2 / HMCL / Prism Launcherなど）を使い慣れている場合：</p>
 <ol>
-<li>ルートの <strong><code>link_to_launcher.bat</code></strong> をダブルクリックして実行します。</li>
-<li>指示に従い、ランチャーのゲームディレクトリ（例：<code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>）をコンソールにドラッグ＆ドロップしてEnterキーを押します。</li>
-<li>スクリプトがWindowsディレクトリジャンクションを自動的に作成します：</li>
+<li>ルートディレクトリの <strong><code>link_to_launcher.bat</code></strong> をダブルクリックして実行します。</li>
+<li>プロンプトに従って、ランチャーのゲームディレクトリ（例：<code>D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\</code>）をコンソールにドラッグ＆ドロップし、Enterキーを押します。</li>
+<li>スクリプトはWindowsのディレクトリジャンクション（Directory Junctions）を自動的に作成します：</li>
 <li><code>config</code> ➜ <code>gte/overrides/config</code></li>
 <li><code>kubejs</code> ➜ <code>gte/overrides/kubejs</code></li>
 <li><code>ftbquests</code> ➜ <code>gte/overrides/config/ftbquests</code></li>
 <li><code>defaultconfigs</code> ➜ <code>gte/overrides/defaultconfigs</code></li>
-<li>ランチャー内でクエストやレシピをどのように変更しても、<strong>物理データはメインのGitリポジトリにリアルタイムで同期保存されます</strong>！</li>
+<li>ランチャーでクエストやレシピをどのように変更しても、<strong>物理データはメインのGitリポジトリにリアルタイムで同期保存されます</strong>！</li>
 </ol>
 <hr />
 <h2 id="3-mod-gte-dev-runtime">☕ 3. Modコードのホットコンパイルシャドウ環境 (<code>gte-dev-runtime</code>)<a class="headerlink" href="#3-mod-gte-dev-runtime" title="Permanent link">&para;</a></h2>
 <p>Java/Kotlinプログラマー向けに、<code>modules/gte-dev-runtime</code> は専用のシャドウデバッグモジュールです：</p>
 <h3 id="_3">動作原理と設計上の考慮点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>位置付け</strong>: 純粋にローカルでのホットコンパイル連携サンドボックスであり、<strong>パッケージングや公開は禁止されており、プレイヤー向けのビルドには一切含まれません</strong>。</li>
-<li><strong>ModDevGradle 動的リマップ</strong>: <code>gtm-reborn</code> と <code>gtecore</code> の最新ソースコードを自動的にホットコンパイルし、Mojang難読化解除名前空間にマウントします。</li>
-<li><strong>起動方法</strong>:</li>
+<li><strong>位置付け</strong>：純粋なローカルホットコンパイルデバッグサンドボックスであり、<strong>パッケージングや公開は禁止されており、プレイヤー向けのビルドには一切含まれません</strong>。</li>
+<li><strong>ModDevGradle動的リマッピング</strong>：<code>gtm-reborn</code> と <code>gtecore</code> の最新ソースコードを自動的にホットコンパイルし、Mojangの難読化解除名前空間にマウントします。</li>
+<li><strong>起動方法</strong>：</li>
 <li>IDEAで実行構成 <strong><code>Run GTE Full Pack (Client - Hot Debug)</code></strong> を選択します。</li>
 <li>またはコマンドラインで実行：
     <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gte-dev-runtime</span><span class="p">:</span><span class="n">runClient</span>

@@ -1042,7 +1042,7 @@
   <a href="#5-cctweaked-computercraft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Современная интеграция периферии CC:Tweaked (ComputerCraft)
+        5. Современная периферийная интеграция CC:Tweaked (ComputerCraft)
       
     </span>
   </a>
@@ -1640,7 +1640,7 @@
   <a href="#5-cctweaked-computercraft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Современная интеграция периферии CC:Tweaked (ComputerCraft)
+        5. Современная периферийная интеграция CC:Tweaked (ComputerCraft)
       
     </span>
   </a>
@@ -1728,60 +1728,60 @@
 <p><code>modules/gtm-reborn</code> — это глубоко модифицированная независимая ветка GregTech Modern (ветка <code>satou</code>) для GTE-Multi.</p>
 <hr />
 <h2 id="satou">🚀 Ключевые улучшения ветки <code>satou</code><a class="headerlink" href="#satou" title="Permanent link">&para;</a></h2>
-<p>По сравнению с оригинальной версией, GTM-Reborn реализует множество революционных технических улучшений и улучшений промышленного опыта в современном Minecraft 1.20.1:</p>
+<p>По сравнению с оригинальной версией, GTM-Reborn реализует множество революционных технических усовершенствований и улучшений промышленного опыта на современной версии Minecraft 1.20.1:</p>
 <pre class="mermaid"><code>graph TD
     A[GTM-Reborn ветка satou] --&gt; B[Многоамперные рецепты и сверхбыстрые вычисления: Multi-Amp Recipes &amp; Subtick 1t OC]
-    A --&gt; C[Сверхбольшие пакетные обработки: 64-битные Long параллельные вычисления и Batch Mode]
+    A --&gt; C[Сверхбольшие пакетные операции: 64-битные Long параллельные вычисления и Batch Mode]
     A --&gt; D[Полная автоматизация контроля качества: набор тестов GameTest на сервере]
-    A --&gt; E[Внешняя интеграция: интерфейс компьютеров CC:Tweaked и глубокое отображение в EMI/JEI]
+    A --&gt; E[Внешняя интеграция: интерфейс для CC:Tweaked и углублённое отображение в EMI/JEI]
     A --&gt; F[Жидкости и трубопроводы: диапазонный вывод жидкостей и беспроводные панели покрытия]</code></pre>
 <h3 id="1-64-batch-mode">1. 64-битные длинные целые параллельные вычисления и пакетный режим (Batch Mode)<a class="headerlink" href="#1-64-batch-mode" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Преодоление 32-битного целочисленного предела</strong>: параллельные вычисления полностью используют тип данных <code>long</code>, что полностью решает проблемы переполнения или усечения чисел при очень высоком параллелизме в крупных промышленных кластерах.</li>
-<li><strong>Интеллектуальный пакетный режим</strong>: при очень большом количестве сырья машина может упаковывать сотни или тысячи мелких рецептов в один цикл выполнения, что значительно снижает нагрузку на тики сервера.</li>
+<li><strong>Преодоление 32-битного предела</strong>: параллельные вычисления полностью используют тип данных <code>long</code>, что окончательно решает проблемы переполнения или усечения чисел при сверхвысоком параллелизме в крупных промышленных кластерах.</li>
+<li><strong>Интеллектуальный пакетный режим</strong>: при чрезвычайно обильных ресурсах машина может упаковывать сотни или тысячи мелких рецептов в один цикл выполнения, значительно снижая нагрузку на тики сервера.</li>
 </ul>
 <h3 id="2-1t-subtick-oc_perfect_subtick">2. Мгновенный разгон 1T Subtick (OC_PERFECT_SUBTICK)<a class="headerlink" href="#2-1t-subtick-oc_perfect_subtick" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Оптимизирован конвейер выполнения Recipe Logic машин, что позволяет указанным продвинутым машинам выполнять несколько итераций рецептов за 1 тик, раскрывая чистый предел промышленного производства.</li>
+<li>Оптимизирован конвейер выполнения Recipe Logic машин, что позволяет указанным продвинутым машинам выполнять несколько итераций рецептов за один тик, раскрывая чистый предел промышленного производства.</li>
 </ul>
 <h3 id="3-multi-amp">3. Многоамперный ввод и поддержка рецептов (Multi-Amp)<a class="headerlink" href="#3-multi-amp" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Рецепты машин поддерживают потребление/вывод нескольких ампер (Amperes) тока, а интерфейсы EMI/JEI наглядно отображают значения многоамперности и подсказки по спецификации проводов.</li>
+<li>Рецепты машин поддерживают потребление/вывод тока в несколько ампер (Amperes) за один рецепт, а интерфейсы EMI/JEI наглядно отображают значения многоамперности и подсказки по спецификации проводов.</li>
 </ul>
 <h3 id="4-ranged-fluid-outputs">4. Диапазонный вывод жидкостей (Ranged Fluid Outputs)<a class="headerlink" href="#4-ranged-fluid-outputs" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Позволяет высокоуровневым дистилляционным колоннам и химическим реакторам выводить жидкие продукты с плавающим диапазоном в зависимости от температуры и давления.</li>
 </ul>
-<h3 id="5-cctweaked-computercraft">5. Современная интеграция периферии CC:Tweaked (ComputerCraft)<a class="headerlink" href="#5-cctweaked-computercraft" title="Permanent link">&para;</a></h3>
+<h3 id="5-cctweaked-computercraft">5. Современная периферийная интеграция CC:Tweaked (ComputerCraft)<a class="headerlink" href="#5-cctweaked-computercraft" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Все стандартные машины открывают периферийные интерфейсы для ComputerCraft:</li>
-<li>Запрос в реальном времени прогресса рецепта, оставшегося времени, текущего потребления EU/t.</li>
+<li>Запрос в реальном времени о прогрессе рецепта, оставшемся времени и текущем потреблении EU/t.</li>
 <li>Динамический запуск, приостановка машин или переключение режимов работы через Lua-скрипты.</li>
 </ul>
 <hr />
 <h2 id="gametest">🧪 Автоматизированное тестирование и проверка GameTest<a class="headerlink" href="#gametest" title="Permanent link">&para;</a></h2>
-<p>GTM-Reborn включает полный набор автоматизированных тестов GameTest для Minecraft (расположен в <code>src/test</code>):</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Запуск автоматизированных серверных тестов GameTest</span>
+<p>GTM-Reborn включает полный набор автоматических тестов GameTest нативного Minecraft (расположен в <code>src/test</code>):</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Запуск автоматизированного серверного теста GameTest</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="p">:</span><span class="n">modules</span><span class="p">:</span><span class="n">gtm-reborn</span><span class="p">:</span><span class="n">runGameTestServer</span>
 </span></code></pre></div>
 <h3 id="_1">Область покрытия тестами<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Система Cover</strong>: тестирование пропускной способности и защиты от утечек жидкостных насосных панелей, панелей передачи предметов и панелей направления энергии.</li>
-<li><strong>Recipe Logic машин</strong>: тестирование многоамперности, пакетной обработки, параллельных вычислений между рецептами и разгона.</li>
+<li><strong>Система Cover</strong>: тестирование пропускной способности и защиты от утечек жидкостных насосных панелей, панелей передачи предметов и энергонаправляющих панелей.</li>
+<li><strong>Recipe Logic машин</strong>: тестирование многоамперности, пакетной обработки, параллелизма между рецептами и вычислений разгона.</li>
 <li><strong>Формирование и вращение мультиблоков</strong>: проверка структуры различных корпусов и отсеков при разных ориентациях.</li>
 </ul>
 <hr />
 <h2 id="git">🌿 Правила рабочего процесса Git для подмодуля<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
 <p><code>modules/gtm-reborn</code> соответствует отдельному Git-репозиторию <code>takanashisatou/GregTech-Modern-Reborn</code>, ветка разработки по умолчанию — <code>satou</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Разработка и коммиты в подмодуле отдельно</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Разработка и коммиты непосредственно в подмодуле</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>modules/gtm-reborn
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>satou
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>git<span class="w"> </span>add<span class="w"> </span>.
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat: optimize multiblock recipe logic"</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>satou
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Возврат в основной проект и обновление указателя подмодуля</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Возврат в основной проект для обновления указателя подмодуля</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">cd</span><span class="w"> </span>../..
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>git<span class="w"> </span>add<span class="w"> </span>modules/gtm-reborn
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"chore: bump gtm-reborn submodule pointer"</span>

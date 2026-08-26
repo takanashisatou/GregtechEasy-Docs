@@ -872,10 +872,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#native-jade-top-integration" class="md-nav__link">
+  <a href="#jade-top-native-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔍 Native Jade / TOP Integration
+        🔍 Jade / TOP Native Integration
       
     </span>
   </a>
@@ -1561,10 +1561,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#native-jade-top-integration" class="md-nav__link">
+  <a href="#jade-top-native-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔍 Native Jade / TOP Integration
+        🔍 Jade / TOP Native Integration
       
     </span>
   </a>
@@ -1620,26 +1620,26 @@
 <hr />
 <h2 id="mod-architecture-and-design-positioning">🏛️ Mod Architecture and Design Positioning<a class="headerlink" href="#mod-architecture-and-design-positioning" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
-    A[GTM-Reborn 基础框架] --&gt; B[GTECore 核心模组]
-    B --&gt; C[东方玄妙工业: 阴阳八卦炼仙炉 / 四象阵法 / 太极五行]
-    B --&gt; D[工业极端优化: 奇迹之环 / 矿石综合处理 / 通用燃油引擎]
-    B --&gt; E[AE2 深度拓展: ME 样板总成 Plus &amp; 镜像 / ME 蒸汽仓]
-    B --&gt; F[超维电路系统: 超弦电路体系 / 阴阳电路体系]
-    B --&gt; G[自动化与开发: Jade 实时集成 / 结构测试终端 / Datagen 国际化]</code></pre>
+    A[GTM-Reborn Base Framework] --&gt; B[GTECore Core Mod]
+    B --&gt; C[Eastern Mystical Industry: Yin-Yang Bagua Refining Furnace / Four Symbols Formation / Tai Chi Five Elements]
+    B --&gt; D[Industrial Extreme Optimization: Ring of Miracles / Comprehensive Ore Processing / Universal Fuel Engine]
+    B --&gt; E[AE2 Deep Expansion: ME Pattern Assembly Plus &amp; Mirror / ME Steam Hatch]
+    B --&gt; F[Hyperdimensional Circuit System: Superstring Circuit System / Yin-Yang Circuit System]
+    B --&gt; G[Automation and Development: Jade Real-time Integration / Structure Testing Terminal / Datagen Internationalization]</code></pre>
 <hr />
 <h2 id="creative-mode-tabs-and-categories">📦 Creative Mode Tabs and Categories<a class="headerlink" href="#creative-mode-tabs-and-categories" title="Permanent link">&para;</a></h2>
 <p>GTECore registers independent creative mode tabs in-game:</p>
 <ol>
 <li><strong>GregTech Easy Machines (<code>itemGroup.gtecore.gtecore_machines</code>)</strong>:</li>
 <li>Contains all GTE original multiblock controllers (Yin-Yang Bagua Blast Furnace, Ring of Miracles, Ore Processing Center, Chemical Terminator, etc.).</li>
-<li>Includes multi-tier super battery buffers (Max Super Battery Buffer), ME Steam Hatch, ME Pattern Assembly Plus and Mirror.</li>
+<li>Contains multi-tier super battery buffers (Max Super Battery Buffer), ME Steam Hatches, ME Pattern Assembly Plus and Mirror.</li>
 <li><strong>GregTech Easy Items (<code>itemGroup.gtecore.gtecore_items</code>)</strong>:</li>
-<li>Contains superstring and Yin-Yang circuit series items (processors, clusters, supercomputers, mainframes).</li>
-<li>Includes Five Elements talismans, Bagua chips, Three Pure Particles, Structure Testing Terminal, and other specialized tools.</li>
+<li>Contains Superstring and Yin-Yang circuit series items (processors, clusters, supercomputers, hosts).</li>
+<li>Contains Five Elements talismans, Bagua chips, Three Pure particles, Structure Testing Terminal, and other specialized tools.</li>
 </ol>
 <hr />
 <h2 id="mod-global-configuration-gteconfig">⚙️ Mod Global Configuration (<code>GTEConfig</code>)<a class="headerlink" href="#mod-global-configuration-gteconfig" title="Permanent link">&para;</a></h2>
-<p>GTECore provides extensive in-game and file configuration options (located in <code>config/gtecore-common.toml</code> or via the in-game config menu):</p>
+<p>GTECore provides rich in-game and file configuration options (located in <code>config/gtecore-common.toml</code> or via the in-game configuration menu):</p>
 <table>
 <thead>
 <tr>
@@ -1652,26 +1652,26 @@
 <tr>
 <td style="text-align: left;"><code>superPeace</code> (Super Peace Mode)</td>
 <td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;">When enabled, completely disables hostile mob spawning, providing an absolutely pure environment for tech building</td>
+<td style="text-align: left;">When enabled, completely disables hostile mob spawning, providing an absolutely pure environment for technological construction</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>durationMultiplier</code> (Recipe Duration Multiplier)</td>
+<td style="text-align: left;"><code>durationMultiplier</code> (Recipe Time Multiplier)</td>
 <td style="text-align: left;"><code>1.0</code></td>
 <td style="text-align: left;">Globally adjusts the duration multiplier for GTECore custom recipes</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="native-jade-top-integration">🔍 Native Jade / TOP Integration<a class="headerlink" href="#native-jade-top-integration" title="Permanent link">&para;</a></h2>
-<p>GTECore includes built-in support for the <strong><code>GTEJadePlugin</code></strong> plugin:
-- <strong>ME Pattern Assembly Plus Status</strong>: Displays in real-time the number of patterns bound to the current assembly, fluid and item output modes.
-- <strong>ME Pattern Assembly Mirror Plus Binding Info</strong>: Hovering directly shows the bound main assembly coordinates <code>(X, Y, Z)</code> and network connectivity status.
-- <strong>Formation Activation Indicator</strong>: On the Yin-Yang Bagua Blast Furnace, displays the readiness status of the Azure Dragon, White Tiger, Vermilion Bird, and Black Tortoise formations in real-time.</p>
+<h2 id="jade-top-native-integration">🔍 Jade / TOP Native Integration<a class="headerlink" href="#jade-top-native-integration" title="Permanent link">&para;</a></h2>
+<p>GTECore includes built-in <strong><code>GTEJadePlugin</code></strong> plugin support:
+- <strong>ME Pattern Assembly Plus Status</strong>: Real-time display of the number of patterns bound to the current assembly, fluid and item output modes.
+- <strong>ME Pattern Assembly Mirror Plus Binding Info</strong>: Hover display directly shows the bound main assembly coordinates <code>(X, Y, Z)</code> and network connectivity status.
+- <strong>Formation Activation Indicator</strong>: Real-time display of the readiness status of the Azure Dragon, White Tiger, Vermilion Bird, and Black Tortoise Four Symbols formations on the Yin-Yang Bagua Refining Furnace.</p>
 <hr />
 <h2 id="structure-testing-terminal-structure-testing-terminal">🛠️ Structure Testing Terminal (<code>Structure Testing Terminal</code>)<a class="headerlink" href="#structure-testing-terminal-structure-testing-terminal" title="Permanent link">&para;</a></h2>
 <p>GTECore provides a dedicated handheld tool — the <strong>Structure Testing Terminal</strong> (<code>item.gtecore.check_structure_terminal</code>):
-- <strong>Right-click on a multiblock controller</strong>: Scans structural integrity in real-time.
-- <strong>Error diagnostic prompts</strong>: If the structure is not formed, the terminal will precisely indicate <strong>the erroneous block coordinates and locations that should not be placed</strong> in the chat and hover tooltip, greatly accelerating the construction and troubleshooting of large multiblocks.</p>
+- <strong>Right-click a multiblock controller</strong>: Real-time scanning of structural integrity.
+- <strong>Error diagnostic hints</strong>: If the structure is not formed, the terminal will precisely indicate <strong>the erroneous block coordinates and positions that should not be placed</strong> in the chat and hover tooltip, greatly accelerating the construction and troubleshooting of large multiblocks.</p>
 
 
 

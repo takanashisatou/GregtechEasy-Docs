@@ -1182,15 +1182,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-click-asset-sync-task-syncblockbenchassets" class="md-nav__link">
+  <a href="#one-click-asset-synchronization-task-syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 One-Click Asset Sync Task (syncBlockbenchAssets)
+        🔄 One-Click Asset Synchronization Task (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 One-Click Asset Sync Task (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 One-Click Asset Synchronization Task (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1542,15 +1542,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-click-asset-sync-task-syncblockbenchassets" class="md-nav__link">
+  <a href="#one-click-asset-synchronization-task-syncblockbenchassets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔄 One-Click Asset Sync Task (syncBlockbenchAssets)
+        🔄 One-Click Asset Synchronization Task (syncBlockbenchAssets)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 One-Click Asset Sync Task (syncBlockbenchAssets)">
+    <nav class="md-nav" aria-label="🔄 One-Click Asset Synchronization Task (syncBlockbenchAssets)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1603,10 +1603,10 @@
 
 
 <h1 id="interface-textures-and-blockbench-art-workflow">Interface, Textures, and Blockbench Art Workflow<a class="headerlink" href="#interface-textures-and-blockbench-art-workflow" title="Permanent link">&para;</a></h1>
-<p>The GTE project has established an automated, zero-loss art asset processing pipeline. Model designers only need to use <strong>Blockbench</strong> to create models and save them in the source directory; the Gradle task automatically handles asset classification, format validation, and incremental synchronization.</p>
+<p>The GTE project has established an automated, zero-loss art asset processing pipeline. Model designers only need to use <strong>Blockbench</strong> to create models and save them in the source directory; Gradle tasks automatically handle asset classification, format validation, and incremental synchronization.</p>
 <hr />
 <h2 id="art-source-directory-art_assets">🎨 Art Source Directory (<code>art_assets/</code>)<a class="headerlink" href="#art-source-directory-art_assets" title="Permanent link">&para;</a></h2>
-<p>The <code>art_assets/</code> directory at the project root is the <strong>only working directory</strong> for art designers and is strictly version-tracked by Git:</p>
+<p>The <code>art_assets/</code> directory at the project root is the <strong>sole working directory</strong> for art designers and is strictly version-tracked by Git:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>art_assets/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── *.bbmodel                           # Blockbench 工程源文件（保留图层与骨骼）
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── *.json                              # Blockbench 导出的 Minecraft 几何模型
@@ -1622,43 +1622,43 @@
 <tr>
 <th style="text-align: left;">File Type</th>
 <th style="text-align: left;">Naming Keywords</th>
-<th style="text-align: left;">Auto-sync Target Directory (GTECore)</th>
+<th style="text-align: left;">Automatic Sync Target Directory (GTECore)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Item Texture</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>Item Textures</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>processor</code>, <code>string</code>, <code>symbol</code>, <code>paper</code>, <code>wafer</code>, <code>chip</code>, <code>god</code>, <code>rune</code>, <code>yin</code>, <code>yang</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/item/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Block Casing Texture</strong> (<code>.png</code>)</td>
+<td style="text-align: left;"><strong>Block Casing Textures</strong> (<code>.png</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>concrete</code>, <code>coil</code>, <code>zhenfa</code>, <code>matrix</code>, <code>buffer</code>, <code>generator</code>, <code>machine</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/textures/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Block Model</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>Block Models</strong> (<code>.json</code>)</td>
 <td style="text-align: left;"><code>casing</code>, <code>module</code>, <code>block</code>, <code>matrix</code></td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/block/</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Item Model</strong> (<code>.json</code>)</td>
+<td style="text-align: left;"><strong>Item Models</strong> (<code>.json</code>)</td>
 <td style="text-align: left;">All other model files (excluding <code>.bbmodel</code>)</td>
 <td style="text-align: left;"><code>src/main/resources/assets/gtecore/models/item/</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="one-click-asset-sync-task-syncblockbenchassets">🔄 One-Click Asset Sync Task (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#one-click-asset-sync-task-syncblockbenchassets" title="Permanent link">&para;</a></h2>
+<h2 id="one-click-asset-synchronization-task-syncblockbenchassets">🔄 One-Click Asset Synchronization Task (<code>syncBlockbenchAssets</code>)<a class="headerlink" href="#one-click-asset-synchronization-task-syncblockbenchassets" title="Permanent link">&para;</a></h2>
 <p>After exporting models or modifying textures, run the following in the terminal:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$env:JAVA_HOME</span><span class="p">=</span><span class="s1">'C:\Users\Ex_Je\.jdks\ms-21.0.11'</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.\</span><span class="n">gradlew</span><span class="p">.</span><span class="n">bat</span> <span class="n">syncBlockbenchAssets</span>
 </span></code></pre></div>
 <h3 id="automation-features">Automation Features<a class="headerlink" href="#automation-features" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Automatic Trigger</strong>: This task is mounted as a prerequisite node for <code>buildAll</code>, <code>copyOutputJars</code>, and CI build processes. It runs automatically during local compilation or game startup, eliminating the need for manual repeated copying.</li>
+<li><strong>Automatic Trigger</strong>: This task is mounted as a prerequisite node for <code>buildAll</code>, <code>copyOutputJars</code>, and the CI build pipeline. It executes automatically during local compilation or game startup, eliminating the need for manual repeated copying.</li>
 <li><strong>Incremental Safety</strong>: Uses binary streaming overwrite and automatically creates missing parent directories in the target resource directory.</li>
-<li><strong>Keeps Git Clean</strong>: <code>.bbmodel</code> files are kept only in <code>art_assets/</code> as source projects; the compiled jar package does not include redundant Blockbench project metadata.</li>
+<li><strong>Keep Git Clean</strong>: <code>.bbmodel</code> files are kept only in <code>art_assets/</code> as source projects; the compiled jar will not include redundant Blockbench project metadata.</li>
 </ol>
 
 

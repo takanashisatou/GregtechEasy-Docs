@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungs-pipeline" class="md-skip">
+        <a href="#cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungspipeline" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -1464,10 +1464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-pages-statisches-maven-repository" class="md-nav__link">
+  <a href="#github-pages-statisches-maven-repository-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 GitHub Pages statisches Maven-Repository
+        🌐 GitHub Pages statisches Maven-Repository-Deployment
       
     </span>
   </a>
@@ -1617,10 +1617,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-pages-statisches-maven-repository" class="md-nav__link">
+  <a href="#github-pages-statisches-maven-repository-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 GitHub Pages statisches Maven-Repository
+        🌐 GitHub Pages statisches Maven-Repository-Deployment
       
     </span>
   </a>
@@ -1671,17 +1671,17 @@
   
 
 
-<h1 id="cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungs-pipeline">CI/CD Automatisierte Build-, Paketierungs- und Maven-Veröffentlichungs-Pipeline<a class="headerlink" href="#cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungs-pipeline" title="Permanent link">&para;</a></h1>
-<p>GTE hat eine hochautomatisierte, multi-Ziel-Artefakt-parallele <strong>GitHub Actions CI/CD-Pipeline</strong> eingerichtet (Konfigurationsdateien in <code>.github/workflows/sync-build.yml</code> und <code>release-publish.yml</code>).</p>
+<h1 id="cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungspipeline">CI/CD Automatisierte Build-, Paketierungs- und Maven-Veröffentlichungspipeline<a class="headerlink" href="#cicd-automatisierte-build-paketierungs-und-maven-veroffentlichungspipeline" title="Permanent link">&para;</a></h1>
+<p>GTE hat eine hochautomatisierte, multi-target <strong>GitHub Actions CI/CD-Pipeline</strong> eingerichtet (Konfigurationsdateien in <code>.github/workflows/sync-build.yml</code> und <code>release-publish.yml</code>).</p>
 <hr />
 <h2 id="vollstandige-ci-pipeline-architektur-sync-buildyml">🔄 Vollständige CI-Pipeline-Architektur (<code>sync-build.yml</code>)<a class="headerlink" href="#vollstandige-ci-pipeline-architektur-sync-buildyml" title="Permanent link">&para;</a></h2>
-<p>Bei jedem Push auf die <code>master</code> / <code>main</code> / <code>satou</code>-Zweige, bei PRs oder bei Release-Tag-Auslösung führt GitHub Actions automatisch die folgende Standard-Pipeline aus:</p>
+<p>Bei jedem Push auf <code>master</code> / <code>main</code> / <code>satou</code>-Zweige, bei PRs oder bei Release-Tag-Auslösung führt GitHub Actions automatisch die folgende Standard-Pipeline aus:</p>
 <pre class="mermaid"><code>flowchart TD
     A[Code-Push / Tag-Auslösung] --&gt; B[Checkout rekursive Submodule &amp; JDK 21 / Python 3.11 / Go konfigurieren]
     B --&gt; C[Gradle inkrementelle Synchronisierung der Blockbench-Art-Assets syncBlockbenchAssets]
     C --&gt; D[Multi-Modul-Hochparallel-Kompilierung &amp; GameTest automatisierte Echtzeit-Tests]
     D --&gt; E[Jar-Dateien nach overrides/mods kopieren &amp; in build/artifacts sammeln]
-    E --&gt; F[opencode_translate.py vollständige/inkrementelle KI-Übersetzung ausführen]
+    E --&gt; F[opencode_translate.py ausführen: Vollständige/inkrementelle KI-Internationalisierungsübersetzung]
     F --&gt; G[Packwiz-Standardpaketierung: CurseForge-Paket + Java 21 manifest-Patch]
     G --&gt; H[Python baut Zero-Compile-Spieler-Komplettpaket .minecraft]
     H --&gt; I[Packwiz exportiert reines Server-Paket]
@@ -1692,23 +1692,23 @@
 <h2 id="detaillierte-beschreibung-der-drei-kern-paketierungsaufgaben">📦 Detaillierte Beschreibung der drei Kern-Paketierungsaufgaben<a class="headerlink" href="#detaillierte-beschreibung-der-drei-kern-paketierungsaufgaben" title="Permanent link">&para;</a></h2>
 <h3 id="1-curseforge-standardpaket-und-java-21-patch">1. CurseForge-Standardpaket und Java 21-Patch<a class="headerlink" href="#1-curseforge-standardpaket-und-java-21-patch" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Packwiz-Export</strong>: Führt <code>packwiz curseforge export</code> aus, um ein standardkonformes Paket zu generieren.</li>
-<li><strong>Automatischer manifest.json-Patch</strong>: Da einige Drittanbieter-Launcher beim Parsen von CurseForge-Paketen standardmäßig Java 17 zuweisen, entpackt die CI das Zip, schreibt per Python-Skript die <code>minecraft.javaVersion</code> und die oberste <code>javaVersion</code> im <code>manifest.json</code> <strong>hartkodiert auf 21</strong> und verpackt es erneut.</li>
+<li><strong>Packwiz-Export</strong>: Führt <code>packwiz curseforge export</code> aus, um ein Standardpaket zu generieren.</li>
+<li><strong>Automatischer manifest.json-Patch</strong>: Da einige Drittanbieter-Launcher beim Parsen von CurseForge-Paketen standardmäßig Java 17 zuweisen, entpackt die CI das Zip, schreibt per Python-Skript <code>minecraft.javaVersion</code> und die oberste <code>javaVersion</code> im <code>manifest.json</code> <strong>hartkodiert auf 21</strong> und verpackt es neu.</li>
 </ul>
 <h3 id="2-spieler-komplettpaket-ohne-kompilierung-build_lazy_packpy">2. Spieler-Komplettpaket ohne Kompilierung (<code>build_lazy_pack.py</code>)<a class="headerlink" href="#2-spieler-komplettpaket-ohne-kompilierung-build_lazy_packpy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Das Python-Skript extrahiert automatisch die neuesten Kern-Jars aus den <code>build/libs/</code>-Verzeichnissen der Module.</li>
-<li>Es fügt automatisch die wichtigen Erweiterungs-Mods aus <code>modules/gtecore/gradle/libs/</code> zusammen.</li>
-<li>Alle Konfigurationen, KubeJS-Skripte und Patchouli-Handbücher werden in ein einsatzbereites <code>.minecraft</code>-Archiv verpackt, inklusive chinesischer Startanleitung.</li>
+<li>Es fügt automatisch die wichtigsten Erweiterungs-Mods aus <code>modules/gtecore/gradle/libs/</code> hinzu.</li>
+<li>Alle Konfigurationen, KubeJS-Skripte und Patchouli-Handbücher werden zu einem einsatzbereiten <code>.minecraft</code>-Archiv zusammengepackt, inklusive chinesischer Startanleitung.</li>
 </ul>
 <h3 id="3-server-exportpaket-packwiz-server-export">3. Server-Exportpaket (<code>packwiz server export</code>)<a class="headerlink" href="#3-server-exportpaket-packwiz-server-export" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Entfernt automatisch client-spezifische Optimierungs-Mods (wie 3D-Skin-Layer, Shader, Tastenbelegungen usw.) und generiert ein reines Serverpaket, das direkt auf Linux/Windows-Produktionsservern bereitgestellt werden kann.</li>
+<li>Entfernt automatisch clientseitige Optimierungs-Mods (wie 3D-Skin-Layer, Shader, Tastenbelegungen usw.) und generiert ein reines Serverpaket, das direkt auf Linux/Windows-Produktionsservern bereitgestellt werden kann.</li>
 </ul>
 <hr />
-<h2 id="github-pages-statisches-maven-repository">🌐 GitHub Pages statisches Maven-Repository<a class="headerlink" href="#github-pages-statisches-maven-repository" title="Permanent link">&para;</a></h2>
-<p>Die Pipeline nutzt die Gradle-<code>publish</code>-Aufgabe, um alle Submodule (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) als standardkonforme Maven-Artefakte zu bauen und auf den <code>gh-pages</code>-Zweig bereitzustellen:</p>
-<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// In Drittanbieter-Mods oder Entwicklungsprojekten direkt das GTE-Maven-Repository referenzieren</span>
+<h2 id="github-pages-statisches-maven-repository-deployment">🌐 GitHub Pages statisches Maven-Repository-Deployment<a class="headerlink" href="#github-pages-statisches-maven-repository-deployment" title="Permanent link">&para;</a></h2>
+<p>Die Pipeline verwendet die Gradle-<code>publish</code>-Aufgabe, um alle Submodule (<code>gtecore</code>, <code>gtm-reborn</code>, <code>gt--</code>) als Standard-Maven-Artefakte zu bauen und auf dem <code>gh-pages</code>-Zweig bereitzustellen:</p>
+<div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// In Drittanbieter-Mods oder Entwicklungsprojekten direkt auf das GTE-Maven-Repository verweisen</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GTE GitHub Pages Maven"</span>
@@ -1723,9 +1723,9 @@
 <hr />
 <h2 id="manuelle-veroffentlichung-und-versions-tagging-workflow-release-publishyml">🏷️ Manuelle Veröffentlichung und Versions-Tagging-Workflow (<code>release-publish.yml</code>)<a class="headerlink" href="#manuelle-veroffentlichung-und-versions-tagging-workflow-release-publishyml" title="Permanent link">&para;</a></h2>
 <p>Das Projekt verwendet einen standardisierten Git-Release-Prozess:
-1. Manuelles Auslösen von <strong>Manual Publish Release</strong> auf der GitHub-Actions-Seite, Eingabe der Versionsnummer (z. B. <code>2.3.0</code>).
-2. Der Workflow erstellt automatisch einen <code>dev -&gt; release</code>-PR, führt die CI-Prüfung aus und führt einen automatischen Squash-Merge durch.
-3. Automatisches Setzen des Git-Tags <code>v2.3.0</code> auf dem <code>release</code>-Zweig und Push.
+1. Manuelles Auslösen von <strong>Manual Publish Release</strong> auf der GitHub Actions-Seite, Eingabe der Versionsnummer (z.B. <code>2.3.0</code>).
+2. Der Workflow erstellt automatisch einen <code>dev -&gt; release</code>-PR, führt CI-Validierung durch und führt automatisch einen Squash-Merge aus.
+3. Automatisches Erstellen und Pushen des Git-Tags <code>v2.3.0</code> auf dem <code>release</code>-Zweig.
 4. Das Tag-Push-Ereignis löst automatisch <code>sync-build.yml</code> aus und schließt die Veröffentlichung aller Kanäle ab.</p>
 
 
