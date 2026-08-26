@@ -1,52 +1,52 @@
-# CI/CD 自动化构建、打包与 Maven 发布流水线
+﻿# Pipeline de CI/CD de construcción, empaquetado y publicación Maven automatizados
 
-GTE 建立了一套高自动化、多目标产物并行的 **GitHub Actions CI/CD 流水线**（配置文件位于 `.github/workflows/sync-build.yml` 与 `release-publish.yml`）。
+GTE ha establecido un **pipeline de CI/CD de GitHub Actions** altamente automatizado y con múltiples artefactos en paralelo (los archivos de configuración se encuentran en `.github/workflows/sync-build.yml` y `release-publish.yml`).
 
 ---
 
-## 🔄 全量 CI 流水线架构 (`sync-build.yml`)
+## 🔄 Arquitectura completa del pipeline de CI (`sync-build.yml`)
 
-每当向 `master` / `main` / `satou` 分支推送代码、提交 PR 或触发 Release Tag 时，GitHub Actions 会自动执行以下标准流水线：
+Cada vez que se envía código a las ramas `master` / `main` / `satou`, se envía un PR o se activa una etiqueta de Release, GitHub Actions ejecuta automáticamente el siguiente pipeline estándar:
 
 ```mermaid
 flowchart TD
-    A[代码推送 / Tag 触发] --> B[Checkout 递归子模块 & 配置 JDK 21 / Python 3.11 / Go]
-    B --> C[Gradle 增量同步 Blockbench 美术资产 syncBlockbenchAssets]
-    C --> D[多模块高并发编译 & GameTest 自动化实机测试]
-    D --> E[复制生成 Jar 至 overrides/mods & 收集至 build/artifacts]
-    E --> F[运行 opencode_translate.py 全量/增量 AI 国际化翻译]
-    F --> G[Packwiz 规范打包: CurseForge 包 + 补丁 Java 21 manifest]
-    G --> H[Python 构建 Zero-Compile 玩家完整懒人包 .minecraft]
-    H --> I[Packwiz 导出纯净服务端 Server 包]
-    I --> J[上传所有 Release 产物至 Actions Artifacts 存储]
-    J --> K[构建静态 Maven 仓库并部署至 GitHub Pages (gh-pages)]
-    J --> L[Tag 触发时: 自动发布至 CurseForge 平台]
+    A[Empuje de código / Activación de Tag] --> B[Checkout de submódulos recursivos y configuración de JDK 21 / Python 3.11 / Go]
+    B --> C[Sincronización incremental de activos de arte de Blockbench con Gradle syncBlockbenchAssets]
+    C --> D[Compilación de múltiples módulos de alta concurrencia y pruebas automatizadas en máquina real con GameTest]
+    D --> E[Copiar los Jars generados a overrides/mods y recopilarlos en build/artifacts]
+    E --> F[Ejecutar opencode_translate.py para traducción internacional AI completa/incremental]
+    F --> G[Empaquetado estándar de Packwiz: paquete CurseForge + parche de manifest de Java 21]
+    G --> H[Python construye el paquete completo para jugadores Zero-Compile .minecraft]
+    H --> I[Packwiz exporta el paquete de servidor puro]
+    I --> J[Subir todos los artefactos de Release al almacenamiento de Actions Artifacts]
+    J --> K[Construir un repositorio Maven estático y desplegarlo en GitHub Pages (gh-pages)]
+    J --> L[Cuando se activa un Tag: publicar automáticamente en la plataforma CurseForge]
 ```
 
 ---
 
-## 📦 三大核心打包任务详解
+## 📦 Detalle de las tres tareas principales de empaquetado
 
-### 1. CurseForge 规范包与 Java 21 补丁
-- **Packwiz 导出**：运行 `packwiz curseforge export` 生成标准规范包。
-- **自动补丁 manifest.json**：针对部分第三方启动器在解析 CurseForge 包时默认指派 Java 17 的问题，CI 会自动解压 zip，通过 Python 脚本将 `manifest.json` 中的 `minecraft.javaVersion` 与顶层 `javaVersion` **硬编码强制写入 21**，然后重新封装。
+### 1. Paquete estándar de CurseForge y parche de Java 21
+- **Exportación de Packwiz**: ejecutar `packwiz curseforge export` para generar el paquete estándar.
+- **Parche automático de manifest.json**: para el problema de que algunos lanzadores de terceros asignan por defecto Java 17 al analizar paquetes de CurseForge, el CI descomprime automáticamente el zip, y mediante un script de Python escribe forzosamente **hardcodeado a 21** el `minecraft.javaVersion` y el `javaVersion` de nivel superior en `manifest.json`, y luego lo vuelve a empaquetar.
 
-### 2. 玩家免编译完整懒人包 (`build_lazy_pack.py`)
-- Python 脚本自动从各模块 `build/libs/` 抽取最新核心 Jar。
-- 自动合并 `modules/gtecore/gradle/libs/` 下的关键扩展 Mod。
-- 将全部配置、KubeJS 脚本、帕秋莉手册打包成一个开箱即用的 `.minecraft` 压缩包，内置中文启动指南。
+### 2. Paquete completo para jugadores sin compilación (`build_lazy_pack.py`)
+- El script de Python extrae automáticamente los Jars principales más recientes de `build/libs/` de cada módulo.
+- Fusiona automáticamente los Mods de extensión clave bajo `modules/gtecore/gradle/libs/`.
+- Empaqueta toda la configuración, scripts de KubeJS y el manual de Patchouli en un archivo comprimido `.minecraft` listo para usar, con una guía de inicio en chino incluida.
 
-### 3. 服务端导出包 (`packwiz server export`)
-- 自动剔除客户端专有优化 Mod（如 3D 皮肤层、光影着色器、按键绑定等），生成可直接部署在 Linux/Windows 生产服务器上的纯净服务端。
+### 3. Paquete de exportación para servidor (`packwiz server export`)
+- Elimina automáticamente los Mods de optimización exclusivos del cliente (como capas de skin 3D, shaders, asignaciones de teclas, etc.), generando un servidor puro que se puede desplegar directamente en servidores de producción Linux/Windows.
 
 ---
 
-## 🌐 GitHub Pages 静态 Maven 仓库部署
+## 🌐 Despliegue del repositorio Maven estático en GitHub Pages
 
-流水线通过 Gradle 的 `publish` 任务将所有子模块（`gtecore`、`gtm-reborn`、`gt--`）构建为标准 Maven 构件，并部署到 `gh-pages` 分支：
+El pipeline, mediante la tarea `publish` de Gradle, construye todos los submódulos (`gtecore`, `gtm-reborn`, `gt--`) como artefactos Maven estándar y los despliega en la rama `gh-pages`:
 
 ```groovy
-// 在第三方 Mod 或开发工程中直接引用 GTE Maven 仓库
+// Referencia directa al repositorio Maven de GTE en Mods de terceros o proyectos de desarrollo
 repositories {
     maven {
         name = "GTE GitHub Pages Maven"
@@ -61,10 +61,10 @@ dependencies {
 
 ---
 
-## 🏷️ 手动发布与版本打标工作流 (`release-publish.yml`)
+## 🏷️ Flujo de trabajo de publicación manual y etiquetado de versiones (`release-publish.yml`)
 
-项目采用规范化的 Git Release 流程：
-1. 在 GitHub Actions 页面手动触发 **Manual Publish Release**，输入版本号（如 `2.3.0`）。
-2. 工作流自动创建 `dev -> release` PR，执行 CI 校验并自动 Squash Merge。
-3. 自动在 `release` 分支打上 `v2.3.0` Git Tag 并推送。
-4. Tag 推送事件自动触发 `sync-build.yml`，最终完成全渠道制品发布。
+El proyecto utiliza un flujo de Release de Git estandarizado:
+1. Activar manualmente **Manual Publish Release** en la página de GitHub Actions, ingresando el número de versión (por ejemplo, `2.3.0`).
+2. El flujo de trabajo crea automáticamente un PR de `dev -> release`, ejecuta la validación de CI y realiza un Squash Merge automático.
+3. Automáticamente etiqueta la rama `release` con el Tag de Git `v2.3.0` y lo empuja.
+4. El evento de empuje del Tag activa automáticamente `sync-build.yml`, completando finalmente la publicación de artefactos en todos los canales.

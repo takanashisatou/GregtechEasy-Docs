@@ -1,24 +1,24 @@
-# KubeJS Customization & Scripting Guide
+# KubeJS Modding and Script Development Guide
 
-GTE delegates material registration, recipe balance, and cross-mod automation to **KubeJS** (located under `gte/overrides/kubejs/`).
+GTE delegates most material registration, recipe adjustments, and cross-mod integration logic to **KubeJS** (located in `gte/overrides/kubejs/`).
 
 ---
 
-## 📁 Directory Hierarchy & Lifecycles
+## 📁 Script Directory Architecture and Lifecycle
 
 ```
 gte/overrides/kubejs/
-├── startup_scripts/     # 【Startup】Executes on early boot; registers materials, fluids, blocks, items
-├── server_scripts/      # 【Server】Executes on world load/server connect; modifies recipes, loot, and tags
-├── client_scripts/      # 【Client】Executes on client; alters tooltips, EMI/JEI recipes and UI
-└── assets/ & data/      # Static localization, textures, models, and datapacks
+├── startup_scripts/     # [Startup Scripts] Execute at the earliest stage of the game, used for registering materials, fluids, blocks, items
+├── server_scripts/      # [Server Scripts] Execute when entering a world/connecting to a server, used for registering/modifying recipes and tags
+├── client_scripts/      # [Client Scripts] Execute on the client, used for modifying tooltips, JEI/EMI interface display
+└── assets/ & data/      # Static localization, textures, and datapack files
 ```
 
 ---
 
 ## 🧪 Startup Phase: Custom Material Registration (`startup_scripts/`)
 
-Register custom elements, fluids, and ingots using `GTCEuStartupEvents.registry('gtceu:material', ...)`:
+Use `GTCEuStartupEvents.registry('gtceu:material', ...)` to register custom elements and materials:
 
 ```javascript
 GTCEuStartupEvents.registry('gtceu:material', event => {
@@ -69,35 +69,35 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 ---
 
-## ⚙️ Server Phase: Custom Recipe Handlers (`server_scripts/`)
+## ⚙️ Server Phase: Custom Recipe and Machine Recipe Writing (`server_scripts/`)
 
-Inside `ServerEvents.recipes`, invoke `event.recipes.gtceu` and `event.recipes.gtecore`:
+In the `ServerEvents.recipes` event, you can directly call `event.recipes.gtceu` and `event.recipes.gtecore`:
 
-### 1. Base Machines & Blast Furnace Recipes
+### 1. Basic Machine and Blast Furnace Recipes
 
 ```javascript
 ServerEvents.recipes(event => {
     const gtr = event.recipes.gtceu
     const gte = event.recipes.gtecore
 
-    // Remove legacy recipes
+    // Remove original inefficient recipes
     event.remove({ input: 'gtceu:raw_platinum' })
     event.remove({ id: 'gtceu:coke_oven/log_to_charcoal' })
 
-    // Instant Coke Oven
+    // Fast coke oven recipe
     gtr.coke_oven('fast_coke_oven')
         .itemInputs('#minecraft:logs_that_burn')
         .itemOutputs('minecraft:charcoal')
         .outputFluids('gtceu:creosote 1000')
         .duration(20)
 
-    // Primitive Blast Furnace: 1 Iron + 1 Coal -> 5 Steel (1 tick)
+    // Primitive blast furnace: 1 iron + 1 coal -> 5 steel ingots (1 tick)
     gtr.primitive_blast_furnace('easy_steel_from_coal')
         .itemInputs('1x minecraft:iron_ingot', '1x minecraft:coal')
         .itemOutputs('5x gtceu:steel_ingot')
         .duration(1)
 
-    // Forming Press AE2 Logic Processor
+    // Forming press for printed logic processor
     gtr.forming_press('gtecore:printed_logic_processor')
         .EUt(26)
         .duration(2 * 20)
@@ -107,13 +107,13 @@ ServerEvents.recipes(event => {
 })
 ```
 
-### 2. GTECore Multiblock Recipes
+### 2. GTECore Custom Machine Recipes
 
 ```javascript
 ServerEvents.recipes(event => {
     const gte = event.recipes.gtecore
 
-    // Easy Box batch ore generator
+    // Easy Box batch mineral output recipe
     gte.easy_box('easy_test')
         .circuit(1)
         .duration(20 * 20)
@@ -132,15 +132,15 @@ ServerEvents.recipes(event => {
 
 ---
 
-## ⚡ In-Game Hot-Reload Commands
+## ⚡ In-Game Hot Reload Commands
 
-Test script modifications live without restarting the client:
+Test script modifications in real-time without restarting the client:
 
-- **Reload Recipes & Server Scripts**:
+- **Reload recipes and server scripts**:
   ```mcfunction
   /kubejs reload server_scripts
   ```
-- **Reload Textures & Client Scripts**:
+- **Reload textures and client scripts**:
   ```mcfunction
   /kubejs reload client_scripts
   ```

@@ -1,58 +1,58 @@
-# 超弦与阴阳高阶电路及材料系统
+﻿# Système de circuits avancés et de matériaux Super String et Yin-Yang
 
-GTECore 拓展了横跨 ZPM 到 MAX 全周期的两大高阶电路分支 —— **超弦电路体系** 与 **阴阳太极电路体系**，并配合以矿石综合处理中心实现自动化材料大循环。
+GTECore étend deux branches de circuits avancés couvrant tout le cycle de ZPM à MAX — **Système de circuits Super String** et **Système de circuits Yin-Yang Taiji**, accompagnés d'un centre de traitement intégré des minerais pour un cycle automatisé des matériaux.
 
 ---
 
-## 🌌 超弦电路体系 (Super String Circuitry)
+## 🌌 Système de circuits Super String (Super String Circuitry)
 
-超弦电路从高维震荡弦中获取超光速算力，主要覆盖 **ZPM ➜ UEV** 电压梯度：
+Les circuits Super String obtiennent une puissance de calcul supraluminique à partir de cordes vibrantes de haute dimension, couvrant principalement le gradient de tension **ZPM ➜ UEV** :
 
 ```mermaid
 graph LR
-    A[超弦基板 / 印刷板] --> B[超弦处理器 ZPM]
-    B --> C[超弦处理器集群 UV]
-    C --> D[超弦处理器超级计算机 UHV]
-    D --> E[超弦处理器主机 UEV]
+    A[Plaque de base Super String / Plaque de circuit imprimé] --> B[Processeur Super String ZPM]
+    B --> C[Cluster de processeurs Super String UV]
+    C --> D[Supercalculateur de processeurs Super String UHV]
+    D --> E[Hôte de processeurs Super String UEV]
 ```
 
-### 超弦材料与弦系物质
-- **起源之弦 (`item.gtecore.original_string`)**：高维宇宙震荡本源。
-- **α弦 / β弦 / γ弦 (`alpha_string`, `beta_string`, `gamma_string`)**：不同能级与偏振态的超弦聚合物。
-- **超弦混合机 (`super_string_mixer`)**、**创世之弦 (`string_of_creation`)** 与 **超弦震荡阵列 (`super_string_oscillator_array`)**：用于超弦物质的分裂、调谐与高阶固化。
+### Matériaux Super String et substances de cordes
+- **Corde d'origine (`item.gtecore.original_string`)** : Source vibrante de l'univers de haute dimension.
+- **Cordes α / β / γ (`alpha_string`, `beta_string`, `gamma_string`)** : Polymères de super cordes à différents niveaux d'énergie et états de polarisation.
+- **Mélangeur de super cordes (`super_string_mixer`)**、**Corde de création (`string_of_creation`)** et **Réseau d'oscillation de super cordes (`super_string_oscillator_array`)** : Utilisés pour la division, l'accord et la solidification avancée des substances de super cordes.
 
 ---
 
-## ☯️ 阴阳太极电路体系 (Yin-Yang Circuitry)
+## ☯️ Système de circuits Yin-Yang Taiji (Yin-Yang Circuitry)
 
-阴阳电路体系遵循 **“阴生阳，阳生阴，生生不息”** 的循环生克哲学，覆盖 **UV ➜ UIV** 乃至更高极限：
+Le système de circuits Yin-Yang suit la philosophie cyclique de **« Yin engendre Yang, Yang engendre Yin, sans fin »**, couvrant **UV ➜ UIV** et au-delà :
 
 ```mermaid
 graph LR
-    A[阴阳单晶硅 / 晶圆] --> B[阴阳处理器 UV]
-    B --> C[阴阳处理器集群 UHV]
-    C --> D[阴阳处理器超级计算机 UEV]
-    D --> E[阴阳处理器主机 UIV]
+    A[Silicium monocristallin Yin-Yang / Plaquette] --> B[Processeur Yin-Yang UV]
+    B --> C[Cluster de processeurs Yin-Yang UHV]
+    C --> D[Supercalculateur de processeurs Yin-Yang UEV]
+    D --> E[Hôte de processeurs Yin-Yang UIV]
 ```
 
-### 八卦与五行专属符篆
-- **五行元素**：金元素 (`jinyuansu`)、木元素 (`muyuansu`)、水元素 (`shuiyuansu`)、火元素 (`huo`)、土元素 (`tuyuansu`)。
-- **五行符篆**：金之符篆、木之符篆、水之符篆、火之符篆、土之符篆。
-- **八卦象与芯片**：乾、坤、震、巽、坎、离、艮、兑八大卦象符石与核心芯片。
-- **三清之粒 (`god_nugget`)**：凝聚天地玄黄之气的顶级合成媒介。
+### Symboles spéciaux des Huit Trigrammes et des Cinq Éléments
+- **Cinq Éléments** : Élément Métal (`jinyuansu`), Élément Bois (`muyuansu`), Élément Eau (`shuiyuansu`), Élément Feu (`huo`), Élément Terre (`tuyuansu`).
+- **Talismans des Cinq Éléments** : Talisman du Métal, Talisman du Bois, Talisman de l'Eau, Talisman du Feu, Talisman de la Terre.
+- **Symboles des Huit Trigrammes et puces** : Pierres de symboles et puces centrales des huit trigrammes Qian, Kun, Zhen, Xun, Kan, Li, Gen, Dui.
+- **Pépite des Trois Purs (`god_nugget`)** : Support de synthèse de premier ordre condensant l'énergie du ciel et de la terre.
 
 ---
 
-## 💎 矿石综合处理中心配方模式
+## 💎 Modes de recette du centre de traitement intégré des minerais
 
-**矿石综合处理中心 (`ore_process_center`)** 预设了 7 大标准化电路模式，可通过在机器内设置编程电路编号切换：
+**Centre de traitement intégré des minerais (`ore_process_center`)** dispose de 7 modes de circuits standardisés, commutables en réglant le numéro de circuit programmé dans la machine :
 
-| 电路编号 | 工艺路线 | 适用矿物类型与产物特色 | 产出倍率 |
+| Numéro de circuit | Processus | Types de minerais applicables et caractéristiques des produits | Multiplicateur de rendement |
 | :---: | :--- | :--- | :---: |
-| **电路 1** | 粉碎 ➜ 粉碎 ➜ 洗矿 | 基础金属矿石（铁、铜、锡等）快速量产 | 5 倍主产物 + 副产物 |
-| **电路 2** | 粉碎 ➜ 粉碎 ➜ 离心 | 伴生高价值稀有轻金属矿石 | 5 倍主产物 + 离心精纯副产物 |
-| **电路 3** | 粉碎 ➜ 洗矿 ➜ 热离 ➜ 粉碎 | 高温耐火矿石、贵金属矿（铂系、金银等） | 5~6 倍 + 纯净金属粉 |
-| **电路 4** | 粉碎 ➜ 热离 ➜ 粉碎 | 硫化物与重度复杂嵌布矿 | 5 倍 + 特殊热离副产物 |
-| **电路 5** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 洗矿 | 稀土矿石与多阶段可溶性盐矿 | 6 倍 + 双重洗矿副产物 |
-| **电路 6** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 离心 | 放射性重矿（铀、钍、钚系）与稀土 | 6 倍 + 精细离心重金属 |
-| **电路 8** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 电磁选矿 | 强磁性与顺磁性矿物（磁铁矿、铬、钛等） | 6~8 倍 + 电磁纯净粉 |
+| **Circuit 1** | Concassage ➜ Concassage ➜ Lavage | Production rapide de minerais métalliques de base (fer, cuivre, étain, etc.) | 5x produit principal + sous-produits |
+| **Circuit 2** | Concassage ➜ Concassage ➜ Centrifugation | Minerais de métaux légers rares de haute valeur associés | 5x produit principal + sous-produits centrifugés purs |
+| **Circuit 3** | Concassage ➜ Lavage ➜ Séparation thermique ➜ Concassage | Minerais réfractaires à haute température, minerais de métaux précieux (platine, or, argent, etc.) | 5-6x + poudre de métal pur |
+| **Circuit 4** | Concassage ➜ Séparation thermique ➜ Concassage | Sulfures et minerais complexes fortement disséminés | 5x + sous-produits de séparation thermique spéciaux |
+| **Circuit 5** | Concassage ➜ Lavage ➜ Concassage ➜ Lavage | Minerais de terres rares et minerais de sels solubles en plusieurs étapes | 6x + sous-produits de double lavage |
+| **Circuit 6** | Concassage ➜ Lavage ➜ Concassage ➜ Centrifugation | Minerais lourds radioactifs (uranium, thorium, plutonium) et terres rares | 6x + métaux lourds centrifugés fins |
+| **Circuit 8** | Concassage ➜ Lavage ➜ Concassage ➜ Séparation électromagnétique | Minéraux ferromagnétiques et paramagnétiques (magnétite, chrome, titane, etc.) | 6-8x + poudre pure électromagnétique |

@@ -1,48 +1,47 @@
-# AE2 深度集成与样板总成 Plus 系统
+﻿# AE2 Tiefenintegration und Muster-Baugruppe Plus System
 
-GTECore 为应用能源 2 (Applied Energistics 2) 与 GregTech 多方块结构之间搭建了极其强大的直接数据互联桥梁。
+GTECore baut eine äußerst leistungsfähige direkte Datenverbindung zwischen Applied Energistics 2 (AE2) und den GregTech-Multiblockstrukturen auf.
 
 ---
 
-## 🧩 ME 样板总成 Plus (`me_pattern_buffer_plus`)
+## 🧩 ME Muster-Baugruppe Plus (`me_pattern_buffer_plus`)
 
-在传统科技模组中，将 AE2 样板供应器连接到多方块机器通常面临**槽位不足、流体与物品无法混合输出、样板难以多机共享**的痛点。
+In traditionellen Tech-Mods ist es oft problematisch, AE2-Muster-Lieferanten mit Multiblock-Maschinen zu verbinden, da es an **Slots mangelt, Flüssigkeiten und Gegenstände nicht gemischt ausgegeben werden können und Muster schwer über mehrere Maschinen geteilt werden können**.
 
-GTECore 研发的 **ME 样板总成 Plus** 彻底解决了这一问题：
+Die von GTECore entwickelte **ME Muster-Baugruppe Plus** löst dieses Problem vollständig:
 
 ```mermaid
 graph TD
-    A[AE2 ME 网络] --> B[ME 样板总成 Plus 主机<br/>81个样板槽位 / 共享库存 / 可编程存储]
-    B -->|闪存 Datastick 绑定| C[ME 样板总成镜像 Plus #1<br/>连接在 多方块机器 A]
-    B -->|闪存 Datastick 绑定| D[ME 样板总成镜像 Plus #2<br/>连接在 多方块机器 B]
-    B -->|闪存 Datastick 绑定| E[ME 样板总成镜像 Plus #3<br/>连接在 多方块机器 C]
+    A[AE2 ME Netzwerk] --> B[ME Muster-Baugruppe Plus Host<br/>81 Musterslots / Geteiltes Inventar / Programmierbarer Speicher]
+    B -->|Datastick-Bindung| C[ME Muster-Baugruppe Spiegel Plus #1<br/>Verbunden mit Multiblock-Maschine A]
+    B -->|Datastick-Bindung| D[ME Muster-Baugruppe Spiegel Plus #2<br/>Verbunden mit Multiblock-Maschine B]
+    B -->|Datastick-Bindung| E[ME Muster-Baugruppe Spiegel Plus #3<br/>Verbunden mit Multiblock-Maschine C]
 ```
 
-### 核心特性
-1. **海量样板容量**：单个总成主机拥有 **81 个样板槽位**（相当于 9 个标准 AE2 样板供应器的总和）。
-2. **全能仓室能力**：同时具备 `IMPORT_ITEMS`、`IMPORT_FLUIDS`、`EXPORT_ITEMS`、`EXPORT_FLUIDS` 能力，支持流体与物品同仓混合交互。
-3. **可编程存储支持**：内部集成 Programmable Storage 机制，支持复杂配方精准投料与缓存。
+### Kernfunktionen
+1. **Große Musterkapazität**: Ein einzelner Baugruppen-Host verfügt über **81 Musterslots** (entspricht der Summe von 9 Standard-AE2-Muster-Lieferanten).
+2. **Allround-Hatch-Fähigkeiten**: Unterstützt gleichzeitig `IMPORT_ITEMS`, `IMPORT_FLUIDS`, `EXPORT_ITEMS` und `EXPORT_FLUIDS` für gemischte Interaktion von Flüssigkeiten und Gegenständen im selben Hatch.
+3. **Unterstützung für programmierbaren Speicher**: Integriert den Programmable-Storage-Mechanismus für präzise Zuführung und Caching komplexer Rezepte.
 
 ---
 
-## 🪞 ME 样板总成镜像 Plus (`me_pattern_buffer_proxy_plus`)
+## 🪞 ME Muster-Baugruppe Spiegel Plus (`me_pattern_buffer_proxy_plus`)
 
-**样板总成镜像 Plus** 是一种革命性的分布式自动化结构部件：
+**ME Muster-Baugruppe Spiegel Plus** ist ein revolutionäres verteiltes Automatisierungsstrukturteil:
 
-### 工作原理与跨机器共享
-- 将镜像总成安装在任意多方块机器的仓室位置。
-- 手持 **闪存 (Datastick)** 右键主 **ME 样板总成 Plus** 读取坐标，然后右键 **样板总成镜像 Plus** 进行绑定。
-- **所有绑定的镜像将实时共享主总成内放置的所有 81 个样板**！
-- 当 AE2 网络发起自动化合成任务时，网络会自动负载均衡分配给所有空闲的镜像机器并行开工！
+### Funktionsweise und maschinenübergreifende Freigabe
+- Installieren Sie die Spiegel-Baugruppe an einer Hatch-Position einer beliebigen Multiblock-Maschine.
+- Halten Sie einen **Datastick** in der Hand, klicken Sie mit der rechten Maustaste auf die Haupt-**ME Muster-Baugruppe Plus**, um die Koordinaten zu lesen, und klicken Sie dann mit der rechten Maustaste auf die **Muster-Baugruppe Spiegel Plus**, um sie zu binden.
+- **Alle gebundenen Spiegel teilen in Echtzeit alle 81 Muster, die in der Haupt-Baugruppe platziert sind**!
+- Wenn das AE2-Netzwerk eine automatisierte Herstellungsaufgabe startet, verteilt das Netzwerk die Last automatisch auf alle freien Spiegel-Maschinen, die parallel arbeiten!
 
-### Jade 悬浮状态显示
-对准样板总成或镜像时，Jade 会自动显示：
-- 主总成：`已连接镜像数量: X`
-- 镜像部件：`已绑定至 - X: ..., Y: ..., Z: ...`
+### Jade-Schwebestatusanzeige
+- Haupt-Baugruppe: `Anzahl verbundener Spiegel: X`
+- Spiegel-Teil: `Gebunden an - X: ..., Y: ..., Z: ...`
 
 ---
 
-## 💨 ME 蒸汽仓 (`me_steam_hatch`)
+## 💨 ME Dampf-Hatch (`me_steam_hatch`)
 
-- **功能**：直接连接 AE2 流体网络与蒸汽多方块结构。
-- **作用**：蒸汽多方块结构无需外挂复杂的高速蒸汽管道与储罐，直接以最高吞吐量从 ME 网络中即时抽取蒸汽供能，杜绝管道传输瓶颈。
+- **Funktion**: Verbindet das AE2-Flüssigkeitsnetzwerk direkt mit Dampf-Multiblockstrukturen.
+- **Wirkung**: Dampf-Multiblockstrukturen benötigen keine komplexen Hochgeschwindigkeits-Dampfrohre und -tanks, sondern können Dampf direkt mit maximalem Durchsatz aus dem ME-Netzwerk beziehen, um Engpässe in der Rohrleitung zu vermeiden.

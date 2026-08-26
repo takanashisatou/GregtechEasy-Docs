@@ -1,48 +1,48 @@
-# AE2 深度集成与样板总成 Plus 系统
+﻿# Système d'intégration approfondie AE2 et d'assemblage de modèles Plus
 
-GTECore 为应用能源 2 (Applied Energistics 2) 与 GregTech 多方块结构之间搭建了极其强大的直接数据互联桥梁。
+GTECore établit un pont de données direct extrêmement puissant entre Applied Energistics 2 (AE2) et les structures multi-blocs de GregTech.
 
 ---
 
-## 🧩 ME 样板总成 Plus (`me_pattern_buffer_plus`)
+## 🧩 Assemblage de modèles ME Plus (`me_pattern_buffer_plus`)
 
-在传统科技模组中，将 AE2 样板供应器连接到多方块机器通常面临**槽位不足、流体与物品无法混合输出、样板难以多机共享**的痛点。
+Dans les mods technologiques traditionnels, connecter un fournisseur de modèles AE2 à une machine multi-blocs pose souvent des problèmes de **manque d'emplacements, d'impossibilité de mélanger fluides et objets en sortie, et de difficulté à partager les modèles entre plusieurs machines**.
 
-GTECore 研发的 **ME 样板总成 Plus** 彻底解决了这一问题：
+GTECore a développé l'**Assemblage de modèles ME Plus** pour résoudre complètement ce problème :
 
 ```mermaid
 graph TD
-    A[AE2 ME 网络] --> B[ME 样板总成 Plus 主机<br/>81个样板槽位 / 共享库存 / 可编程存储]
-    B -->|闪存 Datastick 绑定| C[ME 样板总成镜像 Plus #1<br/>连接在 多方块机器 A]
-    B -->|闪存 Datastick 绑定| D[ME 样板总成镜像 Plus #2<br/>连接在 多方块机器 B]
-    B -->|闪存 Datastick 绑定| E[ME 样板总成镜像 Plus #3<br/>连接在 多方块机器 C]
+    A[Réseau ME AE2] --> B[Hôte Assemblage de modèles ME Plus<br/>81 emplacements de modèles / inventaire partagé / stockage programmable]
+    B -->|Liaison Datastick flash| C[Miroir Assemblage de modèles ME Plus #1<br/>Connecté à la machine multi-blocs A]
+    B -->|Liaison Datastick flash| D[Miroir Assemblage de modèles ME Plus #2<br/>Connecté à la machine multi-blocs B]
+    B -->|Liaison Datastick flash| E[Miroir Assemblage de modèles ME Plus #3<br/>Connecté à la machine multi-blocs C]
 ```
 
-### 核心特性
-1. **海量样板容量**：单个总成主机拥有 **81 个样板槽位**（相当于 9 个标准 AE2 样板供应器的总和）。
-2. **全能仓室能力**：同时具备 `IMPORT_ITEMS`、`IMPORT_FLUIDS`、`EXPORT_ITEMS`、`EXPORT_FLUIDS` 能力，支持流体与物品同仓混合交互。
-3. **可编程存储支持**：内部集成 Programmable Storage 机制，支持复杂配方精准投料与缓存。
+### Caractéristiques principales
+1. **Capacité de modèles massive** : Un seul hôte d'assemblage possède **81 emplacements de modèles** (équivalent à la somme de 9 fournisseurs de modèles AE2 standard).
+2. **Capacité de compartiment universel** : Dispose simultanément des capacités `IMPORT_ITEMS`, `IMPORT_FLUIDS`, `EXPORT_ITEMS`, `EXPORT_FLUIDS`, permettant une interaction mixte fluides et objets dans le même compartiment.
+3. **Support du stockage programmable** : Intègre le mécanisme de stockage programmable en interne, prenant en charge l'alimentation précise et la mise en cache pour les recettes complexes.
 
 ---
 
-## 🪞 ME 样板总成镜像 Plus (`me_pattern_buffer_proxy_plus`)
+## 🪞 Miroir Assemblage de modèles ME Plus (`me_pattern_buffer_proxy_plus`)
 
-**样板总成镜像 Plus** 是一种革命性的分布式自动化结构部件：
+Le **Miroir Assemblage de modèles ME Plus** est un composant structurel d'automatisation distribuée révolutionnaire :
 
-### 工作原理与跨机器共享
-- 将镜像总成安装在任意多方块机器的仓室位置。
-- 手持 **闪存 (Datastick)** 右键主 **ME 样板总成 Plus** 读取坐标，然后右键 **样板总成镜像 Plus** 进行绑定。
-- **所有绑定的镜像将实时共享主总成内放置的所有 81 个样板**！
-- 当 AE2 网络发起自动化合成任务时，网络会自动负载均衡分配给所有空闲的镜像机器并行开工！
+### Principe de fonctionnement et partage entre machines
+- Installez le miroir d'assemblage à l'emplacement de compartiment de n'importe quelle machine multi-blocs.
+- Tenez un **Datastick (flash)** en main, faites un clic droit sur l'**Assemblage de modèles ME Plus** principal pour lire les coordonnées, puis faites un clic droit sur le **Miroir Assemblage de modèles ME Plus** pour le lier.
+- **Tous les miroirs liés partageront en temps réel les 81 modèles placés dans l'assemblage principal** !
+- Lorsque le réseau AE2 lance une tâche d'automatisation de synthèse, le réseau équilibre automatiquement la charge et répartit les tâches entre toutes les machines miroirs inactives pour un fonctionnement parallèle !
 
-### Jade 悬浮状态显示
-对准样板总成或镜像时，Jade 会自动显示：
-- 主总成：`已连接镜像数量: X`
-- 镜像部件：`已绑定至 - X: ..., Y: ..., Z: ...`
+### Affichage d'état en survol Jade
+En pointant sur l'assemblage de modèles ou le miroir, Jade affiche automatiquement :
+- Assemblage principal : `Nombre de miroirs connectés : X`
+- Composant miroir : `Lié à - X : ..., Y : ..., Z : ...`
 
 ---
 
-## 💨 ME 蒸汽仓 (`me_steam_hatch`)
+## 💨 Compartiment vapeur ME (`me_steam_hatch`)
 
-- **功能**：直接连接 AE2 流体网络与蒸汽多方块结构。
-- **作用**：蒸汽多方块结构无需外挂复杂的高速蒸汽管道与储罐，直接以最高吞吐量从 ME 网络中即时抽取蒸汽供能，杜绝管道传输瓶颈。
+- **Fonction** : Connecte directement le réseau de fluides AE2 aux structures multi-blocs à vapeur.
+- **Rôle** : Les structures multi-blocs à vapeur n'ont plus besoin de tuyaux et réservoirs à vapeur haute vitesse complexes externes ; elles peuvent extraire instantanément la vapeur du réseau ME avec un débit maximal pour l'alimentation, éliminant ainsi les goulots d'étranglement de transmission par tuyaux.

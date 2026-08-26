@@ -1,73 +1,73 @@
-# GregTech Easy (GTE) 官方文档
+﻿# Documentation officielle de GregTech Easy (GTE)
 
-欢迎查阅 **GregTech Easy (GTE)** 整合包官方全方位指南！
+Bienvenue dans le guide complet officiel du pack de mods **GregTech Easy (GTE)** !
 
-GTE 是一个以 **“简单、好玩、有趣、耗时短”** 为核心理念的现代 Minecraft 1.20.1 整合包。
+GTE est un pack de mods moderne pour Minecraft 1.20.1, conçu autour des principes **« simple, amusant, intéressant, et rapide »**.
 
 ---
 
-## ⚡ 快速跳转索引
+## ⚡ Index de navigation rapide
 
 <div class="grid cards" markdown>
 
--   :material-download: __[玩家与整合包指南](download-and-play/lazy-pack.md)__
+-   :material-download: __[Guide du joueur et du pack](download-and-play/lazy-pack.md)__
 
     ---
 
-    下载开箱即用的 **0 编译完整懒人包**、CurseForge 规范包与服务端，了解 **Java 21** 运行环境配置与启动器导入教程。
+    Téléchargez le **pack complet prêt à l'emploi sans compilation**, le pack standard CurseForge et le serveur, et découvrez la configuration de l'environnement d'exécution **Java 21** ainsi que le tutoriel d'importation dans le lanceur.
 
-    [:octicons-arrow-right-24: 立即前往](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: Aller directement](download-and-play/lazy-pack.md)
 
--   :material-chip: __[GTECore 核心模组详解](gtecore/overview.md)__
-
-    ---
-
-    深入了解 **阴阳八卦炼仙炉**、**四象阵法**、**矿石处理中心**、**奇迹之环**、**超弦与阴阳电路**、**AE2 样板总成 Plus** 等核心内容。
-
-    [:octicons-arrow-right-24: 立即前往](gtecore/overview.md)
-
--   :material-cog: __[GTM Reborn 模组分支](gtm-reborn/index.md)__
+-   :material-chip: __[Détails du mod principal GTECore](gtecore/overview.md)__
 
     ---
 
-    了解 `satou` 分支带来的多安培配方、批处理模式、1t Subtick 超频、GameTest 自动化测试以及流体区间输出特性。
+    Explorez en profondeur le **Fourneau de raffinage Yin-Yang Bagua**, les **Formations des Quatre Symboles**, le **Centre de traitement du minerai**, l'**Anneau des Merveilles**, les **Circuits Supercordes et Yin-Yang**, le **AE2 Sample Assembly Plus**, et bien plus encore.
 
-    [:octicons-arrow-right-24: 立即前往](gtm-reborn/index.md)
+    [:octicons-arrow-right-24: Aller directement](gtecore/overview.md)
 
--   :material-code-tags: __[KubeJS 魔改与开发工具](kubejs/scripting-guide.md)__
-
-    ---
-
-    学习如何在 KubeJS 中注册材料、编写配方，并使用内置的 `/dumpmultiblock` 木斧框选工具一键导出多方块结构代码。
-
-    [:octicons-arrow-right-24: 立即前往](kubejs/scripting-guide.md)
-
--   :material-hammer-wrench: __[开发者与防崩溃实战手册](development/quick-start.md)__
+-   :material-cog: __[Branche du mod GTM Reborn](gtm-reborn/index.md)__
 
     ---
 
-    掌握 `run_game.bat` 免启动器秒级启动、`link_to_launcher.bat` 零复制目录映射，以及杜绝 Mixin Accessor 崩溃的黄金守则。
+    Découvrez les fonctionnalités de la branche `satou` : recettes multi-ampères, mode par lots, overclocking 1t Subtick, tests automatisés GameTest et sortie de fluide par intervalles.
 
-    [:octicons-arrow-right-24: 立即前往](development/quick-start.md)
+    [:octicons-arrow-right-24: Aller directement](gtm-reborn/index.md)
 
--   :material-robot: __[CI/CD 流水线与 AI 翻译](ci-cd-and-translation/ci-pipeline.md)__
+-   :material-code-tags: __[KubeJS : personnalisation et outils de développement](kubejs/scripting-guide.md)__
 
     ---
 
-    了解基于 GitHub Actions 的自动化多模块并行构建、Packwiz 打包、Maven 发布以及 `opencode_translate.py` AI 国际化脚本。
+    Apprenez à enregistrer des matériaux, écrire des recettes dans KubeJS, et utilisez l'outil intégré `/dumpmultiblock` (hache en bois) pour sélectionner et exporter en un clic le code de structure des machines multi-blocs.
 
-    [:octicons-arrow-right-24: 立即前往](ci-cd-and-translation/ci-pipeline.md)
+    [:octicons-arrow-right-24: Aller directement](kubejs/scripting-guide.md)
+
+-   :material-hammer-wrench: __[Manuel pratique pour développeurs et anti-crash](development/quick-start.md)__
+
+    ---
+
+    Maîtrisez le lancement en quelques secondes sans lanceur avec `run_game.bat`, le mappage de répertoire sans copie avec `link_to_launcher.bat`, et la règle d'or pour éviter les crashs liés aux Mixin Accessor.
+
+    [:octicons-arrow-right-24: Aller directement](development/quick-start.md)
+
+-   :material-robot: __[Pipeline CI/CD et traduction IA](ci-cd-and-translation/ci-pipeline.md)__
+
+    ---
+
+    Comprenez la construction parallèle automatisée multi-modules basée sur GitHub Actions, l'empaquetage Packwiz, la publication Maven et le script d'internationalisation IA `opencode_translate.py`.
+
+    [:octicons-arrow-right-24: Aller directement](ci-cd-and-translation/ci-pipeline.md)
 
 </div>
 
 ---
 
-## 🛠️ 项目基础信息
+## 🛠️ Informations de base du projet
 
-| 配置项 | 说明 |
+| Élément de configuration | Description |
 | :--- | :--- |
-| **项目名称** | `GregtechEasy` (`gte-multi`) |
-| **运行与编译工具链** | **JDK 21**（强制使用 Java 21 Toolchain，所有子模块严格统一） |
-| **游戏版本** | Minecraft `1.20.1` (Forge `47.3.0` / `47.4.4`) |
-| **开源许可证** | LGPL-3.0 / MIT |
-| **默认分支** | 主仓库 `main` / `master`，GTM-Reborn `satou`，GT-- `kotlin`，GTECore `master` |
+| **Nom du projet** | `GregtechEasy` (`gte-multi`) |
+| **Chaîne d'outils d'exécution et de compilation** | **JDK 21** (Toolchain Java 21 obligatoire, tous les sous-modules strictement unifiés) |
+| **Version du jeu** | Minecraft `1.20.1` (Forge `47.3.0` / `47.4.4`) |
+| **Licence open source** | LGPL-3.0 / MIT |
+| **Branches par défaut** | Dépôt principal `main` / `master`, GTM-Reborn `satou`, GT-- `kotlin`, GTECore `master` |

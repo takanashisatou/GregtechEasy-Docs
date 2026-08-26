@@ -1,67 +1,67 @@
-# CurseForge 导入与服务端部署指南
+﻿# Guía de importación de CurseForge e implementación de servidor
 
-除了免编译懒人包外，GTE 提供了基于 **Packwiz** 自动构建的 CurseForge 规范包与服务端包。
-
----
-
-## 📦 CurseForge 规范包导入
-
-CurseForge 格式整合包文件名为 `GTE-CurseForge-<版本号>.zip`。
-
-### 客户端导入方法
-
-=== "PCL2 / HMCL 导入"
-
-    1. 打开启动器，选择 **安装新游戏版本 / 导入整合包**。
-    2. 选择下载好的 `GTE-CurseForge-<版本号>.zip` 文件。
-    3. 启动器将自动解析 `manifest.json` 并高速并发下载依赖模组。
-    4. 导入完成后，进入版本设置将 Java 运行时指定为 **Java 21**。
-    5. 设置运行内存（推荐 8GB ~ 12GB），启动游戏。
-
-=== "CurseForge App 导入"
-
-    1. 打开 CurseForge App 客户端。
-    2. 点击左侧 **Minecraft** 图标，进入 **My Modpacks**。
-    3. 点击右上角设置菜单中的 **Create Custom Profile** ➜ **Import**。
-    4. 选择 `GTE-CurseForge-<版本号>.zip`，等待自动下载并完成安装。
-
-=== "Prism Launcher 导入"
-
-    1. 点击 **Add Instance (添加实例)** ➜ **Import (导入)**。
-    2. 浏览并选中 `GTE-CurseForge-<版本号>.zip`。
-    3. 实例创建后，在实例属性中将 Java 设置为 **JDK 21** 路径。
+Además del paquete de instalación sin compilación, GTE proporciona un paquete estándar de CurseForge y un paquete de servidor construidos automáticamente con **Packwiz**.
 
 ---
 
-## 🖥️ 服务端部署指南
+## 📦 Importación del paquete estándar de CurseForge
 
-服务端文件包名为 `GTE-Server-<版本号>.zip`。
+El archivo del paquete de mods en formato CurseForge se llama `GTE-CurseForge-<versión>.zip`.
 
-### 1. 环境准备
-- 操作系统：Linux (Ubuntu 22.04+ / Debian 12+) 或 Windows Server 2022+
-- **JDK 21 必须就绪**：在终端执行 `java -version` 确认输出为 `openjdk version "21..."`。
-- 推荐配置：4 核心 CPU 以上，16GB 物理内存（给 Minecraft 服务端分配 10G ~ 14G）。
+### Métodos de importación en el cliente
 
-### 2. 部署步骤
+=== "Importación con PCL2 / HMCL"
+
+    1. Abre el lanzador y selecciona **Instalar nueva versión del juego / Importar paquete de mods**.
+    2. Selecciona el archivo `GTE-CurseForge-<versión>.zip` descargado.
+    3. El lanzador analizará automáticamente `manifest.json` y descargará los mods dependientes de forma concurrente a alta velocidad.
+    4. Después de la importación, ve a la configuración de la versión y especifica el runtime de Java como **Java 21**.
+    5. Configura la memoria (se recomienda 8GB ~ 12GB) e inicia el juego.
+
+=== "Importación con la aplicación CurseForge"
+
+    1. Abre la aplicación CurseForge.
+    2. Haz clic en el icono **Minecraft** a la izquierda y entra en **My Modpacks**.
+    3. En el menú de configuración de la esquina superior derecha, haz clic en **Create Custom Profile** ➜ **Import**.
+    4. Selecciona `GTE-CurseForge-<versión>.zip` y espera a que se descargue e instale automáticamente.
+
+=== "Importación con Prism Launcher"
+
+    1. Haz clic en **Add Instance (Añadir instancia)** ➜ **Import (Importar)**.
+    2. Navega y selecciona `GTE-CurseForge-<versión>.zip`.
+    3. Después de crear la instancia, en sus propiedades establece la ruta de Java como **JDK 21**.
+
+---
+
+## 🖥️ Guía de implementación del servidor
+
+El archivo del paquete del servidor se llama `GTE-Server-<versión>.zip`.
+
+### 1. Preparación del entorno
+- Sistema operativo: Linux (Ubuntu 22.04+ / Debian 12+) o Windows Server 2022+
+- **JDK 21 debe estar listo**: ejecuta `java -version` en la terminal y confirma que la salida sea `openjdk version "21..."`.
+- Configuración recomendada: CPU de 4 núcleos o superior, 16GB de memoria física (asigna 10G ~ 14G al servidor de Minecraft).
+
+### 2. Pasos de implementación
 
 ```bash
-# 1. 创建服务端工作目录
+# 1. Crear el directorio de trabajo del servidor
 mkdir -p /opt/gte-server && cd /opt/gte-server
 
-# 2. 解压服务端包
+# 2. Descomprimir el paquete del servidor
 unzip GTE-Server-*.zip -d .
 
-# 3. 安装 Forge 1.20.1-47.3.0 / 47.4.4 服务端核心 (若未预装)
-# 运行安装脚本下载 minecraft_server 与 forge 库
+# 3. Instalar el núcleo del servidor Forge 1.20.1-47.3.0 / 47.4.4 (si no está preinstalado)
+# Ejecutar el script de instalación para descargar minecraft_server y las librerías de forge
 java -jar forge-1.20.1-*-installer.jar --installServer
 
-# 4. 同意 Minecraft EULA 协议
+# 4. Aceptar el acuerdo EULA de Minecraft
 echo "eula=true" > eula.txt
 ```
 
-### 3. 启动脚本配置 (`run_server.sh` / `run_server.bat`)
+### 3. Configuración del script de inicio (`run_server.sh` / `run_server.bat`)
 
-推荐使用 Aikar 优化参数启动服务端：
+Se recomienda usar los parámetros de optimización de Aikar para iniciar el servidor:
 
 === "Linux (`run_server.sh`)"
 
@@ -96,11 +96,11 @@ echo "eula=true" > eula.txt
 
 ---
 
-## ⚙️ 常见问题排查 (FAQ)
+## ⚙️ Solución de problemas comunes (FAQ)
 
-### Q1: 启动服务端提示 `UnsupportedClassVersionError: ... class file version 65.0`
-> **原因**：服务端运行时的 Java 版本低于 Java 21（版本 65.0 代表 JDK 21）。  
-> **解决**：在 Linux 上通过 `sudo update-alternatives --config java` 切换到 OpenJDK 21。
+### P1: Al iniciar el servidor aparece `UnsupportedClassVersionError: ... class file version 65.0`
+> **Causa**: La versión de Java en el servidor es inferior a Java 21 (la versión 65.0 corresponde a JDK 21).  
+> **Solución**: En Linux, cambia a OpenJDK 21 con `sudo update-alternatives --config java`.
 
-### Q2: 玩家进入服务器提示模组列表不匹配
-> **解决**：请确保客户端版本号与服务端版本号完全一致。每次主工程 CI 构建均会同步生成配套的 Client 与 Server 构件。
+### P2: Los jugadores reciben un mensaje de que la lista de mods no coincide al entrar al servidor
+> **Solución**: Asegúrate de que la versión del cliente sea exactamente la misma que la del servidor. Cada compilación CI del proyecto principal genera simultáneamente los artefactos de Cliente y Servidor correspondientes.

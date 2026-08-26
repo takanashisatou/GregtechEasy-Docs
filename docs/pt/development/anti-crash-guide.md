@@ -1,88 +1,88 @@
-# 防崩溃开发守则与实战排错经验库 (Anti-Crash Guide)
+﻿# 防崩溃开发守则与实战排错经验库 (Guia Anti-Crash)
 
-在多模块、多 Classloader 及带有复杂 Mixin 字节码增强的 Minecraft 开发环境中，一些不经意的写法会导致灾难性的运行时崩溃。
+Em ambientes de desenvolvimento Minecraft com múltiplos módulos, múltiplos Classloaders e complexo aprimoramento de bytecode Mixin, algumas práticas descuidadas podem levar a falhas catastróficas em tempo de execução.
 
-本手册总结了 GTE 工程实战中沉淀出的 **五大防崩溃铁律** 与 **高频崩溃排错经验库**。
+Este manual resume as **cinco regras de ouro anti-crash** e a **biblioteca de experiência de solução de problemas de falhas frequentes** acumuladas na prática do projeto GTE.
 
 ---
 
-## 🛡️ 五大防崩溃开发铁律 (CRITICAL)
+## 🛡️ As Cinco Regras de Ouro do Desenvolvimento Anti-Crash (CRÍTICO)
 
-### 铁律 1：严禁强转 Mixin Accessor 接口 (Never Force-Cast Accessors)
+### Regra de Ouro 1: Proibido Forçar Cast de Interfaces Mixin Accessor (Nunca Force-Cast Accessors)
 
-- **崩溃根源**：在多模块环境或 Addon 加载过程中，Minecraft 原生类（如 `BlockBehaviour.Properties`）被早期 Classloader 实例化，此时 Mixin 接口可能尚未完成字节码编织，强转将直接触发 `ClassCastException`！
-- **错误写法（严禁）**：
+- **Causa raiz da falha**: Em ambientes multi-módulo ou durante o carregamento de Addons, classes nativas do Minecraft (como `BlockBehaviour.Properties`) são instanciadas pelo Classloader inicial. Nesse momento, as interfaces Mixin podem ainda não ter passado pela tecelagem de bytecode, e o cast forçado disparará diretamente uma `ClassCastException`!
+- **Escrita errada (proibida)**:
   ```java
-  // 错误！早期类加载时必崩 ClassCastException
+  // Errado! Durante o carregamento inicial de classes, causará ClassCastException
   int destroyTime = ((BlockPropertiesAccessor) props).getDestroyTime();
   ```
-- **正确写法（安全守卫）**：
+- **Escrita correta (com guarda de segurança)**:
   ```java
-  // 正确：使用 instanceof 模式守卫
+  // Correto: usar guarda de padrão instanceof
   if (props instanceof BlockPropertiesAccessor acc) {
       newProps.destroyTime(acc.getDestroyTime());
   }
   ```
-- **更佳方案**：优先使用 Vanilla/Forge 原生 API（例如通过 `property.getPossibleValues()` 获取整数范围，而不是强转 `IntegerPropertyAccessor`）。
+- **Melhor solução**: Priorizar APIs nativas Vanilla/Forge (por exemplo, obter o intervalo de inteiros via `property.getPossibleValues()` em vez de forçar cast para `IntegerPropertyAccessor`).
 
 ---
 
-### 铁律 2：禁止将生产环境优化/着色器 Mod 放入开发环境
+### Regra de Ouro 2: Proibido Colocar Mods de Otimização/Shaders de Produção no Ambiente de Desenvolvimento
 
-- **崩溃根源**：`Oculus`、`Embeddium`、`ModernFix`、`ModernUI` 等生产环境优化 Mod 内置了硬编码的 SRG 混淆 Mixin 映射（如 `f_117950_`, `m_91302_`）。而 Gradle `runClient` 开发环境运行在反混淆的 Mojang 映射下，直接导致 `InvalidMixinException` 崩溃。
-- **治理原则**：将优化模组放入 `gte/overrides/mods/`（供普通启动器使用），严禁加入 `modules/gte-dev-runtime` 的构建依赖。
-
----
-
-### 铁律 3：开发环境依赖必须统一使用 `modLocalRuntime`
-
-- **崩溃根源**：普通的 `localRuntime` 或 `fileTree` 不会触发 ModDevGradle 的反混淆重映射器（Remapper），导致运行时找不到符号或混淆名称断裂。
-- **治理原则**：在 `modules/gte-dev-runtime/build.gradle` 中，必须声明 `modLocalRuntime(...)` 并配置 `obfuscation.createRemappingConfiguration(configurations.localRuntime)`。
+- **Causa raiz da falha**: Mods de otimização de produção como `Oculus`, `Embeddium`, `ModernFix`, `ModernUI` possuem mapeamentos Mixin SRG hardcoded (como `f_117950_`, `m_91302_`). No entanto, o ambiente de desenvolvimento Gradle `runClient` roda sob mapeamentos Mojang desofuscados, causando diretamente a falha `InvalidMixinException`.
+- **Princípio de governança**: Colocar mods de otimização em `gte/overrides/mods/` (para uso com lançadores comuns) e proibir sua inclusão nas dependências de build de `modules/gte-dev-runtime`.
 
 ---
 
-### 铁律 4：Gradle 增量编译死锁 (`NoSuchFileException`) 解决法
+### Regra de Ouro 3: Dependências do Ambiente de Desenvolvimento Devem Usar Uniformemente `modLocalRuntime`
 
-- **现象**：执行 `compileJava` 或 `build` 时提示 `NoSuchFileException: ...\build\classes\java\main\...` 或 `Unable to delete directory 'build'`。
-- **根因**：后台残留的 Gradle Daemon 守护进程占用了 Windows 文件锁。
-- **标准解法**：
+- **Causa raiz da falha**: `localRuntime` comum ou `fileTree` não acionam o remapeador (Remapper) de desofuscação do ModDevGradle, resultando em símbolos não encontrados ou nomes de ofuscação quebrados em tempo de execução.
+- **Princípio de governança**: Em `modules/gte-dev-runtime/build.gradle`, deve-se declarar `modLocalRuntime(...)` e configurar `obfuscation.createRemappingConfiguration(configurations.localRuntime)`.
+
+---
+
+### Regra de Ouro 4: Solução para Deadlock de Compilação Incremental do Gradle (`NoSuchFileException`)
+
+- **Sintoma**: Ao executar `compileJava` ou `build`, aparece `NoSuchFileException: ...\build\classes\java\main\...` ou `Unable to delete directory 'build'`.
+- **Causa raiz**: Processos Gradle Daemon residuais em segundo plano ocupam travas de arquivo do Windows.
+- **Solução padrão**:
   ```powershell
-  # 1. 彻底终止后台残留 Gradle 守护进程
+  # 1. Encerrar completamente os processos Gradle Daemon residuais em segundo plano
   .\gradlew.bat --stop
 
-  # 2. 删除冲突的 build 缓存目录后重新编译
+  # 2. Excluir os diretórios de cache de build conflitantes e recompilar
   Remove-Item -Recurse -Force modules/*/build
   .\gradlew.bat compileJava
   ```
 
 ---
 
-### 铁律 5：修改底层 `gtm-reborn` 后的强制联动自检
+### Regra de Ouro 5: Auto-Verificação Obrigatória de Integração Após Modificar o `gtm-reborn` Subjacente
 
-当修改了 `gtm-reborn` 的基础机器、材料系统、RecipeType、配方条件或 Capability 时，必须依次执行以下三步检查：
-1. **检查 `gtecore` 编译完整性**：运行 `.\gradlew.bat :modules:gtecore:compileJava`。
-2. **检查 KubeJS 联动脚本**：检查 `startup_scripts/` 中的 GTCEu 注册事件与 `server_scripts/` 中的 Machine 引用。
-3. **检查 FTB Quests 物品引用**：检查任务书是否引用了被重命名或移除的物品 ID。
+Ao modificar máquinas base, sistema de materiais, RecipeType, condições de receita ou Capabilities do `gtm-reborn`, é obrigatório executar as três etapas de verificação a seguir em ordem:
+1. **Verificar a integridade de compilação do `gtecore`**: Executar `.\gradlew.bat :modules:gtecore:compileJava`.
+2. **Verificar scripts de integração KubeJS**: Verificar os eventos de registro GTCEu em `startup_scripts/` e as referências de Machine em `server_scripts/`.
+3. **Verificar referências de itens no FTB Quests**: Verificar se o livro de missões referencia IDs de itens que foram renomeados ou removidos.
 
 ---
 
-## 📚 真实崩溃复盘与修复配方库 (Post-Mortems)
+## 📚 Biblioteca de Revisão de Falhas Reais e Receitas de Correção (Post-Mortems)
 
-### 案例 1: `GTBlocks.copy` / 矿石注册报 `ClassCastException`
-- **错误堆栈**：`BlockBehaviour$Properties cannot be cast to BlockPropertiesAccessor`
-- **修复方案**：使用 `if (props instanceof BlockPropertiesAccessor acc)` 保护所有属性复制逻辑。
+### Caso 1: `GTBlocks.copy` / Registro de Minérios com `ClassCastException`
+- **Stack trace de erro**: `BlockBehaviour$Properties cannot be cast to BlockPropertiesAccessor`
+- **Solução**: Usar `if (props instanceof BlockPropertiesAccessor acc)` para proteger toda a lógica de cópia de propriedades.
 
-### 案例 2: `GrowingPlantRender` 强转 `IntegerPropertyAccessor` 崩溃
-- **错误堆栈**：`IntegerProperty cannot be cast to IntegerPropertyAccessor`
-- **修复方案**：替换为原生流式操作：
+### Caso 2: Falha de Cast Forçado de `GrowingPlantRender` para `IntegerPropertyAccessor`
+- **Stack trace de erro**: `IntegerProperty cannot be cast to IntegerPropertyAccessor`
+- **Solução**: Substituir por operação de stream nativa:
   ```java
   property.getPossibleValues().stream().min(Integer::compare).orElse(0);
   ```
 
-### 案例 3: `GregTechDatagen.initPre` 出现 `AssertionError`
-- **错误堆栈**：`AssertionError at RegistrateDataProviderAccessor.gtceu$getTypes()`
-- **修复方案**：`RegistrateDataProvider` 静态 Map 仅在 `--datagen` 参数下初始化，将调用包裹在 `try { ... } catch (Throwable ignored) { }` 中即可避免普通启动时报错。
+### Caso 3: `AssertionError` em `GregTechDatagen.initPre`
+- **Stack trace de erro**: `AssertionError at RegistrateDataProviderAccessor.gtceu$getTypes()`
+- **Solução**: O Map estático de `RegistrateDataProvider` só é inicializado sob o parâmetro `--datagen`. Envolver a chamada em `try { ... } catch (Throwable ignored) { }` evita o erro durante a inicialização normal.
 
-### 案例 4: `PonderPlugin` 缺失导致 `NoClassDefFoundError`
-- **错误堆栈**：`GTMachines.<clinit>` 抛出 `NoClassDefFoundError: PonderPlugin`，随后 Ponder 崩溃提示 `requires flywheel`
-- **修复方案**：在 `modules/gte-dev-runtime/build.gradle` 中同时引入 `modLocalRuntime(forge.ponder)` 与 `modLocalRuntime(forge.flywheel.forge)`。
+### Caso 4: `NoClassDefFoundError` devido à ausência de `PonderPlugin`
+- **Stack trace de erro**: `GTMachines.<clinit>` lança `NoClassDefFoundError: PonderPlugin`, seguido de falha do Ponder indicando `requires flywheel`
+- **Solução**: Em `modules/gte-dev-runtime/build.gradle`, incluir tanto `modLocalRuntime(forge.ponder)` quanto `modLocalRuntime(forge.flywheel.forge)`.

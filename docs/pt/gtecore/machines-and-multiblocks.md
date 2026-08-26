@@ -1,80 +1,80 @@
-# GTECore 多方块机器图鉴
+﻿# GTECore Guia de Máquinas Multibloco
 
-GTECore 针对科技线中后期繁琐的流水线堆叠，设计了大量兼具**超高并行能力**与**聚合生产逻辑**的多方块机器。
+O GTECore foi projetado para lidar com as complexas linhas de produção do meio ao fim do jogo tecnológico, oferecendo uma vasta gama de máquinas multibloco com **capacidade de processamento paralelo extremamente alta** e **lógica de produção agregada**.
 
 ---
 
-## 🏭 蒸汽时代大型多方块
+## 🏭 Grandes Multiblocos da Era do Vapor
 
-为解决蒸汽时代单机产能低下、占地冗余的问题，GTECore 引入了一系列大型蒸汽多方块，全部支持跨配方并行与大容量蒸汽吞吐：
+Para resolver os problemas de baixa produtividade e uso excessivo de espaço das máquinas individuais na Era do Vapor, o GTECore introduziu uma série de grandes multiblocos a vapor, todos com suporte a processamento paralelo entre receitas e grande capacidade de fluxo de vapor:
 
-| 机器名称 (Block ID) | 核心功能与配方类型 | 特性与优势 |
+| Nome da Máquina (ID do Bloco) | Função Principal e Tipos de Receita | Características e Vantagens |
 | :--- | :--- | :--- |
-| **大型蒸汽合金炉** (`gtceu:big_alloy`) | 合金冶炼 (`alloy_smelter`) | 早期高倍率合金生产，支持高压蒸汽 |
-| **大型蒸汽压缩机** (`gtceu:big_compressor`) | 压缩处理 (`compressor`) | 批量压制致密金属板与块 |
-| **大型蒸汽锻造锤** (`gtceu:big_forge_hammer`) | 锻造锤打粉/板 (`forge_hammer`) | 自动化板材与粗矿快速破碎 |
-| **大型蒸汽提取机** (`gtceu:big_steam_extractor`) | 橡胶/流体提取 (`extractor`) | 大规模提取树胶与工业流体 |
-| **简易蒸汽磨粉机** (`gtceu:steam_grinder_easy`) | 矿石磨粉 (`macerator`) | 早期矿物多倍处理 |
-| **简易蒸汽熔炼炉** (`gtceu:steam_oven_easy`) | 热解熔炼 (`pyrochlore_oven`) | 焦炭与木炭工业化大批量烧制 |
-| **蒸汽矿物处理厂** (`gtecore:steam_op`) | 综合矿石粉碎与精炼 | **10 亿 (1B) 并行**，所有配方 **1 tick** 执行完毕！支持任意输入输出仓室 |
+| **Grande Forno de Ligas a Vapor** (`gtceu:big_alloy`) | Fundição de ligas (`alloy_smelter`) | Produção de ligas em alta taxa no início do jogo, suporta vapor de alta pressão |
+| **Grande Compressor a Vapor** (`gtceu:big_compressor`) | Processamento de compressão (`compressor`) | Prensagem em massa de placas e blocos metálicos densos |
+| **Grande Martelo de Forja a Vapor** (`gtceu:big_forge_hammer`) | Martelo de forja para pó/placas (`forge_hammer`) | Automação de placas e trituração rápida de minério bruto |
+| **Grande Extrator a Vapor** (`gtceu:big_steam_extractor`) | Extração de borracha/fluidos (`extractor`) | Extração em larga escala de resinas e fluidos industriais |
+| **Moedor de Minério a Vapor Simples** (`gtceu:steam_grinder_easy`) | Moagem de minério (`macerator`) | Processamento múltiplo de minérios no início do jogo |
+| **Forno de Fusão a Vapor Simples** (`gtceu:steam_oven_easy`) | Fusão por pirólise (`pyrochlore_oven`) | Produção industrial em massa de coque e carvão vegetal |
+| **Planta de Processamento de Minério a Vapor** (`gtecore:steam_op`) | Trituração e refino integrado de minérios | **Paralelismo de 1 bilhão (1B)**, todas as receitas executadas em **1 tick**! Suporta qualquer compartimento de entrada/saída |
 
 ---
 
-## ⚡ 超级电气工业多方块
+## ⚡ Multiblocos Industriais Super Elétricos
 
-进入电力时代后，GTECore 提供了多合一与高阶加工中心：
+Ao entrar na era elétrica, o GTECore oferece centros de processamento integrados e de alta complexidade:
 
 ```mermaid
 graph LR
-    A[原料/粗矿/化学品] --> B[零件工厂 / 电路工厂]
-    A --> C[矿石综合处理中心 7种模式]
-    A --> D[综合石化工厂 / 脱硫塔]
-    B & C & D --> E[奇迹之环 1B并行免研究]
-    E --> F[终极科技物产与超弦/阴阳电路]
+    A[Matérias-primas / Minérios brutos / Produtos químicos] --> B[Fábrica de Componentes / Fábrica de Circuitos]
+    A --> C[Centro Integrado de Processamento de Minérios - 7 modos]
+    A --> D[Planta Petroquímica Integrada / Torre de Dessulfurização]
+    B & C & D --> E[Anel do Milagre - 1B paralelo sem pesquisa]
+    E --> F[Produtos tecnológicos supremos e circuitos de supercordas / Yin-Yang]
 ```
 
-### 1. 核心生产工厂
+### 1. Fábricas de Produção Principais
 
-- **§6零件工厂 (`gtceu:component_factory`)**：
-  - **定位**：一步到位生产马达、泵、活塞、机械臂、传送带、发光二极管等各类常用基础元件。
-  - **特性**：直接跳过繁琐的中间子工序，极速产出指定电压等级的标准工业配件。
-- **§6电路工厂 (`gtceu:circuit_factory`)**：
-  - **定位**：集成电路基板、芯片蚀刻、集成封装于一体。
-  - **特性**：支持跨配方并行仓，全面加速 ULV 到 MAX 全电压梯度的电路板生产。
-- **§6奇迹之环 (`gtceu:miracle_ring`)**：
-  - **定位**：工业奇迹终极装配设施。
-  - **特性**：拥有 **10 亿 (1B) 并行** 与 **1t Subtick 超频**，**无需进行任何科研/装配线研究**即可直接运行装配线配方！
-- **化学终结者 (`gtecore:chemistry_terminator`)**：
-  - **定位**：“颠覆了化学与物理的存在，代表着化学的终结”。
-  - **特性**：将繁复的十几步长链化学反应一键聚合，极速合成各种终极聚合物与酸类介质。
-- **十合一通用处理工厂 (`gtecore:ten_in_one`)**：
-  - **定位**：融合离心、电解、化学浸矿、聚合、高压反应等 10 大基础工序的万能集成箱。
+- **§6Fábrica de Componentes (`gtceu:component_factory`)**:
+  - **Função**: Produzir motores, bombas, pistões, braços mecânicos, correias transportadoras, diodos emissores de luz e outros componentes básicos comuns em uma única etapa.
+  - **Características**: Pula diretamente os subprocessos intermediários complicados, produzindo rapidamente peças industriais padrão da tensão especificada.
+- **§6Fábrica de Circuitos (`gtceu:circuit_factory`)**:
+  - **Função**: Integra substratos de circuitos integrados, gravação de chips e encapsulamento integrado.
+  - **Características**: Suporta compartimentos paralelos entre receitas, acelerando totalmente a produção de placas de circuito de ULV a MAX em toda a faixa de tensão.
+- **§6Anel do Milagre (`gtceu:miracle_ring`)**:
+  - **Função**: Instalação final de montagem de maravilhas industriais.
+  - **Características**: Possui **paralelismo de 1 bilhão (1B)** e **overclock de 1 tick Subtick**, **sem necessidade de qualquer pesquisa/estudo de linha de montagem** para executar receitas de linha de montagem diretamente!
+- **Terminador Químico (`gtecore:chemistry_terminator`)**:
+  - **Função**: "Subverte a existência da química e da física, representando o fim da química".
+  - **Características**: Agrega reações químicas complexas de várias etapas em um único clique, sintetizando rapidamente vários polímeros finais e meios ácidos.
+- **Fábrica de Processamento Universal Dez-em-Um (`gtecore:ten_in_one`)**:
+  - **Função**: Caixa integrada universal que combina 10 processos básicos, incluindo centrifugação, eletrólise, lixiviação química de minérios, polimerização e reação de alta pressão.
 
-### 2. 矿石与流体精炼体系
+### 2. Sistema de Refino de Minérios e Fluidos
 
-- **§6矿石综合处理中心 (`gtecore:ore_process_center`)**：
-  - 支持 **7 种编程电路模式**，实现不同产物导向的矿物 5~8 倍精炼（粉碎、洗矿、热离、离心、电磁选矿全集成），支持 1t Subtick 超频。
-- **综合石化工厂 (`gtecore:integrated_petrochemical_plant`)**：
-  - 整合原油分馏、催化裂化、重整、脱硫全链条，单机产出全部烃类轻质气与芳香烃。
-- **脱硫机 (`gtceu:desulfurization`)**：
-  - 快速净化各类重质含硫燃油，回收高纯度硫粉副产物。
-- **简易/进阶流体钻机 (`gtecore:easy_fluid_drilling_rig` / `not_hard_fluid_drilling_rig`)**：
-  - 自动抽汲基岩流体矿脉，永不枯竭，无需复杂管道勘探。
+- **§6Centro Integrado de Processamento de Minérios (`gtecore:ore_process_center`)**:
+  - Suporta **7 modos de circuito programável**, permitindo diferentes orientações de produtos com refino de minérios de 5 a 8 vezes (trituração, lavagem, separação térmica, centrifugação e separação eletromagnética totalmente integradas), com suporte a overclock de 1 tick Subtick.
+- **Planta Petroquímica Integrada (`gtecore:integrated_petrochemical_plant`)**:
+  - Integra toda a cadeia de destilação de petróleo bruto, craqueamento catalítico, reforma e dessulfurização, produzindo todos os gases leves de hidrocarbonetos e aromáticos em uma única máquina.
+- **Dessulfurizador (`gtceu:desulfurization`)**:
+  - Purifica rapidamente vários combustíveis pesados sulfurosos, recuperando subprodutos de enxofre de alta pureza.
+- **Sonda de Fluidos Simples/Avançada (`gtecore:easy_fluid_drilling_rig` / `not_hard_fluid_drilling_rig`)**:
+  - Extrai automaticamente veios de fluidos do leito rochoso, sem nunca esgotar, sem necessidade de exploração complexa de tubulações.
 
-### 3. 高端与超导线缆加工
+### 3. Processamento de Cabos de Alta Tensão e Supercondutores
 
-- **§6导线工厂 (`gtecore:wiremill_factory`)**：一键生产所有金属单股、双股、四股、八股、十六股导线及超导线缆。
-- **§6晶核中枢 (`gtecore:crystal_center`)**：规模化自动培育单晶硅柱、绿宝石、蓝宝石、充能赛克斯泰尔晶体。
-- **§6量子线擎 (`gtecore:quantum_cable_assembler`)**：专门用于高速制造量子光纤与超维能量传输线缆。
-- **§3星刃蚀刻仪 (`gtecore:starblade_etching_machine`)**：利用高能光束在极紫外/X射线波段刻蚀星系级微纳芯片。
+- **§6Fábrica de Fiação (`gtecore:wiremill_factory`)**: Produz em um único clique todos os fios metálicos de fio único, duplo, quádruplo, óctuplo, dezesseis fios e cabos supercondutores.
+- **§6Núcleo de Cristais (`gtecore:crystal_center`)**: Cultivo automatizado em larga escala de pilares de silício monocristalino, esmeraldas, safiras e cristais de Sextil carregado.
+- **§6Motor Quântico de Cabos (`gtecore:quantum_cable_assembler`)**: Especializado na fabricação em alta velocidade de fibras ópticas quânticas e cabos de transmissão de energia de dimensões superiores.
+- **§3Gravador de Lâminas Estelares (`gtecore:starblade_etching_machine`)**: Utiliza feixes de alta energia na faixa de ultravioleta extremo/raios X para gravar chips de microescala de nível galáctico.
 
 ---
 
-## 🔋 能源与发电机系统
+## 🔋 Sistemas de Energia e Geradores
 
-| 机器名称 | 能源输出/等级 | 核心机制与特性 |
+| Nome da Máquina | Saída de Energia/Nível | Mecanismo Principal e Características |
 | :--- | :--- | :--- |
-| **§6通用燃料引擎** (`gtceu:general_fuel_engine`) | 动态自适应 (最高 MAX) | **支持世界上所有类型的燃料**（柴油、生物质、天然气、火箭燃油等），拥有 **20 亿 (2B) 并行**，瞬息之间释放天量能量！ |
-| **大型通用发电机** (`gtecore:large_general_generator`) | 多级电压可选 | 适配常规燃气、蒸汽与等离子发电机转子 |
-| **超级聚变反应堆** (`gtecore:super_fusion_reactor`) | 聚变等离子体输出 | 彻底消除普通聚变漫长的升温等待，**完美支持 1T Subtick 超频**，瞬时输出高温聚变产物 |
-| **上限压超级电池箱** (`gtecore:max_super_battery_buffer_1x`) | **MAX (2,147,483,647 V)** | 容纳超海量 EU 缓存，支持零损耗跨维无线充能接口 |
+| **§6Motor de Combustível Universal** (`gtceu:general_fuel_engine`) | Adaptativo dinâmico (máximo MAX) | **Suporta todos os tipos de combustível do mundo** (diesel, biomassa, gás natural, combustível de foguete, etc.), com **paralelismo de 2 bilhões (2B)**, liberando energia colossal em um instante! |
+| **Grande Gerador Universal** (`gtecore:large_general_generator`) | Tensão multi-nível selecionável | Compatível com rotores de geradores a gás, vapor e plasma convencionais |
+| **Reator de Fusão Super** (`gtecore:super_fusion_reactor`) | Saída de plasma de fusão | Elimina completamente a longa espera de aquecimento da fusão comum, **suporta perfeitamente overclock de 1T Subtick**, produzindo instantaneamente produtos de fusão de alta temperatura |
+| **Bateria Super de Tensão Máxima** (`gtecore:max_super_battery_buffer_1x`) | **MAX (2.147.483.647 V)** | Armazena uma quantidade imensa de EU, suporta interface de carregamento sem fio interdimensional com zero perdas |

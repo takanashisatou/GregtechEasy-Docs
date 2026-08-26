@@ -1,80 +1,80 @@
 # GTECore Multiblock Machine Compendium
 
-GTECore is designed to eliminate tedious mid-to-late game machine duplication by introducing high-performance multiblock architectures featuring **extreme parallelism** and **composite production workflows**.
+GTECore addresses the tedious pipeline stacking of the mid-to-late tech progression with a large array of multiblock machines featuring both **ultra-high parallel processing capability** and **aggregated production logic**.
 
 ---
 
-## 🏭 Steam Age Large Multiblocks
+## 🏭 Large Steam-Age Multiblocks
 
-To address the low throughput and footprint issues of early-game single-block steam machines, GTECore introduces full-scale steam multiblocks with multiparallel capabilities:
+To solve the problems of low single-machine throughput and excessive footprint in the Steam Age, GTECore introduces a series of large steam multiblocks, all supporting cross-recipe parallelism and high-capacity steam throughput:
 
-| Machine (Block ID) | Recipes & Capabilities | Key Features |
+| Machine Name (Block ID) | Core Function & Recipe Types | Features & Advantages |
 | :--- | :--- | :--- |
-| **Large Steam Alloy Smelter** (`gtceu:big_alloy`) | Alloy Smelting (`alloy_smelter`) | High-throughput early-game alloy crafting |
-| **Large Steam Compressor** (`gtceu:big_compressor`) | Compressing (`compressor`) | Mass production of dense metal plates and blocks |
-| **Large Steam Forge Hammer** (`gtceu:big_forge_hammer`) | Hammering & Crushing (`forge_hammer`) | Rapid raw ore shattering and plate forging |
-| **Large Steam Extractor** (`gtceu:big_steam_extractor`) | Fluid Extraction (`extractor`) | Large-scale rubber and liquid extraction |
-| **Steam Grinder Easy** (`gtceu:steam_grinder_easy`) | Ore Grinding (`macerator`) | Early-game ore multiplication |
-| **Steam Oven Easy** (`gtceu:steam_oven_easy`) | Pyrolyse Smelting (`pyrochlore_oven`) | Mass charcoal and coke oven baking |
-| **Steam Ore Processing Factory** (`gtecore:steam_op`) | Composite Ore Refining | **1 Billion (1B) Parallels**, all recipes finish in **1 tick**! Accepts all hatch types |
+| **Large Steam Alloy Smelter** (`gtceu:big_alloy`) | Alloy smelting (`alloy_smelter`) | Early high-multiplier alloy production, supports high-pressure steam |
+| **Large Steam Compressor** (`gtceu:big_compressor`) | Compression processing (`compressor`) | Batch pressing of dense metal plates and blocks |
+| **Large Steam Forge Hammer** (`gtceu:big_forge_hammer`) | Forge hammer dusting/plating (`forge_hammer`) | Automated plate production and rapid crushing of raw ores |
+| **Large Steam Extractor** (`gtceu:big_steam_extractor`) | Rubber/fluid extraction (`extractor`) | Large-scale extraction of tree gum and industrial fluids |
+| **Simple Steam Macerator** (`gtceu:steam_grinder_easy`) | Ore grinding (`macerator`) | Early multi-fold ore processing |
+| **Simple Steam Oven** (`gtceu:steam_oven_easy`) | Pyrolysis smelting (`pyrochlore_oven`) | Industrialized mass production of coke and charcoal |
+| **Steam Ore Processing Plant** (`gtecore:steam_op`) | Comprehensive ore crushing and refining | **1 Billion (1B) parallel**, all recipes execute in **1 tick**! Supports any input/output hatch |
 
 ---
 
-## ⚡ Electric Industrial Processing Multiblocks
+## ⚡ Super Electrical Industrial Multiblocks
 
-In the electric era, GTECore provides all-in-one manufacturing centers and extreme scaling infrastructure:
+Entering the electric age, GTECore provides all-in-one and high-tier processing centers:
 
 ```mermaid
 graph LR
-    A[Raw Ores / Chemicals] --> B[Component Factory / Circuit Factory]
-    A --> C[Ore Processing Center 7 Modes]
-    A --> D[Integrated Petrochemical Plant]
-    B & C & D --> E[Miracle Ring 1B Parallel No Research]
-    E --> F[Superstring & Yin-Yang Endgame Circuits]
+    A[Raw Materials / Raw Ores / Chemicals] --> B[Component Factory / Circuit Factory]
+    A --> C[Ore Comprehensive Processing Center 7 Modes]
+    A --> D[Integrated Petrochemical Plant / Desulfurization Tower]
+    B & C & D --> E[Miracle Ring 1B Parallel No Research Required]
+    E --> F[Ultimate Tech Products and Super String / Yin-Yang Circuits]
 ```
 
-### 1. Core Manufacturing Facilities
+### 1. Core Production Factories
 
 - **§6Component Factory (`gtceu:component_factory`)**:
-  - **Purpose**: Direct one-step fabrication of electric motors, pumps, pistons, robot arms, conveyor belts, and emitter diodes across all voltage tiers.
-  - **Advantage**: Skips intermediate micro-assembly recipes, outputting finished components instantly.
+  - **Role**: One-stop production of motors, pumps, pistons, robot arms, conveyor belts, LEDs, and other common basic components.
+  - **Features**: Skips tedious intermediate sub-processes, rapidly producing standard industrial parts of the specified voltage tier.
 - **§6Circuit Factory (`gtceu:circuit_factory`)**:
-  - **Purpose**: Integrates circuit substrates, wafer etching, and assembly packaging into a single controller.
-  - **Advantage**: Supports Multi-Parallel Hatches to accelerate ULV to MAX tier circuit synthesis.
+  - **Role**: Integrates circuit board substrate production, chip etching, and integrated packaging in one machine.
+  - **Features**: Supports cross-recipe parallel hatches, comprehensively accelerating circuit board production across the full ULV to MAX voltage gradient.
 - **§6Miracle Ring (`gtceu:miracle_ring`)**:
-  - **Purpose**: The pinnacle of automated assembly line engineering.
-  - **Advantage**: Boasts **1 Billion (1B) Parallels** and **1t Subtick Overclocking**; executes any assembly line recipe **without requiring research items**!
+  - **Role**: The ultimate industrial miracle assembly facility.
+  - **Features**: Possesses **1 Billion (1B) parallel** and **1t Subtick overclocking**, **no research/assembly line research required** to directly run assembly line recipes!
 - **Chemistry Terminator (`gtecore:chemistry_terminator`)**:
-  - **Purpose**: "Overturns the laws of chemistry and physics, marking the end of tedious multi-step chemistry."
-  - **Advantage**: Collapses complex 15-step organic synthesis chains into instant single-step recipes.
-- **Ten-in-One General Processing Factory (`gtecore:ten_in_one`)**:
-  - **Purpose**: Integrates centrifugation, electrolysis, chemical bathing, polymerization, and autoclave processing.
+  - **Role**: "Subverts the existence of chemistry and physics, representing the end of chemistry."
+  - **Features**: Aggregates tedious dozen-step long-chain chemical reactions into one click, rapidly synthesizing various ultimate polymers and acid media.
+- **Ten-in-One Universal Processing Factory (`gtecore:ten_in_one`)**:
+  - **Role**: A universal integrated box fusing 10 basic processes including centrifugation, electrolysis, chemical leaching, polymerization, and high-pressure reaction.
 
-### 2. Ore Refining & Petrochemical Systems
+### 2. Ore and Fluid Refining System
 
-- **§6Ore Processing Center (`gtecore:ore_process_center`)**:
-  - Features **7 Programmed Circuit Modes** for ore quintupling/octupling (crushing, washing, thermal separation, centrifugation, electromagnetic separation), with 1t subtick overclock support.
+- **§6Ore Comprehensive Processing Center (`gtecore:ore_process_center`)**:
+  - Supports **7 programming circuit modes**, achieving 5~8x ore refining with different product orientations (crushing, washing, thermal centrifugation, centrifugation, electromagnetic separation fully integrated), supports 1t Subtick overclocking.
 - **Integrated Petrochemical Plant (`gtecore:integrated_petrochemical_plant`)**:
-  - Combines oil distillation, catalytic cracking, reforming, and desulfurization into one continuous high-speed loop.
-- **Desulfurization Plant (`gtceu:desulfurization`)**:
-  - Purifies heavy oils and recovers high-purity sulfur dust byproduct.
-- **Easy & Not-Hard Fluid Drilling Rigs (`gtecore:easy_fluid_drilling_rig` / `not_hard_fluid_drilling_rig`)**:
-  - Infinite bedrock fluid extraction without vein depletion or complex pipe searching.
+  - Integrates the full chain of crude oil fractionation, catalytic cracking, reforming, and desulfurization, producing all light hydrocarbon gases and aromatic hydrocarbons from a single machine.
+- **Desulfurization Machine (`gtceu:desulfurization`)**:
+  - Rapidly purifies various heavy sulfur-containing fuel oils, recovering high-purity sulfur dust byproducts.
+- **Easy/Advanced Fluid Drilling Rig (`gtecore:easy_fluid_drilling_rig` / `not_hard_fluid_drilling_rig`)**:
+  - Automatically extracts bedrock fluid ore veins, never depleting, no complex pipeline exploration required.
 
-### 3. Advanced Metallurgy & Superconductors
+### 3. High-End and Superconducting Cable Processing
 
-- **§6Wiremill Factory (`gtecore:wiremill_factory`)**: Mass-produces 1x, 2x, 4x, 8x, 16x cables and superconducting wires.
-- **§6Crystal Center (`gtecore:crystal_center`)**: Automated cultivation of silicon boules, emeralds, sapphires, and Certus Quartz.
-- **§6Quantum Cable Assembler (`gtecore:quantum_cable_assembler`)**: Specialized in ultra-high-bandwidth quantum and energy cables.
-- **§3Starblade Etching Machine (`gtecore:starblade_etching_machine`)**: Sub-nanometer laser wafer patterning for celestial grade computation chips.
+- **§6Wiremill Factory (`gtecore:wiremill_factory`)**: One-click production of all metal single, double, quadruple, octuple, and 16-fold wires and superconducting cables.
+- **§6Crystal Center (`gtecore:crystal_center`)**: Large-scale automated cultivation of monocrystalline silicon columns, emeralds, sapphires, and charged Certus Quartz crystals.
+- **§6Quantum Cable Assembler (`gtecore:quantum_cable_assembler`)**: Specialized in high-speed manufacturing of quantum fiber optics and hyperdimensional energy transmission cables.
+- **§3Starblade Etching Machine (`gtecore:starblade_etching_machine`)**: Uses high-energy beams in the extreme ultraviolet/X-ray band to etch galaxy-scale micro-nano chips.
 
 ---
 
-## 🔋 Power Generation & Buffers
+## 🔋 Energy and Generator Systems
 
-| Machine | Power Class | Mechanics |
+| Machine Name | Energy Output/Tier | Core Mechanism & Features |
 | :--- | :--- | :--- |
-| **§6General Fuel Engine** (`gtceu:general_fuel_engine`) | Dynamic Adaptive (up to MAX) | **Burns all fuel types in Minecraft** (Diesel, Biomass, Natural Gas, Rocket Fuel) with **2 Billion (2B) Parallels**! |
-| **Large General Generator** (`gtecore:large_general_generator`) | Multi-Tier Output | Compatible with gas, steam, and plasma turbine rotors |
-| **Super Fusion Reactor** (`gtecore:super_fusion_reactor`) | Fusion Plasma Output | Eliminates warm-up delays, **supports 1T Subtick Overclock**, generating instant high-temperature plasma |
-| **Maximum Voltage Super Battery Buffer** (`gtecore:max_super_battery_buffer_1x`) | **MAX (2,147,483,647 V)** | Infinite buffer capacity with zero transfer impedance |
+| **§6Universal Fuel Engine** (`gtceu:general_fuel_engine`) | Dynamic adaptive (up to MAX) | **Supports all fuel types in the world** (diesel, biomass, natural gas, rocket fuel, etc.), possesses **2 Billion (2B) parallel**, unleashing astronomical energy in an instant! |
+| **Large Universal Generator** (`gtecore:large_general_generator`) | Multi-tier voltage selectable | Compatible with conventional gas, steam, and plasma generator rotors |
+| **Super Fusion Reactor** (`gtecore:super_fusion_reactor`) | Fusion plasma output | Completely eliminates the long heating wait of ordinary fusion, **perfectly supports 1T Subtick overclocking**, instantly outputting high-temperature fusion products |
+| **Max Super Battery Buffer** (`gtecore:max_super_battery_buffer_1x`) | **MAX (2,147,483,647 V)** | Holds massive EU cache, supports zero-loss cross-dimensional wireless charging interface |

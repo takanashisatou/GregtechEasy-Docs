@@ -1,78 +1,78 @@
-# 整合包下载与玩家懒人包指南
+﻿# Guía de descarga del paquete integrado y paquete perezoso para jugadores
 
-GTE (GregTech Easy) 为不同技术背景的玩家和服主提供了三种开箱即用的交付形式：
+GTE (GregTech Easy) ofrece tres formatos de entrega listos para usar para jugadores y administradores de servidores con diferentes niveles técnicos:
 
-1. **玩家免编译完整懒人包 (`GTE-LazyPack-*.zip`)**：包含预编译好的全部模组、配置、魔改脚本与完整 `.minecraft` 目录结构，**双击或拖入启动器即可游玩**。
-2. **CurseForge 规范包 (`GTE-CurseForge-*.zip`)**：标准 CurseForge 格式，可直接在 PCL2 / HMCL / CurseForge App / Prism Launcher 中一键导入。
-3. **服务端整合包 (`GTE-Server-*.zip`)**：包含纯净服务端配置、模组与启动脚本，用于开服联机。
-
----
-
-## 🚀 玩家懒人包（推荐）
-
-### 特点与优势
-- **0 编译依赖**：无需安装 JDK 编译环境、IntelliJ IDEA 或 Git。
-- **全量打包**：`gtecore`、`gtm-reborn`、`gt--` 最新发布 Jar 及前置扩展模组已全部内置于 `mods/` 目录。
-- **即拖即玩**：支持 PCL2 / HMCL 窗口拖拽一键导入。
-
-### 导入与启动步骤
-
-=== "方式一：启动器一键拖拽（推荐）"
-
-    1. 打开 **PCL2 (Plain Craft Launcher 2)** 或 **HMCL (Hello Minecraft! Launcher)**。
-    2. 将下载到的 `GTE-LazyPack-<版本号>.zip` 直接**鼠标左键拖入**启动器主窗口中。
-    3. 启动器将自动识别并解压至游戏版本列表。
-    4. 前往该版本的**版本设置**，将 Java 运行时指定为 **Java 21**。
-    5. 分配 **8GB ~ 12GB** 内存，点击启动游戏！
-
-=== "方式二：手动解压模式"
-
-    1. 将压缩包解压至任意无中文、无空格路径（例如 `D:\Games\GTE\`）。
-    2. 解压后将获得包含 `mods/`、`config/`、`kubejs/` 的 `.minecraft` 目录。
-    3. 在启动器中添加游戏版本，将游戏根目录选择为解压出的 `.minecraft` 文件夹。
-    4. 确保选择 **Java 21** 核心并启动。
+1. **Paquete perezoso completo sin compilación para jugadores (`GTE-LazyPack-*.zip`)**: Incluye todos los mods precompilados, configuraciones, scripts de modificación y la estructura completa del directorio `.minecraft`. **Haz doble clic o arrástralo al lanzador para jugar**.
+2. **Paquete estándar CurseForge (`GTE-CurseForge-*.zip`)**: Formato estándar de CurseForge, se puede importar directamente con un clic en PCL2 / HMCL / CurseForge App / Prism Launcher.
+3. **Paquete integrado de servidor (`GTE-Server-*.zip`)**: Incluye configuración de servidor limpia, mods y scripts de inicio, para abrir servidores y jugar en línea.
 
 ---
 
-## ⚠️ Java 21 运行环境要求（极其重要）
+## 🚀 Paquete perezoso para jugadores (recomendado)
+
+### Características y ventajas
+- **0 dependencias de compilación**: No es necesario instalar el entorno de compilación JDK, IntelliJ IDEA o Git.
+- **Empaquetado completo**: Los últimos JAR publicados de `gtecore`, `gtm-reborn`, `gt--` y los mods de extensión adicionales ya están incluidos en el directorio `mods/`.
+- **Arrastrar y jugar**: Compatible con la importación con un clic mediante arrastre en PCL2 / HMCL.
+
+### Pasos de importación e inicio
+
+=== "Método 1: Arrastre con un clic en el lanzador (recomendado)"
+
+    1. Abre **PCL2 (Plain Craft Launcher 2)** o **HMCL (Hello Minecraft! Launcher)**.
+    2. Arrastra el archivo `GTE-LazyPack-<versión>.zip` descargado directamente a la ventana principal del lanzador con el **botón izquierdo del ratón**.
+    3. El lanzador lo reconocerá automáticamente y lo descomprimirá en la lista de versiones del juego.
+    4. Ve a la **configuración de versión** de esa versión y especifica el tiempo de ejecución de Java como **Java 21**.
+    5. Asigna **8GB ~ 12GB** de memoria y ¡haz clic para iniciar el juego!
+
+=== "Método 2: Modo de descompresión manual"
+
+    1. Descomprime el archivo en cualquier ruta sin caracteres chinos ni espacios (por ejemplo, `D:\Games\GTE\`).
+    2. Después de descomprimir, obtendrás un directorio `.minecraft` que contiene `mods/`, `config/`, `kubejs/`.
+    3. En el lanzador, agrega una versión del juego y selecciona la carpeta `.minecraft` descomprimida como directorio raíz del juego.
+    4. Asegúrate de seleccionar el núcleo **Java 21** e inicia.
+
+---
+
+## ⚠️ Requisitos del entorno de ejecución Java 21 (extremadamente importante)
 
 > [!CAUTION]
-> **本整合包强制要求运行环境为 Java 21 (JDK 21)！**
-> 切勿使用 **Java 17** 或 **Java 8**，否则游戏将直接崩溃或拒绝启动！
+> **Este paquete integrado requiere obligatoriamente el entorno de ejecución Java 21 (JDK 21)!**
+> No uses **Java 17** ni **Java 8**, de lo contrario el juego se bloqueará o se negará a iniciar.
 
-### 为什么必须使用 Java 21？
-- GTE 的核心模组（`gtecore`、`gtm-reborn`、`gt--`）全面采用了 **Java 21 现代化语言特性**（如 Record Patterns、Virtual Threads、增强 Switch 匹配）。
-- Gradle 构建脚本全局配置了 `JavaLanguageVersion.of(21)` 强制工具链检查。
+### ¿Por qué es obligatorio usar Java 21?
+- Los mods principales de GTE (`gtecore`, `gtm-reborn`, `gt--`) utilizan completamente las **características modernas del lenguaje Java 21** (como Record Patterns, Virtual Threads, mejora de coincidencia de Switch).
+- Los scripts de compilación de Gradle configuran globalmente `JavaLanguageVersion.of(21)` para forzar la verificación de la cadena de herramientas.
 
-### 推荐 JDK 21 下载地址
+### Direcciones de descarga recomendadas para JDK 21
 
-| 发行版 | 下载链接 | 推荐理由 |
+| Distribución | Enlace de descarga | Razón de recomendación |
 | :--- | :--- | :--- |
-| **Azul Zulu 21 (LTS)** | [点击前往 Azul 官网](https://www.azul.com/downloads/?version=java-21-lts) | 性能卓越，对 Minecraft 大规模多线程优化极佳 |
-| **Eclipse Temurin 21 (LTS)** | [点击前往 Adoptium 官网](https://adoptium.net/temurin/releases/?version=21) | 官方推荐，高兼容性与稳定性 |
-| **Microsoft OpenJDK 21** | [点击前往 Microsoft 官网](https://learn.microsoft.com/zh-cn/java/openjdk/download) | Windows 平台原生适配良好 |
+| **Azul Zulu 21 (LTS)** | [Haz clic para ir al sitio web de Azul](https://www.azul.com/downloads/?version=java-21-lts) | Excelente rendimiento, muy buena optimización para el multihilo a gran escala de Minecraft |
+| **Eclipse Temurin 21 (LTS)** | [Haz clic para ir al sitio web de Adoptium](https://adoptium.net/temurin/releases/?version=21) | Recomendado oficialmente, alta compatibilidad y estabilidad |
+| **Microsoft OpenJDK 21** | [Haz clic para ir al sitio web de Microsoft](https://learn.microsoft.com/zh-cn/java/openjdk/download) | Buena adaptación nativa en plataformas Windows |
 
-### 在启动器中配置 Java 21
+### Configurar Java 21 en el lanzador
 
 ```mermaid
 graph LR
-    A[打开启动器] --> B[进入 GTE 版本设置]
-    B --> C[Java 路径 / 运行时]
-    C --> D[选择已安装的 JDK 21 javaw.exe]
-    D --> E[分配 8192MB ~ 12288MB 内存]
-    E --> F[保存并启动游戏]
+    A[Abrir el lanzador] --> B[Entrar en la configuración de la versión GTE]
+    B --> C[Ruta de Java / tiempo de ejecución]
+    C --> D[Seleccionar el javaw.exe del JDK 21 instalado]
+    D --> E[Asignar 8192MB ~ 12288MB de memoria]
+    E --> F[Guardar e iniciar el juego]
 ```
 
 ---
 
-## 🎮 游戏内快捷键与常用指令
+## 🎮 Atajos de teclado y comandos comunes en el juego
 
-| 指令 / 快捷键 | 功能说明 | 权限要求 |
+| Comando / Atajo | Descripción de función | Requisito de permisos |
 | :--- | :--- | :--- |
-| `/ftbquests editing_mode true` | 开启任务书可视化编辑模式（作者模式） | OP 权限 |
-| `/ftbquests reload` | 热重载 FTB Quests 任务书配置文件 | 所有人 |
-| `/kubejs reload server_scripts` | 热重载服务端魔改脚本与配方 | OP 权限 |
-| `/kubejs reload client_scripts` | 热重载客户端魔改脚本与显示逻辑 | 无需权限 |
-| `/dumpmultiblock` | 木斧选取区域后一键导出多方块结构代码 | OP 权限 |
-| <kbd>U</kbd> / <kbd>R</kbd> | 查看光标处物品的用途 (Usage) / 配方 (Recipe) | EMI / JEI 快捷键 |
-| <kbd>F7</kbd> | 查看周围光照等级（红叉表示刷怪区域） | 客户端快捷键 |
+| `/ftbquests editing_mode true` | Activar el modo de edición visual del libro de misiones (modo autor) | Permisos de OP |
+| `/ftbquests reload` | Recargar en caliente los archivos de configuración del libro de misiones de FTB Quests | Todos |
+| `/kubejs reload server_scripts` | Recargar en caliente los scripts de modificación del servidor y las recetas | Permisos de OP |
+| `/kubejs reload client_scripts` | Recargar en caliente los scripts de modificación del cliente y la lógica de visualización | Sin permisos |
+| `/dumpmultiblock` | Exportar con un clic el código de estructura de bloques múltiples después de seleccionar un área con el hacha de madera | Permisos de OP |
+| <kbd>U</kbd> / <kbd>R</kbd> | Ver el uso (Usage) / receta (Recipe) del objeto bajo el cursor | Atajos de EMI / JEI |
+| <kbd>F7</kbd> | Ver el nivel de luz circundante (las cruces rojas indican áreas de aparición de monstruos) | Atajo del cliente |

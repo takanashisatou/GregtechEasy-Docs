@@ -1,69 +1,69 @@
-# Yin-Yang Eight Trigrams Furnace & Four Symbols System
+# Yin-Yang Eight Trigrams Blast Furnace and Four Symbols Formation System
 
-GTECore introduces a unique synthesis of ancient Oriental Daoist cosmology and cutting-edge industrial technology known as the **"Tai Chi Eight Trigrams & Four Symbols Array System"**. This system serves as the pinnacle hub for endgame metallurgy, superconductor synthesis, and cosmic engineering.
+GTECore has pioneered the **"Taiji Eight Trigrams and Four Symbols Formation System"**, combining Eastern Taoist philosophy with modern heavy industry engineering. This system forms the core hub for mid-to-late game metallurgy, superconducting material synthesis, and mystical technology ascension.
 
 ---
 
 ## 🌌 Yin-Yang Eight Trigrams Blast Furnace (`yin_yang_eight_trigmas_blast_furnace`)
 
-The **Crape Myrtle Eight Trigrams Immortal Forging Furnace** is one of the most massive and intricate multiblocks in tech modding history, spanning a footprint exceeding 55×55 blocks:
+The **Ziwei Eight Trigrams Blast Furnace** is one of the most massive and intricately mechanized multiblock structures in the tech modding community (occupying over 55×55 blocks):
 
 ```mermaid
 graph TD
-    A[Eight Trigrams Blast Furnace Controller] --> B[Core Crucible: Li Fire / Kan Water / Kun Gen Casings & Yin-Yang Coils]
-    A --> C[East Wing: Azure Dragon Formation Array]
-    A --> D[West Wing: White Tiger Formation Array]
-    A --> E[South Wing: Vermilion Bird Formation Array]
-    A --> F[North Wing: Black Tortoise Formation Array]
+    A[Ziwei Eight Trigrams Blast Furnace Controller] --> B[Central Furnace Core: Li Fire / Kan Water / Kun Gen Machine Casings & Yin-Yang Coils]
+    A --> C[East: Azure Dragon Formation Module]
+    A --> D[West: White Tiger Formation Module]
+    A --> E[South: Vermilion Bird Formation Module]
+    A --> F[North: Black Tortoise Formation Module]
 ```
 
-### 🧭 Feng Shui Orientation Rule (CRITICAL)
+### 🧭 Feng Shui Orientation Rules (Key Mechanic)
 > [!IMPORTANT]
-> **Orientation Law**: Due to geomantic and magnetic containment constraints, the **controller block must face directly South** to channel the cosmic Yin and Yang energies and form properly!
+> **Feng Shui Orientation Law**: Due to feng shui and magnetic field constraints, the **blast furnace main controller must face south** to connect with the yin-yang energy of heaven and earth and form/operate correctly!
 
-### Processing Capabilities
-- **Supported Recipe Types**: Standard Blast Furnaces (`blast_recipes`), Standard Smelting (`furnace_recipes`), Alloy Smelting (`alloy_smelter_recipes`), GCYM Mega Alloy Blast (`alloy_blast_recipes`), and specialized **Yin-Yang Eight Trigrams Blast Recipes (`yin_yang_eight_trigmas_blast`)**.
-- **Overclocking**: Fully supports **1T Subtick Instant Overclock** and **Batch Mode**.
+### Furnace Base Capabilities
+- **Supported Recipe Library**: Natively compatible with standard blast furnace recipes (`blast_recipes`), furnace recipes (`furnace_recipes`), alloy smelter recipes (`alloy_smelter_recipes`), GCYM giant alloy blast furnace recipes (`alloy_blast_recipes`), and the exclusive **Yin-Yang Eight Trigrams recipes (`yin_yang_eight_trigmas_blast`)**.
+- **Overclocking Features**: Perfectly supports **1T Subtick instant overclocking** and **Batch Mode**.
 
 ---
 
-## 🐉 Four Symbols Modular Formations & Recipe Conditions
+## 🐉 Four Symbols Formation Sub-Modules and Dynamic Condition Detection
 
-Surrounding the core furnace, players can expand four auxiliary formation arrays:
+Around the blast furnace, four formation wings can be extended: **East Azure Dragon, West White Tiger, South Vermilion Bird, North Black Tortoise**:
 
-| Formation Module | Direction | Module Block | Recipe Condition (`RecipeCondition`) | Effects & Benefits |
+| Formation Module | Formation Direction | Formation Blocks | Recipe Condition | Benefits & Effects When Activated |
 | :--- | :--- | :--- | :--- | :--- |
-| **Azure Dragon** (`Qing Long`) | **East** | `qinglong_module` | `QING_LONG_CONDITION` | Harnesses wood-nurturing-fire energetics to drastically reduce EU consumption and unlock regenerative catalysts |
-| **White Tiger** (`Bai Hu`) | **West** | `baihu_module` | `BAI_HU_CONDITION` | Manifests cutting-edge slaughter energies, unlocking super-dense heavy nuclei fission and quantum transmutation recipes |
-| **Vermilion Bird** (`Zhu Que`) | **South** | `zhuque_module` | `ZHU_QUE_CONDITION` | Unleashes infinite furnace temperatures, unlocking celestial stellar plasma fusion and immortal pill forging |
-| **Black Tortoise** (`Xuan Wu`) | **North** | `xuanwu_module` | `XUAN_WU_CONDITION` | Governs deep abyssal cooling, enabling instant thermal solidification and antimatter stabilization |
+| **Azure Dragon Formation** (`Qing Long`) | **East** | `qinglong_module` | `QING_LONG_CONDITION` | Activates the Wood-generates-Fire momentum, greatly reducing energy consumption for ultra-high-temperature smelting, unlocking endless high-tier catalytic recipes |
+| **White Tiger Formation** (`Bai Hu`) | **West** | `baihu_module` | `BAI_HU_CONDITION` | Metal Sha dominates destruction, unlocking high-hardness divine metals, ultra-dense heavy nucleus element fission, and quantum metal transmutation recipes |
+| **Vermilion Bird Formation** (`Zhu Que`) | **South** | `zhuque_module` | `ZHU_QUE_CONDITION` | Southern Bright Li Fire, provides unlimited maximum furnace temperature, unlocking stellar-level plasma casting and divine pill refining recipes |
+| **Black Tortoise Formation** (`Xuan Wu`) | **North** | `xuanwu_module` | `XUAN_WU_CONDITION` | Kan Water guards, ultra-fast cooling of ultra-high-temperature products, unlocking instant solidification and antimatter stabilization recipes |
 
-### Dynamic Verification & Status Display
-- The controller invokes `checkModule()` dynamically to calculate whether formation blocks at fixed spatial offsets match the required configuration.
-- Aiming at the controller with **Jade** provides real-time status indicators (Green = Enabled, Red = Disabled).
+### Dynamic Detection and Status Feedback
+- The controller automatically calls `checkModule()` during each structure scan and recipe matching to calculate whether the formation blocks at the four directional offset coordinates are ready.
+- Using **Jade** hover targeting the controller, you can visually inspect the activation status of all four formations (green indicates active, red indicates not ready).
 
 ---
 
-## 🔮 Daoist Star Arrays & Endgame Cores
+## 🔮 Derived Taoist Cores and Star Matrix
 
-Branching out from the Eight Trigrams furnace, GTECore offers a constellation of celestial Daoist infrastructure:
+Building upon the Eight Trigrams Blast Furnace, GTECore further extends a series of celestial Taoist multiblocks:
 
 ```
-GTE Celestial Industrial Complex
-├── Tai Chi Five Elements Separation Array
+GTE High-Tier Array Industrial Group
+├── Taiji Five Elements Separation Array
 ├── Kun Gen Star Hub
-├── Qian Qiong Universal Engine
-├── Red Sun Taoist Core
+├── Qian Qiong Engine
+├── Red Sun Tao Core
 └── Ashing Star Fusion Array
 ```
 
-1. **Tai Chi Five Elements Separation Array (`taichi_five_elements_separation_array`)**:
-   - Strips down any compound or mineral into its pure elemental constituents: **Gold, Wood, Water, Fire, and Earth**.
+1. **Taiji Five Elements Separation Array (`taichi_five_elements_separation_array`)**:
+   - Separates and decomposes any mineral and chemical substance from reality and fantasy into pure **Metal, Wood, Water, Fire, Earth** Five Elements origin elements.
 2. **Kun Gen Star Hub (`kun_gen_star_hub`)**:
-   - Interlinks planetary and stellar gravitational waves to focus gravitons and stabilize micro-singularities.
-3. **Qian Qiong Universal Engine (`qian_qiong_engine`)**:
-   - Taps into zero-point quantum fluctuations to draw vast quantities of void energy.
-4. **Red Sun Taoist Core (`red_sun_tao_core`)**:
-   - Creates a miniature artificial stellar core replicating multi-trillion Kelvin coronal physics.
+   - Connects earth and stellar gravitational waves, used for converging microscopic gravitons and constructing miniature black holes.
+3. **Qian Qiong Engine (`qian_qiong_engine`)**:
+   - Void energy extraction engine, drawing boundless void energy from quantum fluctuations of nothingness.
+4. **Red Sun Tao Core (`red_sun_tao_core`)**:
+   - Artificial ultra-miniature stellar core, simulating trillion-degree extreme physical conditions of a stellar corona.
 5. **Ashing Star Fusion Array (`ashing_star_fusion_array`)**:
-   - Supernova remnant annihilation matrix used to balance dark matter and antimatter states.
+   - Supernova remnant annihilation fusion matrix, used for reconstructing the equilibrium state of dark matter and antimatter.

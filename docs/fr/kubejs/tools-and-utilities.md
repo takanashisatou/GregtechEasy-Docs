@@ -1,37 +1,37 @@
-# KubeJS 工具集与多方块导出器 (`/dumpmultiblock`)
+﻿# KubeJS Boîte à outils et exportateur de multiblocs (`/dumpmultiblock`)
 
-GTE 在 KubeJS 服务端脚本中内置了开发者专用的多方块自动化构建与结构提取工具，彻底解放多方块结构设计流程。
+GTE intègre dans les scripts serveur KubeJS des outils de développement dédiés à la construction automatisée et à l'extraction de structures multiblocs, libérant ainsi entièrement le processus de conception de structures multiblocs.
 
 ---
 
-## 🪓 多方块可视化导出器 (`/dumpmultiblock`)
+## 🪓 Exportateur visuel de multiblocs (`/dumpmultiblock`)
 
-在开发自定义多方块（无论是 Java 代码还是 KubeJS 脚本）时，手动编写由数十层字符组成的 `FactoryBlockPattern.aisle(...)` 极其耗时且极易出错。
+Lors du développement de multiblocs personnalisés (que ce soit en code Java ou en scripts KubeJS), écrire manuellement des `FactoryBlockPattern.aisle(...)` composés de dizaines de couches de caractères est extrêmement chronophage et très sujet aux erreurs.
 
-GTE 内置了 **`/dumpmultiblock` 木斧框选导出器** (`server_scripts/easymultiblock.js`)：
+GTE intègre l'**exportateur de sélection à la hache en bois `/dumpmultiblock`** (`server_scripts/easymultiblock.js`) :
 
 ```mermaid
 graph LR
-    A[手持木斧] -->|左键点击| B[选取 Pos1 角点]
-    A -->|右键点击| C[选取 Pos2 对角点]
-    B & C --> D[游戏内执行 /dumpmultiblock]
-    D --> E[控制台与聊天栏输出完整的 FactoryBlockPattern Java 代码]
+    A[Hache en bois en main] -->|Clic gauche| B[Sélectionner le coin Pos1]
+    A -->|Clic droit| C[Sélectionner le coin diagonal Pos2]
+    B & C --> D[Exécuter /dumpmultiblock dans le jeu]
+    D --> E[Console et chat affichent le code Java complet de FactoryBlockPattern]
 ```
 
-### 使用步骤
+### Étapes d'utilisation
 
-1. 进入游戏创造模式，手持一把 **木斧 (`minecraft:wooden_axe`)**。
-2. 按照构想在世界中直接搭建好完整的多方块物理结构（包括机壳、仓室、线圈、主控制器）。
-3. 使用木斧 **左键点击** 结构的一个底角方块（聊天栏提示 `已设置 Pos1: x, y, z`）。
-4. 使用木斧 **右键点击** 结构的对角线顶角方块（聊天栏提示 `已设置 Pos2: x, y, z`）。
-5. 在聊天框输入指令：
+1. Passez en mode créatif dans le jeu et tenez une **hache en bois (`minecraft:wooden_axe`)**.
+2. Construisez directement dans le monde la structure physique complète du multibloc selon vos plans (incluant la coque, les compartiments, les bobines, le contrôleur principal).
+3. Utilisez la hache en bois avec un **clic gauche** sur un bloc d'angle inférieur de la structure (le chat affiche `Pos1 défini : x, y, z`).
+4. Utilisez la hache en bois avec un **clic droit** sur le bloc d'angle supérieur diagonal de la structure (le chat affiche `Pos2 défini : x, y, z`).
+5. Saisissez la commande dans le chat :
    ```mcfunction
    /dumpmultiblock
    ```
-6. 脚本会自动扫描三维包围盒内的所有方块类型，分配字符映射（`.` 为空气，`A-Z/a-z/0-9` 为具体方块），并在后台日志与客户端直接生成结构代码：
+6. Le script analyse automatiquement tous les types de blocs dans la boîte englobante 3D, attribue une correspondance de caractères (`.` pour l'air, `A-Z/a-z/0-9` pour les blocs spécifiques), et génère directement le code de structure dans les journaux d'arrière-plan et côté client :
 
 ```java
-// 自动导出的 FactoryBlockPattern 模板
+// Modèle FactoryBlockPattern exporté automatiquement
 .pattern(definition -> FactoryBlockPattern.start()
     .aisle("BBB", "BBB", "BBB")
     .aisle("BBB", "BAB", "BBB")
@@ -45,16 +45,16 @@ graph LR
 
 ---
 
-## 🌌 维度气体与流体矿脉配置
+## 🌌 Configuration des veines de fluides et de gaz dimensionnels
 
-GTE 通过 KubeJS 对全维度流体与气体收集进行了扩展：
+GTE étend la collecte de fluides et de gaz à travers toutes les dimensions via KubeJS :
 
-### 1. 全维度气体抽取 (`dimension_gas.js`)
-使用大型集气室 (`gas_collector`) 配合不同电路编号，可在任意维度抽取该维度专属大气：
-- **主世界空气**：`circuit(4)` ➜ 输出 `gtceu:air 10000`
-- **下界地狱之气**：`circuit(5)` ➜ 输出 `gtceu:nether_air 10000`
-- **末地虚空之气**：`circuit(6)` ➜ 输出 `gtceu:ender_air 10000`
+### 1. Extraction de gaz à l'échelle dimensionnelle (`dimension_gas.js`)
+En utilisant la grande chambre de collecte de gaz (`gas_collector`) avec différents numéros de circuit, il est possible d'extraire l'atmosphère spécifique de chaque dimension :
+- **Air du monde normal** : `circuit(4)` ➜ sortie `gtceu:air 10000`
+- **Air infernal du Nether** : `circuit(5)` ➜ sortie `gtceu:nether_air 10000`
+- **Air du vide de l'End** : `circuit(6)` ➜ sortie `gtceu:ender_air 10000`
 
-### 2. 万能电路转换器 (`universal_circuit.js`)
-为解决跨模组与各等级电路板繁杂的配方堆叠，GTE 引入了 **通用电路 (`universal_circuit`)** 系统：
-- 允许在打包机 (`packer`) 中将任意同电压等级的电路（ULV 至 MAX）以 **1 EU / 1 tick** 无损转换为统一的通用电路物品。
+### 2. Convertisseur de circuits universels (`universal_circuit.js`)
+Pour résoudre la complexité des recettes empilées entre les différents niveaux de circuits et les mods, GTE introduit le système de **circuit universel (`universal_circuit`)** :
+- Permet dans la machine d'emballage (`packer`) de convertir sans perte tout circuit de même niveau de tension (de ULV à MAX) en un objet de circuit universel unique à raison de **1 EU / 1 tick**.

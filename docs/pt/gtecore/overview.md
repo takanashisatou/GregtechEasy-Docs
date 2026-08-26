@@ -1,58 +1,58 @@
-# GTECore 核心模组概览
+﻿# Visão Geral do Núcleo do Mod GTECore
 
-**GTECore** 是 GregTech Easy 项目的定制化 Java 核心模组。它直接依赖 `gtm-reborn` 源码，拓展了大规模多方块工业结构、高阶阵法科技、AE2 深层交互以及超级电路制造体系。
+**GTECore** é o núcleo Java personalizado do projeto GregTech Easy. Ele depende diretamente do código-fonte do `gtm-reborn`, expandindo estruturas industriais multibloco em grande escala, tecnologia de matrizes de alto nível, interações profundas com AE2 e sistemas de fabricação de circuitos super avançados.
 
 ---
 
-## 🏛️ 模组架构与设计定位
+## 🏛️ Arquitetura do Mod e Posicionamento de Design
 
 ```mermaid
 graph TD
-    A[GTM-Reborn 基础框架] --> B[GTECore 核心模组]
-    B --> C[东方玄妙工业: 阴阳八卦炼仙炉 / 四象阵法 / 太极五行]
-    B --> D[工业极端优化: 奇迹之环 / 矿石综合处理 / 通用燃油引擎]
-    B --> E[AE2 深度拓展: ME 样板总成 Plus & 镜像 / ME 蒸汽仓]
-    B --> F[超维电路系统: 超弦电路体系 / 阴阳电路体系]
-    B --> G[自动化与开发: Jade 实时集成 / 结构测试终端 / Datagen 国际化]
+    A[Estrutura Base GTM-Reborn] --> B[Núcleo do Mod GTECore]
+    B --> C[Indústria Mística Oriental: Forno de Refinamento Alquímico Yin-Yang / Matrizes dos Quatro Símbolos / Tai Chi e Cinco Elementos]
+    B --> D[Otimização Industrial Extrema: Anel dos Milagres / Processamento Abrangente de Minérios / Motor de Combustível Universal]
+    B --> E[Extensão Profunda AE2: Conjunto de Modelos ME Plus & Espelho / Câmara de Vapor ME]
+    B --> F[Sistema de Circuitos Hiperdimensionais: Sistema de Circuitos de Supercordas / Sistema de Circuitos Yin-Yang]
+    B --> G[Automação e Desenvolvimento: Integração em Tempo Real Jade / Terminal de Teste de Estrutura / Internacionalização Datagen]
 ```
 
 ---
 
-## 📦 创造模式物品栏与分类
+## 📦 Abas de Inventário do Modo Criativo e Classificação
 
-GTECore 在游戏内注册了独立的创造模式标签页：
+O GTECore registra abas separadas no modo criativo dentro do jogo:
 
-1. **格雷科技Easy机器 (`itemGroup.gtecore.gtecore_machines`)**：
-   - 包含所有 GTE 原创多方块主方块（阴阳八卦高炉、奇迹之环、矿石处理中心、化学终结者等）。
-   - 包含多级超级电池箱（Max Super Battery Buffer）、ME 蒸汽仓、ME 样板总成 Plus 及镜像。
-2. **格雷科技Easy物品 (`itemGroup.gtecore.gtecore_items`)**：
-   - 包含超弦与阴阳电路系列物品（处理器、集群、超算、主机）。
-   - 包含五行元素符篆、八卦芯片、三清之粒、结构测试终端等专用道具。
+1. **Máquinas GregTech Easy (`itemGroup.gtecore.gtecore_machines`)**:
+   - Inclui todos os blocos principais multibloco originais do GTE (Alto-Forno Yin-Yang Bagua, Anel dos Milagres, Centro de Processamento de Minérios, Finalizador Químico, etc.).
+   - Inclui Buffers de Bateria Super de vários níveis (Max Super Battery Buffer), Câmara de Vapor ME, Conjunto de Modelos ME Plus e Espelho.
+2. **Itens GregTech Easy (`itemGroup.gtecore.gtecore_items`)**:
+   - Inclui a série de circuitos de Supercordas e Yin-Yang (processadores, clusters, supercomputadores, hosts).
+   - Inclui talismãs dos Cinco Elementos, chips Bagua, partículas dos Três Puros, Terminal de Teste de Estrutura e outros itens especializados.
 
 ---
 
-## ⚙️ 模组全局配置 (`GTEConfig`)
+## ⚙️ Configuração Global do Mod (`GTEConfig`)
 
-GTECore 提供了丰富的游戏内与文件配置项（位于 `config/gtecore-common.toml` 或游戏内配置菜单）：
+O GTECore oferece opções de configuração ricas dentro do jogo e em arquivos (localizados em `config/gtecore-common.toml` ou no menu de configuração do jogo):
 
-| 配置项 | 默认值 | 详细说明 |
+| Item de Configuração | Valor Padrão | Descrição Detalhada |
 | :--- | :--- | :--- |
-| `superPeace` (超级和平模式) | `false` | 开启后全面禁用恶性敌对生物生成，为科技建造提供绝对纯净环境 |
-| `durationMultiplier` (配方时间倍率) | `1.0` | 全局调整 GTECore 自定义配方的耗时倍率 |
+| `superPeace` (Modo Super Paz) | `false` | Quando ativado, desativa completamente a geração de mobs hostis, proporcionando um ambiente absolutamente puro para construção tecnológica |
+| `durationMultiplier` (Multiplicador de Duração de Receitas) | `1.0` | Ajusta globalmente o multiplicador de tempo das receitas personalizadas do GTECore |
 
 ---
 
-## 🔍 Jade / TOP 原生集成
+## 🔍 Integração Nativa com Jade / TOP
 
-GTECore 内置了 **`GTEJadePlugin`** 插件支持：
-- **ME 样板总成 Plus 状态**：实时显示当前总成绑定的样板数、流体与物品输出模式。
-- **ME 样板总成镜像 Plus 绑定信息**：悬浮直接显示绑定的主总成坐标 `(X, Y, Z)` 以及网络连通状态。
-- **阵法激活指示**：在阴阳八卦炼仙炉上实时显示青龙、白虎、朱雀、玄武四象阵法的就绪状态。
+O GTECore possui suporte integrado ao plugin **`GTEJadePlugin`**:
+- **Status do Conjunto de Modelos ME Plus**: Exibe em tempo real o número de modelos vinculados ao conjunto atual, bem como os modos de saída de fluidos e itens.
+- **Informações de Vinculação do Espelho do Conjunto de Modelos ME Plus**: Ao passar o mouse, exibe diretamente as coordenadas `(X, Y, Z)` do conjunto principal vinculado e o estado de conectividade da rede.
+- **Indicador de Ativação de Matriz**: Exibe em tempo real no Forno de Refinamento Alquímico Yin-Yang o estado de prontidão das matrizes dos Quatro Símbolos: Dragão Azul, Tigre Branco, Pássaro Vermelho e Tartaruga Negra.
 
 ---
 
-## 🛠️ 结构检测终端 (`Structure Testing Terminal`)
+## 🛠️ Terminal de Teste de Estrutura (`Structure Testing Terminal`)
 
-GTECore 提供了专属的手持工具 —— **结构检测终端** (`item.gtecore.check_structure_terminal`)：
-- **右键多方块控制器**：实时扫描结构完整性。
-- **错误诊断提示**：若结构未成型，终端会在聊天栏和悬浮提示中精准指出**错误方块坐标及不应放置的位置**，极大加速大型多方块建造与排错。
+O GTECore fornece uma ferramenta portátil exclusiva — o **Terminal de Teste de Estrutura** (`item.gtecore.check_structure_terminal`):
+- **Clique direito no controlador multibloco**: Escaneia a integridade da estrutura em tempo real.
+- **Dicas de diagnóstico de erro**: Se a estrutura não estiver formada, o terminal indicará com precisão no chat e nas dicas flutuantes as **coordenadas dos blocos incorretos e as posições que não deveriam estar lá**, acelerando enormemente a construção e a correção de grandes multiblocos.

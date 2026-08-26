@@ -1,61 +1,90 @@
-# AI 国际化翻译引擎 (`opencode_translate.py`)
+﻿# Motor de Tradução Internacional por IA (`opencode_translate.py`)
 
-GTE 工程设计并实现了基于现代大语言模型（LLM）的跨模组全自动国际化翻译系统（位于 `scripts/opencode_translate.py`）。
+O projeto GTE implementa um sistema de tradução internacional multilíngue de nível industrial, dirigido por um script unificado, cobrindo três áreas principais: ativos de mods, livros de missões FTB e documentação Markdown.
 
 ---
 
-## 🤖 翻译引擎架构
+## 🔒 As Cinco Regras de Ferro da Tradução
 
-传统的社区汉化依赖人工手动维护繁杂的 JSON 与 SNBT 文本，更新滞后且极易产生错漏。
+A tradução deste projeto segue as seguintes **5 regras de ferro que não podem ser violadas**:
 
-GTE 的 AI 翻译引擎通过标准化 OpenAI 兼容 API，实现了 FTB Quests 任务书与核心 Mod 语言文件的**自动化增量提取、术语对齐与并发翻译**：
+1. **Script Único**: Toda a tradução é exclusivamente conduzida por `scripts/opencode_translate.py`, integrado ao modelo `deepseek-v4-flash` do OpenCode Zen. É proibido introduzir um segundo script de tradução ou montar chamadas de API manualmente.
+2. **Execução na Nuvem**: Todas as traduções completas devem ser executadas no GitHub Actions CI (`translate.yml` / `docs-deploy.yml` / `sync-build.yml`). É estritamente proibido executar em grande escala manualmente em ambiente local.
+3. **Localização Única**: Todo o site é implantado uniformemente em `https://takanashisatou.github.io/GregtechEasy/` (branch `gh-pages`). Não se cria um segundo site de documentação nem se faz implantações duplicadas.
+4. **Regras de Inglês**:
+   - Sistema de documentação (`docs/en/`): O inglês deve ser totalmente traduzido por IA a partir de `docs/zh/`, sendo proibida a sobrescrita manual;
+   - Projeto do mod: Apenas o `en_us.json` do `gtecore` é mantido manualmente. O script possui lógica de proteção integrada, nunca sobrescrevendo com tradução automática.
+5. **Localização Profunda**: O menu de navegação (`nav_translations`), textos de diagramas Mermaid, comentários de código e rótulos de tabelas devem ser 100% localizados para o idioma correspondente.
+
+---
+
+## 🤖 Arquitetura do Motor de Tradução
+
+A tradução comunitária tradicional depende de manutenção manual de arquivos JSON e SNBT complexos, com atualizações atrasadas e alta propensão a erros e omissões.
+
+O motor de tradução por IA do GTE, através de uma API padronizada compatível com OpenAI, implementa **extração incremental automatizada, alinhamento de terminologia e tradução concorrente** para os livros de missões FTB Quests e arquivos de idioma do mod principal:
 
 ```mermaid
 graph TD
-    A[扫描 FTB Quests snbt 与 Lang json] --> B[提取未翻译词条]
-    B --> C[读取 .translation_cache.json 本地缓存]
-    C --> D{是否有新增或修改词条?}
-    D -- 无 --> E[直接同步写入目标语言文件]
-    D -- 有 --> F[组装包含格雷科技工业术语约束的 Prompt]
-    F --> G[调用 LLM 供应商 API: DeepSeek / OpenAI / Gemini / Qwen / Kimi / GLM]
-    G --> H[校验与更新本地缓存]
-    H --> I[回写至 zh_cn.json / en_us.json / ftbquests/lang/]
+    A[Escanear FTB Quests snbt e Lang json] --> B[Extrair entradas não traduzidas]
+    B --> C[Ler cache local .translation_cache.json]
+    C --> D{Há entradas novas ou modificadas?}
+    D -- Não --> E[Sincronizar e escrever diretamente nos arquivos de idioma de destino]
+    D -- Sim --> F[Montar Prompt com restrições de terminologia industrial GregTech]
+    F --> G["Priorizar chamada ao OpenCode deepseek-v4-flash<br/>Failover: DeepSeek / Gemini / Qwen / Kimi / GLM"]
+    G --> H[Validar e atualizar cache local]
+    H --> I[Gravar de volta em zh_cn.json / en_us.json / ftbquests/lang/]
 ```
 
 ---
 
-## 🔑 支持的 LLM 供应商与环境变量
+## 🔑 Provedores de LLM Suportados e Variáveis de Ambiente
 
-脚本支持通过环境变量无缝切换不同的 AI 模型提供商：
+O script seleciona automaticamente a primeira chave de API disponível, sem necessidade de especificar manualmente o provedor:
 
-| 供应商名称 | API Key 环境变量 | Base URL 环境变量 | 默认模型 |
-| :--- | :--- | :--- | :--- |
-| **DeepSeek** | `DEEPSEEK_API_KEY` | `DEEPSEEK_BASE_URL` | `deepseek-chat` |
-| **OpenAI** | `OPENAI_API_KEY` | `OPENAI_BASE_URL` | `gpt-4o-mini` |
-| **Google Gemini** | `GEMINI_API_KEY` | `GEMINI_BASE_URL` | `gemini-3.5-flash` |
-| **通义千问 (DashScope)** | `DASHSCOPE_API_KEY` | `DASHSCOPE_BASE_URL` | `qwen-plus` |
-| **月之暗面 (Moonshot)** | `MOONSHOT_API_KEY` | `MOONSHOT_BASE_URL` | `moonshot-v1-8k` |
-| **智谱清言 (Zhipu GLM)** | `ZHIPU_API_KEY` | `ZHIPU_BASE_URL` | `glm-4-flash` |
-| **OpenCode 平台** | `OPENCODE_API_KEY` | `OPENCODE_BASE_URL` | `deepseek-v4-flash` |
-| **通用聚合代理** | `LLM_API_KEY` | `LLM_BASE_URL` | `LLM_MODEL` (自定义) |
+| Prioridade | Nome do Provedor | Variável de Ambiente da API Key | Variável de Ambiente da Base URL | Modelo Padrão |
+| :---: | :--- | :--- | :--- | :--- |
+| **1 (Preferencial)** | **OpenCode Zen** | `OPENCODE_API_KEY` | `OPENCODE_BASE_URL` | **`deepseek-v4-flash`** |
+| 2 | DeepSeek | `DEEPSEEK_API_KEY` | `DEEPSEEK_BASE_URL` | `deepseek-chat` |
+| 3 | Google Gemini | `GEMINI_API_KEY` | `GEMINI_BASE_URL` | `gemini-3.6-flash` |
+| 4 | Tongyi Qianwen (DashScope) | `DASHSCOPE_API_KEY` | `DASHSCOPE_BASE_URL` | `qwen-plus` |
+| 5 | Moonshot AI | `MOONSHOT_API_KEY` | `MOONSHOT_BASE_URL` | `moonshot-v1-8k` |
+| 6 | Zhipu GLM | `ZHIPU_API_KEY` | `ZHIPU_BASE_URL` | `glm-4-flash` |
+| 7 | OpenAI | `OPENAI_API_KEY` | `OPENAI_BASE_URL` | `gpt-4o-mini` |
+| 8 | Proxy Agregador Genérico | `LLM_API_KEY` | `LLM_BASE_URL` | `LLM_MODEL` (personalizado) |
 
----
-
-## 🎯 工业级 Prompt 约束原则
-
-在调用 API 进行翻译时，系统内置了严格的 Minecraft 与 GregTech 术语规则：
-1. **格式符绝对保留**：完整保留 Minecraft 原生颜色格式化代码（如 `§a`, `§c`, `§6`）与占位符（`%s`, `%d`, `{0}`）。
-2. **科技术语规范统一**：严格锁定科技专有名词翻译（如 `UHV`, `EU/t`, `Amps`, `Voltage`, `Overclock`, `Subtick` 等）。
-3. **哈希增量缓存**：所有已翻译条目自动持久化记录在 `.translation_cache.json` 中，只有新增或变更文本会发起网络请求，极大节省 Token 开销与 CI 耗时。
+> **Nota**: Basta configurar `OPENCODE_API_KEY` nos Secrets do GitHub para que o CI funcione completamente. Os demais são Failovers de reserva.
 
 ---
 
-## 💻 本地运行指令
+## 🎯 Princípios de Restrição do Prompt de Nível Industrial
 
-在本地开发环境中一键触发全量翻译：
+Ao chamar a API para tradução, o sistema possui regras estritas de terminologia do Minecraft e GregTech:
 
-```powershell
-# 设置任意一个有效 API Key 后执行
-$env:DEEPSEEK_API_KEY="sk-..."
-python scripts/opencode_translate.py
-```
+1. **Preservação Absoluta de Formatadores**: Preservar integralmente os códigos de formatação de cor nativos do Minecraft (como `§a`, `§c`, `§6`) e placeholders (`%s`, `%d`, `{0}`).
+2. **Padronização de Termos Técnicos**: Tradução estritamente fixada para nomes técnicos especializados (como `UHV`, `EU/t`, `Amps`, `Voltage`, `Overclock`, `Subtick`, etc.).
+3. **Cache Incremental por Hash**: Todas as entradas já traduzidas são persistidas automaticamente em `.translation_cache.json`. Apenas textos novos ou alterados geram requisições de rede, economizando significativamente tokens e tempo de CI.
+4. **Localização de Textos em Diagramas Mermaid**: Rótulos de nós de fluxogramas (como `A[Rótulo]`) são traduzidos para o idioma de destino, enquanto palavras-chave de sintaxe como `graph TD`, `-->`, `subgraph` permanecem inalteradas.
+5. **Comentários de Código e Rótulos de Tabelas**: Comentários dentro de blocos de código (`//` / `#`) e cabeçalhos de colunas de tabelas são totalmente localizados.
+
+---
+
+## 🏗️ Arquivos Protegidos (Não Traduzíveis Automaticamente)
+
+| Caminho | Motivo da Proteção | Mecanismo de Proteção |
+| :--- | :--- | :--- |
+| `modules/gtecore/src/main/resources/assets/gtecore/lang/en_us.json` | A tradução em inglês do gtecore é mantida manualmente pelo autor | O script detecta a flag `is_gtecore` e ignora a sobrescrita para o idioma `en_us` |
+
+---
+
+## 💻 Formas de Acionamento do CI (Execução na Nuvem, Regra de Ferro 2)
+
+| Cenário | Workflow | Forma de Acionamento |
+| :--- | :--- | :--- |
+| Após push de código, build completo + tradução automática | `sync-build.yml` | Acionado automaticamente por Push para `main`/`master` |
+| Após alteração de documentação, tradução + implantação automática | `docs-deploy.yml` | Acionado quando há alterações em `docs/` ou `mkdocs.yml` |
+| Tradução manual completa de ativos do mod | `translate.yml` | Acionado manualmente na página de Actions, com opção de Provedor e idioma |
+| Tradução manual completa de documentação | `translate.yml` | Marcar a opção de entrada `translate_docs` |
+
+> [!CAUTION]
+> É proibido executar manualmente `python scripts/opencode_translate.py` localmente para traduções completas em grande escala. A execução local é permitida apenas para depuração de arquivos individuais ou verificação de conectividade da chave de API.

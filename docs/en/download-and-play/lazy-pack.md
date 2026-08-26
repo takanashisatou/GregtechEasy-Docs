@@ -1,78 +1,80 @@
-# Modpack Download & Player Lazy Pack Guide
+# Modpack Download and Player Lazy Pack Guide
 
-GTE (GregTech Easy) provides three ready-to-use distribution packages tailored for players, modpack developers, and server administrators:
+GTE (GregTech Easy) provides three ready-to-use delivery formats for players and server owners with different technical backgrounds:
 
-1. **Player Zero-Compile Lazy Pack (`GTE-LazyPack-*.zip`)**: Contains all pre-compiled mod jars, configurations, KubeJS scripts, and the complete `.minecraft` directory structure. **Drag and drop into your launcher to play immediately**.
-2. **CurseForge Standard Pack (`GTE-CurseForge-*.zip`)**: Standard CurseForge format ready for one-click import into PCL2, HMCL, CurseForge App, and Prism Launcher.
-3. **Server Deployment Pack (`GTE-Server-*.zip`)**: Dedicated server pack containing clean server configuration, mods, and launch scripts for multiplayer hosting.
+1. **Player No-Compile Complete Lazy Pack (`GTE-LazyPack-*.zip`)**: Contains all pre-compiled mods, configurations, tweak scripts, and the complete `.minecraft` directory structure. **Double-click or drag into a launcher to play**.
+2. **CurseForge Standard Pack (`GTE-CurseForge-*.zip`)**: Standard CurseForge format, can be imported with one click in PCL2 / HMCL / CurseForge App / Prism Launcher.
+3. **Server Modpack (`GTE-Server-*.zip`)**: Contains clean server configuration, mods, and startup scripts for hosting multiplayer servers.
 
 ---
 
 ## 🚀 Player Lazy Pack (Recommended)
 
-### Key Benefits
-- **Zero Compilation Dependency**: No need to install JDK compilation toolchains, IntelliJ IDEA, or Git.
-- **Fully Bundled**: The latest release jars of `gtecore`, `gtm-reborn`, `gt--`, and all required companion addons are pre-synced into `mods/`.
-- **Drag & Drop Ready**: Supports seamless window drag-and-drop import in PCL2 and HMCL.
+### Features and Advantages
+- **0 Compilation Dependencies**: No need to install a JDK compilation environment, IntelliJ IDEA, or Git.
+- **Full Packaging**: The latest release Jars of `gtecore`, `gtm-reborn`, `gt--` and prerequisite extension mods are all pre-included in the `mods/` directory.
+- **Drag-and-Play**: Supports one-click import by dragging into PCL2 / HMCL windows.
 
-### Import & Startup Instructions
+### Import and Startup Steps
 
-=== "Option 1: Launcher Drag & Drop (Recommended)"
+=== "Method 1: Launcher One-Click Drag-and-Drop (Recommended)"
 
     1. Open **PCL2 (Plain Craft Launcher 2)** or **HMCL (Hello Minecraft! Launcher)**.
-    2. Left-click and drag the downloaded `GTE-LazyPack-<version>.zip` directly into the launcher window.
-    3. The launcher will automatically extract the version into your game version list.
-    4. Navigate to the **Version Settings**, and ensure the Java runtime is set to **Java 21**.
-    5. Allocate **8GB ~ 12GB** of RAM, and launch the game!
+    2. Directly **left-click and drag** the downloaded `GTE-LazyPack-<version>.zip` into the launcher's main window.
+    3. The launcher will automatically recognize and extract it to the game version list.
+    4. Go to the **version settings** for that version and set the Java runtime to **Java 21**.
+    5. Allocate **8GB ~ 12GB** of memory and click launch!
 
-=== "Option 2: Manual Directory Extraction"
+=== "Method 2: Manual Extraction Mode"
 
-    1. Extract the zip archive into any directory without special characters or spaces (e.g. `D:\Games\GTE\`).
-    2. The extracted contents contain a complete `.minecraft` folder with `mods/`, `config/`, and `kubejs/`.
-    3. In your launcher, add a game version and set the game directory path to the extracted `.minecraft` folder.
-    4. Select **Java 21** as the runtime and launch.
+    1. Extract the archive to any path without Chinese characters or spaces (e.g., `D:\Games\GTE\`).
+    2. After extraction, you will obtain a `.minecraft` directory containing `mods/`, `config/`, and `kubejs/`.
+    3. Add a game version in the launcher and select the extracted `.minecraft` folder as the game root directory.
+    4. Ensure **Java 21** is selected as the core and launch.
 
 ---
 
-## ⚠️ Java 21 Runtime Requirement (CRITICAL)
+## ⚠️ Java 21 Runtime Environment Requirements (Extremely Important)
 
 > [!CAUTION]
-> **This modpack strictly requires Java 21 (JDK 21) as its runtime environment!**
-> Do NOT use **Java 17** or **Java 8**, otherwise the game will immediately crash on startup!
+> **This modpack strictly requires Java 21 (JDK 21) as the runtime environment!**
+> Do NOT use **Java 17** or **Java 8**, otherwise the game will crash directly or refuse to start!
 
-### Why Java 21 is Mandatory
-- GTE's core mods (`gtecore`, `gtm-reborn`, `gt--`) utilize modern **Java 21 language features** such as Record Patterns, Virtual Threads, and enhanced switch pattern matching.
-- Gradle build scripts enforce `JavaLanguageVersion.of(21)` across all modules.
+### Why Must Java 21 Be Used?
+- GTE's core mods (`gtecore`, `gtm-reborn`, `gt--`) fully adopt **modern Java 21 language features** (such as Record Patterns, Virtual Threads, and enhanced Switch matching).
+- The Gradle build scripts globally configure `JavaLanguageVersion.of(21)` to enforce toolchain checks.
 
-### Recommended JDK 21 Downloads
+### Recommended JDK 21 Download Links
 
-| Distribution | Download Link | Notes |
+| Distribution | Download Link | Recommendation Reason |
 | :--- | :--- | :--- |
-| **Azul Zulu 21 (LTS)** | [Azul Official Site](https://www.azul.com/downloads/?version=java-21-lts) | Outstanding multithreading optimization for Minecraft |
-| **Eclipse Temurin 21 (LTS)** | [Adoptium Official Site](https://adoptium.net/temurin/releases/?version=21) | Highly recommended for compatibility and stability |
-| **Microsoft OpenJDK 21** | [Microsoft Official Site](https://learn.microsoft.com/en-us/java/openjdk/download) | Excellent native Windows integration |
+| **Azul Zulu 21 (LTS)** | [Click to visit Azul website](https://www.azul.com/downloads/?version=java-21-lts) | Excellent performance, ideal for Minecraft large-scale multi-threading optimization |
+| **Eclipse Temurin 21 (LTS)** | [Click to visit Adoptium website](https://adoptium.net/temurin/releases/?version=21) | Officially recommended, high compatibility and stability |
+| **Microsoft OpenJDK 21** | [Click to visit Microsoft website](https://learn.microsoft.com/zh-cn/java/openjdk/download) | Good native adaptation on Windows platforms |
 
-### Setting Java 21 in Launcher
+### Configuring Java 21 in the Launcher
 
 ```mermaid
 graph LR
-    A[Open Launcher] --> B[Enter GTE Version Settings]
-    B --> C[Java Path / Runtime]
-    C --> D[Select Installed JDK 21 javaw.exe]
-    D --> E[Allocate 8192MB ~ 12288MB RAM]
-    E --> F[Save & Launch Game]
+    A[Open launcher] --> B[Enter GTE version settings]
+    B --> C[Java path / runtime]
+    C --> D[Select installed JDK 21 javaw.exe]
+    D --> E[Allocate 8192MB ~ 12288MB memory]
+    E --> F[Save and launch game]
 ```
 
 ---
 
-## 🎮 In-Game Keybindings & Commands
+## 🎮 In-Game Shortcuts and Common Commands
 
-| Command / Key | Function | Permission |
+| Command / Shortcut | Function Description | Permission Requirement |
 | :--- | :--- | :--- |
-| `/ftbquests editing_mode true` | Enable FTB Quests in-game visual editor | OP Permission |
-| `/ftbquests reload` | Reload quest book configurations | Everyone |
-| `/kubejs reload server_scripts` | Hot reload server scripts and custom recipes | OP Permission |
-| `/kubejs reload client_scripts` | Hot reload client scripts and UI logic | Everyone |
-| `/dumpmultiblock` | Export multiblock pattern code from wooden axe selection | OP Permission |
-| <kbd>U</kbd> / <kbd>R</kbd> | View item Usage / Recipe | EMI / JEI |
-| <kbd>F7</kbd> | Toggle light level overlay (red X marks monster spawn areas) | Client |
+| `/ftbquests editing_mode true` | Enable quest book visual editing mode (author mode) | OP permission |
+| `/ftbquests reload` | Hot reload FTB Quests quest book configuration files | Everyone |
+| `/kubejs reload server_scripts` | Hot reload server-side tweak scripts and recipes | OP permission |
+| `/kubejs reload client_scripts` | Hot reload client-side tweak scripts and display logic | No permission required |
+| `/dumpmultiblock` | One-click export of multiblock structure code after selecting an area with a wooden axe | OP permission |
+| <kbd>U</kbd> / <kbd>R</kbd> | View usage (Usage) / recipe (Recipe) of the item under the cursor | EMI / JEI shortcut |
+| <kbd>F7</kbd> | View surrounding light levels (red X marks mob spawn areas) | Client-side shortcut |
+
+<<<<<FILE_END: download-and-play/lazy-pack.md>>>>

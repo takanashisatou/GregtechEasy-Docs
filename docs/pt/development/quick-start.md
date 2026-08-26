@@ -1,4 +1,4 @@
-# 开发者快速上手指南
+﻿# 开发者快速上手指南
 
 本指南面向参与 GTE-Multi 跨模块工程开发的 Java/Kotlin 程序员与整合包作者。
 
@@ -33,8 +33,8 @@ git submodule update --init --recursive
 ```
 
 ### IDEA 导入指引
-1. 在 IDEA 中点击 **File ➜ Open**，选中根目录的 `build.gradle` 打开为工程。
-2. 前往设置：`Settings` ➜ `Build, Execution, Deployment` ➜ `Build Tools` ➜ `Gradle`。
+1. 在 IDEA 中点击 **文件 ➜ 打开**，选中根目录的 `build.gradle` 打开为工程。
+2. 前往设置：`设置` ➜ `构建、执行、部署` ➜ `构建工具` ➜ `Gradle`。
 3. 将 **Gradle JVM** 指定为 **JDK 21**。
 
 ---

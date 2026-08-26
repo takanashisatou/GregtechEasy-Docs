@@ -1,54 +1,56 @@
-# Local Hot Debugging & Launcher-Free Runtimes
+# Local Hot Debugging and Launcher-Free Quick Run
 
-GTE provides an integrated developer ecosystem tailored for quest writers, gameplay designers, and mod developers.
+GTE has designed a seamless debugging system that is extremely friendly to modpack planners, quest writers, and mod programmers.
 
 ---
 
-## ⚡ 1. Launcher-Free Instant Start (`run_game.bat` / `run_game.sh`)
+## ⚡ 1. Launcher-Free Ultra-Fast Startup Script (`run_game.bat` / `run_game.sh`)
 
-For quest designers (FTB Quests) and KubeJS gameplay authors, **there is no need to launch IntelliJ IDEA or configure third-party launchers**. Double-click **`run_game.bat`** at the project root to launch the full modpack immediately!
+For quest book authors (FTB Quests) and KubeJS recipe planners, **there is no need to open IntelliJ IDEA or install any third-party launcher**. Simply double-click **`run_game.bat`** in the project root directory to enter the game at lightning speed!
 
 ```mermaid
 graph TD
-    A[Double-click run_game.bat] --> B[Auto-detect & persist local JDK 21 installation]
-    B --> C[Auto-detect system RAM and CPU core count]
-    C --> D[Dynamically allocate optimal JVM heap and parallel GC threads]
-    D --> E[Mount gte/overrides directly as game working directory]
-    E --> F[Launch game: Real-time read/write for Git-tracked quests and scripts]
+    A[Double-click run_game.bat] --> B[Automatically scan local JDK 21 paths and persist]
+    B --> C[Automatically detect system physical memory and CPU core count]
+    C --> D[Dynamically calculate optimal JVM memory allocation and GC threads]
+    D --> E[Directly mount gte/overrides as the game working directory]
+    E --> F[Launch game: real-time read/write of Git-tracked quests and scripts]
 ```
 
-### Key Advantages
-1. **Zero-Configuration JDK 21 Discovery**: Automatically scans `.jdks`, `Adoptium`, `Zulu`, and `Program Files`, caching the validated JDK path in `.jdk_path`.
-2. **Hardware Adaptive Tuning**: Allocates 50%~60% of available physical memory to JVM heap and configures parallel garbage collection threads automatically.
-3. **Zero-Copy Git Workflow**: In-game quest changes (`/ftbquests editing_mode true`) write directly into the Git repository's `config/ftbquests/` folder. Open GitHub Desktop and commit in one click!
+### Core Features
+1. **Fully Automatic JDK 21 Detection**: Automatically searches for installed Java 21 in `.jdks`, `Adoptium`, `Zulu`, and `Program Files`, and automatically remembers it in `.jdk_path`.
+2. **Hardware Adaptive Optimization**: Automatically allocates JVM heap size based on the optimal ratio (50%~60% of available physical memory) according to the current computer's total RAM, and automatically configures parallel GC threads.
+3. **Zero-Move Workflow**: Modify quests in-game (`/ftbquests editing_mode true`) and save. Changes are saved in real-time directly to the corresponding `config/ftbquests/` directory in the Git repository. Open GitHub Desktop and commit with one click!
 
 ---
 
-## 🔗 2. Launcher Zero-Copy Junction Linker (`link_to_launcher.bat`)
+## 🔗 2. External Launcher Zero-Copy Mapping Tool (`link_to_launcher.bat`)
 
-If you prefer using your custom launcher instance (PCL2, HMCL, Prism Launcher, or CurseForge App):
+If you prefer using a launcher with your own configured skins and key bindings (such as PCL2 / HMCL / Prism Launcher):
 
-1. Run **`link_to_launcher.bat`**.
-2. Drag and drop your launcher's instance `.minecraft` path into the prompt and press Enter.
-3. The script creates Windows Directory Junctions (`mklink /J`):
+1. Double-click **`link_to_launcher.bat`** in the root directory.
+2. Follow the prompts to drag your launcher's game directory (e.g., `D:\PCL2\.minecraft\versions\GTE-Dev\.minecraft\`) into the console and press Enter.
+3. The script will automatically create Windows directory junctions:
    - `config` ➜ `gte/overrides/config`
    - `kubejs` ➜ `gte/overrides/kubejs`
    - `ftbquests` ➜ `gte/overrides/config/ftbquests`
    - `defaultconfigs` ➜ `gte/overrides/defaultconfigs`
-4. All in-game modifications made in your launcher instance are saved directly into the main Git repository.
+4. No matter how you modify quests or recipes in the launcher, **physical data is synchronized in real-time and saved in the main Git repository**!
 
 ---
 
-## ☕ 3. Shadow Hot-Debug Runtime (`gte-dev-runtime`)
+## ☕ 3. Mod Code Hot-Compile Shadow Environment (`gte-dev-runtime`)
 
-For Java and Kotlin programmers, `modules/gte-dev-runtime` provides a dedicated hot-debug runner:
+For Java/Kotlin programmers, `modules/gte-dev-runtime` is a dedicated shadow debugging module:
 
-### Mechanics & Design
-- **Role**: Pure local deobfuscated debug sandbox. **Never packaged into release distributions**.
-- **ModDevGradle Dynamic Remapping**: Combines the live source trees of `gtm-reborn`, `gt--`, and `gtecore` into the Mojang mapping namespace.
-- **How to Launch**:
-  - In IDEA, run **`Run GTE Full Pack (Client - Hot Debug)`**.
-  - Or via terminal:
+### Working Principle and Design Considerations
+- **Positioning**: A purely local hot-compile debugging sandbox. **Packaging and publishing are prohibited; it will not appear in any player artifacts**.
+- **ModDevGradle Dynamic Remapping**: Automatically hot-compiles the latest source code of `gtm-reborn` and `gtecore` and mounts them into the Mojang deobfuscated namespace.
+- **Startup Methods**:
+  - In IDEA, select the run configuration **`Run GTE Full Pack (Client - Hot Debug)`**.
+  - Or execute from the command line:
     ```powershell
     .\gradlew.bat :modules:gte-dev-runtime:runClient
     ```
+
+<<<<<FILE_END: development/runtime-and-launchers.md>>>>

@@ -1,47 +1,47 @@
-# 界面、材质与 Blockbench 美术工作流
+﻿# Interface, textures et flux de travail artistique Blockbench
 
-GTE 工程建立了一套自动化、零丢失的美术资产处理流水线。模型设计师只需使用 **Blockbench** 制作模型并保存在原件目录，Gradle 任务会自动完成资产分类、格式校验与增量同步。
+Le projet GTE a établi un pipeline automatisé de traitement des actifs artistiques sans perte. Les concepteurs de modèles n'ont qu'à utiliser **Blockbench** pour créer des modèles et les enregistrer dans le répertoire source, et les tâches Gradle automatisent la classification des actifs, la validation du format et la synchronisation incrémentale.
 
 ---
 
-## 🎨 美术源文件目录 (`art_assets/`)
+## 🎨 Répertoire des fichiers sources artistiques (`art_assets/`)
 
-项目根目录下的 `art_assets/` 是美术设计师的**唯一工作目录**，受 Git 严格版本追踪：
+Le répertoire `art_assets/` à la racine du projet est le **répertoire de travail unique** des concepteurs artistiques, strictement suivi par Git :
 
 ```
 art_assets/
-├── *.bbmodel                           # Blockbench 工程源文件（保留图层与骨骼）
-├── *.json                              # Blockbench 导出的 Minecraft 几何模型
-├── *.png                               # 纹理贴图（物品 / 方块机壳 / 阵法贴图）
-├── *.png.mcmeta                        # 动画与材质元数据
-└── projectuhv/                         # 高阶电路系列专用材质子目录
+├── *.bbmodel                           # Fichiers sources du projet Blockbench (conservant les calques et les os)
+├── *.json                              # Modèles géométriques Minecraft exportés depuis Blockbench
+├── *.png                               # Textures (objets / boîtiers de blocs / textures de formation)
+├── *.png.mcmeta                        # Métadonnées d'animation et de matériaux
+└── projectuhv/                         # Sous-répertoire dédié aux matériaux de la série de circuits avancés
 ```
 
 ---
 
-## 🏷️ 命名规范与自动路由规则
+## 🏷️ Règles de nommage et de routage automatique
 
-Gradle 任务 `syncBlockbenchAssets` 根据文件命名关键词，自动将文件分发至 `modules/gtecore` 对应的资源路径中：
+La tâche Gradle `syncBlockbenchAssets` distribue automatiquement les fichiers vers les chemins de ressources correspondants dans `modules/gtecore` en fonction des mots-clés de nommage des fichiers :
 
-| 文件类型 | 命名包含关键词 | 自动同步目标目录 (GTECore) |
+| Type de fichier | Mots-clés de nommage | Répertoire cible de synchronisation automatique (GTECore) |
 | :--- | :--- | :--- |
-| **物品贴图** (`.png`) | `processor`, `string`, `symbol`, `paper`, `wafer`, `chip`, `god`, `rune`, `yin`, `yang` | `src/main/resources/assets/gtecore/textures/item/` |
-| **方块机壳贴图** (`.png`) | `casing`, `module`, `concrete`, `coil`, `zhenfa`, `matrix`, `buffer`, `generator`, `machine` | `src/main/resources/assets/gtecore/textures/block/` |
-| **方块模型** (`.json`) | `casing`, `module`, `block`, `matrix` | `src/main/resources/assets/gtecore/models/block/` |
-| **物品模型** (`.json`) | 其余所有模型文件（排除 `.bbmodel`） | `src/main/resources/assets/gtecore/models/item/` |
+| **Textures d'objets** (`.png`) | `processor`, `string`, `symbol`, `paper`, `wafer`, `chip`, `god`, `rune`, `yin`, `yang` | `src/main/resources/assets/gtecore/textures/item/` |
+| **Textures de boîtiers de blocs** (`.png`) | `casing`, `module`, `concrete`, `coil`, `zhenfa`, `matrix`, `buffer`, `generator`, `machine` | `src/main/resources/assets/gtecore/textures/block/` |
+| **Modèles de blocs** (`.json`) | `casing`, `module`, `block`, `matrix` | `src/main/resources/assets/gtecore/models/block/` |
+| **Modèles d'objets** (`.json`) | tous les autres fichiers de modèles (à l'exclusion de `.bbmodel`) | `src/main/resources/assets/gtecore/models/item/` |
 
 ---
 
-## 🔄 一键资产同步任务 (`syncBlockbenchAssets`)
+## 🔄 Tâche de synchronisation des actifs en un clic (`syncBlockbenchAssets`)
 
-在导出模型或修改贴图后，在终端执行：
+Après avoir exporté des modèles ou modifié des textures, exécutez dans le terminal :
 
 ```powershell
 $env:JAVA_HOME='C:\Users\Ex_Je\.jdks\ms-21.0.11'
 .\gradlew.bat syncBlockbenchAssets
 ```
 
-### 自动化特性
-1. **自动触发**：该任务已被挂载至 `buildAll`、`copyOutputJars` 以及 CI 构建流程的前置节点，在本地编译或启动游戏时会自动执行，无需手动反复拷贝。
-2. **增量安全**：使用二进制流式覆写，自动在目标资源目录中补全缺失的父级目录。
-3. **保持 Git 清洁**：`.bbmodel` 仅保留在 `art_assets/` 作为源工程，编译生成的 jar 包中不会夹带冗余的 Blockbench 项目元数据。
+### Caractéristiques d'automatisation
+1. **Déclenchement automatique** : cette tâche est montée sur les nœuds préalables de `buildAll`, `copyOutputJars` et du pipeline de construction CI, elle s'exécute automatiquement lors de la compilation locale ou du lancement du jeu, sans avoir à copier manuellement à plusieurs reprises.
+2. **Sécurité incrémentale** : utilise l'écrasement en flux binaire, complète automatiquement les répertoires parents manquants dans le répertoire de ressources cible.
+3. **Maintien de la propreté Git** : `.bbmodel` n'est conservé que dans `art_assets/` comme projet source, le jar généré par la compilation ne contient pas de métadonnées de projet Blockbench redondantes.

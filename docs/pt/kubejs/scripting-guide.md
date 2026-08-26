@@ -1,28 +1,28 @@
-# KubeJS 魔改与脚本开发指南
+﻿# Guia de Modificação e Desenvolvimento de Scripts KubeJS
 
-GTE 将大部分材料注册、配方调整与多模组联动逻辑交由 **KubeJS** 处理（目录位于 `gte/overrides/kubejs/`）。
+O GTE delega a maior parte do registro de materiais, ajustes de receitas e lógica de integração entre múltiplos mods para o **KubeJS** (diretório localizado em `gte/overrides/kubejs/`).
 
 ---
 
-## 📁 脚本目录架构与生命周期
+## 📁 Estrutura de Diretórios de Scripts e Ciclo de Vida
 
 ```
 gte/overrides/kubejs/
-├── startup_scripts/     # 【启动期脚本】在游戏最早期执行，用于注册材料、流体、方块、物品
-├── server_scripts/      # 【服务端脚本】在进入存档/连接服务器时执行，用于注册/修改配方与标签
-├── client_scripts/      # 【客户端脚本】在客户端执行，用于修改 Tooltips、JEI/EMI 界面显示
-└── assets/ & data/      # 静态本地化、贴图材质与数据包文件
+├── startup_scripts/     # 【Scripts de inicialização】Executados no início do jogo, usados para registrar materiais, fluidos, blocos e itens
+├── server_scripts/      # 【Scripts do servidor】Executados ao entrar em um mundo/servidor, usados para registrar/modificar receitas e tags
+├── client_scripts/      # 【Scripts do cliente】Executados no cliente, usados para modificar Tooltips, exibição da interface JEI/EMI
+└── assets/ & data/      # Arquivos estáticos de localização, texturas e pacotes de dados
 ```
 
 ---
 
-## 🧪 启动期：自定义材料注册 (`startup_scripts/`)
+## 🧪 Fase de Inicialização: Registro de Materiais Personalizados (`startup_scripts/`)
 
-使用 `GTCEuStartupEvents.registry('gtceu:material', ...)` 注册自定义元素与材料：
+Use `GTCEuStartupEvents.registry('gtceu:material', ...)` para registrar elementos e materiais personalizados:
 
 ```javascript
 GTCEuStartupEvents.registry('gtceu:material', event => {
-    // 1. 注册无尽金属 (Infinite)
+    // 1. Registrar Metal Infinito (Infinite)
     event.create('infinite')
         .color(0xed1661)
         .ingot()
@@ -32,7 +32,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             GTToolType.AXE, GTToolType.PICKAXE, GTToolType.SWORD, GTToolType.MORTAR
         ]))
 
-    // 2. 注册暗流体金属 (Dark Fluid)
+    // 2. Registrar Metal de Fluido Escuro (Dark Fluid)
     event.create('dark_fluid')
         .color(0xb156d8)
         .fluid()
@@ -45,7 +45,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             GTMaterialFlags.GENERATE_LONG_ROD
         )
 
-    // 3. 注册喵喵物质 (Meow Meow Matter) 与 反物质 (Antimatter)
+    // 3. Registrar Matéria Miau Miau (Meow Meow Matter) e Antimatéria (Antimatter)
     event.create('meow_meow_matter')
         .color(0x483D8B)
         .dust()
@@ -69,35 +69,35 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 ---
 
-## ⚙️ 服务端：自定义配方与机器配方编写 (`server_scripts/`)
+## ⚙️ Fase de Servidor: Receitas Personalizadas e Escrita de Receitas de Máquinas (`server_scripts/`)
 
-在 `ServerEvents.recipes` 事件中，可直接调用 `event.recipes.gtceu` 与 `event.recipes.gtecore`：
+No evento `ServerEvents.recipes`, você pode chamar diretamente `event.recipes.gtceu` e `event.recipes.gtecore`:
 
-### 1. 基础机器与高炉配方
+### 1. Receitas Básicas de Máquinas e Alto-Forno
 
 ```javascript
 ServerEvents.recipes(event => {
     const gtr = event.recipes.gtceu
     const gte = event.recipes.gtecore
 
-    // 移除原有低效配方
+    // Remover receitas antigas ineficientes
     event.remove({ input: 'gtceu:raw_platinum' })
     event.remove({ id: 'gtceu:coke_oven/log_to_charcoal' })
 
-    // 极速焦炉配方
+    // Receita de forno de coque rápido
     gtr.coke_oven('fast_coke_oven')
         .itemInputs('#minecraft:logs_that_burn')
         .itemOutputs('minecraft:charcoal')
         .outputFluids('gtceu:creosote 1000')
         .duration(20)
 
-    // 原始高炉：1 铁 + 1 煤炭 -> 5 钢锭 (1 tick)
+    // Alto-forno primitivo: 1 ferro + 1 carvão -> 5 lingotes de aço (1 tick)
     gtr.primitive_blast_furnace('easy_steel_from_coal')
         .itemInputs('1x minecraft:iron_ingot', '1x minecraft:coal')
         .itemOutputs('5x gtceu:steel_ingot')
         .duration(1)
 
-    // 压模机压制逻辑处理器
+    // Prensagem para processador lógico
     gtr.forming_press('gtecore:printed_logic_processor')
         .EUt(26)
         .duration(2 * 20)
@@ -107,13 +107,13 @@ ServerEvents.recipes(event => {
 })
 ```
 
-### 2. GTECore 自定义机器配方
+### 2. Receitas Personalizadas de Máquinas GTECore
 
 ```javascript
 ServerEvents.recipes(event => {
     const gte = event.recipes.gtecore
 
-    // 简单之盒 (Easy Box) 批量矿物产出配方
+    // Receita de produção em massa de minérios da Caixa Fácil (Easy Box)
     gte.easy_box('easy_test')
         .circuit(1)
         .duration(20 * 20)
@@ -132,15 +132,15 @@ ServerEvents.recipes(event => {
 
 ---
 
-## ⚡ 游戏内热重载指令
+## ⚡ Comandos de Recarga Rápida no Jogo
 
-无需重启客户端即可实时测试脚本修改：
+Teste alterações de scripts em tempo real sem reiniciar o cliente:
 
-- **重载配方与服务端脚本**：
+- **Recarregar receitas e scripts do servidor**:
   ```mcfunction
   /kubejs reload server_scripts
   ```
-- **重载材质与客户端脚本**：
+- **Recarregar materiais e scripts do cliente**:
   ```mcfunction
   /kubejs reload client_scripts
   ```

@@ -1,88 +1,90 @@
-# Anti-Crash Development Guide & Practical Post-Mortems
+# Anti-Crash Development Guidelines and Practical Troubleshooting Experience Library (Anti-Crash Guide)
 
-In a complex multi-module development environment featuring multiple classloaders and bytecode mixins, seemingly innocent code patterns can cause catastrophic runtime crashes.
+In a Minecraft development environment with multiple modules, multiple Classloaders, and complex Mixin bytecode enhancement, some careless coding practices can lead to catastrophic runtime crashes.
 
-This guide details the **Five Golden Rules for Crash Prevention** and a repository of **Real-World Crash Post-Mortems**.
+This manual summarizes the **Five Anti-Crash Iron Rules** and the **High-Frequency Crash Troubleshooting Experience Library** accumulated from real-world GTE project development.
 
 ---
 
-## 🛡️ Five Golden Anti-Crash Rules (CRITICAL)
+## 🛡️ Five Anti-Crash Development Iron Rules (CRITICAL)
 
-### Rule 1: Never Force-Cast Mixin Accessors
+### Iron Rule 1: Never Force-Cast Mixin Accessor Interfaces
 
-- **Root Cause**: In multi-module environments, vanilla Minecraft classes (like `BlockBehaviour.Properties`) are loaded by early classloaders before Mixin interfaces are attached, resulting in a fatal `ClassCastException`.
-- **Wrong Pattern (STRICTLY PROHIBITED)**:
+- **Crash Root Cause**: In a multi-module environment or during Addon loading, Minecraft native classes (such as `BlockBehaviour.Properties`) are instantiated by an early Classloader. At this point, the Mixin interface may not have completed bytecode weaving, and a force-cast will directly trigger a `ClassCastException`!
+- **Incorrect Approach (Strictly Forbidden)**:
   ```java
-  // WRONG: Crashes with ClassCastException during early classloading
+  // Wrong! Will definitely crash with ClassCastException during early class loading
   int destroyTime = ((BlockPropertiesAccessor) props).getDestroyTime();
   ```
-- **Correct Pattern (Pattern Matching Guard)**:
+- **Correct Approach (Safe Guard)**:
   ```java
-  // CORRECT: Safe instanceof pattern matching guard
+  // Correct: Use instanceof pattern guard
   if (props instanceof BlockPropertiesAccessor acc) {
       newProps.destroyTime(acc.getDestroyTime());
   }
   ```
-- **Best Practice**: Prefer Vanilla/Forge native methods over accessors (e.g. `property.getPossibleValues()` instead of `IntegerPropertyAccessor`).
+- **Better Solution**: Prefer using Vanilla/Forge native APIs (for example, use `property.getPossibleValues()` to obtain the integer range instead of force-casting `IntegerPropertyAccessor`).
 
 ---
 
-### Rule 2: Never Put Production Shader/Optimizer Jars in Dev Runtime
+### Iron Rule 2: Prohibited from Placing Production Optimization/Shader Mods in the Development Environment
 
-- **Root Cause**: Optimization mods such as `Oculus`, `Embeddium`, `ModernFix`, and `ModernUI` contain hardcoded SRG obfuscated mixin refmaps (`f_117950_`, `m_91302_`). Gradle `runClient` runs in Mojang deobfuscated mappings, triggering `InvalidMixinException`.
-- **Rule**: Keep optimization jars strictly in `gte/overrides/mods/` for real player launchers; exclude them from `modules/gte-dev-runtime`.
-
----
-
-### Rule 3: Always Use `modLocalRuntime` for Dev Dependencies
-
-- **Root Cause**: Standard `localRuntime` or `fileTree` dependencies do not trigger ModDevGradle's deobfuscation remapper.
-- **Rule**: In `modules/gte-dev-runtime/build.gradle`, declare runtime dependencies using `modLocalRuntime(...)` and verify `obfuscation.createRemappingConfiguration(configurations.localRuntime)` is declared.
+- **Crash Root Cause**: Production environment optimization Mods such as `Oculus`, `Embeddium`, `ModernFix`, and `ModernUI` contain hardcoded SRG obfuscated Mixin mappings (e.g., `f_117950_`, `m_91302_`). However, the Gradle `runClient` development environment runs under deobfuscated Mojang mappings, directly causing an `InvalidMixinException` crash.
+- **Governance Principle**: Place optimization mods in `gte/overrides/mods/` (for use by standard launchers) and strictly prohibit adding them to the build dependencies of `modules/gte-dev-runtime`.
 
 ---
 
-### Rule 4: Handling Gradle Incremental Locks (`NoSuchFileException`)
+### Iron Rule 3: Development Environment Dependencies Must Uniformly Use `modLocalRuntime`
 
-- **Symptom**: `compileJava` fails with `NoSuchFileException: ...\build\classes\java\main\...` or `Unable to delete directory 'build'`.
-- **Root Cause**: Lingering background Gradle Daemons holding Windows file system locks.
-- **Solution**:
+- **Crash Root Cause**: Ordinary `localRuntime` or `fileTree` does not trigger ModDevGradle's deobfuscation remapper, leading to missing symbols or broken obfuscated names at runtime.
+- **Governance Principle**: In `modules/gte-dev-runtime/build.gradle`, you must declare `modLocalRuntime(...)` and configure `obfuscation.createRemappingConfiguration(configurations.localRuntime)`.
+
+---
+
+### Iron Rule 4: Gradle Incremental Compilation Deadlock (`NoSuchFileException`) Solution
+
+- **Symptom**: When executing `compileJava` or `build`, you encounter `NoSuchFileException: ...\build\classes\java\main\...` or `Unable to delete directory 'build'`.
+- **Root Cause**: A lingering background Gradle Daemon process is holding Windows file locks.
+- **Standard Solution**:
   ```powershell
-  # 1. Kill lingering Gradle daemons
+  # 1. Completely terminate lingering background Gradle daemon processes
   .\gradlew.bat --stop
 
-  # 2. Delete locked build directories and recompile
+  # 2. Delete conflicting build cache directories and recompile
   Remove-Item -Recurse -Force modules/*/build
   .\gradlew.bat compileJava
   ```
 
 ---
 
-### Rule 5: Cross-Module Change Validation Checklist
+### Iron Rule 5: Mandatory Linked Self-Check After Modifying the Underlying `gtm-reborn`
 
-Whenever editing `gtm-reborn` core classes, machines, materials, RecipeTypes, or Capabilities, execute this 3-step checklist:
-1. **Validate `gtecore` compilation**: Run `.\gradlew.bat :modules:gtecore:compileJava`.
-2. **Validate KubeJS scripts**: Check `startup_scripts/` for registered events and `server_scripts/` for machine references.
-3. **Validate FTB Quests**: Ensure no quests reference renamed or deleted item IDs.
+When modifying the base machines, material system, RecipeType, recipe conditions, or Capabilities of `gtm-reborn`, you must sequentially perform the following three-step check:
+1. **Check `gtecore` compilation integrity**: Run `.\gradlew.bat :modules:gtecore:compileJava`.
+2. **Check KubeJS integration scripts**: Check the GTCEu registration events in `startup_scripts/` and the Machine references in `server_scripts/`.
+3. **Check FTB Quests item references**: Check whether the quest book references item IDs that have been renamed or removed.
 
 ---
 
-## 📚 Real-World Crash Post-Mortems & Fix Recipes
+## 📚 Real Crash Post-Mortems and Fix Recipe Library
 
-### Case 1: `GTBlocks.copy` / Ore Registration `ClassCastException`
-- **Symptom**: `BlockBehaviour$Properties cannot be cast to BlockPropertiesAccessor`
-- **Fix**: Guard all property cloning using `if (props instanceof BlockPropertiesAccessor acc)`.
+### Case 1: `GTBlocks.copy` / Ore Registration Throws `ClassCastException`
+- **Error Stack Trace**: `BlockBehaviour$Properties cannot be cast to BlockPropertiesAccessor`
+- **Fix Solution**: Use `if (props instanceof BlockPropertiesAccessor acc)` to guard all property copy logic.
 
-### Case 2: `GrowingPlantRender` `IntegerPropertyAccessor` Crash
-- **Symptom**: `IntegerProperty cannot be cast to IntegerPropertyAccessor`
-- **Fix**: Replace accessor call with native stream methods:
+### Case 2: `GrowingPlantRender` Force-Cast `IntegerPropertyAccessor` Crash
+- **Error Stack Trace**: `IntegerProperty cannot be cast to IntegerPropertyAccessor`
+- **Fix Solution**: Replace with native streaming operations:
   ```java
   property.getPossibleValues().stream().min(Integer::compare).orElse(0);
   ```
 
-### Case 3: `GregTechDatagen.initPre` `AssertionError`
-- **Symptom**: `AssertionError at RegistrateDataProviderAccessor.gtceu$getTypes()`
-- **Fix**: `RegistrateDataProvider` static maps only initialize during `--datagen`. Wrap the call in `try { ... } catch (Throwable ignored) { }` to safely ignore in normal client runs.
+### Case 3: `GregTechDatagen.initPre` Throws `AssertionError`
+- **Error Stack Trace**: `AssertionError at RegistrateDataProviderAccessor.gtceu$getTypes()`
+- **Fix Solution**: The `RegistrateDataProvider` static Map is only initialized under the `--datagen` parameter. Wrap the call in `try { ... } catch (Throwable ignored) { }` to avoid errors during normal startup.
 
-### Case 4: Missing `PonderPlugin` & Flywheel `NoClassDefFoundError`
-- **Symptom**: `GTMachines.<clinit>` throws `NoClassDefFoundError: PonderPlugin`, and Ponder crashes with `requires flywheel`.
-- **Fix**: Add both `modLocalRuntime(forge.ponder)` and `modLocalRuntime(forge.flywheel.forge)` to `modules/gte-dev-runtime/build.gradle`.
+### Case 4: Missing `PonderPlugin` Causes `NoClassDefFoundError`
+- **Error Stack Trace**: `GTMachines.<clinit>` throws `NoClassDefFoundError: PonderPlugin`, followed by a Ponder crash indicating `requires flywheel`
+- **Fix Solution**: In `modules/gte-dev-runtime/build.gradle`, add both `modLocalRuntime(forge.ponder)` and `modLocalRuntime(forge.flywheel.forge)`.
+
+<<<<<FILE_END: development/anti-crash-guide.md>>>>

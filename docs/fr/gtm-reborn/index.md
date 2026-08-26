@@ -1,72 +1,72 @@
-# GregTech Modern Reborn (GTM Reborn)
+﻿# GregTech Modern Reborn (GTM Reborn)
 
-`modules/gtm-reborn` 是 GTE-Multi 深度定制的 GregTech Modern 独立分支（分支名为 `satou`）。
+`modules/gtm-reborn` est une branche indépendante de GregTech Modern profondément personnalisée par GTE-Multi (nom de branche `satou`).
 
 ---
 
-## 🚀 `satou` 分支核心增强特性
+## 🚀 Caractéristiques clés de la branche `satou`
 
-相比上游原版，GTM-Reborn 在现代高版本 Minecraft 1.20.1 上实现了多项革命性技术演进与工业体验升级：
+Par rapport à la version originale en amont, GTM-Reborn a réalisé plusieurs évolutions technologiques révolutionnaires et améliorations de l'expérience industrielle sur Minecraft 1.20.1 moderne :
 
 ```mermaid
 graph TD
-    A[GTM-Reborn satou 分支] --> B[多安培与极速计算: Multi-Amp Recipes & Subtick 1t OC]
-    A --> C[超大批处理: 64-bit Long 并行计算与 Batch Mode]
-    A --> D[全自动化质量保障: GameTest 服务端实机测试套件]
-    A --> E[外部集成: CC:Tweaked 电脑接口 & EMI/JEI 深度显示]
-    A --> F[流体与管网: 范围流体输出 & 无线覆盖板]
+    A[Branche satou de GTM-Reborn] --> B[Multi-ampères et calcul ultra-rapide : Recettes Multi-Amp & Subtick 1t OC]
+    A --> C[Traitement par lots massif : calcul parallèle 64-bit Long et mode Batch]
+    A --> D[Assurance qualité entièrement automatisée : suite de tests GameTest côté serveur]
+    A --> E[Intégration externe : interface CC:Tweaked & affichage approfondi EMI/JEI]
+    A --> F[Fluides et réseaux de canalisations : sorties de fluides à portée & panneaux de couverture sans fil]
 ```
 
-### 1. 64 位长整型并行与批处理模式 (Batch Mode)
-- **突破 32 位整型上限**：并行计算全面采用 `long` 数据类型，彻底解决超大型工业群在极高并行下数值溢出或计算截断问题。
-- **智能批处理模式**：当原料极其充沛时，机器可将成百上千次微小配方打包为单个周期执行，极大降低服务器 Tick 负载。
+### 1. Parallélisme 64 bits et mode de traitement par lots (Batch Mode)
+- **Dépassement de la limite des entiers 32 bits** : le calcul parallèle utilise entièrement le type de données `long`, résolvant complètement les problèmes de débordement ou de troncature numérique dans les très grandes installations industrielles à très haut parallélisme.
+- **Mode de traitement par lots intelligent** : lorsque les matières premières sont extrêmement abondantes, la machine peut regrouper des centaines, voire des milliers de micro-recettes en un seul cycle, réduisant considérablement la charge de ticks du serveur.
 
-### 2. 1T Subtick 瞬时超频 (OC_PERFECT_SUBTICK)
-- 优化了机器 Recipe Logic 执行流水线，允许指定高级机器在 1 个 Tick 内完成多次配方迭代，释放纯粹的工业生产极限。
+### 2. Overclocking instantané 1T Subtick (OC_PERFECT_SUBTICK)
+- Optimise le pipeline d'exécution de la logique de recette des machines, permettant à certaines machines avancées d'effectuer plusieurs itérations de recettes en un seul tick, libérant ainsi les limites pures de la production industrielle.
 
-### 3. 多安培输入与配方支持 (Multi-Amp)
-- 机器配方支持单配方消耗/输出多安培（Amperes）电流，支持 EMI/JEI 界面直观渲染多安培数值与导线规格提示。
+### 3. Prise en charge des entrées et recettes multi-ampères (Multi-Amp)
+- Les recettes de machines prennent en charge la consommation/la sortie de plusieurs ampères (Amperes) par recette, et l'interface EMI/JEI affiche de manière intuitive les valeurs multi-ampères et les indications de spécifications de câbles.
 
-### 4. 范围流体输出 (Ranged Fluid Outputs)
-- 允许高阶蒸馏塔与化学反应器根据不同温度与压力工况输出带有范围浮动的流体产物。
+### 4. Sorties de fluides à portée (Ranged Fluid Outputs)
+- Permet aux colonnes de distillation avancées et aux réacteurs chimiques de produire des fluides avec des plages de variation en fonction des conditions de température et de pression.
 
-### 5. CC:Tweaked (ComputerCraft) 现代外设集成
-- 所有标准机器均向 ComputerCraft 开放外设接口：
-  - 实时查询配方进度、剩余时间、当前 EU/t 消耗。
-  - 通过 Lua 脚本动态开启、暂停机器或切换工作模式。
+### 5. Intégration moderne des périphériques CC:Tweaked (ComputerCraft)
+- Toutes les machines standard exposent une interface périphérique à ComputerCraft :
+  - Interroger en temps réel la progression des recettes, le temps restant, la consommation EU/t actuelle.
+  - Activer, mettre en pause ou changer le mode de fonctionnement des machines dynamiquement via des scripts Lua.
 
 ---
 
-## 🧪 自动化测试与 GameTest 验证
+## 🧪 Tests automatisés et validation GameTest
 
-GTM-Reborn 包含完整的 Minecraft 原生 GameTest 自动化测试套件（位于 `src/test`）：
+GTM-Reborn comprend une suite complète de tests automatisés GameTest natifs de Minecraft (située dans `src/test`) :
 
 ```powershell
-# 运行 GameTest 自动化服务端测试
+# Exécuter les tests automatisés GameTest côté serveur
 $env:JAVA_HOME='C:\Users\Ex_Je\.jdks\ms-21.0.11'
 .\gradlew.bat :modules:gtm-reborn:runGameTestServer
 ```
 
-### 测试覆盖范围
-- **Cover 系统**：测试流体泵板、物品传送板、能量导流板的吞吐与防漏逻辑。
-- **机器 Recipe Logic**：测试多安培、批处理、跨配方并行与超频计算。
-- **多方块成型与旋转**：测试各类机壳、仓室在不同朝向下的结构验证。
+### Couverture des tests
+- **Système de couverture** : teste le débit et la logique anti-fuite des plaques de pompe à fluide, des plaques de transfert d'objets et des plaques de conduction d'énergie.
+- **Logique de recette des machines** : teste le multi-ampères, le traitement par lots, le parallélisme inter-recettes et le calcul d'overclocking.
+- **Formation et rotation des multiblocs** : teste la validation structurelle de divers boîtiers et compartiments sous différentes orientations.
 
 ---
 
-## 🌿 子模块 Git 工作流规范
+## 🌿 Normes de flux de travail Git pour les sous-modules
 
-`modules/gtm-reborn` 对应独立 Git 仓库 `takanashisatou/GregTech-Modern-Reborn`，默认开发分支为 `satou`：
+`modules/gtm-reborn` correspond au dépôt Git indépendant `takanashisatou/GregTech-Modern-Reborn`, avec la branche de développement par défaut `satou` :
 
 ```bash
-# 独立在子模块中开发与提交
+# Développer et committer indépendamment dans le sous-module
 cd modules/gtm-reborn
 git checkout satou
 git add .
 git commit -m "feat: optimize multiblock recipe logic"
 git push origin satou
 
-# 回到主工程更新 submodule 指针
+# Revenir au projet principal et mettre à jour le pointeur du sous-module
 cd ../..
 git add modules/gtm-reborn
 git commit -m "chore: bump gtm-reborn submodule pointer"

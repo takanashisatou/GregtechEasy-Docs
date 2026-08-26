@@ -1,58 +1,58 @@
-# 超弦与阴阳高阶电路及材料系统
+﻿# Sistema de Circuitos Avanzados de Supercuerdas y Yin-Yang y Materiales
 
-GTECore 拓展了横跨 ZPM 到 MAX 全周期的两大高阶电路分支 —— **超弦电路体系** 与 **阴阳太极电路体系**，并配合以矿石综合处理中心实现自动化材料大循环。
+GTECore expande dos ramas principales de circuitos avanzados a lo largo de todo el ciclo de ZPM a MAX: el **Sistema de Circuitos de Supercuerdas** y el **Sistema de Circuitos de Yin-Yang Taiji**, junto con el Centro de Procesamiento Integral de Minerales para lograr un ciclo automático de materiales.
 
 ---
 
-## 🌌 超弦电路体系 (Super String Circuitry)
+## 🌌 Sistema de Circuitos de Supercuerdas (Super String Circuitry)
 
-超弦电路从高维震荡弦中获取超光速算力，主要覆盖 **ZPM ➜ UEV** 电压梯度：
+El circuito de supercuerdas obtiene potencia de cómputo superlumínica a partir de cuerdas oscilantes de alta dimensión, cubriendo principalmente el gradiente de voltaje **ZPM ➜ UEV**:
 
 ```mermaid
 graph LR
-    A[超弦基板 / 印刷板] --> B[超弦处理器 ZPM]
-    B --> C[超弦处理器集群 UV]
-    C --> D[超弦处理器超级计算机 UHV]
-    D --> E[超弦处理器主机 UEV]
+    A[Placa base de supercuerdas / Placa de circuito impreso] --> B[Procesador de supercuerdas ZPM]
+    B --> C[Clúster de procesadores de supercuerdas UV]
+    C --> D[Supercomputadora de procesadores de supercuerdas UHV]
+    D --> E[Host de procesadores de supercuerdas UEV]
 ```
 
-### 超弦材料与弦系物质
-- **起源之弦 (`item.gtecore.original_string`)**：高维宇宙震荡本源。
-- **α弦 / β弦 / γ弦 (`alpha_string`, `beta_string`, `gamma_string`)**：不同能级与偏振态的超弦聚合物。
-- **超弦混合机 (`super_string_mixer`)**、**创世之弦 (`string_of_creation`)** 与 **超弦震荡阵列 (`super_string_oscillator_array`)**：用于超弦物质的分裂、调谐与高阶固化。
+### Materiales de supercuerdas y materia de cuerdas
+- **Cuerda de origen (`item.gtecore.original_string`)**: Fuente de oscilación del universo de alta dimensión.
+- **Cuerdas α / β / γ (`alpha_string`, `beta_string`, `gamma_string`)**: Polímeros de supercuerdas con diferentes niveles de energía y estados de polarización.
+- **Mezclador de supercuerdas (`super_string_mixer`)**, **Cuerda de la creación (`string_of_creation`)** y **Matriz de oscilación de supercuerdas (`super_string_oscillator_array`)**: Se utilizan para la división, sintonización y solidificación avanzada de la materia de supercuerdas.
 
 ---
 
-## ☯️ 阴阳太极电路体系 (Yin-Yang Circuitry)
+## ☯️ Sistema de Circuitos de Yin-Yang Taiji (Yin-Yang Circuitry)
 
-阴阳电路体系遵循 **“阴生阳，阳生阴，生生不息”** 的循环生克哲学，覆盖 **UV ➜ UIV** 乃至更高极限：
+El sistema de circuitos Yin-Yang sigue la filosofía cíclica de "el Yin genera el Yang, el Yang genera el Yin, y la vida es infinita", cubriendo **UV ➜ UIV** e incluso límites más altos:
 
 ```mermaid
 graph LR
-    A[阴阳单晶硅 / 晶圆] --> B[阴阳处理器 UV]
-    B --> C[阴阳处理器集群 UHV]
-    C --> D[阴阳处理器超级计算机 UEV]
-    D --> E[阴阳处理器主机 UIV]
+    A[Silicio monocristalino de Yin-Yang / Oblea] --> B[Procesador de Yin-Yang UV]
+    B --> C[Clúster de procesadores de Yin-Yang UHV]
+    C --> D[Supercomputadora de procesadores de Yin-Yang UEV]
+    D --> E[Host de procesadores de Yin-Yang UIV]
 ```
 
-### 八卦与五行专属符篆
-- **五行元素**：金元素 (`jinyuansu`)、木元素 (`muyuansu`)、水元素 (`shuiyuansu`)、火元素 (`huo`)、土元素 (`tuyuansu`)。
-- **五行符篆**：金之符篆、木之符篆、水之符篆、火之符篆、土之符篆。
-- **八卦象与芯片**：乾、坤、震、巽、坎、离、艮、兑八大卦象符石与核心芯片。
-- **三清之粒 (`god_nugget`)**：凝聚天地玄黄之气的顶级合成媒介。
+### Talismanes exclusivos de los Ocho Trigramas y los Cinco Elementos
+- **Elementos de los Cinco Elementos**: Elemento Metal (`jinyuansu`), Elemento Madera (`muyuansu`), Elemento Agua (`shuiyuansu`), Elemento Fuego (`huo`), Elemento Tierra (`tuyuansu`).
+- **Talismanes de los Cinco Elementos**: Talismán de Metal, Talismán de Madera, Talismán de Agua, Talismán de Fuego, Talismán de Tierra.
+- **Símbolos de los Ocho Trigramas y Chips**: Piedras de símbolos y chips centrales de los ocho trigramas: Qian, Kun, Zhen, Xun, Kan, Li, Gen, Dui.
+- **Partícula de los Tres Puros (`god_nugget`)**: Medio de síntesis de nivel superior que condensa la energía del cielo y la tierra.
 
 ---
 
-## 💎 矿石综合处理中心配方模式
+## 💎 Modo de Recetas del Centro de Procesamiento Integral de Minerales
 
-**矿石综合处理中心 (`ore_process_center`)** 预设了 7 大标准化电路模式，可通过在机器内设置编程电路编号切换：
+**Centro de Procesamiento Integral de Minerales (`ore_process_center`)** tiene 7 modos de circuito estandarizados preestablecidos, que se pueden cambiar configurando el número de circuito programado en la máquina:
 
-| 电路编号 | 工艺路线 | 适用矿物类型与产物特色 | 产出倍率 |
+| Número de Circuito | Ruta de Proceso | Tipos de Minerales Aplicables y Características del Producto | Multiplicador de Producción |
 | :---: | :--- | :--- | :---: |
-| **电路 1** | 粉碎 ➜ 粉碎 ➜ 洗矿 | 基础金属矿石（铁、铜、锡等）快速量产 | 5 倍主产物 + 副产物 |
-| **电路 2** | 粉碎 ➜ 粉碎 ➜ 离心 | 伴生高价值稀有轻金属矿石 | 5 倍主产物 + 离心精纯副产物 |
-| **电路 3** | 粉碎 ➜ 洗矿 ➜ 热离 ➜ 粉碎 | 高温耐火矿石、贵金属矿（铂系、金银等） | 5~6 倍 + 纯净金属粉 |
-| **电路 4** | 粉碎 ➜ 热离 ➜ 粉碎 | 硫化物与重度复杂嵌布矿 | 5 倍 + 特殊热离副产物 |
-| **电路 5** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 洗矿 | 稀土矿石与多阶段可溶性盐矿 | 6 倍 + 双重洗矿副产物 |
-| **电路 6** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 离心 | 放射性重矿（铀、钍、钚系）与稀土 | 6 倍 + 精细离心重金属 |
-| **电路 8** | 粉碎 ➜ 洗矿 ➜ 粉碎 ➜ 电磁选矿 | 强磁性与顺磁性矿物（磁铁矿、铬、钛等） | 6~8 倍 + 电磁纯净粉 |
+| **Circuito 1** | Trituración ➜ Trituración ➜ Lavado | Producción rápida de minerales metálicos básicos (hierro, cobre, estaño, etc.) | 5x producto principal + subproductos |
+| **Circuito 2** | Trituración ➜ Trituración ➜ Centrifugación | Minerales de metales ligeros raros de alto valor asociados | 5x producto principal + subproductos purificados por centrifugación |
+| **Circuito 3** | Trituración ➜ Lavado ➜ Separación térmica ➜ Trituración | Minerales refractarios de alta temperatura, minerales de metales preciosos (platino, oro, plata, etc.) | 5-6x + polvo de metal puro |
+| **Circuito 4** | Trituración ➜ Separación térmica ➜ Trituración | Sulfuros y minerales complejos de inclusión pesada | 5x + subproductos especiales de separación térmica |
+| **Circuito 5** | Trituración ➜ Lavado ➜ Trituración ➜ Lavado | Minerales de tierras raras y minerales de sales solubles de múltiples etapas | 6x + subproductos de doble lavado |
+| **Circuito 6** | Trituración ➜ Lavado ➜ Trituración ➜ Centrifugación | Minerales pesados radiactivos (uranio, torio, plutonio) y tierras raras | 6x + metales pesados finamente centrifugados |
+| **Circuito 8** | Trituración ➜ Lavado ➜ Trituración ➜ Separación electromagnética | Minerales ferromagnéticos y paramagnéticos (magnetita, cromo, titanio, etc.) | 6-8x + polvo puro electromagnético |

@@ -1,48 +1,48 @@
-# AE2 深度集成与样板总成 Plus 系统
+﻿# Sistema de Integração Profunda AE2 e Montagem de Padrões Plus
 
-GTECore 为应用能源 2 (Applied Energistics 2) 与 GregTech 多方块结构之间搭建了极其强大的直接数据互联桥梁。
+O GTECore estabelece uma ponte de dados extremamente poderosa e direta entre o Applied Energistics 2 (AE2) e as estruturas multibloco do GregTech.
 
 ---
 
-## 🧩 ME 样板总成 Plus (`me_pattern_buffer_plus`)
+## 🧩 Montagem de Padrões ME Plus (`me_pattern_buffer_plus`)
 
-在传统科技模组中，将 AE2 样板供应器连接到多方块机器通常面临**槽位不足、流体与物品无法混合输出、样板难以多机共享**的痛点。
+Em mods de tecnologia tradicionais, conectar um Fornecedor de Padrões AE2 a uma máquina multibloco geralmente enfrenta os problemas de **espaço de slots insuficiente, impossibilidade de misturar saídas de fluidos e itens, e dificuldade em compartilhar padrões entre múltiplas máquinas**.
 
-GTECore 研发的 **ME 样板总成 Plus** 彻底解决了这一问题：
+O **Montagem de Padrões ME Plus** desenvolvido pelo GTECore resolve completamente esse problema:
 
 ```mermaid
 graph TD
-    A[AE2 ME 网络] --> B[ME 样板总成 Plus 主机<br/>81个样板槽位 / 共享库存 / 可编程存储]
-    B -->|闪存 Datastick 绑定| C[ME 样板总成镜像 Plus #1<br/>连接在 多方块机器 A]
-    B -->|闪存 Datastick 绑定| D[ME 样板总成镜像 Plus #2<br/>连接在 多方块机器 B]
-    B -->|闪存 Datastick 绑定| E[ME 样板总成镜像 Plus #3<br/>连接在 多方块机器 C]
+    A[Rede ME AE2] --> B[Host de Montagem de Padrões ME Plus<br/>81 slots de padrões / Inventário compartilhado / Armazenamento programável]
+    B -->|Vinculação com Datastick| C[Espelho de Montagem de Padrões ME Plus #1<br/>Conectado à Máquina Multibloco A]
+    B -->|Vinculação com Datastick| D[Espelho de Montagem de Padrões ME Plus #2<br/>Conectado à Máquina Multibloco B]
+    B -->|Vinculação com Datastick| E[Espelho de Montagem de Padrões ME Plus #3<br/>Conectado à Máquina Multibloco C]
 ```
 
-### 核心特性
-1. **海量样板容量**：单个总成主机拥有 **81 个样板槽位**（相当于 9 个标准 AE2 样板供应器的总和）。
-2. **全能仓室能力**：同时具备 `IMPORT_ITEMS`、`IMPORT_FLUIDS`、`EXPORT_ITEMS`、`EXPORT_FLUIDS` 能力，支持流体与物品同仓混合交互。
-3. **可编程存储支持**：内部集成 Programmable Storage 机制，支持复杂配方精准投料与缓存。
+### Características Principais
+1. **Capacidade Massiva de Padrões**: Um único host de montagem possui **81 slots de padrões** (equivalente à soma de 9 Fornecedores de Padrões AE2 padrão).
+2. **Capacidade de Compartimento Universal**: Possui simultaneamente as capacidades `IMPORT_ITEMS`, `IMPORT_FLUIDS`, `EXPORT_ITEMS` e `EXPORT_FLUIDS`, suportando interação mista de fluidos e itens no mesmo compartimento.
+3. **Suporte a Armazenamento Programável**: Integra internamente o mecanismo de Armazenamento Programável, suportando alimentação precisa e cache para receitas complexas.
 
 ---
 
-## 🪞 ME 样板总成镜像 Plus (`me_pattern_buffer_proxy_plus`)
+## 🪞 Espelho de Montagem de Padrões ME Plus (`me_pattern_buffer_proxy_plus`)
 
-**样板总成镜像 Plus** 是一种革命性的分布式自动化结构部件：
+O **Espelho de Montagem de Padrões ME Plus** é um componente estrutural revolucionário para automação distribuída:
 
-### 工作原理与跨机器共享
-- 将镜像总成安装在任意多方块机器的仓室位置。
-- 手持 **闪存 (Datastick)** 右键主 **ME 样板总成 Plus** 读取坐标，然后右键 **样板总成镜像 Plus** 进行绑定。
-- **所有绑定的镜像将实时共享主总成内放置的所有 81 个样板**！
-- 当 AE2 网络发起自动化合成任务时，网络会自动负载均衡分配给所有空闲的镜像机器并行开工！
+### Princípio de Funcionamento e Compartilhamento entre Máquinas
+- Instale o espelho de montagem na posição de compartimento de qualquer máquina multibloco.
+- Segure um **Datastick** e clique com o botão direito no **Montagem de Padrões ME Plus** principal para ler as coordenadas, depois clique com o botão direito no **Espelho de Montagem de Padrões ME Plus** para vincular.
+- **Todos os espelhos vinculados compartilharão em tempo real todos os 81 padrões colocados no host principal**!
+- Quando a rede AE2 inicia uma tarefa de automação de síntese, a rede automaticamente distribui a carga de forma balanceada para todas as máquinas espelho ociosas, que trabalham em paralelo!
 
-### Jade 悬浮状态显示
-对准样板总成或镜像时，Jade 会自动显示：
-- 主总成：`已连接镜像数量: X`
-- 镜像部件：`已绑定至 - X: ..., Y: ..., Z: ...`
+### Exibição de Status Flutuante Jade
+Ao mirar no montagem de padrões ou no espelho, o Jade exibirá automaticamente:
+- Host principal: `Número de espelhos conectados: X`
+- Componente espelho: `Vinculado a - X: ..., Y: ..., Z: ...`
 
 ---
 
-## 💨 ME 蒸汽仓 (`me_steam_hatch`)
+## 💨 Compartimento de Vapor ME (`me_steam_hatch`)
 
-- **功能**：直接连接 AE2 流体网络与蒸汽多方块结构。
-- **作用**：蒸汽多方块结构无需外挂复杂的高速蒸汽管道与储罐，直接以最高吞吐量从 ME 网络中即时抽取蒸汽供能，杜绝管道传输瓶颈。
+- **Função**: Conecta diretamente a rede de fluidos AE2 à estrutura multibloco de vapor.
+- **Efeito**: A estrutura multibloco de vapor não precisa de tubulações e tanques de vapor complexos e de alta velocidade externos; ela extrai vapor diretamente da rede ME com a máxima taxa de transferência para fornecimento de energia, eliminando gargalos de transmissão por tubulações.
