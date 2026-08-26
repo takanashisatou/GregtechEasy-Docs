@@ -1,7 +1,7 @@
 site_name: GregTech Easy (GTE) 文档
 site_description: GregTech Easy (GTE-Multi) 官方人类可读多语言开发与游玩指南文档
 site_author: takanashisatou & GTE Team
-site_url: https://takanashisatou.github.io/
+site_url: https://takanashisatou.github.io/GregtechEasy-Docs/
 
 repo_name: takanashisatou/GregtechEasy
 repo_url: https://github.com/takanashisatou/GregtechEasy
@@ -154,34 +154,34 @@ markdown_extensions:
 extra:
   alternate:
     - name: 简体中文
-      link: /
+      link: /GregtechEasy-Docs/
       lang: zh
     - name: English
-      link: /en/
+      link: /GregtechEasy-Docs/en/
       lang: en
     - name: 繁體中文
-      link: /zh-TW/
+      link: /GregtechEasy-Docs/zh-TW/
       lang: zh-TW
     - name: 日本語
-      link: /ja/
+      link: /GregtechEasy-Docs/ja/
       lang: ja
     - name: 한국어
-      link: /ko/
+      link: /GregtechEasy-Docs/ko/
       lang: ko
     - name: Русский
-      link: /ru/
+      link: /GregtechEasy-Docs/ru/
       lang: ru
     - name: Deutsch
-      link: /de/
+      link: /GregtechEasy-Docs/de/
       lang: de
     - name: Français
-      link: /fr/
+      link: /GregtechEasy-Docs/fr/
       lang: fr
     - name: Español
-      link: /es/
+      link: /GregtechEasy-Docs/es/
       lang: es
     - name: Português
-      link: /pt/
+      link: /GregtechEasy-Docs/pt/
       lang: pt
   social:
     - icon: fontawesome/brands/github
