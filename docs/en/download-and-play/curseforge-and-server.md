@@ -1,6 +1,6 @@
 # CurseForge Import and Server Deployment Guide
 
-In addition to the no-compile lazy pack, GTE provides a CurseForge standard pack and a server pack automatically built with **Packwiz**.
+In addition to the full-mod client pack, GTE provides a CurseForge standard pack and a server pack automatically built with **Packwiz**.
 
 ---
 

@@ -10,13 +10,13 @@ GTE est un pack d'intégration moderne pour Minecraft 1.20.1, conçu autour des 
 
 <div class="grid cards" markdown>
 
--   :material-download: __[Guide du joueur et du pack d'intégration](download-and-play/lazy-pack.md)__
+-   :material-download: __[Guide du joueur et du pack d'intégration](download-and-play/full-mod-pack.md)__
 
     ---
 
-    Téléchargez le **pack clé-en-main complet sans compilation**, le pack standard CurseForge et le serveur, et découvrez la configuration de l'environnement d'exécution **Java 21** et les tutoriels d'importation pour lanceurs.
+    Téléchargez le **pack client complet**, le pack standard CurseForge et le serveur, et découvrez la configuration de l'environnement d'exécution **Java 21** et les tutoriels d'importation pour lanceurs.
 
-    [:octicons-arrow-right-24: Aller sur la page](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: Aller sur la page](download-and-play/full-mod-pack.md)
 
 -   :material-chip: __[Guide détaillé du mod principal GTECore](gtecore/overview.md)__
 

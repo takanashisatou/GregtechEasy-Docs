@@ -1,6 +1,6 @@
 # CurseForge-Import und Server-Bereitstellungsanleitung
 
-Neben dem vorgefertigten Lazy Pack bietet GTE ein CurseForge-konformes Paket und ein Serverpaket, die automatisch mit **Packwiz** erstellt werden.
+Neben dem Komplett-Mod-Client-Paket bietet GTE ein CurseForge-konformes Paket und ein Serverpaket, die automatisch mit **Packwiz** erstellt werden.
 
 ---
 

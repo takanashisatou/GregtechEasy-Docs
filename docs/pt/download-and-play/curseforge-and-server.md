@@ -1,6 +1,6 @@
 # Guia de Importação CurseForge e Implantação de Servidor
 
-Além do pacote pronto para jogar sem compilação, o GTE oferece um pacote padrão CurseForge e um pacote de servidor construídos automaticamente com base no **Packwiz**.
+Além do pacote cliente completo de mods, o GTE oferece um pacote padrão CurseForge e um pacote de servidor construídos automaticamente com base no **Packwiz**.
 
 ---
 
