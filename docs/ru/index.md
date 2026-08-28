@@ -10,13 +10,13 @@ GTE — это современная сборка для Minecraft 1.20.1, ос
 
 <div class="grid cards" markdown>
 
--   :material-download: __[Руководство для игроков и по сборке](download-and-play/lazy-pack.md)__
+-   :material-download: __[Руководство для игроков и по сборке](download-and-play/full-mod-pack.md)__
 
     ---
 
-    Скачайте готовую к использованию **полную сборку без компиляции**, пакет CurseForge и серверную часть, узнайте о настройке окружения **Java 21** и импорте через лаунчер.
+    Скачайте **клиентский пакет со всеми модами**, пакет CurseForge и серверную часть, узнайте о настройке окружения **Java 21** и импорте через лаунчер.
 
-    [:octicons-arrow-right-24: Перейти](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: Перейти](download-and-play/full-mod-pack.md)
 
 -   :material-chip: __[Подробное описание основного мода GTECore](gtecore/overview.md)__
 

@@ -1,6 +1,6 @@
 # CurseForge 가져오기 및 서버 배포 가이드
 
-컴파일 불필요한 간편 팩 외에도, GTE는 **Packwiz** 기반으로 자동 구축된 CurseForge 규격 팩과 서버 팩을 제공합니다.
+전체 모드 클라이언트 팩 외에도, GTE는 **Packwiz** 기반으로 자동 구축된 CurseForge 규격 팩과 서버 팩을 제공합니다.
 
 ---
 

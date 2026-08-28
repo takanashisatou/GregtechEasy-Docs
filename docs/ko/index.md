@@ -10,13 +10,13 @@ GTE는 **"간단하고, 재미있고, 흥미롭고, 짧은 플레이 시간"** �
 
 <div class="grid cards" markdown>
 
--   :material-download: __[플레이어 및 통합 팩 가이드](download-and-play/lazy-pack.md)__
+-   :material-download: __[플레이어 및 통합 팩 가이드](download-and-play/full-mod-pack.md)__
 
     ---
 
-    설치 즉시 실행 가능한 **0 컴파일 완전 간편 팩**, CurseForge 규격 팩 및 서버를 다운로드하고, **Java 21** 실행 환경 설정과 런처 가져오기 튜토리얼을 알아보세요.
+    **전체 모드 클라이언트 팩**, CurseForge 규격 팩 및 서버를 다운로드하고, **Java 21** 실행 환경 설정과 런처 가져오기 튜토리얼을 알아보세요.
 
-    [:octicons-arrow-right-24: 바로가기](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: 바로가기](download-and-play/full-mod-pack.md)
 
 -   :material-chip: __[GTECore 핵심 모드 상세 설명](gtecore/overview.md)__
 

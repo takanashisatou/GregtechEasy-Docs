@@ -10,13 +10,13 @@ O GTE é um pacote de mods moderno para Minecraft 1.20.1 com o conceito central 
 
 <div class="grid cards" markdown>
 
--   :material-download: __[Guia do Jogador e do Pacote de Mods](download-and-play/lazy-pack.md)__
+-   :material-download: __[Guia do Jogador e do Pacote de Mods](download-and-play/full-mod-pack.md)__
 
     ---
 
-    Baixe o **pacote completo pronto para jogar com 0 compilação**, o pacote padrão CurseForge e o servidor, e aprenda sobre a configuração do ambiente de execução **Java 21** e os tutoriais de importação no launcher.
+    Baixe o **pacote cliente completo de mods**, o pacote padrão CurseForge e o servidor, e aprenda sobre a configuração do ambiente de execução **Java 21** e os tutoriais de importação no launcher.
 
-    [:octicons-arrow-right-24: Ir agora](download-and-play/lazy-pack.md)
+    [:octicons-arrow-right-24: Ir agora](download-and-play/full-mod-pack.md)
 
 -   :material-chip: __[Detalhes do Mod Principal GTECore](gtecore/overview.md)__
 
