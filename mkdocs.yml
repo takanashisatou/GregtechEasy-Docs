@@ -72,6 +72,7 @@ plugins:
             阴阳八卦与四象阵法: Yin-Yang & Formations
             AE2 深度集成: AE2 Deep Integration
             超弦与阴阳高阶电路: Circuits & Materials
+            三级水质净化体系: Tiered Water Purification
             GTM Reborn 模组分支: GTM Reborn Mod Branch
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS & Scripting
@@ -100,6 +101,7 @@ plugins:
             阴阳八卦与四象阵法: 陰陽八卦與四象陣法
             AE2 深度集成: AE2 深度集成
             超弦与阴阳高阶电路: 超弦與陰陽高階電路
+            三级水质净化体系: 三級水質淨化體系
             GTM Reborn 模组分支: GTM Reborn 模組分支
             GT-- Community Edition: GT-- 社群版
             KubeJS 魔改与联动: KubeJS 魔改與連動
@@ -156,6 +158,7 @@ plugins:
             阴阳八卦与四象阵法: 음양 팔괘 및 사상 진법
             AE2 深度集成: AE2 심층 통합
             超弦与阴阳高阶电路: 초끈 및 음양 고급 회로
+            三级水质净化体系: 3단계 수질 정화 체계
             GTM Reborn 模组分支: GTM Reborn 모드 브랜치
             GT-- Community Edition: GT-- 커뮤니티 에디션
             KubeJS 魔改与联动: KubeJS 모드 개조 및 연동
@@ -184,6 +187,7 @@ plugins:
             阴阳八卦与四象阵法: Инь-Ян и Четыре Символа
             AE2 深度集成: Глубокая интеграция с AE2
             超弦与阴阳高阶电路: Суперструны и схемы Инь-Ян
+            三级水质净化体系: Трехуровневая очистка воды
             GTM Reborn 模组分支: Ветка мода GTM Reborn
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS и скрипты
@@ -212,6 +216,7 @@ plugins:
             阴阳八卦与四象阵法: Yin-Yang & Formationen
             AE2 深度集成: AE2-Integration
             超弦与阴阳高阶电路: Superstring & Yin-Yang Schaltkreise
+            三级水质净化体系: Dreistufige Wasseraufbereitung
             GTM Reborn 模组分支: GTM Reborn Mod-Zweig
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS & Scripting
@@ -240,6 +245,7 @@ plugins:
             阴阳八卦与四象阵法: Yin-Yang & Formations
             AE2 深度集成: Intégration AE2
             超弦与阴阳高阶电路: Supercordes & Circuits
+            三级水质净化体系: Purification de l'Eau à Trois Niveaux
             GTM Reborn 模组分支: Branche GTM Reborn
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS & Scripts
@@ -268,6 +274,7 @@ plugins:
             阴阳八卦与四象阵法: Yin-Yang y Formaciones
             AE2 深度集成: Integración AE2
             超弦与阴阳高阶电路: Supercuerdas y Circuitos
+            三级水质净化体系: Purificación de Agua en Tres Niveles
             GTM Reborn 模组分支: Rama GTM Reborn
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS y Scripts
@@ -296,6 +303,7 @@ plugins:
             阴阳八卦与四象阵法: Yin-Yang e Formações
             AE2 深度集成: Integração AE2
             超弦与阴阳高阶电路: Supercordas e Circuitos
+            三级水质净化体系: Purificação de Água em Três Níveis
             GTM Reborn 模组分支: Ramo GTM Reborn
             GT-- Community Edition: GT-- Community Edition
             KubeJS 魔改与联动: KubeJS e Scripts
@@ -321,6 +329,7 @@ nav:
       - 阴阳八卦与四象阵法: gtecore/yin-yang-and-four-symbols.md
       - AE2 深度集成: gtecore/ae2-integration.md
       - 超弦与阴阳高阶电路: gtecore/circuits-and-materials.md
+      - 三级水质净化体系: gtecore/water-purification-system.md
   - GTM Reborn 模组分支: gtm-reborn/index.md
   - GT-- Community Edition: gt-minus-minus/index.md
   - KubeJS 魔改与联动:
