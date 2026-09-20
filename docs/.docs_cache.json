@@ -9,7 +9,7 @@
   "gt-minus-minus/index.md:en": "4714f72117a6f92783f42caad29cf89726ed020ef1b6b3d95050419b5f1d0ae6",
   "gtecore/ae2-integration.md:en": "2f643051250d5a6db6c9ef09b372f483d6d1e58b74e14a35aa56ee4afbb92b9f",
   "gtecore/overview.md:en": "48e26a46f58dd2947853d84f119f5b7e88829942369eb353d63c74777d6fa5d5",
-  "gtecore/circuits-and-materials.md:en": "7cdeb37a36ef3333101e0d247d3275e1336b1d2bd25ffecaf7ff033b5f4a6646",
+  "gtecore/circuits-and-materials.md:en": "7e814cc4b1fa6be938411636d3212c4eb02fb06d0c26fa95c5d9516e43288f5d",
   "gtm-reborn/index.md:en": "0da9ef1500853a8378424ae64e6946bfbc88b999493957905a13a674cfdeaffa",
   "index.md:en": "8139b687d9869fbd3ef4964d77399304019b952fdc8a21a3ff9220c50908b963",
   "art-and-ui/blockbench-workflow.md:zh-TW": "6aaccfe058220cc3f7a74a356989742305c536ad9dee6dcb34ace1cbf4865a24",
@@ -21,7 +21,7 @@
   "download-and-play/curseforge-and-server.md:zh-TW": "233a8444fdf29fa89daf4e47a7f0d69f52ca3990c5357f25728c9f15519c8c45",
   "gt-minus-minus/index.md:zh-TW": "4714f72117a6f92783f42caad29cf89726ed020ef1b6b3d95050419b5f1d0ae6",
   "gtecore/ae2-integration.md:zh-TW": "2f643051250d5a6db6c9ef09b372f483d6d1e58b74e14a35aa56ee4afbb92b9f",
-  "gtecore/circuits-and-materials.md:zh-TW": "7cdeb37a36ef3333101e0d247d3275e1336b1d2bd25ffecaf7ff033b5f4a6646",
+  "gtecore/circuits-and-materials.md:zh-TW": "7e814cc4b1fa6be938411636d3212c4eb02fb06d0c26fa95c5d9516e43288f5d",
   "gtecore/machines-and-multiblocks.md:zh-TW": "571b837730b1d30484cae555d9dad1f3200b4db9d51895812a30d8caa494241d",
   "gtecore/overview.md:zh-TW": "48e26a46f58dd2947853d84f119f5b7e88829942369eb353d63c74777d6fa5d5",
   "gtecore/yin-yang-and-four-symbols.md:zh-TW": "2b450188e664adf75be2ec3c6bcf4daf19fee2b6089f5b697142da70d9d456e1",
@@ -151,5 +151,14 @@
   "index.md:pt": "8139b687d9869fbd3ef4964d77399304019b952fdc8a21a3ff9220c50908b963",
   "gtm-reborn/index.md:pt": "0da9ef1500853a8378424ae64e6946bfbc88b999493957905a13a674cfdeaffa",
   "kubejs/scripting-guide.md:pt": "d12c7837e31fe11f294ea3437af907ed0a89d6a916db9c5579089e93c433882a",
-  "kubejs/tools-and-utilities.md:pt": "0fa9ee2759cdd234d6d402c9842a56f9ba431834e284d63b63f380d69086c20d"
+  "kubejs/tools-and-utilities.md:pt": "0fa9ee2759cdd234d6d402c9842a56f9ba431834e284d63b63f380d69086c20d",
+  "gtecore/water-purification-system.md:en": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:zh-TW": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:ja": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:ko": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:de": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:fr": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:ru": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:es": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9",
+  "gtecore/water-purification-system.md:pt": "305f50760aaa36a8223cd757ff45f5c1e3af4156e73cb7184c4e4faa3dcee2f9"
 }
